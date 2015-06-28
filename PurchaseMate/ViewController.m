@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
         
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=070662060025"]];
+//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=054400015041"]];
 
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -244,7 +244,7 @@
 
 - (void)showAlert {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                    message:@"We have no data on this product! Submit a report to notify us about this and add it to our database."
+                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
