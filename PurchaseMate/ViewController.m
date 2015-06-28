@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
         
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=9781118692288"]];
+//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=070662060025"]];
 
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -114,42 +114,50 @@
     
     if ([responseDictionary objectForKey:@"Brand"] != nil) {
         //Has Brand Attribute
-        id brandName = [responseDictionary objectForKey:@"Brand"];
-        NSDictionary *brandDictionary = brandName;
+        [self getDataFromMongoDBWithDictionary:responseDictionary];
         
-        NSError *error = nil;
-        if (error) {
-            NSLog(@"%@", error);
-        }
-        MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
-        MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
-        
-        MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
-        [predicate keyPath:@"Name" matches:brandDictionary];
-        BSONDocument *resultDoc = [collection findOneWithPredicate:predicate
-                                                             error:&error];
-        NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
+    } else {
+        //Doesn't have Brand Attribute
+        [self showAlert];
+    }
+    
+    return [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+}
+
+- (void)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary {
+
+    id brandName = [responseDictionary objectForKey:@"Brand"];
+    NSDictionary *brandDictionary = brandName;
+    
+    NSError *error = nil;
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    //Connect to MongoDB
+    MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+    MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
+    
+    MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
+    [predicate keyPath:@"Name" matches:brandDictionary];
+    BSONDocument *resultDoc = [collection findOneWithPredicate:predicate error:&error];
+    NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
+    
+    //Check if we have the product in our database
+    if ([result objectForKey:@"Corp"] != nil) {
+        //We have it
         id corp = [result objectForKey:@"Corp"];
         NSDictionary *corpDictionary = corp;
         
-        NSLog(@"json result %@, brand: %@", jsonArray, brandDictionary);
+        NSLog(@"Corp is %@", corpDictionary);
         
         [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpDictionary]];
         
     } else {
-        //Doesn't have Brand Attribute
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                        message:@"We have no data on this product! Submit a report to notify us about this and add it to our database."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-
-        [self performSegueWithIdentifier:@"Results" sender:self];
-
+        //We dont have it
+        [self showAlert];
     }
-    
-    return [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+
 }
 
 - (NSString *)getOrgIDWithURL:(NSString *)urlstring{
@@ -232,6 +240,17 @@
         }
     
     [_session stopRunning];
+}
+
+- (void)showAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                    message:@"We have no data on this product! Submit a report to notify us about this and add it to our database."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+    [self performSegueWithIdentifier:@"Results" sender:self];
 }
 
 @end
