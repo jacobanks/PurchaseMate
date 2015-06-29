@@ -1,0 +1,15 @@
+//
+//  resultsVC.h
+//  PurchaseMate
+//
+//  Created by Jacob Banks on 6/29/15.
+//  Copyright (c) 2015 Jacobanks. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface resultsVC : UIViewController
+
+@property (nonatomic, strong) IBOutlet UILabel *resultsLabel;
+
+@end

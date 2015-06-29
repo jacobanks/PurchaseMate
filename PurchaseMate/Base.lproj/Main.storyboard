@@ -39,7 +39,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="6uo-Jw-uul" kind="show" identifier="Results" id="aRg-lX-dyK"/>
+                        <segue destination="eR0-js-a8Z" kind="show" identifier="Results" id="79Y-zz-Che"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyh-Xe-hZq" sceneMemberID="firstResponder"/>
@@ -96,6 +96,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBJ-fO-RQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="874.5" y="282.5"/>
+        </scene>
+        <!--ResultsVC-->
+        <scene sceneID="EQm-zL-MDl">
+            <objects>
+                <viewController id="eR0-js-a8Z" customClass="resultsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="noU-ag-XEf"/>
+                        <viewControllerLayoutGuide type="bottom" id="gXM-z7-klA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bNK-kw-MaJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLb-k6-rRy">
+                                <rect key="frame" x="97" y="213" width="180" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="resultsLabel" destination="zLb-k6-rRy" id="XiS-xY-VpA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tg-4O-kAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.5" y="1028.5"/>
         </scene>
         <!--ReportTVC-->
         <scene sceneID="o3c-Yn-iJ0">

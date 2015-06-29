@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
         
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=054400015041"]];
+    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=054400015041"]];
 
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -74,7 +74,7 @@
     [self.view bringSubviewToFront:_label];
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:12.0/255.0 green:181.0/255.0 blue:123.0/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
