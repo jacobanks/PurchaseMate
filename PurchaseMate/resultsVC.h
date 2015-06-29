@@ -10,6 +10,9 @@
 
 @interface resultsVC : UIViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *resultsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *lobbyingLabel;
+@property (nonatomic, strong) IBOutlet UILabel *corpLabel;
+@property (nonatomic, strong) IBOutlet UILabel *republicanLabel;
+@property (nonatomic, strong) IBOutlet UILabel *democratLabel;
 
 @end

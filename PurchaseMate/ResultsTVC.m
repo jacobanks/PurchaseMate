@@ -59,9 +59,7 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
     NSString *arrayString = [app.valuesArray objectAtIndex:indexPath.row];
-   
     NSString *formattedString = [formatter stringFromNumber:[NSNumber numberWithInteger:arrayString.integerValue]];
-    
     cell.textLabel.text = [titlesArray objectAtIndex:indexPath.row];
     
     if (indexPath.row <= 1) {

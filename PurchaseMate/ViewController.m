@@ -149,6 +149,10 @@
         id corp = [result objectForKey:@"Corp"];
         NSDictionary *corpDictionary = corp;
         
+        id name = [result objectForKey:@"Name"];
+        
+        productName = name;
+        
         NSLog(@"Corp is %@", corpDictionary);
         
         [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpDictionary]];
@@ -256,3 +260,4 @@
 @end
 
 NSString *organizationName;
+NSString *productName;

@@ -21,7 +21,26 @@
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
 
-    self.resultsLabel.text = [NSString stringWithFormat:@"Something: %@", app.valuesArray[1]];
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    NSString *arrayString = app.valuesArray[1];
+    NSString *array1String = app.valuesArray[4];
+    NSString *array2String = app.valuesArray[8];
+
+    NSString *formattedString = [formatter stringFromNumber:[NSNumber numberWithInteger:arrayString.integerValue]];
+    NSString *formattedString1 = [formatter stringFromNumber:[NSNumber numberWithInteger:array1String.integerValue]];
+    NSString *formattedString2 = [formatter stringFromNumber:[NSNumber numberWithInteger:array2String.integerValue]];
+
+    self.lobbyingLabel.text = [NSString stringWithFormat:@"Lobbying: $%@", formattedString];
+    self.corpLabel.text = organizationName;
+    self.republicanLabel.text = [NSString stringWithFormat:@"republican: $%@", formattedString1];
+    self.democratLabel.text = [NSString stringWithFormat:@"democrat: $%@", formattedString2];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.title = productName;
 }
 
 - (void)didReceiveMemoryWarning {
