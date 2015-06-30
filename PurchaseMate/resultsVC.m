@@ -27,20 +27,21 @@
     NSString *arrayString = app.valuesArray[1];
     NSString *array1String = app.valuesArray[4];
     NSString *array2String = app.valuesArray[8];
+    NSString *array3String = app.valuesArray[6];
 
     NSString *formattedString = [formatter stringFromNumber:[NSNumber numberWithInteger:arrayString.integerValue]];
     NSString *formattedString1 = [formatter stringFromNumber:[NSNumber numberWithInteger:array1String.integerValue]];
     NSString *formattedString2 = [formatter stringFromNumber:[NSNumber numberWithInteger:array2String.integerValue]];
+    NSString *formattedString3 = [formatter stringFromNumber:[NSNumber numberWithInteger:array3String.integerValue]];
 
-    self.lobbyingLabel.text = [NSString stringWithFormat:@"Lobbying: $%@", formattedString];
-    self.corpLabel.text = organizationName;
-    self.republicanLabel.text = [NSString stringWithFormat:@"republican: $%@", formattedString1];
-    self.democratLabel.text = [NSString stringWithFormat:@"democrat: $%@", formattedString2];
-
+    self.lobbyingLabel.text = [NSString stringWithFormat:@"$%@", formattedString];
+    self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedString1];
+    self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
+    self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.title = productName;
+    self.title = organizationName;
 }
 
 - (void)didReceiveMemoryWarning {
