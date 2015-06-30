@@ -14,5 +14,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *republicanLabel;
 @property (nonatomic, strong) IBOutlet UILabel *democratLabel;
 @property (nonatomic, strong) IBOutlet UILabel *indiLabel;
+@property (nonatomic, strong) IBOutlet UILabel *totalLabel;
 
 @end

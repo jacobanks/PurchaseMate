@@ -28,14 +28,18 @@
     NSString *array1String = app.valuesArray[4];
     NSString *array2String = app.valuesArray[8];
     NSString *array3String = app.valuesArray[6];
+    NSString *array4String = app.valuesArray[9];
 
     NSString *formattedString = [formatter stringFromNumber:[NSNumber numberWithInteger:arrayString.integerValue]];
     NSString *formattedString1 = [formatter stringFromNumber:[NSNumber numberWithInteger:array1String.integerValue]];
     NSString *formattedString2 = [formatter stringFromNumber:[NSNumber numberWithInteger:array2String.integerValue]];
     NSString *formattedString3 = [formatter stringFromNumber:[NSNumber numberWithInteger:array3String.integerValue]];
+    NSString *formattedString4 = [formatter stringFromNumber:[NSNumber numberWithInteger:array4String.integerValue]];
+
 
     self.lobbyingLabel.text = [NSString stringWithFormat:@"$%@", formattedString];
     self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedString1];
+    self.totalLabel.text = [NSString stringWithFormat:@"Total Contributions: $%@", formattedString4];
     self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
     self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
 }
