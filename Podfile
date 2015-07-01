@@ -3,4 +3,3 @@ inhibit_all_warnings!
 
 pod 'SBJson', '~> 3.0.0'
 pod 'ObjCMongoDB', '~> 0.12.0'
-

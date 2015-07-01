@@ -42,6 +42,18 @@
     self.totalLabel.text = [NSString stringWithFormat:@"Total Contributions: $%@", formattedString4];
     self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
     self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
+    
+    PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:60] clockwise:NO];
+    republicanChart.backgroundColor = [UIColor clearColor];
+    [republicanChart setStrokeColor:PNRed];
+    [republicanChart strokeChart];
+    [self.view addSubview:republicanChart];
+    
+    PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:75] clockwise:NO];
+    democratChart.backgroundColor = [UIColor clearColor];
+    [democratChart setStrokeColor:PNBlue];
+    [democratChart strokeChart];
+    [self.view addSubview:democratChart];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
