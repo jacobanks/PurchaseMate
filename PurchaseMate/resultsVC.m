@@ -43,13 +43,25 @@
     self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
     self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
     
-    PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:60] clockwise:NO];
+    
+    int RepubRandomINT = arc4random() %51 + 50;
+
+    int demoRandomINT = arc4random() %51 + 50;
+    
+    if (formattedString1.intValue < formattedString2.intValue) {
+        RepubRandomINT = demoRandomINT - 30;
+    } else {
+        demoRandomINT = RepubRandomINT - 30;
+    }
+    
+    PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:RepubRandomINT] clockwise:NO];
+    NSLog(@"%d, %d", RepubRandomINT, demoRandomINT);
     republicanChart.backgroundColor = [UIColor clearColor];
     [republicanChart setStrokeColor:PNRed];
     [republicanChart strokeChart];
     [self.view addSubview:republicanChart];
     
-    PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:75] clockwise:NO];
+    PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
     democratChart.backgroundColor = [UIColor clearColor];
     [democratChart setStrokeColor:PNBlue];
     [democratChart strokeChart];
