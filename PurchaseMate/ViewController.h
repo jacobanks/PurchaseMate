@@ -13,7 +13,7 @@
 #import "ObjCMongoDB.h"
 
 extern NSString *organizationName;
-extern NSString *productName;
+extern NSString *barcodeID;
 
 @interface ViewController : UIViewController
 

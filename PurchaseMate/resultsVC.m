@@ -44,18 +44,17 @@
     self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
     
     
-    int RepubRandomINT = arc4random() %51 + 50;
+    int repubRandomINT = arc4random() %51 + 50;
 
     int demoRandomINT = arc4random() %51 + 50;
     
     if (formattedString1.intValue < formattedString2.intValue) {
-        RepubRandomINT = demoRandomINT - 30;
+        repubRandomINT = demoRandomINT - 30;
     } else {
-        demoRandomINT = RepubRandomINT - 30;
+        demoRandomINT = repubRandomINT - 30;
     }
     
-    PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:RepubRandomINT] clockwise:NO];
-    NSLog(@"%d, %d", RepubRandomINT, demoRandomINT);
+    PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
     republicanChart.backgroundColor = [UIColor clearColor];
     [republicanChart setStrokeColor:PNRed];
     [republicanChart strokeChart];

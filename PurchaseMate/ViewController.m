@@ -29,9 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
-    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=054400015041"]];
-
+        //For testing on the simulator
+//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=054400015041"]];
+//    barcodeID = @"054400015041";
+    
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
     _highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -148,13 +149,7 @@
         //We have it
         id corp = [result objectForKey:@"Corp"];
         NSDictionary *corpDictionary = corp;
-        
-        id name = [result objectForKey:@"Name"];
-        
-        productName = name;
-        
-        NSLog(@"Corp is %@", corpDictionary);
-        
+                        
         [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpDictionary]];
         
     } else {
@@ -235,7 +230,8 @@
         {
             _label.text = @"Product Found!";
             [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", detectionString]];
-
+            barcodeID = detectionString;
+            
             break;
         }
         else
@@ -260,4 +256,4 @@
 @end
 
 NSString *organizationName;
-NSString *productName;
+NSString *barcodeID;
