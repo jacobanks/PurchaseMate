@@ -11,10 +11,15 @@
 
 @interface resultsVC : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *lobbyingLabel;
 @property (nonatomic, strong) IBOutlet UILabel *republicanLabel;
 @property (nonatomic, strong) IBOutlet UILabel *democratLabel;
 @property (nonatomic, strong) IBOutlet UILabel *indiLabel;
-@property (nonatomic, strong) IBOutlet UILabel *totalLabel;
+@property (nonatomic, strong) IBOutlet UILabel *repubTitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *demoTitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *lobbyTitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *indiTitleLabel;
+@property (nonatomic, strong) UILabel *noDataLabel;
 
 @end

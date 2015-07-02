@@ -21,50 +21,70 @@
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
 
-    NSNumberFormatter *formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    if (app.valuesArray.count != 0){
+        NSNumberFormatter *formatter = [NSNumberFormatter new];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
-    NSString *arrayString = app.valuesArray[1];
-    NSString *array1String = app.valuesArray[4];
-    NSString *array2String = app.valuesArray[8];
-    NSString *array3String = app.valuesArray[6];
-    NSString *array4String = app.valuesArray[9];
+        NSString *arrayString = app.valuesArray[1];
+        NSString *array1String = app.valuesArray[4];
+        NSString *array2String = app.valuesArray[8];
+        NSString *array3String = app.valuesArray[6];
 
-    NSString *formattedString = [formatter stringFromNumber:[NSNumber numberWithInteger:arrayString.integerValue]];
-    NSString *formattedString1 = [formatter stringFromNumber:[NSNumber numberWithInteger:array1String.integerValue]];
-    NSString *formattedString2 = [formatter stringFromNumber:[NSNumber numberWithInteger:array2String.integerValue]];
-    NSString *formattedString3 = [formatter stringFromNumber:[NSNumber numberWithInteger:array3String.integerValue]];
-    NSString *formattedString4 = [formatter stringFromNumber:[NSNumber numberWithInteger:array4String.integerValue]];
+        NSString *formattedString = [formatter stringFromNumber:[NSNumber numberWithInteger:arrayString.integerValue]];
+        NSString *formattedString1 = [formatter stringFromNumber:[NSNumber numberWithInteger:array1String.integerValue]];
+        NSString *formattedString2 = [formatter stringFromNumber:[NSNumber numberWithInteger:array2String.integerValue]];
+        NSString *formattedString3 = [formatter stringFromNumber:[NSNumber numberWithInteger:array3String.integerValue]];
 
 
-    self.lobbyingLabel.text = [NSString stringWithFormat:@"$%@", formattedString];
-    self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedString1];
-    self.totalLabel.text = [NSString stringWithFormat:@"Total Contributions: $%@", formattedString4];
-    self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
-    self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
+        self.lobbyingLabel.text = [NSString stringWithFormat:@"$%@", formattedString];
+        self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedString1];
+        self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
+        self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
     
-    
-    int repubRandomINT = arc4random() %51 + 50;
+        
+        int repubRandomINT = arc4random() %51 + 50;
 
-    int demoRandomINT = arc4random() %51 + 50;
+        int demoRandomINT = arc4random() %51 + 50;
     
-    if (formattedString1.intValue < formattedString2.intValue) {
-        repubRandomINT = demoRandomINT - 30;
+        if (formattedString1.intValue < formattedString2.intValue) {
+            repubRandomINT = demoRandomINT - 30;
+        } else {
+            demoRandomINT = repubRandomINT - 30;
+        }
+    
+        PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
+        republicanChart.backgroundColor = [UIColor clearColor];
+        [republicanChart setStrokeColor:PNRed];
+        [republicanChart strokeChart];
+        [self.view addSubview:republicanChart];
+    
+        PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
+        democratChart.backgroundColor = [UIColor clearColor];
+        [democratChart setStrokeColor:PNBlue];
+        [democratChart strokeChart];
+        [self.view addSubview:democratChart];
+        
+        self.noDataLabel.hidden = YES;
+        
     } else {
-        demoRandomINT = repubRandomINT - 30;
+        self.republicanLabel.hidden = YES;
+        self.democratLabel.hidden = YES;
+        self.lobbyingLabel.hidden = YES;
+        self.indiLabel.hidden = YES;
+        self.titleLabel.hidden = YES;
+        self.repubTitleLabel.hidden = YES;
+        self.demoTitleLabel.hidden = YES;
+        self.lobbyTitleLabel.hidden = YES;
+        self.indiTitleLabel.hidden = YES;
+        self.noDataLabel.hidden = NO;
+        
+        self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, SCREEN_WIDTH, 100)];
+        self.noDataLabel.text = @"No Data";
+        self.noDataLabel.adjustsFontSizeToFitWidth = NO;
+        self.noDataLabel.font = [UIFont systemFontOfSize:25];
+        self.noDataLabel.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:self.noDataLabel];
     }
-    
-    PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
-    republicanChart.backgroundColor = [UIColor clearColor];
-    [republicanChart setStrokeColor:PNRed];
-    [republicanChart strokeChart];
-    [self.view addSubview:republicanChart];
-    
-    PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
-    democratChart.backgroundColor = [UIColor clearColor];
-    [democratChart setStrokeColor:PNBlue];
-    [democratChart strokeChart];
-    [self.view addSubview:democratChart];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

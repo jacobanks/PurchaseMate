@@ -32,7 +32,6 @@
         reportObject[@"Product_Name"] = self.productTextField.text;
         reportObject[@"Company_Name"] = self.corpTextField.text;
         reportObject[@"barcode"] = barcodeID;
-        NSLog(@"%@", barcodeID);
         [reportObject saveInBackground];
         
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Thank You!"

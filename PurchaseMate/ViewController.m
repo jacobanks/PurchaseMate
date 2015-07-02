@@ -30,8 +30,8 @@
 {
     [super viewDidLoad];
         //For testing on the simulator
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=054400015041"]];
-//    barcodeID = @"054400015041";
+    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0071603469006"]];
+    barcodeID = @"0071603469006";
     
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -196,13 +196,14 @@
     NSDictionary *responseDictionary = response;
     id organization = [responseDictionary objectForKey:@"organization"];
     NSDictionary *summaryDict = organization;
-
     
     app.valuesArray = [[NSMutableArray alloc] initWithArray:[summaryDict allValues]];
     app.keysArray = [[NSMutableArray alloc] initWithArray:[summaryDict allKeys]];
-
-    [self performSegueWithIdentifier:@"Results" sender:self];
     
+    [self performSegueWithIdentifier:@"Results" sender:self];
+
+    
+
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 

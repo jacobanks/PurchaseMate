@@ -125,10 +125,15 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="demoTitleLabel" destination="bpD-IE-xwB" id="00B-2I-thd"/>
                         <outlet property="democratLabel" destination="NU9-fU-g8U" id="xlU-d4-q8K"/>
                         <outlet property="indiLabel" destination="84t-hN-zZ6" id="5Xu-jN-MTW"/>
+                        <outlet property="indiTitleLabel" destination="hyx-5F-2aK" id="VjW-7o-x5a"/>
+                        <outlet property="lobbyTitleLabel" destination="866-tp-Hge" id="8kD-TU-cgX"/>
                         <outlet property="lobbyingLabel" destination="zLb-k6-rRy" id="2EE-39-qho"/>
+                        <outlet property="repubTitleLabel" destination="pE5-5A-9H8" id="LWH-a6-reH"/>
                         <outlet property="republicanLabel" destination="3xu-kG-5FT" id="kpq-I0-IJv"/>
+                        <outlet property="titleLabel" destination="3Jf-rG-pqP" id="8Me-sp-Vr3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tg-4O-kAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
