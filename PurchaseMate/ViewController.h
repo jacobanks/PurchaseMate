@@ -14,6 +14,7 @@
 
 extern NSString *organizationName;
 extern NSString *barcodeID;
+extern NSString *ethicsString;
 
 @interface ViewController : UIViewController
 

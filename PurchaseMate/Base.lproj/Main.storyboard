@@ -112,6 +112,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ethics Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-8m-f3d">
+                                <rect key="frame" x="124" y="470" width="126" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsG-qd-5tg">
+                                <rect key="frame" x="145" y="499" width="84" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
@@ -127,6 +139,8 @@
                     <connections>
                         <outlet property="demoTitleLabel" destination="bpD-IE-xwB" id="00B-2I-thd"/>
                         <outlet property="democratLabel" destination="NU9-fU-g8U" id="xlU-d4-q8K"/>
+                        <outlet property="ethicsLabel" destination="xsG-qd-5tg" id="rFR-RN-NrO"/>
+                        <outlet property="ethicsTitleLabel" destination="4Gr-8m-f3d" id="AbA-If-kTg"/>
                         <outlet property="indiLabel" destination="84t-hN-zZ6" id="5Xu-jN-MTW"/>
                         <outlet property="indiTitleLabel" destination="hyx-5F-2aK" id="VjW-7o-x5a"/>
                         <outlet property="lobbyTitleLabel" destination="866-tp-Hge" id="8kD-TU-cgX"/>

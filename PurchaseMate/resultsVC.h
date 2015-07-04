@@ -21,5 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *lobbyTitleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *indiTitleLabel;
 @property (nonatomic, strong) UILabel *noDataLabel;
+@property (nonatomic, strong) IBOutlet UILabel *ethicsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *ethicsTitleLabel;
 
 @end

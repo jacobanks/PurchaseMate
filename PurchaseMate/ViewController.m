@@ -30,8 +30,8 @@
 {
     [super viewDidLoad];
         //For testing on the simulator
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0038000599217"]];
-//    barcodeID = @"0038000599217";
+    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=038900042714"]];
+    barcodeID = @"038900042714";
     
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -112,15 +112,16 @@
     //Sort JSON from OutPan
     id attributes = [jsonArray objectForKey:@"attributes"];
     NSDictionary *responseDictionary = attributes;
+    NSLog(@"%@", responseDictionary);
     
-    if ([responseDictionary objectForKey:@"Brand"] != nil) {
-        //Has Brand Attribute
-        [self getDataFromMongoDBWithDictionary:responseDictionary];
-        
-    } else {
-        //Doesn't have Brand Attribute
-        [self showAlert];
-    }
+        if (responseDictionary[@"Brand"]) {
+            //Has Brand Attribute
+            [self getDataFromMongoDBWithDictionary:responseDictionary];
+            
+        } else {
+            //Doesn't have Brand Attribute
+            [self showAlert];
+        }
     
     return [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 }
@@ -149,6 +150,8 @@
         //We have it
         id corp = [result objectForKey:@"Corp"];
         NSDictionary *corpDictionary = corp;
+        
+        [self getEthicsRatingWithName:[NSString stringWithFormat:@"%@", corpDictionary]];
                         
         [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpDictionary]];
         
@@ -207,6 +210,22 @@
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
+- (void)getEthicsRatingWithName:(NSString *)name {
+    NSError *error;
+    MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+    MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.ethics"];
+    
+    MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
+    [predicate keyPath:@"Name:" matches:name];
+    BSONDocument *resultDoc = [collection findOneWithPredicate:predicate error:&error];
+    NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
+    NSLog(@"%@", result);
+    
+    id score = [result objectForKey:@"Score:"];
+    NSDictionary *scoreDict = score;
+    ethicsString = [NSString stringWithFormat:@"%@", scoreDict];
+}
+
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
@@ -258,3 +277,4 @@
 
 NSString *organizationName;
 NSString *barcodeID;
+NSString *ethicsString;

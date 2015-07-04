@@ -40,13 +40,21 @@
         self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedString1];
         self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
         self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
-    
+        self.ethicsLabel.text = ethicsString;
+        
+        if (ethicsString.intValue <= 50) {
+            self.ethicsLabel.textColor = [UIColor redColor];
+        } else if (ethicsString.intValue > 50 && ethicsString.intValue <= 70) {
+            self.ethicsLabel.textColor = [UIColor yellowColor];
+        } else {
+            self.ethicsLabel.textColor = [UIColor greenColor];
+        }
         
         int repubRandomINT = arc4random() %51 + 50;
 
         int demoRandomINT = arc4random() %51 + 50;
     
-        if (formattedString1.intValue < formattedString2.intValue) {
+        if (array1String.intValue < array2String.intValue) {
             repubRandomINT = demoRandomINT - 30;
         } else {
             demoRandomINT = repubRandomINT - 30;
@@ -77,6 +85,8 @@
         self.lobbyTitleLabel.hidden = YES;
         self.indiTitleLabel.hidden = YES;
         self.noDataLabel.hidden = NO;
+        self.ethicsLabel.hidden = YES;
+        self.ethicsTitleLabel.hidden =YES;
         
         self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, SCREEN_WIDTH, 100)];
         self.noDataLabel.text = @"No Data";
