@@ -18,6 +18,7 @@ extern NSString *ethicsString;
 
 @interface ViewController : UIViewController
 
+- (IBAction)scanProduct:(id)sender;
 
 @end
 

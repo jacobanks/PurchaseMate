@@ -97,6 +97,11 @@
     [_session startRunning];
 }
 
+- (void)scanProduct:(id)sender {
+    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
+    barcodeID = @"04976400";
+}
+
 - (NSString *)getDataFromOutPan:(NSString *)urlString{
     
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
@@ -114,14 +119,14 @@
     NSDictionary *responseDictionary = attributes;
     NSLog(@"%@", responseDictionary);
     
-        if (responseDictionary[@"Brand"]) {
-            //Has Brand Attribute
-            [self getDataFromMongoDBWithDictionary:responseDictionary];
-            
-        } else {
-            //Doesn't have Brand Attribute
-            [self showAlert];
-        }
+    if (responseDictionary[@"Brand"]) {
+        //Has Brand Attribute
+        [self getDataFromMongoDBWithDictionary:responseDictionary];
+        
+    } else {
+        //Doesn't have Brand Attribute
+        [self showAlert];
+    }
     
     return [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 }
