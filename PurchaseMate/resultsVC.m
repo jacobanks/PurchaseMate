@@ -20,8 +20,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:YES];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     if (app.valuesArray.count != 0){
@@ -98,9 +98,7 @@
         self.noDataLabel.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:self.noDataLabel];
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
+    
     self.title = organizationName;
 }
 
