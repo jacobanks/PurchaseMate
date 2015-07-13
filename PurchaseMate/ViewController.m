@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
         //For testing on the simulator
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0047400097728"]];
+//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0012546612296"]];
 //    barcodeID = @"0047400097728";
     
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
@@ -44,7 +44,7 @@
     _label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     _label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
     _label.textColor = [UIColor whiteColor];
-    _label.font = [UIFont fontWithName:nil size:15];
+    _label.font = [UIFont fontWithName:@"Default" size:15];
     _label.textAlignment = NSTextAlignmentCenter;
     _label.text = @"Scanning...";
     [self.view addSubview:_label];
@@ -98,8 +98,8 @@
 }
 
 - (void)scanProduct:(id)sender {
-    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
-    barcodeID = @"04976400";
+    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0012546612296"]];
+    barcodeID = @"0012546612296";
 }
 
 - (NSString *)getDataFromOutPan:(NSString *)urlString{
@@ -268,12 +268,12 @@
 }
 
 - (void)showAlert {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+//                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
+//                                                   delegate:nil
+//                                          cancelButtonTitle:@"OK"
+//                                          otherButtonTitles:nil];
+//    [alert show];
     
     [self performSegueWithIdentifier:@"Results" sender:self];
 }
