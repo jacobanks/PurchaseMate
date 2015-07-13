@@ -98,8 +98,8 @@
 }
 
 - (void)scanProduct:(id)sender {
-    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0012546612296"]];
-    barcodeID = @"0012546612296";
+    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
+    barcodeID = @"04976400";
 }
 
 - (NSString *)getDataFromOutPan:(NSString *)urlString{
