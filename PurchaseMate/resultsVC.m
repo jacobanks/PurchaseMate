@@ -48,9 +48,9 @@
         if (ethicsString.intValue <= 50) {
             self.ethicsLabel.textColor = [UIColor redColor];
         } else if (ethicsString.intValue > 50 && ethicsString.intValue <= 70) {
-            self.ethicsLabel.textColor = [UIColor yellowColor];
+            self.ethicsLabel.textColor = [UIColor colorWithRed:215/255.0 green:216/255.0 blue:25/255.0 alpha:1.0];
         } else {
-            self.ethicsLabel.textColor = [UIColor greenColor];
+            self.ethicsLabel.textColor = [UIColor colorWithRed:0/255.0 green:216/255.0 blue:6/255.0 alpha:1.0];
         }
         
         int repubRandomINT = arc4random() %51 + 50;
