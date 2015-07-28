@@ -151,7 +151,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6MM-l4-w2V">
                         <barButtonItem key="backBarButtonItem" title=" " id="B5F-Qt-UEi"/>
-                        <barButtonItem key="rightBarButtonItem" title="Report" id="mvo-j2-sRD">
+                        <barButtonItem key="rightBarButtonItem" image="triangle.png" id="mvo-j2-sRD">
                             <connections>
                                 <segue destination="Vsz-LZ-4B9" kind="push" id="SNL-e9-r7j"/>
                             </connections>
@@ -249,6 +249,9 @@
             <point key="canvasLocation" x="921.5" y="266.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="triangle.png" width="128" height="128"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
