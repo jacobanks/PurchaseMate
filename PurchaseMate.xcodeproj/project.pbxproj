@@ -32,6 +32,7 @@
 		164ED8A11B67F2F1008BBD86 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164ED8A01B67F2F1008BBD86 /* Parse.framework */; };
 		164ED8A31B67F312008BBD86 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164ED8A21B67F312008BBD86 /* Bolts.framework */; };
 		164ED8A51B67F576008BBD86 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 164ED8A41B67F576008BBD86 /* triangle.png */; };
+		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
 		165583001B3DFFD200819716 /* reportTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 165582FF1B3DFFD200819716 /* reportTVC.m */; };
 		169A65861B4388640040F74C /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65691B4388640040F74C /* PNBar.m */; };
 		169A65871B4388640040F74C /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A656B1B4388640040F74C /* PNBarChart.m */; };
@@ -1663,6 +1664,8 @@
 		164ED8A01B67F2F1008BBD86 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		164ED8A21B67F312008BBD86 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		164ED8A41B67F576008BBD86 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
+		164ED8A61B681816008BBD86 /* reviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reviewVC.h; sourceTree = "<group>"; };
+		164ED8A71B681816008BBD86 /* reviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reviewVC.m; sourceTree = "<group>"; };
 		165582FE1B3DFFD200819716 /* reportTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reportTVC.h; sourceTree = "<group>"; };
 		165582FF1B3DFFD200819716 /* reportTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reportTVC.m; sourceTree = "<group>"; };
 		165583201B3E065D00819716 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
@@ -3683,6 +3686,8 @@
 				161C43631B2CA80900F3F8F4 /* ViewController.m */,
 				16E45E991B41EBA100932B9E /* resultsVC.h */,
 				16E45E9A1B41EBA100932B9E /* resultsVC.m */,
+				164ED8A61B681816008BBD86 /* reviewVC.h */,
+				164ED8A71B681816008BBD86 /* reviewVC.m */,
 				165582FE1B3DFFD200819716 /* reportTVC.h */,
 				165582FF1B3DFFD200819716 /* reportTVC.m */,
 				1655694F1B44F0DE00668730 /* Just for reference */,
@@ -4057,6 +4062,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				169A65901B4388640040F74C /* PNPieChartDataItem.m in Sources */,
+				164ED8A81B681816008BBD86 /* reviewVC.m in Sources */,
 				169A65961B4389250040F74C /* UICountingLabel.m in Sources */,
 				169A65931B4388640040F74C /* PNScatterChartDataItem.m in Sources */,
 				169A65891B4388640040F74C /* PNCircleChart.m in Sources */,
