@@ -19,5 +19,10 @@
 @property (strong, nonatomic) UILabel *productLabel;
 @property (strong, nonatomic) UILabel *rateLabel;
 @property (strong, nonatomic) UILabel *buyLabel;
+@property (strong, nonatomic) UILabel *whyLabel;
+
+@property (strong, nonatomic) UIButton *yesButton;
+@property (strong, nonatomic) UIButton *noButton;
+
 
 @end
