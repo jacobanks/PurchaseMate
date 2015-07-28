@@ -23,5 +23,7 @@
 @property (nonatomic, strong) UILabel *noDataLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ethicsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ethicsTitleLabel;
+@property (nonatomic, strong) IBOutlet UIButton *reviewButton;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 @end

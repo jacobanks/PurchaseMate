@@ -22,6 +22,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     if (app.valuesArray.count != 0){
@@ -67,13 +68,21 @@
         republicanChart.backgroundColor = [UIColor clearColor];
         [republicanChart setStrokeColor:PNRed];
         [republicanChart strokeChart];
-        [self.view addSubview:republicanChart];
+        [self.scrollView addSubview:republicanChart];
         
         PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
         democratChart.backgroundColor = [UIColor clearColor];
         [democratChart setStrokeColor:PNBlue];
         [democratChart strokeChart];
-        [self.view addSubview:democratChart];
+        [self.scrollView addSubview:democratChart];
+        
+        self.reviewButton.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.reviewButton.layer.shadowOpacity = 0.5;
+        self.reviewButton.layer.shadowRadius = 2;
+        self.reviewButton.layer.shadowOffset = CGSizeMake(0,0);
+        self.reviewButton.layer.cornerRadius = 15;
+        
+        self.scrollView.contentSize =CGSizeMake(self.view.frame.size.width, 700);
         
         self.noDataLabel.hidden = YES;
         
