@@ -15,4 +15,9 @@
 @property (strong, nonatomic) UIView *buyView;
 @property (strong, nonatomic) UIView *whyView;
 
+@property (strong, nonatomic) UILabel *corpLabel;
+@property (strong, nonatomic) UILabel *productLabel;
+@property (strong, nonatomic) UILabel *rateLabel;
+@property (strong, nonatomic) UILabel *buyLabel;
+
 @end
