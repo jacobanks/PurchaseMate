@@ -70,8 +70,52 @@
 
     [self.view addSubview:self.buyView];
     
-    self.whyView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, self.view.frame.size.width, 96)];
+    self.whyView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, self.view.frame.size.width, 120)];
     [self addShadowtoView:self.whyView];
+    
+    self.whyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
+    self.whyLabel.text = @"Why/Why not?";
+    self.whyLabel.textAlignment = NSTextAlignmentCenter;
+    self.whyLabel.font = [UIFont fontWithName:nil size:20];
+    self.whyLabel.alpha = 0.7;
+    [self.whyView addSubview:self.whyLabel];
+    
+    self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 35, 130, 35)];
+    [self.ethicsButton setTitle:@"Ethics" forState:UIControlStateNormal];
+    [self.ethicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.ethicsButton.backgroundColor = [UIColor whiteColor];
+    self.ethicsButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.ethicsButton.layer.borderWidth = 2;
+    self.ethicsButton.layer.cornerRadius = 5;
+    [self.whyView addSubview:self.ethicsButton];
+    
+    self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 35, 130, 35)];
+    [self.politicsButton setTitle:@"Politics" forState:UIControlStateNormal];
+    [self.politicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.politicsButton.backgroundColor = [UIColor whiteColor];
+    self.politicsButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.politicsButton.layer.borderWidth = 2;
+    self.politicsButton.layer.cornerRadius = 5;
+    [self.whyView addSubview:self.politicsButton];
+    
+    self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 80, 130, 35)];
+    [self.gmoButton setTitle:@"GMO" forState:UIControlStateNormal];
+    [self.gmoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.gmoButton.backgroundColor = [UIColor whiteColor];
+    self.gmoButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.gmoButton.layer.borderWidth = 2;
+    self.gmoButton.layer.cornerRadius = 5;
+    [self.whyView addSubview:self.gmoButton];
+    
+    self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 80, 130, 35)];
+    [self.originButton setTitle:@"Origin" forState:UIControlStateNormal];
+    [self.originButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.originButton.backgroundColor = [UIColor whiteColor];
+    self.originButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.originButton.layer.borderWidth = 2;
+    self.originButton.layer.cornerRadius = 5;
+    [self.whyView addSubview:self.originButton];
+    
     [self.view addSubview:self.whyView];
 }
 
