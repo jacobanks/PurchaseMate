@@ -122,7 +122,7 @@
     if (responseDictionary[@"Brand"]) {
         //Has Brand Attribute
         [self getDataFromMongoDBWithDictionary:responseDictionary];
-        
+        productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Brand"]];
     } else {
         //Doesn't have Brand Attribute
         [self showAlert];
@@ -283,3 +283,4 @@
 NSString *organizationName;
 NSString *barcodeID;
 NSString *ethicsString;
+NSString *productName;

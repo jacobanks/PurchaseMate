@@ -21,13 +21,13 @@
     [self addShadowtoView:self.corpTitleView];
     
     self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 30)];
-    self.corpLabel.text = @"Corpation_Name";
+    self.corpLabel.text = organizationName;
     self.corpLabel.textAlignment = NSTextAlignmentCenter;
     self.corpLabel.font = [UIFont fontWithName:nil size:25];
     [self.corpTitleView addSubview:self.corpLabel];
     
     self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 20)];
-    self.productLabel.text = @"Product_Name";
+    self.productLabel.text = productName;
     self.productLabel.textAlignment = NSTextAlignmentCenter;
     self.productLabel.font = [UIFont fontWithName:nil size:20];
     self.productLabel.alpha = 0.7 ;
