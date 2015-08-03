@@ -118,7 +118,7 @@
     
     [self.view addSubview:self.whyView];
     
-    self.submitButton = [[UIButton alloc] initWithFrame:CGRectMake(7, 500, 360, 42)];
+    self.submitButton = [[UIButton alloc] initWithFrame:CGRectMake(7, 480, 360, 60)];
     self.submitButton.backgroundColor = [UIColor whiteColor];
     [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
     [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1] forState:UIControlStateNormal];
