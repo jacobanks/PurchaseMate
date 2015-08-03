@@ -117,6 +117,19 @@
     [self.whyView addSubview:self.originButton];
     
     [self.view addSubview:self.whyView];
+    
+    self.submitButton = [[UIButton alloc] initWithFrame:CGRectMake(7, 500, 360, 42)];
+    self.submitButton.backgroundColor = [UIColor whiteColor];
+    [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
+    [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1] forState:UIControlStateNormal];
+    self.submitButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.submitButton.layer.shadowOpacity = 0.5;
+    self.submitButton.layer.shadowRadius = 2;
+    self.submitButton.layer.shadowOffset = CGSizeMake(0,0);
+    self.submitButton.layer.cornerRadius = 15;
+    [self.view addSubview:self.submitButton];
+    
+    [self.view setUserInteractionEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {

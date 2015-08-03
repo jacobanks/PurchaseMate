@@ -28,5 +28,6 @@
 @property (strong, nonatomic) UIButton *gmoButton;
 @property (strong, nonatomic) UIButton *politicsButton;
 @property (strong, nonatomic) UIButton *originButton;
+@property (strong, nonatomic) UIButton *submitButton;
 
 @end
