@@ -59,12 +59,14 @@
     self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, self.view.frame.size.width / 2 - 6, 77)];
     [self.yesButton setTitle:@"Yes" forState:UIControlStateNormal];
     [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.yesButton setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:0.3] forState:UIControlStateHighlighted];
     self.yesButton.backgroundColor = [UIColor darkGrayColor];
     [self.buyView addSubview:self.yesButton];
     
     self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 2, 45, self.view.frame.size.width / 2 - 6, 77)];
     [self.noButton setTitle:@"No" forState:UIControlStateNormal];
     [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.noButton setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:0.3] forState:UIControlStateHighlighted];
     self.noButton.backgroundColor = [UIColor redColor];
     [self.buyView addSubview:self.noButton];
 
@@ -83,6 +85,7 @@
     self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 35, 130, 35)];
     [self.ethicsButton setTitle:@"Ethics" forState:UIControlStateNormal];
     [self.ethicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.ethicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
     self.ethicsButton.backgroundColor = [UIColor whiteColor];
     self.ethicsButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.ethicsButton.layer.borderWidth = 2;
@@ -92,6 +95,7 @@
     self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 35, 130, 35)];
     [self.politicsButton setTitle:@"Politics" forState:UIControlStateNormal];
     [self.politicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.politicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
     self.politicsButton.backgroundColor = [UIColor whiteColor];
     self.politicsButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.politicsButton.layer.borderWidth = 2;
@@ -101,6 +105,7 @@
     self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 80, 130, 35)];
     [self.gmoButton setTitle:@"GMO" forState:UIControlStateNormal];
     [self.gmoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.gmoButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
     self.gmoButton.backgroundColor = [UIColor whiteColor];
     self.gmoButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.gmoButton.layer.borderWidth = 2;
@@ -110,6 +115,7 @@
     self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 80, 130, 35)];
     [self.originButton setTitle:@"Origin" forState:UIControlStateNormal];
     [self.originButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.originButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
     self.originButton.backgroundColor = [UIColor whiteColor];
     self.originButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.originButton.layer.borderWidth = 2;
@@ -118,10 +124,13 @@
     
     [self.view addSubview:self.whyView];
     
-    self.submitButton = [[UIButton alloc] initWithFrame:CGRectMake(7, 480, 360, 60)];
+    self.submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.submitButton.frame = CGRectMake(7, 480, 360, 60);
     self.submitButton.backgroundColor = [UIColor whiteColor];
     [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
     [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1] forState:UIControlStateNormal];
+    [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:0.3] forState:UIControlStateHighlighted];
+    [self.submitButton addTarget:self action:@selector(submitClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.submitButton.layer.shadowColor = [UIColor blackColor].CGColor;
     self.submitButton.layer.shadowOpacity = 0.5;
     self.submitButton.layer.shadowRadius = 2;
@@ -129,7 +138,6 @@
     self.submitButton.layer.cornerRadius = 15;
     [self.view addSubview:self.submitButton];
     
-    [self.view setUserInteractionEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,6 +152,10 @@
     view.layer.shadowRadius = 2;
     view.layer.shadowOffset = CGSizeMake(0,0);
     view.layer.cornerRadius = 5;
+}
+
+-(void)submitClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
