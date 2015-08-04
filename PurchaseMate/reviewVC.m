@@ -23,13 +23,13 @@
     self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 30)];
     self.corpLabel.text = organizationName;
     self.corpLabel.textAlignment = NSTextAlignmentCenter;
-    self.corpLabel.font = [UIFont fontWithName:nil size:25];
+    self.corpLabel.font = [UIFont fontWithName:@"Default" size:25];
     [self.corpTitleView addSubview:self.corpLabel];
     
     self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 20)];
     self.productLabel.text = productName;
     self.productLabel.textAlignment = NSTextAlignmentCenter;
-    self.productLabel.font = [UIFont fontWithName:nil size:20];
+    self.productLabel.font = [UIFont fontWithName:@"Default" size:20];
     self.productLabel.alpha = 0.7 ;
     [self.corpTitleView addSubview:self.productLabel];
     
@@ -40,7 +40,7 @@
     
     self.rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 30, 100, 20)];
     self.rateLabel.text = @"Rate:";
-    self.rateLabel.font = [UIFont fontWithName:nil size:20];
+    self.rateLabel.font = [UIFont fontWithName:@"Default" size:20];
     self.rateLabel.alpha = 0.7;
     [self.rateView addSubview:self.rateLabel];
     
@@ -52,7 +52,7 @@
     self.buyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
     self.buyLabel.text = @"Would you buy this product?";
     self.buyLabel.textAlignment = NSTextAlignmentCenter;
-    self.buyLabel.font = [UIFont fontWithName:nil size:20];
+    self.buyLabel.font = [UIFont fontWithName:@"Default" size:20];
     self.buyLabel.alpha = 0.7;
     [self.buyView addSubview:self.buyLabel];
     
@@ -78,7 +78,7 @@
     self.whyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
     self.whyLabel.text = @"Why/Why not?";
     self.whyLabel.textAlignment = NSTextAlignmentCenter;
-    self.whyLabel.font = [UIFont fontWithName:nil size:20];
+    self.whyLabel.font = [UIFont fontWithName:@"Default" size:20];
     self.whyLabel.alpha = 0.7;
     [self.whyView addSubview:self.whyLabel];
     
