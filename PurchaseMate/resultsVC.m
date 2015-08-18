@@ -45,13 +45,22 @@
         self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
         self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
         self.ethicsLabel.text = ethicsString;
+        ethicsString = NULL;
         
-        if (ethicsString.intValue <= 50) {
-            self.ethicsLabel.textColor = [UIColor redColor];
-        } else if (ethicsString.intValue > 50 && ethicsString.intValue <= 70) {
-            self.ethicsLabel.textColor = [UIColor colorWithRed:215/255.0 green:216/255.0 blue:25/255.0 alpha:1.0];
+        if (ethicsString != NULL) {
+
+            if (ethicsString.intValue <= 50) {
+                self.ethicsLabel.textColor = [UIColor redColor];
+            } else if (ethicsString.intValue > 50 && ethicsString.intValue <= 70) {
+                self.ethicsLabel.textColor = [UIColor colorWithRed:215/255.0 green:216/255.0 blue:25/255.0 alpha:1.0];
+            } else {
+                self.ethicsLabel.textColor = [UIColor colorWithRed:0/255.0 green:216/255.0 blue:6/255.0 alpha:1.0];
+            }
+            
         } else {
-            self.ethicsLabel.textColor = [UIColor colorWithRed:0/255.0 green:216/255.0 blue:6/255.0 alpha:1.0];
+            self.ethicsLabel.textColor = [UIColor blackColor];
+            self.ethicsLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:18];
+            self.ethicsLabel.text = @"No Data";
         }
         
         int repubRandomINT = arc4random() %51 + 50;
