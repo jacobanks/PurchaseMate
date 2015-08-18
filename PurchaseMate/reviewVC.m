@@ -194,8 +194,13 @@
 
 - (void)whyButtonClicked:(UIButton *)button {
     
-    [self.whyArray addObject:button.titleLabel.text];
-    NSLog(@"%@", self.whyArray);
+    if ([self.whyArray containsObject:button.titleLabel.text]) {
+        [self.whyArray removeObject:button.titleLabel.text];
+        NSLog(@"%@", self.whyArray);
+    } else {
+        [self.whyArray addObject:button.titleLabel.text];
+        NSLog(@"%@", self.whyArray);
+    }
     
     if (button.backgroundColor == [UIColor whiteColor]) {
         button.backgroundColor = [UIColor blackColor];
