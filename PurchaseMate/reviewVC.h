@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "RateView.h"
 
-@interface reviewVC : UIViewController
+@interface reviewVC : UIViewController <RateViewDelegate>
+
+@property (strong, nonatomic) RateView *ratingView;
+@property (strong, nonatomic) NSString *ratingString;
+
 
 @property (strong, nonatomic) UIView *corpTitleView;
 @property (strong, nonatomic) UIView *rateView;

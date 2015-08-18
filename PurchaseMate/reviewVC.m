@@ -43,6 +43,15 @@
     self.rateLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
     self.rateLabel.alpha = 0.7;
     [self.rateView addSubview:self.rateLabel];
+
+    self.ratingView = [[RateView alloc] initWithFrame:CGRectMake(100, 15, 250, 50)];
+    self.ratingView.notSelectedImage = [UIImage imageNamed:@"kermit_empty.png"];
+    self.ratingView.fullSelectedImage = [UIImage imageNamed:@"kermit_full.png"];
+    self.ratingView.rating = 0;
+    self.ratingView.editable = YES;
+    self.ratingView.maxRating = 5;
+    self.ratingView.delegate = self;
+    [self.rateView addSubview:self.ratingView];
     
     [self.view addSubview:self.rateView];
     
@@ -154,6 +163,10 @@
     
 }
 
+- (void)rateView:(RateView *)rateView ratingDidChange:(int)rating {
+    self.ratingString = [NSString stringWithFormat:@"%d", rating];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -217,7 +230,7 @@
                                  @"product" : productName,
                                  @"buyQuestion" : self.buyQuestionString,
                                  @"why" : self.whyArray,
-                                 @"rating" : @(5)
+                                 @"rating" : self.ratingString
                                  };
     
     NSError *error = nil;
