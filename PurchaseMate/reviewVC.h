@@ -31,5 +31,6 @@
 @property (strong, nonatomic) UIButton *submitButton;
 
 @property (strong, nonatomic) NSString *buyQuestionString;
+@property (strong, nonatomic) NSString *whyString;
 
 @end

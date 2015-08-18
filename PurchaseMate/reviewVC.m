@@ -92,6 +92,7 @@
     self.ethicsButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.ethicsButton.layer.borderWidth = 2;
     self.ethicsButton.layer.cornerRadius = 5;
+    [self.ethicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.ethicsButton];
     
     self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 35, 130, 35)];
@@ -102,6 +103,7 @@
     self.politicsButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.politicsButton.layer.borderWidth = 2;
     self.politicsButton.layer.cornerRadius = 5;
+    [self.politicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.politicsButton];
     
     self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 80, 130, 35)];
@@ -112,6 +114,7 @@
     self.gmoButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.gmoButton.layer.borderWidth = 2;
     self.gmoButton.layer.cornerRadius = 5;
+    [self.gmoButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.gmoButton];
     
     self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 80, 130, 35)];
@@ -122,6 +125,7 @@
     self.originButton.layer.borderColor = [UIColor blackColor].CGColor;
     self.originButton.layer.borderWidth = 2;
     self.originButton.layer.cornerRadius = 5;
+    [self.originButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.originButton];
     
     [self.view addSubview:self.whyView];
@@ -168,12 +172,17 @@
     self.buyQuestionString = @"No";
 }
 
+- (void)whyButtonClicked:(UIButton *)button {
+    self.whyString = button.titleLabel.text;
+    NSLog(@"%@", button.titleLabel.text);
+}
+
 - (void)submitClicked:(id)sender {
     NSDictionary *userReview = @{
                                  @"corporation" : organizationName,
                                  @"product" : productName,
                                  @"buyQuestion" : self.buyQuestionString,
-                                 @"why" : @"ethics",
+                                 @"why" : self.whyString,
                                  @"rating" : @(5)
                                  };
 //    NSData *data = [[userReview BSONDocument] dataValue];
