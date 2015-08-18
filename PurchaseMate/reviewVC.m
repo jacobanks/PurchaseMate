@@ -58,18 +58,24 @@
     
     self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, self.view.frame.size.width / 2 - 6, 77)];
     [self.yesButton setTitle:@"Yes" forState:UIControlStateNormal];
-    [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.yesButton setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:0.3] forState:UIControlStateHighlighted];
-    self.yesButton.backgroundColor = [UIColor darkGrayColor];
+    [self.yesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.yesButton setTitleColor:[UIColor colorWithRed:85.0/255.0 green:85.0/255.0 blue:85.0/255.0 alpha:0.3] forState:UIControlStateHighlighted];
     [self.yesButton addTarget:self action:@selector(yesClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.yesButton.backgroundColor = [UIColor whiteColor];
+    self.yesButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.yesButton.layer.borderWidth = 2;
+    self.yesButton.layer.cornerRadius = 5;
     [self.buyView addSubview:self.yesButton];
     
     self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 2, 45, self.view.frame.size.width / 2 - 6, 77)];
     [self.noButton setTitle:@"No" forState:UIControlStateNormal];
-    [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.noButton setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:0.3] forState:UIControlStateHighlighted];
-    self.noButton.backgroundColor = [UIColor redColor];
+    [self.noButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.noButton setTitleColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
     [self.noButton addTarget:self action:@selector(noClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.noButton.backgroundColor = [UIColor whiteColor];
+    self.noButton.layer.borderColor = [UIColor redColor].CGColor;
+    self.noButton.layer.borderWidth = 2;
+    self.noButton.layer.cornerRadius = 5;
     [self.buyView addSubview:self.noButton];
 
     [self.view addSubview:self.buyView];
@@ -83,6 +89,8 @@
     self.whyLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
     self.whyLabel.alpha = 0.7;
     [self.whyView addSubview:self.whyLabel];
+    
+    self.whyArray = [[NSMutableArray alloc] init];
     
     self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 35, 130, 35)];
     [self.ethicsButton setTitle:@"Ethics" forState:UIControlStateNormal];
@@ -166,15 +174,36 @@
 
 - (void)yesClicked:(id)sender {
     self.buyQuestionString = @"Yes";
+    self.yesButton.backgroundColor = [UIColor darkGrayColor];
+    [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.noButton.backgroundColor = [UIColor whiteColor];
+    [self.noButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+
 }
 
 - (void)noClicked:(id)sender {
     self.buyQuestionString = @"No";
+    self.noButton.backgroundColor = [UIColor redColor];
+    [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.yesButton.backgroundColor = [UIColor whiteColor];
+    [self.yesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+
 }
 
 - (void)whyButtonClicked:(UIButton *)button {
-    self.whyString = button.titleLabel.text;
-    NSLog(@"%@", button.titleLabel.text);
+    
+    [self.whyArray addObject:button.titleLabel.text];
+    NSLog(@"%@", self.whyArray);
+    
+    if (button.backgroundColor == [UIColor whiteColor]) {
+        button.backgroundColor = [UIColor blackColor];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    } else {
+        button.backgroundColor = [UIColor whiteColor];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
 }
 
 - (void)submitClicked:(id)sender {
@@ -182,7 +211,7 @@
                                  @"corporation" : organizationName,
                                  @"product" : productName,
                                  @"buyQuestion" : self.buyQuestionString,
-                                 @"why" : self.whyString,
+                                 @"why" : self.whyArray,
                                  @"rating" : @(5)
                                  };
 //    NSData *data = [[userReview BSONDocument] dataValue];

@@ -45,7 +45,6 @@
         self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedString2];
         self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
         self.ethicsLabel.text = ethicsString;
-        ethicsString = NULL;
         
         if (ethicsString != NULL) {
 
