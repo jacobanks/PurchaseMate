@@ -117,7 +117,6 @@
     //Sort JSON from OutPan
     id attributes = [jsonArray objectForKey:@"attributes"];
     NSDictionary *responseDictionary = attributes;
-    NSLog(@"Outpan: %@", responseDictionary);
     
     if (responseDictionary[@"Brand"]) {
         //Has Brand Attribute
@@ -149,7 +148,7 @@
     [predicate keyPath:@"Name" matches:brandDictionary];
     BSONDocument *resultDoc = [collection findOneWithPredicate:predicate error:&error];
     NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
-    NSLog(@"MONGODB: %@", result);
+
     //Check if we have the product in our database
     if ([result objectForKey:@"Corp"] != nil) {
         //We have it
@@ -224,7 +223,6 @@
     [predicate keyPath:@"Name:" matches:name];
     BSONDocument *resultDoc = [collection findOneWithPredicate:predicate error:&error];
     NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
-    NSLog(@"%@", result);
     
     id score = [result objectForKey:@"Score:"];
     NSDictionary *scoreDict = score;

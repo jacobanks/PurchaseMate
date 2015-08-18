@@ -219,8 +219,6 @@
                                  @"why" : self.whyArray,
                                  @"rating" : @(5)
                                  };
-//    NSData *data = [[userReview BSONDocument] dataValue];
-//    NSDictionary *infoDecoded = [BSONDecoder decodeDictionaryWithData:data];
     
     NSError *error = nil;
     if (error) {
