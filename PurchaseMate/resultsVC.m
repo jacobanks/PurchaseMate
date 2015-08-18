@@ -98,7 +98,8 @@
         self.indiTitleLabel.hidden = YES;
         self.noDataLabel.hidden = NO;
         self.ethicsLabel.hidden = YES;
-        self.ethicsTitleLabel.hidden =YES;
+        self.ethicsTitleLabel.hidden = YES;
+//        self.reviewButton.hidden = YES;
         
         self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, SCREEN_WIDTH, 100)];
         self.noDataLabel.text = @"No Data";

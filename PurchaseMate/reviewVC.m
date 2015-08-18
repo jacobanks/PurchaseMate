@@ -61,6 +61,7 @@
     [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.yesButton setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:0.3] forState:UIControlStateHighlighted];
     self.yesButton.backgroundColor = [UIColor darkGrayColor];
+    [self.yesButton addTarget:self action:@selector(yesClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.buyView addSubview:self.yesButton];
     
     self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 2, 45, self.view.frame.size.width / 2 - 6, 77)];
@@ -68,6 +69,7 @@
     [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.noButton setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:0.3] forState:UIControlStateHighlighted];
     self.noButton.backgroundColor = [UIColor redColor];
+    [self.noButton addTarget:self action:@selector(noClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.buyView addSubview:self.noButton];
 
     [self.view addSubview:self.buyView];
@@ -154,8 +156,41 @@
     view.layer.cornerRadius = 5;
 }
 
--(void)submitClicked:(id)sender {
+- (void)rateClicked:(id)sender {
+    //Have Rate button logic here
+}
+
+- (void)yesClicked:(id)sender {
+    self.buyQuestionString = @"Yes";
+}
+
+- (void)noClicked:(id)sender {
+    self.buyQuestionString = @"No";
+}
+
+- (void)submitClicked:(id)sender {
+    NSDictionary *userReview = @{
+                                 @"corporation" : organizationName,
+                                 @"product" : productName,
+                                 @"buyQuestion" : self.buyQuestionString,
+                                 @"why" : @"ethics",
+                                 @"rating" : @(5)
+                                 };
+//    NSData *data = [[userReview BSONDocument] dataValue];
+//    NSDictionary *infoDecoded = [BSONDecoder decodeDictionaryWithData:data];
+    
+    NSError *error = nil;
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    //Connect to MongoDB
+    MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+    MongoDBCollection *collection = [dbConn collectionWithName:@"reviewsDB.review"];
+    [collection insertDictionary:userReview writeConcern:nil error:&error];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

@@ -30,4 +30,6 @@
 @property (strong, nonatomic) UIButton *originButton;
 @property (strong, nonatomic) UIButton *submitButton;
 
+@property (strong, nonatomic) NSString *buyQuestionString;
+
 @end
