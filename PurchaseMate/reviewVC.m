@@ -101,7 +101,7 @@
     
     self.whyArray = [[NSMutableArray alloc] init];
     
-    self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 35, 130, 35)];
+    self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 150, 35, 130, 35)];
     [self.ethicsButton setTitle:@"Ethics" forState:UIControlStateNormal];
     [self.ethicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.ethicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -112,7 +112,7 @@
     [self.ethicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.ethicsButton];
     
-    self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 35, 130, 35)];
+    self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 20, 35, 130, 35)];
     [self.politicsButton setTitle:@"Politics" forState:UIControlStateNormal];
     [self.politicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.politicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -123,7 +123,7 @@
     [self.politicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.politicsButton];
     
-    self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 80, 130, 35)];
+    self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 150, 80, 130, 35)];
     [self.gmoButton setTitle:@"GMO" forState:UIControlStateNormal];
     [self.gmoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.gmoButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -134,7 +134,7 @@
     [self.gmoButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.gmoButton];
     
-    self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 80, 130, 35)];
+    self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 20, 80, 130, 35)];
     [self.originButton setTitle:@"Origin" forState:UIControlStateNormal];
     [self.originButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.originButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -209,10 +209,8 @@
     
     if ([self.whyArray containsObject:button.titleLabel.text]) {
         [self.whyArray removeObject:button.titleLabel.text];
-        NSLog(@"%@", self.whyArray);
     } else {
         [self.whyArray addObject:button.titleLabel.text];
-        NSLog(@"%@", self.whyArray);
     }
     
     if (button.backgroundColor == [UIColor whiteColor]) {
