@@ -223,25 +223,36 @@
 }
 
 - (void)submitClicked:(id)sender {
-    NSDictionary *userReview = @{
-                                 @"corporation" : organizationName,
-                                 @"product" : productName,
-                                 @"buyQuestion" : self.buyQuestionString,
-                                 @"why" : self.whyArray,
-                                 @"rating" : self.ratingString
-                                 };
+
     
-    NSError *error = nil;
-    if (error) {
-        NSLog(@"%@", error);
+    if (self.buyQuestionString == nil || self.ratingString == nil || [self.whyArray count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                              message:@"You need to fill out all fields before continuing!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        
+    } else {
+            NSDictionary *userReview = @{
+                                         @"corporation" : organizationName,
+                                         @"product" : productName,
+                                         @"buyQuestion" : self.buyQuestionString,
+                                         @"why" : self.whyArray,
+                                         @"rating" : self.ratingString
+                                         };
+        
+        NSError *error = nil;
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        
+        //Connect to MongoDB
+        MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+        MongoDBCollection *collection = [dbConn collectionWithName:@"reviewsDB.review"];
+        [collection insertDictionary:userReview writeConcern:nil error:&error];
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    
-    //Connect to MongoDB
-    MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
-    MongoDBCollection *collection = [dbConn collectionWithName:@"reviewsDB.review"];
-    [collection insertDictionary:userReview writeConcern:nil error:&error];
-    
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
