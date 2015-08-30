@@ -51,7 +51,6 @@
 		16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AEC56C1B83F7F700E538C0 /* RateView.m */; };
 		16AEC5711B83F8B900E538C0 /* kermit_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AEC56E1B83F8B900E538C0 /* kermit_empty.png */; };
 		16AEC5721B83F8B900E538C0 /* kermit_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 16AEC56F1B83F8B900E538C0 /* kermit_full.png */; };
-		16CC115F1B2E20E400D09552 /* ResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CC115E1B2E20E400D09552 /* ResultsTVC.m */; };
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
 		78AAF3601DF06664E196AE76 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01965A067282322DCA567553 /* libPods.a */; };
@@ -1727,8 +1726,6 @@
 		16CC113E1B2E026300D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16CC11401B2E026300D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16CC11421B2E026300D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
-		16CC115D1B2E20E400D09552 /* ResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTVC.h; sourceTree = "<group>"; };
-		16CC115E1B2E20E400D09552 /* ResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTVC.m; sourceTree = "<group>"; };
 		16D1B3391B2D2DAC00C9E185 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		16E45E991B41EBA100932B9E /* resultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
@@ -3697,7 +3694,6 @@
 				165582FF1B3DFFD200819716 /* reportTVC.m */,
 				16AEC56E1B83F8B900E538C0 /* kermit_empty.png */,
 				16AEC56F1B83F8B900E538C0 /* kermit_full.png */,
-				1655694F1B44F0DE00668730 /* Just for reference */,
 				161C43681B2CA80900F3F8F4 /* Images.xcassets */,
 				161C436A1B2CA80900F3F8F4 /* LaunchScreen.xib */,
 				161C435B1B2CA80900F3F8F4 /* Supporting Files */,
@@ -3767,15 +3763,6 @@
 				01965A067282322DCA567553 /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1655694F1B44F0DE00668730 /* Just for reference */ = {
-			isa = PBXGroup;
-			children = (
-				16CC115D1B2E20E400D09552 /* ResultsTVC.h */,
-				16CC115E1B2E20E400D09552 /* ResultsTVC.m */,
-			);
-			name = "Just for reference";
 			sourceTree = "<group>";
 		};
 		169A65671B4388640040F74C /* PNChart */ = {
@@ -4093,7 +4080,6 @@
 				16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */,
 				169A65871B4388640040F74C /* PNBarChart.m in Sources */,
 				169A658C1B4388640040F74C /* PNLineChart.m in Sources */,
-				16CC115F1B2E20E400D09552 /* ResultsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
