@@ -255,6 +255,13 @@
         
         NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
         [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay!"
+                                                        message:[NSString stringWithFormat:@"You now have %ld stars!", stars]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
