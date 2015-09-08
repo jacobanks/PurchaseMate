@@ -252,6 +252,9 @@
         [collection insertDictionary:userReview writeConcern:nil error:&error];
         
         [self.navigationController popViewControllerAnimated:YES];
+        
+        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
+        [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
     }
 }
 
