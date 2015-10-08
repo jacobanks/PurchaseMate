@@ -4,78 +4,55 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-ObjCMongoDB.xcscheme</key>
+		<key>CompactConstraint.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
-		<key>Pods-SBJson.xcscheme</key>
+		<key>ObjCMongoDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>Pods-mongo-c-driver.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
+		</dict>
+		<key>SBJson.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>mongo-c-driver.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>095874661495EC51574D8E11</key>
+		<key>2C18D55D360BC6825AD7B665EB79F7CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1AC079101D234A60DE1473BF</key>
+		<key>6B897C0F676755CB18633E45FBB090C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A8A3C44946630C7FA9880A3</key>
+		<key>75BD67AB983EED6976B898F2EEB3EC92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59B975B45C09655E48389F33</key>
+		<key>C1C27DCB6CBFE8F2337ED2E81AD9D281</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>748F9F440AE75E97DADA9F20</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>90CE385989FB2BD0046608BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C76B07671CF218E94FE7BF4D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB0D37A2AF91762ED46B0DCB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FA61F27F484A05AAF7E2E1CF</key>
+		<key>E85917FD6FF2C6A40149EA103CC9ED73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

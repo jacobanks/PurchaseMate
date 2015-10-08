@@ -11,6 +11,7 @@
 #import "XMLReader.h"
 #import "AppDelegate.h"
 #import "ObjCMongoDB.h"
+#import "resultsVC.h"
 
 extern NSString *organizationName;
 extern NSString *barcodeID;

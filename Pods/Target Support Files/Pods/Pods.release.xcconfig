@@ -1,6 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ObjCMongoDB" "${PODS_ROOT}/Headers/Public/SBJson" "${PODS_ROOT}/Headers/Public/mongo-c-driver"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/ObjCMongoDB" -isystem "${PODS_ROOT}/Headers/Public/SBJson" -isystem "${PODS_ROOT}/Headers/Public/mongo-c-driver"
-OTHER_LDFLAGS = -ObjC -l"Pods-ObjCMongoDB" -l"Pods-SBJson" -l"Pods-mongo-c-driver"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CompactConstraint" "${PODS_ROOT}/Headers/Public/ObjCMongoDB" "${PODS_ROOT}/Headers/Public/SBJson" "${PODS_ROOT}/Headers/Public/mongo-c-driver"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CompactConstraint" -isystem "${PODS_ROOT}/Headers/Public/ObjCMongoDB" -isystem "${PODS_ROOT}/Headers/Public/SBJson" -isystem "${PODS_ROOT}/Headers/Public/mongo-c-driver"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"CompactConstraint" -l"ObjCMongoDB" -l"SBJson" -l"mongo-c-driver"
 PODS_ROOT = ${SRCROOT}/Pods

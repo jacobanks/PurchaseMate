@@ -11,19 +11,19 @@
 
 @interface resultsVC : UIViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *lobbyingLabel;
-@property (nonatomic, strong) IBOutlet UILabel *republicanLabel;
-@property (nonatomic, strong) IBOutlet UILabel *democratLabel;
-@property (nonatomic, strong) IBOutlet UILabel *indiLabel;
-@property (nonatomic, strong) IBOutlet UILabel *repubTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *demoTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *lobbyTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *indiTitleLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *lobbyingLabel;
+@property (nonatomic, strong) UILabel *republicanLabel;
+@property (nonatomic, strong) UILabel *democratLabel;
+@property (nonatomic, strong) UILabel *indiLabel;
+@property (nonatomic, strong) UILabel *repubTitleLabel;
+@property (nonatomic, strong) UILabel *demoTitleLabel;
+@property (nonatomic, strong) UILabel *lobbyTitleLabel;
+@property (nonatomic, strong) UILabel *indiTitleLabel;
 @property (nonatomic, strong) UILabel *noDataLabel;
-@property (nonatomic, strong) IBOutlet UILabel *ethicsLabel;
-@property (nonatomic, strong) IBOutlet UILabel *ethicsTitleLabel;
-@property (nonatomic, strong) IBOutlet UIButton *reviewButton;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) UILabel *ethicsLabel;
+@property (nonatomic, strong) UILabel *ethicsTitleLabel;
+@property (nonatomic, strong) UIButton *reviewButton;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end

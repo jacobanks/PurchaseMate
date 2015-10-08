@@ -29,10 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        //For testing on the simulator
-//    [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=0012546612296"]];
-//    barcodeID = @"0047400097728";
     
+    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
+    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
+    [testScan addTarget:self action:@selector(scanProduct:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
+
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
     _highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -207,9 +209,8 @@
     app.valuesArray = [[NSMutableArray alloc] initWithArray:[summaryDict allValues]];
     app.keysArray = [[NSMutableArray alloc] initWithArray:[summaryDict allKeys]];
     
-    [self performSegueWithIdentifier:@"Results" sender:self];
-
-    
+    resultsVC *vc = [[resultsVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

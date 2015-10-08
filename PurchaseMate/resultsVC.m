@@ -23,6 +23,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     if (app.valuesArray.count != 0){

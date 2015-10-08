@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "ViewController.h"
+
+@class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray *valuesArray;
 @property (strong, nonatomic) NSMutableArray *keysArray;
+@property (strong, nonatomic) ViewController *viewController;
 
 @end
 
