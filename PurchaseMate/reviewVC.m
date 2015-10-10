@@ -45,8 +45,8 @@
     [self.rateView addSubview:self.rateLabel];
 
     self.ratingView = [[RateView alloc] initWithFrame:CGRectMake(100, 15, self.view.frame.size.width / 2 + 60, 50)];
-    self.ratingView.notSelectedImage = [UIImage imageNamed:@"kermit_empty.png"];
-    self.ratingView.fullSelectedImage = [UIImage imageNamed:@"kermit_full.png"];
+    self.ratingView.notSelectedImage = [UIImage imageNamed:@"starEmpty"];
+    self.ratingView.fullSelectedImage = [UIImage imageNamed:@"starFull"];
     self.ratingView.rating = 0;
     self.ratingView.editable = YES;
     self.ratingView.maxRating = 5;
@@ -257,7 +257,7 @@
         [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay!"
-                                                        message:[NSString stringWithFormat:@"You now have %ld stars!", stars]
+                                                        message:[NSString stringWithFormat:@"You now have %ld stars!", (long)stars]
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4CEE9F67-58E5-4F62-8381-9505A1CF6EF8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PurchaseMate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3C9E2069EFA264F0C179602113717F22C19AC9A2</key>
+		<string>https://github.com/jacobanks/PurchaseMate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PurchaseMate.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3C9E2069EFA264F0C179602113717F22C19AC9A2</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jacobanks/PurchaseMate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3C9E2069EFA264F0C179602113717F22C19AC9A2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3C9E2069EFA264F0C179602113717F22C19AC9A2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PurchaseMate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

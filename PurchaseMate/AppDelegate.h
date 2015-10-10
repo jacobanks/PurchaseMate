@@ -10,15 +10,16 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "ViewController.h"
+#import "resultsVC.h"
 
-@class ViewController;
+@class resultsVC;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray *valuesArray;
 @property (strong, nonatomic) NSMutableArray *keysArray;
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) resultsVC *viewController;
 
 @end
 

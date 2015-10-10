@@ -25,7 +25,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    _viewController = [[ViewController alloc] init];
+    _viewController = [[resultsVC alloc] init];
     UINavigationController *mainNavigationController = [[UINavigationController alloc] init];
     mainNavigationController.viewControllers = @[_viewController];
     mainNavigationController.navigationBar.tintColor = [UIColor whiteColor];
