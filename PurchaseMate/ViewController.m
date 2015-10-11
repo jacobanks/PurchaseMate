@@ -209,8 +209,7 @@
     app.valuesArray = [[NSMutableArray alloc] initWithArray:[summaryDict allValues]];
     app.keysArray = [[NSMutableArray alloc] initWithArray:[summaryDict allKeys]];
     
-    resultsVC *vc = [[resultsVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self performSegueWithIdentifier:@"Results" sender:self];
 
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

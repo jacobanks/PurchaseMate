@@ -22,16 +22,6 @@
     keysArray = [[NSMutableArray alloc] init];
     
     [Parse setApplicationId:@"8qRzMOAeLczoJtCzWO6xVSH9h4NdNTsaGZELj9c1" clientKey:@"X0EK1KO7tV7nKfi2SFAAuKH9cy9Io9THTLAxOm8A"];
-
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    _viewController = [[resultsVC alloc] init];
-    UINavigationController *mainNavigationController = [[UINavigationController alloc] init];
-    mainNavigationController.viewControllers = @[_viewController];
-    mainNavigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
-    self.window.rootViewController = mainNavigationController;
-    [self.window makeKeyAndVisible];
     
     return YES;
 }

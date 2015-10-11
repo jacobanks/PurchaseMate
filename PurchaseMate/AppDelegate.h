@@ -12,14 +12,11 @@
 #import "ViewController.h"
 #import "resultsVC.h"
 
-@class resultsVC;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray *valuesArray;
 @property (strong, nonatomic) NSMutableArray *keysArray;
-@property (strong, nonatomic) resultsVC *viewController;
 
 @end
 

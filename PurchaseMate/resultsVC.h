@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "PNChart.h"
-#import <CompactConstraint.h>
 
 @interface resultsVC : UIViewController
 
