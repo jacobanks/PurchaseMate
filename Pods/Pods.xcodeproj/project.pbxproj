@@ -967,6 +967,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6E81D6BE88DC7E7E89A5232B1F29A86 /* ObjCMongoDB-Private.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/ObjCMongoDB/ObjCMongoDB-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1070,6 +1071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6E81D6BE88DC7E7E89A5232B1F29A86 /* ObjCMongoDB-Private.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/ObjCMongoDB/ObjCMongoDB-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

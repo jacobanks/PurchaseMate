@@ -48,7 +48,7 @@
     _label.textColor = [UIColor whiteColor];
     _label.font = [UIFont fontWithName:@"Default" size:15];
     _label.textAlignment = NSTextAlignmentCenter;
-    _label.text = @"Scanning...";
+    _label.text = @"Scan a product to begin";
     [self.view addSubview:_label];
     
     _session = [[AVCaptureSession alloc] init];
@@ -80,13 +80,12 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.translucent = NO;
-    
+    self.navigationController.navigationBar.translucent = NO;    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.title = @"PurchaseMate";
-    _label.text = @"Scanning...";
+    _label.text = @"Scan a product to begin";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
