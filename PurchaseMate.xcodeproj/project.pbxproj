@@ -3933,7 +3933,7 @@
 		16F4AFE71BC7033D0007C322 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				16F4AFE81BC703490007C322 /* Main View */,
+				16F4AFE81BC703490007C322 /* Scan View */,
 				16F4AFE91BC703500007C322 /* Results */,
 				16F4AFEA1BC703600007C322 /* Review */,
 				16F4AFEB1BC703650007C322 /* Report */,
@@ -3941,13 +3941,13 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		16F4AFE81BC703490007C322 /* Main View */ = {
+		16F4AFE81BC703490007C322 /* Scan View */ = {
 			isa = PBXGroup;
 			children = (
 				161C43621B2CA80900F3F8F4 /* ViewController.h */,
 				161C43631B2CA80900F3F8F4 /* ViewController.m */,
 			);
-			name = "Main View";
+			name = "Scan View";
 			sourceTree = "<group>";
 		};
 		16F4AFE91BC703500007C322 /* Results */ = {
@@ -3998,6 +3998,7 @@
 				161C43551B2CA80900F3F8F4 /* Frameworks */,
 				161C43561B2CA80900F3F8F4 /* Resources */,
 				CDD2B30AB9B1619611E8E222 /* Copy Pods Resources */,
+				95FA458911E9512233BC98FA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4060,6 +4061,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		95FA458911E9512233BC98FA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B4905D175E10338FDF73A9A1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4239,6 +4255,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4247,14 +4264,9 @@
 				INFOPLIST_FILE = PurchaseMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-l\"Pods-ObjCMongoDB\"",
-					"-l\"Pods-SBJson\"",
-					"-l\"Pods-mongo-c-driver\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "PurchaseMate.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PurchaseMate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -4267,6 +4279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4275,14 +4288,9 @@
 				INFOPLIST_FILE = PurchaseMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-l\"Pods-ObjCMongoDB\"",
-					"-l\"Pods-SBJson\"",
-					"-l\"Pods-mongo-c-driver\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "PurchaseMate.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PurchaseMate-Bridging-Header.h";
 			};
 			name = Release;

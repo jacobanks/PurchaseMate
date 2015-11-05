@@ -19,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - CompactConstraint
+  - mongo-c-driver
   - ObjCMongoDB (~> 0.12.0)
   - SBJson (~> 3.0.0)
 
@@ -28,4 +29,4 @@ SPEC CHECKSUMS:
   ObjCMongoDB: 465dffcaf56a852381ee34bef0f98828398c8cfc
   SBJson: 69a98861fe3f4e9a02393700b2600284925fa73c
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

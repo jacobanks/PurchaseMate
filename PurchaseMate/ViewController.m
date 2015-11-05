@@ -121,10 +121,14 @@
     
     if (responseDictionary[@"Brand"]) {
         //Has Brand Attribute
-        [self getDataFromMongoDBWithDictionary:responseDictionary];
+        [self getDataFromMongoDBWithDictionary:responseDictionary[@"Brand"]];
         productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Brand"]];
+    } else if (responseDictionary[@"Manufacturer"]) {
+        //Doesn't have Brand Attribute so check for Manufacturer
+        [self getDataFromMongoDBWithDictionary:responseDictionary[@"Manufacturer"]];
+        productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Manufacturer"]];
     } else {
-        //Doesn't have Brand Attribute
+        // We have nothing so show alert
         [self showAlert];
     }
     
@@ -132,9 +136,6 @@
 }
 
 - (void)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary {
-
-    id brandName = [responseDictionary objectForKey:@"Brand"];
-    NSDictionary *brandDictionary = brandName;
     
     NSError *error = nil;
     if (error) {
@@ -146,7 +147,7 @@
     MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
     
     MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
-    [predicate keyPath:@"Name" matches:brandDictionary];
+    [predicate keyPath:@"Name" matches:responseDictionary];
     BSONDocument *resultDoc = [collection findOneWithPredicate:predicate error:&error];
     NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
 
@@ -253,7 +254,6 @@
             _label.text = @"Product Found!";
             [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", detectionString]];
             barcodeID = detectionString;
-            
             break;
         }
         else
