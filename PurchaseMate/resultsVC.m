@@ -53,7 +53,7 @@
         self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
         self.ethicsLabel.text = ethicsString;
         
-        if (ethicsString != NULL) {
+        if (![ethicsString isEqualToString:@"(null)"]) {
 
             if (ethicsString.intValue <= 50) {
                 self.ethicsLabel.textColor = [UIColor redColor];
@@ -64,7 +64,7 @@
             }
             
         } else {
-            self.ethicsLabel.textColor = [UIColor blackColor];
+            self.ethicsLabel.textColor = [UIColor lightGrayColor];
             self.ethicsLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:18];
             self.ethicsLabel.text = @"No Data";
         }
