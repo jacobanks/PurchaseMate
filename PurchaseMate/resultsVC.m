@@ -11,10 +11,12 @@
 
 @interface resultsVC ()
 
-@property (nonatomic, strong) UILabel *titleLabel, *lobbyingLabel, *republicanLabel, *democratLabel, *indiLabel, *repubTitleLabel,
-*demoTitleLabel, *lobbyTitleLabel, *indiTitleLabel, *noDataLabel, *ethicsLabel, *ethicsTitleLabel;
-@property (nonatomic, strong) UIButton *reviewButton;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel, *lobbyingLabel, *republicanLabel, *democratLabel, *indiLabel, *repubTitleLabel,
+*demoTitleLabel, *lobbyTitleLabel, *indiTitleLabel, *ethicsLabel, *ethicsTitleLabel;
+@property (nonatomic, strong) UILabel *noDataLabel, *starsLabel;
+@property (nonatomic, strong) IBOutlet UIButton *reviewButton;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *starsView;
 
 @end
 
@@ -99,8 +101,22 @@
         
         self.scrollView.contentSize =CGSizeMake(self.view.frame.size.width, 700);
         
-        self.noDataLabel.hidden = YES;
+        self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
+        [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
         
+        self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
+        self.starsLabel.textColor = [UIColor whiteColor];
+        self.starsLabel.font = [UIFont systemFontOfSize:16];
+        self.starsLabel.textAlignment = NSTextAlignmentCenter;
+        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
+        self.starsLabel.text = [NSString stringWithFormat:@"You have %ld stars!", (long)stars];
+        [self.starsView addSubview:self.starsLabel];
+        
+        [self.view addSubview:self.starsView];
+
+        [self.view addSubview:self.reviewButton];
+        
+        self.noDataLabel.hidden = YES;
     } else {
         self.republicanLabel.hidden = YES;
         self.democratLabel.hidden = YES;
@@ -123,7 +139,7 @@
         self.noDataLabel.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:self.noDataLabel];
     }
-    
+
     self.title = organizationName;
 }
 
