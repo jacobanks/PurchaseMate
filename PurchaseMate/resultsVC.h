@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PNChart.h"
+#import "CAPSPageMenu.h"
+#import "reviewVC.h"
+#import "reportTVC.h"
+
 @import AMScrollingNavbar;
 
 @interface resultsVC : UIViewController <ScrollingNavigationControllerDelegate>

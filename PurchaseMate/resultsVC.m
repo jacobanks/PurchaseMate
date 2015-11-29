@@ -17,6 +17,7 @@
 @property (nonatomic, strong) IBOutlet UIButton *reviewButton;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *starsView;
+@property (nonatomic) CAPSPageMenu *pagemenu;
 
 @end
 
@@ -29,6 +30,34 @@
     [self.navigationController.navigationBar  setBackgroundImage:[UIImage new]
                                                   forBarPosition:UIBarPositionAny
                                                       barMetrics:UIBarMetricsDefault];
+    
+    // Array to keep track of controllers in page menu
+    NSMutableArray *controllerArray = [NSMutableArray array];
+
+//    resultsVC *result = (resultsVC *)[self.storyboard instantiateViewControllerWithIdentifier:@"result"];
+//    result.title = @"Results";
+//    [controllerArray addObject:result];
+    
+    reviewVC *review = (reviewVC *)[self.storyboard instantiateViewControllerWithIdentifier:@"review"];
+    review.title = @"Review";
+    [controllerArray addObject:review];
+    
+    reportTVC *report = (reportTVC *)[self.storyboard instantiateViewControllerWithIdentifier:@"report"];
+    report.title = @"Report";
+    [controllerArray addObject:report];
+
+    NSDictionary *parameters = @{CAPSPageMenuOptionScrollMenuBackgroundColor: [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1.0],
+                                 CAPSPageMenuOptionSelectionIndicatorColor: [UIColor whiteColor],
+                                 CAPSPageMenuOptionMenuHeight: @(40.0),
+                                 CAPSPageMenuOptionCenterMenuItems: @(YES),
+                                 CAPSPageMenuOptionMenuItemSeparatorWidth: @(4.3),
+                                 CAPSPageMenuOptionUseMenuLikeSegmentedControl: @(YES),
+                                 CAPSPageMenuOptionMenuItemSeparatorPercentageHeight: @(0.1)
+                                 };
+    
+    // Initialize page menu with controller array, frame, and optional parameters
+    _pagemenu = [[CAPSPageMenu alloc] initWithViewControllers:controllerArray frame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height) options:parameters];
+    [self.view addSubview:_pagemenu.view];
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
@@ -151,7 +180,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
