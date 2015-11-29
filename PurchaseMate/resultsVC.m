@@ -25,12 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar  setBackgroundImage:[UIImage new]
+                                                  forBarPosition:UIBarPositionAny
+                                                      barMetrics:UIBarMetricsDefault];
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
@@ -56,7 +54,7 @@
         self.ethicsLabel.text = ethicsString;
         
         if (![ethicsString isEqualToString:@"(null)"]) {
-
+            
             if (ethicsString.intValue <= 50) {
                 self.ethicsLabel.textColor = [UIColor redColor];
             } else if (ethicsString.intValue > 50 && ethicsString.intValue <= 70) {
@@ -99,11 +97,11 @@
         self.reviewButton.layer.shadowOffset = CGSizeMake(0,0);
         self.reviewButton.layer.cornerRadius = 15;
         
-        self.scrollView.contentSize =CGSizeMake(self.view.frame.size.width, 700);
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
         
         NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
         if (stars != 0) {
-            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
+            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 110, self.view.frame.size.width, 50)];
             [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
             
             self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
@@ -121,7 +119,7 @@
             
             [self.view addSubview:self.starsView];
         }
-
+        
         [self.view addSubview:self.reviewButton];
         
         self.noDataLabel.hidden = YES;
@@ -147,8 +145,20 @@
         self.noDataLabel.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:self.noDataLabel];
     }
-
+    
     self.title = organizationName;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    [(ScrollingNavigationController *)self.navigationController followScrollView:self.scrollView delay:50.0f];
+    [(ScrollingNavigationController *)self.navigationController scrollingNavbarDelegate];
+
 }
 
 - (void)didReceiveMemoryWarning {

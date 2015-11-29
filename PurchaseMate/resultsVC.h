@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PNChart.h"
+@import AMScrollingNavbar;
 
-@interface resultsVC : UIViewController
+@interface resultsVC : UIViewController <ScrollingNavigationControllerDelegate>
 
 @end
