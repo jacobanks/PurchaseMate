@@ -101,18 +101,26 @@
         
         self.scrollView.contentSize =CGSizeMake(self.view.frame.size.width, 700);
         
-        self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
-        [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
-        
-        self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
-        self.starsLabel.textColor = [UIColor whiteColor];
-        self.starsLabel.font = [UIFont systemFontOfSize:16];
-        self.starsLabel.textAlignment = NSTextAlignmentCenter;
         NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
-        self.starsLabel.text = [NSString stringWithFormat:@"You have %ld stars!", (long)stars];
-        [self.starsView addSubview:self.starsLabel];
-        
-        [self.view addSubview:self.starsView];
+        if (stars != 0) {
+            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
+            [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
+            
+            self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
+            self.starsLabel.textColor = [UIColor whiteColor];
+            self.starsLabel.font = [UIFont systemFontOfSize:16];
+            self.starsLabel.textAlignment = NSTextAlignmentCenter;
+            
+            if (stars <= 1) {
+                self.starsLabel.text = [NSString stringWithFormat:@"You have %ld star!", (long)stars];
+            } else {
+                self.starsLabel.text = [NSString stringWithFormat:@"You have %ld stars!", (long)stars];
+            }
+            
+            [self.starsView addSubview:self.starsLabel];
+            
+            [self.view addSubview:self.starsView];
+        }
 
         [self.view addSubview:self.reviewButton];
         
