@@ -51,11 +51,10 @@
 		16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AEC56C1B83F7F700E538C0 /* RateView.m */; };
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
-		78AAF3601DF06664E196AE76 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01965A067282322DCA567553 /* libPods.a */; };
+		35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B7B836E94DBCE8CDDD41B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01965A067282322DCA567553 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		160F3EB91B3E51FC006816D1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		160F3EBC1B3E5209006816D1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		161434C61B2FDDF000FFF81B /* acinclude.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = acinclude.m4; sourceTree = "<group>"; };
@@ -1726,6 +1725,7 @@
 		16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		16E45E991B41EBA100932B9E /* resultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
 		16E45E9A1B41EBA100932B9E /* resultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsVC.m; sourceTree = "<group>"; };
+		2C7B7B836E94DBCE8CDDD41B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F741227351BC092BB050F73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8DB8BD507AA0C802AC937449 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1753,7 +1753,7 @@
 				161C43861B2CA89000F3F8F4 /* UIKit.framework in Frameworks */,
 				161C43841B2CA88100F3F8F4 /* CoreGraphics.framework in Frameworks */,
 				161C43821B2CA87700F3F8F4 /* Foundation.framework in Frameworks */,
-				78AAF3601DF06664E196AE76 /* libPods.a in Frameworks */,
+				35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3742,7 +3742,7 @@
 				161C43851B2CA89000F3F8F4 /* UIKit.framework */,
 				161C43831B2CA88100F3F8F4 /* CoreGraphics.framework */,
 				161C43811B2CA87600F3F8F4 /* Foundation.framework */,
-				01965A067282322DCA567553 /* libPods.a */,
+				2C7B7B836E94DBCE8CDDD41B /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

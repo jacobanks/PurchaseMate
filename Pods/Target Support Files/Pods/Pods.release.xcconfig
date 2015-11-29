@@ -1,5 +1,8 @@
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CompactConstraint" "${PODS_ROOT}/Headers/Public/ObjCMongoDB" "${PODS_ROOT}/Headers/Public/SBJson" "${PODS_ROOT}/Headers/Public/mongo-c-driver"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CompactConstraint" -isystem "${PODS_ROOT}/Headers/Public/ObjCMongoDB" -isystem "${PODS_ROOT}/Headers/Public/SBJson" -isystem "${PODS_ROOT}/Headers/Public/mongo-c-driver"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"CompactConstraint" -l"ObjCMongoDB" -l"SBJson" -l"mongo-c-driver"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/AMScrollingNavbar.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CompactConstraint.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ObjCMongoDB.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SBJson.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/mongo_c_driver.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "AMScrollingNavbar" -framework "CompactConstraint" -framework "ObjCMongoDB" -framework "SBJson" -framework "mongo_c_driver"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}/Pods
