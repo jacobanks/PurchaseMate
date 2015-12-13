@@ -149,8 +149,8 @@
     self.title = organizationName;
     self.tabBarController.title = organizationName;
     
-    UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
-    [report setTitle:@"Report" forState:UIControlStateNormal];
+    UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 45)];
+    [report setImage:[UIImage imageNamed:@"warningTriangle"] forState:UIControlStateNormal];
     [report addTarget:self action:@selector(openReportView) forControlEvents:UIControlEventTouchUpInside];
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
 }

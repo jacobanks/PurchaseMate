@@ -19,6 +19,13 @@
     // Do any additional setup after loading the view.
     self.title = @"Review";
     
+    UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 667)];
+    scrollview.showsVerticalScrollIndicator = YES;
+    scrollview.scrollEnabled = YES;
+    scrollview.userInteractionEnabled = YES;
+    [self.view addSubview:scrollview];
+    scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, 900);
+    
     self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, self.view.frame.size.width, 120)];
     [self addShadowtoView:self.corpTitleView];
     
@@ -35,7 +42,7 @@
     self.productLabel.alpha = 0.7 ;
     [self.corpTitleView addSubview:self.productLabel];
     
-    [self.view addSubview:self.corpTitleView];
+    [scrollview addSubview:self.corpTitleView];
     
     self.rateView = [[UIView alloc] initWithFrame:CGRectMake(0, 122, self.view.frame.size.width, 80)];
     [self addShadowtoView:self.rateView];
@@ -55,7 +62,7 @@
     self.ratingView.delegate = self;
     [self.rateView addSubview:self.ratingView];
     
-    [self.view addSubview:self.rateView];
+    [scrollview addSubview:self.rateView];
     
     self.buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 203, self.view.frame.size.width, 127)];
     [self addShadowtoView:self.buyView];
@@ -89,7 +96,7 @@
     self.noButton.layer.cornerRadius = 5;
     [self.buyView addSubview:self.noButton];
 
-    [self.view addSubview:self.buyView];
+    [scrollview addSubview:self.buyView];
     
     self.whyView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, self.view.frame.size.width, 120)];
     [self addShadowtoView:self.whyView];
@@ -147,7 +154,9 @@
     [self.originButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.whyView addSubview:self.originButton];
     
-    [self.view addSubview:self.whyView];
+    [scrollview addSubview:self.whyView];
+    
+    
     
     self.submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.submitButton.frame = CGRectMake(7, 480, 360, 60);
@@ -161,7 +170,9 @@
     self.submitButton.layer.shadowRadius = 2;
     self.submitButton.layer.shadowOffset = CGSizeMake(0,0);
     self.submitButton.layer.cornerRadius = 15;
-    [self.view addSubview:self.submitButton];
+    [scrollview addSubview:self.submitButton];
+    
+    [self.view addSubview:scrollview];
     
 }
 
