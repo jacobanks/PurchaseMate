@@ -253,7 +253,7 @@
         MongoDBCollection *collection = [dbConn collectionWithName:@"reviewsDB.review"];
         [collection insertDictionary:userReview writeConcern:nil error:&error];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        self.tabBarController.selectedIndex = 0;
         
         NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
         [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
