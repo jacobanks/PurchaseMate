@@ -30,10 +30,12 @@
 {
     [super viewDidLoad];
     
-    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
-    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
-    [testScan addTarget:self action:@selector(scanProduct:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
+//    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
+//    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
+//    [testScan addTarget:self action:@selector(scanProduct:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
+    
+    [self scanProduct];
 
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -98,7 +100,7 @@
     [_session startRunning];
 }
 
-- (void)scanProduct:(id)sender {
+- (void)scanProduct {
     [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
     barcodeID = @"04976400";
 }
@@ -273,6 +275,7 @@
 //    [alert show];
     
     [self performSegueWithIdentifier:@"Results" sender:self];
+
 }
 
 @end

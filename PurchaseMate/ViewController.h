@@ -20,7 +20,6 @@ extern NSString *productName;
 
 @interface ViewController : UIViewController
 
-- (IBAction)scanProduct:(id)sender;
 
 @end
 

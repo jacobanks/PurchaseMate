@@ -17,7 +17,6 @@
 @property (nonatomic, strong) IBOutlet UIButton *reviewButton;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *starsView;
-@property (nonatomic) CAPSPageMenu *pagemenu;
 
 @end
 
@@ -96,29 +95,28 @@
         
         self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
         
-        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
-        if (stars != 0) {
-            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 110, self.view.frame.size.width, 50)];
-            [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
-            
-            self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
-            self.starsLabel.textColor = [UIColor whiteColor];
-            self.starsLabel.font = [UIFont systemFontOfSize:16];
-            self.starsLabel.textAlignment = NSTextAlignmentCenter;
-            
-            if (stars <= 1) {
-                self.starsLabel.text = [NSString stringWithFormat:@"You have %ld star!", (long)stars];
-            } else {
-                self.starsLabel.text = [NSString stringWithFormat:@"You have %ld stars!", (long)stars];
-            }
-            
-            [self.starsView addSubview:self.starsLabel];
-            
-            [self.view addSubview:self.starsView];
-        }
+//        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
+//        if (stars != 0) {
+//            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 110, self.view.frame.size.width, 50)];
+//            [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
+//            
+//            self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
+//            self.starsLabel.textColor = [UIColor whiteColor];
+//            self.starsLabel.font = [UIFont systemFontOfSize:16];
+//            self.starsLabel.textAlignment = NSTextAlignmentCenter;
+//            
+//            if (stars <= 1) {
+//                self.starsLabel.text = [NSString stringWithFormat:@"You have %ld star!", (long)stars];
+//            } else {
+//                self.starsLabel.text = [NSString stringWithFormat:@"You have %ld stars!", (long)stars];
+//            }
+//            
+//            [self.starsView addSubview:self.starsLabel];
+//            
+//            [self.view addSubview:self.starsView];
+//        }
         
-        [self.view addSubview:self.reviewButton];
-        
+    
         self.noDataLabel.hidden = YES;
     } else {
         self.republicanLabel.hidden = YES;
@@ -144,18 +142,20 @@
     }
     
     self.title = organizationName;
+    self.tabBarController.title = organizationName;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 //    self.view.backgroundColor = [UIColor whiteColor];
+    //    self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     [(ScrollingNavigationController *)self.navigationController followScrollView:self.scrollView delay:50.0f];
     [(ScrollingNavigationController *)self.navigationController scrollingNavbarDelegate];
-
 }
 
 - (void)didReceiveMemoryWarning {
