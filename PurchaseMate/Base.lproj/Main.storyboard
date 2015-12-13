@@ -177,7 +177,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="B5F-Qt-UEi"/>
                         <barButtonItem key="rightBarButtonItem" image="warningTriangle" id="8lu-uS-ag1">
                             <connections>
-                                <segue destination="Vsz-LZ-4B9" kind="push" id="Z7B-aZ-zlZ"/>
+                                <segue destination="Vsz-LZ-4B9" kind="push" identifier="report" id="Z7B-aZ-zlZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -233,7 +233,7 @@
                             <tableViewSection id="pHt-iD-2Ui">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ahg-EC-zRh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ahg-EC-zRh" id="o88-Wh-Mae">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -252,7 +252,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HK7-m0-Xvf">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HK7-m0-Xvf" id="xxe-ZV-ro9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>

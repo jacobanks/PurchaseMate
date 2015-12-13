@@ -30,13 +30,11 @@
 {
     [super viewDidLoad];
     
-//    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
-//    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
-//    [testScan addTarget:self action:@selector(scanProduct:) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
+    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
+    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
+    [testScan addTarget:self action:@selector(scanProduct) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
     
-    [self scanProduct];
-
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
     _highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -267,12 +265,12 @@
 }
 
 - (void)showAlert {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-//                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
-//                                                   delegate:nil
-//                                          cancelButtonTitle:@"OK"
-//                                          otherButtonTitles:nil];
-//    [alert show];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
     
     [self performSegueWithIdentifier:@"Results" sender:self];
 

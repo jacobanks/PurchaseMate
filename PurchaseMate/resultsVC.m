@@ -25,6 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBarController.navigationItem.backBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:@""
+                                     style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil];
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
@@ -143,7 +148,11 @@
     
     self.title = organizationName;
     self.tabBarController.title = organizationName;
-
+    
+    UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
+    [report setTitle:@"Report" forState:UIControlStateNormal];
+    [report addTarget:self action:@selector(openReportView) forControlEvents:UIControlEventTouchUpInside];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -161,6 +170,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)openReportView {
+    [self performSegueWithIdentifier:@"report" sender:nil];
 }
 
 /*
