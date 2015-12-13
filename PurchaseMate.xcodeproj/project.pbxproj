@@ -49,7 +49,6 @@
 		169A65931B4388640040F74C /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65851B4388640040F74C /* PNScatterChartDataItem.m */; };
 		169A65961B4389250040F74C /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65951B4389250040F74C /* UICountingLabel.m */; };
 		16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AEC56C1B83F7F700E538C0 /* RateView.m */; };
-		16BB69DD1C0BB5780074783F /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BB69DC1C0BB5780074783F /* CAPSPageMenu.m */; };
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
 		35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B7B836E94DBCE8CDDD41B /* Pods.framework */; };
@@ -1710,8 +1709,6 @@
 		169A65951B4389250040F74C /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		16AEC56B1B83F7F700E538C0 /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
 		16AEC56C1B83F7F700E538C0 /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
-		16BB69DB1C0BB5780074783F /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
-		16BB69DC1C0BB5780074783F /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		16CC112B1B2E025200D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16CC112D1B2E025200D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16CC112F1B2E025200D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
@@ -3923,8 +3920,6 @@
 		16F4AFE61BC703050007C322 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				16BB69DB1C0BB5780074783F /* CAPSPageMenu.h */,
-				16BB69DC1C0BB5780074783F /* CAPSPageMenu.m */,
 				16AEC56B1B83F7F700E538C0 /* RateView.h */,
 				16AEC56C1B83F7F700E538C0 /* RateView.m */,
 				169A65941B4389250040F74C /* UICountingLabel.h */,
@@ -4120,7 +4115,6 @@
 			files = (
 				169A65901B4388640040F74C /* PNPieChartDataItem.m in Sources */,
 				164ED8A81B681816008BBD86 /* reviewVC.m in Sources */,
-				16BB69DD1C0BB5780074783F /* CAPSPageMenu.m in Sources */,
 				169A65961B4389250040F74C /* UICountingLabel.m in Sources */,
 				169A65931B4388640040F74C /* PNScatterChartDataItem.m in Sources */,
 				169A65891B4388640040F74C /* PNCircleChart.m in Sources */,

@@ -23,10 +23,6 @@
     
     [Parse setApplicationId:@"8qRzMOAeLczoJtCzWO6xVSH9h4NdNTsaGZELj9c1" clientKey:@"X0EK1KO7tV7nKfi2SFAAuKH9cy9Io9THTLAxOm8A"];
 
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, 20)];
-    view.backgroundColor = [UIColor colorWithRed:6/255 green:181/255 blue:124/255 alpha:0.1];
-    [self.window.rootViewController.view addSubview:view];
-
     return YES;
 }
 
