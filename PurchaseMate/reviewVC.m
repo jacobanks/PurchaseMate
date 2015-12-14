@@ -24,7 +24,7 @@
     scrollview.scrollEnabled = YES;
     scrollview.userInteractionEnabled = YES;
     [self.view addSubview:scrollview];
-    scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, 900);
+    scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, 800);
     
     self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, self.view.frame.size.width, 120)];
     [self addShadowtoView:self.corpTitleView];
@@ -156,10 +156,24 @@
     
     [scrollview addSubview:self.whyView];
     
+    self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 452, self.view.frame.size.width, 140)];
+    [self addShadowtoView:self.explainView];
     
+    self.explainTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
+    self.explainTitleLabel.text = @"Further Review/Comments";
+    self.explainTitleLabel.textAlignment = NSTextAlignmentCenter;
+    self.explainTitleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+    self.explainTitleLabel.alpha = 0.7;
+    [self.explainView addSubview:self.explainTitleLabel];
+    
+    self.explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.explainTitleLabel.center.y + 15, self.explainView.frame.size.width, 100)];
+    self.explainTextView.editable = YES;
+    [self.explainView addSubview:self.explainTextView];
+    
+    [scrollview addSubview:self.explainView];
     
     self.submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.submitButton.frame = CGRectMake(7, 480, 360, 60);
+    self.submitButton.frame = CGRectMake(7, 610, 360, 60);
     self.submitButton.backgroundColor = [UIColor whiteColor];
     [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
     [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1] forState:UIControlStateNormal];
@@ -251,7 +265,8 @@
                                          @"product" : productName,
                                          @"buyQuestion" : self.buyQuestionString,
                                          @"why" : self.whyArray,
-                                         @"rating" : self.ratingString
+                                         @"rating" : self.ratingString,
+                                         @"review" : self.explainTextView.text
                                          };
         
         NSError *error = nil;

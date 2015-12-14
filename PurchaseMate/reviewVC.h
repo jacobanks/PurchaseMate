@@ -20,12 +20,15 @@
 @property (strong, nonatomic) UIView *rateView;
 @property (strong, nonatomic) UIView *buyView;
 @property (strong, nonatomic) UIView *whyView;
+@property (strong, nonatomic) UIView *explainView;
 
 @property (strong, nonatomic) UILabel *corpLabel;
 @property (strong, nonatomic) UILabel *productLabel;
 @property (strong, nonatomic) UILabel *rateLabel;
 @property (strong, nonatomic) UILabel *buyLabel;
 @property (strong, nonatomic) UILabel *whyLabel;
+@property (strong, nonatomic) UILabel *explainTitleLabel;
+
 
 @property (strong, nonatomic) UIButton *yesButton;
 @property (strong, nonatomic) UIButton *noButton;
@@ -34,6 +37,8 @@
 @property (strong, nonatomic) UIButton *politicsButton;
 @property (strong, nonatomic) UIButton *originButton;
 @property (strong, nonatomic) UIButton *submitButton;
+
+@property (strong, nonatomic) UITextView *explainTextView;
 
 @property (strong, nonatomic) NSString *buyQuestionString;
 @property (strong, nonatomic) NSMutableArray *whyArray;
