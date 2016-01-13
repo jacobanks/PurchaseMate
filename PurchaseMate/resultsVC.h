@@ -10,6 +10,7 @@
 #import "PNChart.h"
 #import "reviewVC.h"
 #import "reportTVC.h"
+#import <QuartzCore/QuartzCore.h>
 
 @import AMScrollingNavbar;
 

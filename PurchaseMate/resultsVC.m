@@ -53,8 +53,10 @@
         self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedString3];
         self.ethicsLabel.text = ethicsString;
         
+        // check if there is no data for ethics rating
         if (![ethicsString isEqualToString:@"(null)"]) {
             
+            // if there is data setup the label
             if (ethicsString.intValue <= 50) {
                 self.ethicsLabel.textColor = [UIColor redColor];
             } else if (ethicsString.intValue > 50 && ethicsString.intValue <= 70) {
@@ -81,6 +83,7 @@
             demoRandomINT = repubRandomINT - 30;
         }
         
+        // initial setup for graphs
         PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
         republicanChart.backgroundColor = [UIColor clearColor];
         [republicanChart setStrokeColor:PNRed];
@@ -93,6 +96,14 @@
         [democratChart strokeChart];
         [self.scrollView addSubview:democratChart];
         
+        // set labels to be set at the center of the graphs
+        self.republicanLabel.frame = CGRectMake(republicanChart.frame.origin.x, republicanChart.frame.origin.y, republicanChart.frame.size.width, republicanChart.frame.size.height);
+        self.repubTitleLabel.frame = CGRectMake(republicanChart.frame.origin.x, self.repubTitleLabel.frame.origin.y, republicanChart.frame.size.width, self.repubTitleLabel.frame.size.height);
+
+        self.democratLabel.frame = CGRectMake(democratChart.frame.origin.x, democratChart.frame.origin.y, democratChart.frame.size.width, democratChart.frame.size.height);
+        self.demoTitleLabel.frame = CGRectMake(democratChart.frame.origin.x, self.demoTitleLabel.frame.origin.y, democratChart.frame.size.width, self.demoTitleLabel.frame.size.height);
+
+        // set scrollview content size
         self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
         
 //        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
