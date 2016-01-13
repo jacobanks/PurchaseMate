@@ -30,8 +30,11 @@
                                     target:nil
                                     action:nil];
     
-    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    // set scrollview content size
+    self.scrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
     
+    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     if (app.valuesArray.count != 0){
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -71,10 +74,18 @@
             self.ethicsLabel.text = @"No Data";
         }
         
-        self.titleLabel.frame = CGRectMake(self.view.frame.origin.x, self.titleLabel.frame.origin.y, self.view.frame.size.width, self.titleLabel.frame.size.height);
+        self.titleLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.titleLabel.frame.origin.y, self.scrollView.frame.size.width, self.titleLabel.frame.size.height);
+        
+        self.lobbyTitleLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.lobbyTitleLabel.frame.origin.y, self.scrollView.frame.size.width, self.lobbyTitleLabel.frame.size.height);
+        self.lobbyingLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.lobbyingLabel.frame.origin.y, self.scrollView.frame.size.width, self.lobbyingLabel.frame.size.height);
+
+        self.indiTitleLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.indiTitleLabel.frame.origin.y, self.scrollView.frame.size.width, self.indiTitleLabel.frame.size.height);
+        self.indiLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.indiLabel.frame.origin.y, self.scrollView.frame.size.width, self.indiLabel.frame.size.height);
+        
+        self.ethicsTitleLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.ethicsTitleLabel.frame.origin.y, self.scrollView.frame.size.width, self.ethicsTitleLabel.frame.size.height);
+        self.ethicsLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.ethicsLabel.frame.origin.y, self.scrollView.frame.size.width, self.ethicsLabel.frame.size.height);
         
         int repubRandomINT = arc4random() %51 + 50;
-        
         int demoRandomINT = arc4random() %51 + 50;
         
         if (array1String.intValue < array2String.intValue) {
@@ -102,9 +113,6 @@
 
         self.democratLabel.frame = CGRectMake(democratChart.frame.origin.x, democratChart.frame.origin.y, democratChart.frame.size.width, democratChart.frame.size.height);
         self.demoTitleLabel.frame = CGRectMake(democratChart.frame.origin.x, self.demoTitleLabel.frame.origin.y, democratChart.frame.size.width, self.demoTitleLabel.frame.size.height);
-
-        // set scrollview content size
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
         
 //        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
 //        if (stars != 0) {
