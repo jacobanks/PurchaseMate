@@ -14,7 +14,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel, *lobbyingLabel, *republicanLabel, *democratLabel, *indiLabel, *repubTitleLabel,
 *demoTitleLabel, *lobbyTitleLabel, *indiTitleLabel, *ethicsLabel, *ethicsTitleLabel;
 @property (nonatomic, strong) UILabel *noDataLabel, *starsLabel;
-@property (nonatomic, strong) IBOutlet UIButton *reviewButton;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *starsView;
 
@@ -70,6 +69,8 @@
             self.ethicsLabel.text = @"No Data";
         }
         
+        self.titleLabel.frame = CGRectMake(self.view.frame.origin.x, self.titleLabel.frame.origin.y, self.view.frame.size.width, self.titleLabel.frame.size.height);
+        
         int repubRandomINT = arc4random() %51 + 50;
         
         int demoRandomINT = arc4random() %51 + 50;
@@ -91,12 +92,6 @@
         [democratChart setStrokeColor:PNBlue];
         [democratChart strokeChart];
         [self.scrollView addSubview:democratChart];
-        
-        self.reviewButton.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.reviewButton.layer.shadowOpacity = 0.5;
-        self.reviewButton.layer.shadowRadius = 2;
-        self.reviewButton.layer.shadowOffset = CGSizeMake(0,0);
-        self.reviewButton.layer.cornerRadius = 15;
         
         self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
         
@@ -136,7 +131,6 @@
         self.noDataLabel.hidden = NO;
         self.ethicsLabel.hidden = YES;
         self.ethicsTitleLabel.hidden = YES;
-        self.reviewButton.hidden = YES;
         
         self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, SCREEN_WIDTH, 100)];
         self.noDataLabel.text = @"No Data";

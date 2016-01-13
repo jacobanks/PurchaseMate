@@ -1,6 +1,5 @@
 PODS:
   - AMScrollingNavbar (2.0.9)
-  - CompactConstraint (0.1.0)
   - mongo-c-driver (0.8.1)
   - ObjCMongoDB (0.12.0):
     - mongo-c-driver (~> 0.8.1)
@@ -20,14 +19,12 @@ PODS:
 
 DEPENDENCIES:
   - AMScrollingNavbar (~> 2.0.1)
-  - CompactConstraint
   - mongo-c-driver
   - ObjCMongoDB (~> 0.12.0)
   - SBJson (~> 3.0.0)
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: 6ee57388f84b8f33f31a7944abf51b9afa16bafd
-  CompactConstraint: 562187c821afcc510536a3df799a16c25bea3d9b
   mongo-c-driver: 56558b8009f8d27549b23b62ce64fe33b9818703
   ObjCMongoDB: 465dffcaf56a852381ee34bef0f98828398c8cfc
   SBJson: 69a98861fe3f4e9a02393700b2600284925fa73c

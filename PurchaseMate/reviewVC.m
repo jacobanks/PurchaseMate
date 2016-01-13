@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     self.title = @"Review";
     
-    UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 667)];
+    UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height)];
     scrollview.showsVerticalScrollIndicator = YES;
     scrollview.scrollEnabled = YES;
     scrollview.userInteractionEnabled = YES;
@@ -173,7 +173,7 @@
     [scrollview addSubview:self.explainView];
     
     self.submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.submitButton.frame = CGRectMake(7, 610, 360, 60);
+    self.submitButton.frame = CGRectMake(10, 610, self.view.frame.size.width - 20, 60);
     self.submitButton.backgroundColor = [UIColor whiteColor];
     [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
     [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1] forState:UIControlStateNormal];
@@ -284,8 +284,8 @@
         NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
         [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay!"
-                                                        message:[NSString stringWithFormat:@"You now have %ld stars!", (long)stars]
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You!"
+                                                        message:@"Thank you for reviewing this corporation!"
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
