@@ -24,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    
     self.tabBarController.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@""
                                      style:UIBarButtonItemStylePlain
@@ -160,12 +166,13 @@
     }
     
     self.title = organizationName;
-    self.tabBarController.title = organizationName;
-    
+
     UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 45)];
     [report setImage:[UIImage imageNamed:@"warningTriangle"] forState:UIControlStateNormal];
     [report addTarget:self action:@selector(openReportView) forControlEvents:UIControlEventTouchUpInside];
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -176,8 +183,10 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    [(ScrollingNavigationController *)self.navigationController followScrollView:self.scrollView delay:50.0f];
-    [(ScrollingNavigationController *)self.navigationController scrollingNavbarDelegate];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -187,6 +196,10 @@
 
 - (void)openReportView {
     [self performSegueWithIdentifier:@"report" sender:nil];
+}
+
+- (void)dismissView {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

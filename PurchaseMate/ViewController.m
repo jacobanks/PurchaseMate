@@ -33,7 +33,7 @@
     UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
     [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
     [testScan addTarget:self action:@selector(scanProduct) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
     
     _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -75,25 +75,14 @@
     
     [self.view bringSubviewToFront:_highlightView];
     [self.view bringSubviewToFront:_label];
-    
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.translucent = NO;    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.title = @"PurchaseMate";
     _label.text = @"Scan a product to begin";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.translucent = NO;
 
     [_session startRunning];
 }
@@ -209,7 +198,11 @@
     app.valuesArray = [[NSMutableArray alloc] initWithArray:[summaryDict allValues]];
     app.keysArray = [[NSMutableArray alloc] initWithArray:[summaryDict allKeys]];
     
-    [self performSegueWithIdentifier:@"Results" sender:self];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:navController animated:YES completion:nil];
+
 
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

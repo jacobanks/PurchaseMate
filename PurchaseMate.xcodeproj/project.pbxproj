@@ -51,6 +51,8 @@
 		16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AEC56C1B83F7F700E538C0 /* RateView.m */; };
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
+		16FEBEDF1C4FFD0E006B8212 /* randomTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */; };
+		16FEBEE31C4FFD3B006B8212 /* reviewedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEE21C4FFD3B006B8212 /* reviewedTVC.m */; };
 		35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B7B836E94DBCE8CDDD41B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -1725,6 +1727,10 @@
 		16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		16E45E991B41EBA100932B9E /* resultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
 		16E45E9A1B41EBA100932B9E /* resultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsVC.m; sourceTree = "<group>"; };
+		16FEBEDD1C4FFD0E006B8212 /* randomTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = randomTVC.h; sourceTree = "<group>"; };
+		16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = randomTVC.m; sourceTree = "<group>"; };
+		16FEBEE11C4FFD3B006B8212 /* reviewedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reviewedTVC.h; sourceTree = "<group>"; };
+		16FEBEE21C4FFD3B006B8212 /* reviewedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reviewedTVC.m; sourceTree = "<group>"; };
 		2C7B7B836E94DBCE8CDDD41B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F741227351BC092BB050F73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8DB8BD507AA0C802AC937449 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -3934,6 +3940,8 @@
 			isa = PBXGroup;
 			children = (
 				16F4AFE81BC703490007C322 /* Scan View */,
+				16FEBEE01C4FFD1A006B8212 /* Random Products */,
+				16FEBEE41C4FFD46006B8212 /* Reviewed */,
 				16F4AFE91BC703500007C322 /* Results */,
 				16F4AFEA1BC703600007C322 /* Review */,
 				16F4AFEB1BC703650007C322 /* Report */,
@@ -3975,6 +3983,24 @@
 				165582FF1B3DFFD200819716 /* reportTVC.m */,
 			);
 			name = Report;
+			sourceTree = "<group>";
+		};
+		16FEBEE01C4FFD1A006B8212 /* Random Products */ = {
+			isa = PBXGroup;
+			children = (
+				16FEBEDD1C4FFD0E006B8212 /* randomTVC.h */,
+				16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */,
+			);
+			name = "Random Products";
+			sourceTree = "<group>";
+		};
+		16FEBEE41C4FFD46006B8212 /* Reviewed */ = {
+			isa = PBXGroup;
+			children = (
+				16FEBEE11C4FFD3B006B8212 /* reviewedTVC.h */,
+				16FEBEE21C4FFD3B006B8212 /* reviewedTVC.m */,
+			);
+			name = Reviewed;
 			sourceTree = "<group>";
 		};
 		DE3A871597C2CDA7B86A963A /* Pods */ = {
@@ -4125,6 +4151,7 @@
 				169A658F1B4388640040F74C /* PNPieChart.m in Sources */,
 				169A658D1B4388640040F74C /* PNLineChartData.m in Sources */,
 				161C43611B2CA80900F3F8F4 /* AppDelegate.m in Sources */,
+				16FEBEDF1C4FFD0E006B8212 /* randomTVC.m in Sources */,
 				169A658B1B4388640040F74C /* PNGenericChart.m in Sources */,
 				16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */,
 				169A65911B4388640040F74C /* PNScatterChart.m in Sources */,
@@ -4132,6 +4159,7 @@
 				16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */,
 				169A65881B4388640040F74C /* PNChartLabel.m in Sources */,
 				169A65861B4388640040F74C /* PNBar.m in Sources */,
+				16FEBEE31C4FFD3B006B8212 /* reviewedTVC.m in Sources */,
 				161C435E1B2CA80900F3F8F4 /* main.m in Sources */,
 				16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */,
 				169A65871B4388640040F74C /* PNBarChart.m in Sources */,
