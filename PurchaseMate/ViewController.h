@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "ObjCMongoDB.h"
 #import "resultsVC.h"
+#import "CorpInfo.h"
 
 extern NSString *organizationName;
 extern NSString *barcodeID;
@@ -19,7 +20,6 @@ extern NSString *ethicsString;
 extern NSString *productName;
 
 @interface ViewController : UIViewController
-
 
 @end
 
