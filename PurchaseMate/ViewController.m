@@ -89,10 +89,12 @@
 
 - (void)scanProduct {
     
-    NSDictionary *responseDictionary = [[[CorpInfo alloc] init] getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
-    NSDictionary *corpDictionary = [[[CorpInfo alloc] init] getDataFromMongoDBWithDictionary:responseDictionary];
+//    NSDictionary *responseDictionary = [[[CorpInfo alloc] init] getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
+//    NSDictionary *corpDictionary = [[[CorpInfo alloc] init] getDataFromMongoDBWithDictionary:responseDictionary];
 
-    barcodeID = @"04976400";
+//    barcodeID = @"04976400";
+    NSDictionary *dictionary = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:@"04976400"];
+    NSLog(@"%@", dictionary);
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -117,7 +119,7 @@
         if (detectionString != nil)
         {
             _label.text = @"Product Found!";
-            [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", detectionString]];
+//            [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", detectionString]];
             barcodeID = detectionString;
             break;
         }

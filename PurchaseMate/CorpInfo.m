@@ -10,6 +10,23 @@
 
 @implementation CorpInfo
 
+- (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
+    NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
+    NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
+
+    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
+    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
+
+    
+    NSMutableDictionary *corpInfo = [NSMutableDictionary
+                                     dictionaryWithDictionary:@{
+                                        @"corpName" : corpName,
+                                        @"politicalInfo" : politicalDictionary
+                                    }];
+    
+    return corpInfo;
+}
+
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString {
     
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
@@ -45,7 +62,7 @@
     return nil;
 }
 
-- (NSDictionary *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary {
+- (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary {
     
     NSError *error = nil;
     if (error) {
@@ -70,8 +87,8 @@
 //        [self getEthicsRatingWithName:[NSString stringWithFormat:@"%@", corpDictionary]];
 //        
 //        [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpDictionary]];
-        
-        return corpDictionary;
+
+        return [NSString stringWithFormat:@"%@", corpDictionary];
     }
     
     return nil;
@@ -95,12 +112,12 @@
     
     organizationName = orgName;
     
-    [self getSummaryWithOrgName:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
+//    [self getSummaryWithOrgName:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
     
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return [NSString stringWithFormat:@"%@", orgID];
 }
 
-- (NSString *)getSummaryWithOrgName:(NSString *)urlString {
+- (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString {
     
     NSURL *URL = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
@@ -118,7 +135,7 @@
     app.valuesArray = [[NSMutableArray alloc] initWithArray:[summaryDict allValues]];
     app.keysArray = [[NSMutableArray alloc] initWithArray:[summaryDict allKeys]];
     
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return summaryDict;
 }
 
 - (NSString *)getEthicsRatingWithName:(NSString *)name {
