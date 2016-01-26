@@ -11,9 +11,12 @@
 #import "reviewVC.h"
 #import "reportTVC.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CorpInfo.h"
 
 @import AMScrollingNavbar;
 
-@interface resultsVC : UIViewController <ScrollingNavigationControllerDelegate>
+@interface resultsVC : UIViewController <ScrollingNavigationControllerDelegate> {
+    NSDictionary *corpInfo;
+}
 
 @end

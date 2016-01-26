@@ -29,14 +29,17 @@
     NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
     NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
 
-    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
-    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
+    NSDictionary *orgDict = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
+    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgDict[@"orgid"]]];
 
+    NSString *ethicsString = [self getEthicsRatingWithName:corpName];
     
     NSMutableDictionary *corpInfo = [NSMutableDictionary
                                      dictionaryWithDictionary:@{
                                         @"corpName" : corpName,
-                                        @"politicalInfo" : politicalDictionary
+                                        @"orgDict" : orgDict,
+                                        @"politicalInfo" : politicalDictionary,
+                                        @"ethics" : ethicsString
                                     }];
     
     return corpInfo;
@@ -61,14 +64,10 @@
     if (![responseDictionary count] == 0) {
         if (responseDictionary[@"Brand"]) {
             //Has Brand Attribute
-            productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Brand"]];
-            
             return responseDictionary[@"Brand"];
             
         } else if (responseDictionary[@"Manufacturer"]) {
-            //Doesn't have Brand Attribute so check for Manufacturer
-            productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Manufacturer"]];
-            
+            //Doesn't have Brand Attribute so check for Manufacturer            
             return responseDictionary[@"Manufacturer"];
         }
     }
@@ -108,7 +107,7 @@
     return nil;
 }
 
-- (NSString *)getOrgIDWithURL:(NSString *)urlstring {
+- (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring {
     
     NSURL *URL = [[NSURL alloc] initWithString:[urlstring stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
@@ -119,16 +118,9 @@
     id response = [dictionary objectForKey:@"response"];
     NSDictionary *responseDictionary = response;
     id organization = [responseDictionary objectForKey:@"organization"];
-    NSDictionary *orgIDDict = organization;
+    NSDictionary *orgDict = organization;
     
-    id orgID = [orgIDDict objectForKey:@"orgid"];
-    id orgName = [orgIDDict objectForKey:@"orgname"];
-    
-    organizationName = orgName;
-    
-//    [self getSummaryWithOrgName:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
-    
-    return [NSString stringWithFormat:@"%@", orgID];
+    return orgDict;
 }
 
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString {
@@ -139,15 +131,10 @@
     
     NSDictionary *dictionary = [XMLReader dictionaryForXMLData:data error:&error];
     
-    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
     id response = [dictionary objectForKey:@"response"];
     NSDictionary *responseDictionary = response;
     id organization = [responseDictionary objectForKey:@"organization"];
     NSDictionary *summaryDict = organization;
-    
-    app.valuesArray = [[NSMutableArray alloc] initWithArray:[summaryDict allValues]];
-    app.keysArray = [[NSMutableArray alloc] initWithArray:[summaryDict allKeys]];
     
     return summaryDict;
 }

@@ -20,7 +20,7 @@
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString;
 - (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary;
 
-- (NSString *)getOrgIDWithURL:(NSString *)urlstring;
+- (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring;
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString;
 
 - (NSString *)getEthicsRatingWithName:(NSString *)name;

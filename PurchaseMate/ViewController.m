@@ -88,15 +88,13 @@
 }
 
 - (void)scanProduct {
-    
-//    NSDictionary *responseDictionary = [[[CorpInfo alloc] init] getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=04976400"]];
-//    NSDictionary *corpDictionary = [[[CorpInfo alloc] init] getDataFromMongoDBWithDictionary:responseDictionary];
 
-//    barcodeID = @"04976400";
+    barcodeID = @"04976400";
     
-    NSString *string = [[[CorpInfo alloc] init] checkForCorpWithBarcode:@"04976400"];
+    NSString *corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:barcodeID];
 
-    if (string != nil) {
+    if (corpName != nil) {
+        
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -128,8 +126,19 @@
         
         if (detectionString != nil) {
             _label.text = @"Product Found!";
-//            [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", detectionString]];
-            barcodeID = detectionString;
+            NSString *corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:detectionString];
+            
+            if (corpName != nil) {
+                barcodeID = detectionString;
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                [self presentViewController:navController animated:YES completion:nil];
+                
+            } else {
+                [self showAlert];
+            }
+            
             break;
         } else {
             _label.text = @"(none)";

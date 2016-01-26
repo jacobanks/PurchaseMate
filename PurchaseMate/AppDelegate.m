@@ -13,13 +13,9 @@
 @end
 
 @implementation AppDelegate
-@synthesize valuesArray;
-@synthesize keysArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    valuesArray = [[NSMutableArray alloc] init];
-    keysArray = [[NSMutableArray alloc] init];
     
     [Parse setApplicationId:@"8qRzMOAeLczoJtCzWO6xVSH9h4NdNTsaGZELj9c1" clientKey:@"X0EK1KO7tV7nKfi2SFAAuKH9cy9Io9THTLAxOm8A"];
     
