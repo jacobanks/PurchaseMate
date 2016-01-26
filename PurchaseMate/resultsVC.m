@@ -70,7 +70,7 @@
         self.ethicsLabel.text = corpInfo[@"ethics"];
         
         // check if there is no data for ethics rating
-        if (ethicsString != nil) {
+        if (![ethicsString isEqual:@"(null)"]) {
             
             // if there is data setup the label
             if (ethicsString.intValue <= 50) {

@@ -29,20 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tabBarController.title = @"Scan";
+    
+    _highlightView = [[UIView alloc] init];
+    _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
+    _highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
+    _highlightView.layer.borderWidth = 3;
     
     UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
     [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
     [testScan addTarget:self action:@selector(scanProduct) forControlEvents:UIControlEventTouchUpInside];
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
     
-    _highlightView = [[UIView alloc] initWithFrame:CGRectMake(62.5, self.view.center.y - 90, 250, 125)];
-    _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
-    _highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
-    _highlightView.layer.borderWidth = 3;
-    [self.view addSubview:_highlightView];
-    
     _label = [[UILabel alloc] init];
-    _label.frame = CGRectMake(0, self.view.bounds.size.height - 30, self.view.bounds.size.width, 30);
+    _label.frame = CGRectMake(0, self.view.bounds.size.height - 80, self.view.bounds.size.width, 30);
     _label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     _label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
     _label.textColor = [UIColor whiteColor];
@@ -83,8 +83,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-
     [_session startRunning];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [_highlightView removeFromSuperview];
+    [_session stopRunning];
 }
 
 - (void)scanProduct {
@@ -107,6 +111,7 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
+    CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barCodeObject;
     NSString *detectionString = nil;
     NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
@@ -118,6 +123,7 @@
             if ([metadata.type isEqualToString:type])
             {
                 barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+                highlightViewRect = barCodeObject.bounds;
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 break;
             }
@@ -151,6 +157,9 @@
         }
     }
     
+    [self.view addSubview:_highlightView];
+    _highlightView.frame = highlightViewRect;
+    
     [_session stopRunning];
 }
 
@@ -170,7 +179,4 @@
 
 @end
 
-NSString *organizationName;
 NSString *barcodeID;
-NSString *ethicsString;
-NSString *productName;
