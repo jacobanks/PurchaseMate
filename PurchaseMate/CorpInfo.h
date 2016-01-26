@@ -14,11 +14,15 @@
 
 @interface CorpInfo : NSObject
 
+- (NSString *)checkForCorpWithBarcode:(NSString* )ID;
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID;
+
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString;
 - (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary;
+
 - (NSString *)getOrgIDWithURL:(NSString *)urlstring;
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString;
+
 - (NSString *)getEthicsRatingWithName:(NSString *)name;
 
 @end

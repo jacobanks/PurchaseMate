@@ -10,6 +10,21 @@
 
 @implementation CorpInfo
 
+- (NSString *)checkForCorpWithBarcode:(NSString* )ID {
+    
+    NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
+    if (productName == nil) {
+        return nil;
+    } else {
+        NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
+        if (corpName != nil) {
+            return corpName;
+        }
+    }
+    
+    return nil;
+}
+
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
     NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
     NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
@@ -42,21 +57,20 @@
     //Sort JSON from OutPan
     id attributes = [jsonArray objectForKey:@"attributes"];
     NSDictionary *responseDictionary = attributes;
-    
-    if (responseDictionary[@"Brand"]) {
-        //Has Brand Attribute
-        productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Brand"]];
-        
-        return responseDictionary[@"Brand"];
-        
-    } else if (responseDictionary[@"Manufacturer"]) {
-        //Doesn't have Brand Attribute so check for Manufacturer
-        productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Manufacturer"]];
-        
-        return responseDictionary[@"Manufacturer"];
-        
-    } else {
-        // TODO : show alert
+
+    if (![responseDictionary count] == 0) {
+        if (responseDictionary[@"Brand"]) {
+            //Has Brand Attribute
+            productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Brand"]];
+            
+            return responseDictionary[@"Brand"];
+            
+        } else if (responseDictionary[@"Manufacturer"]) {
+            //Doesn't have Brand Attribute so check for Manufacturer
+            productName = [NSString stringWithFormat:@"%@", responseDictionary[@"Manufacturer"]];
+            
+            return responseDictionary[@"Manufacturer"];
+        }
     }
     
     return nil;

@@ -93,8 +93,18 @@
 //    NSDictionary *corpDictionary = [[[CorpInfo alloc] init] getDataFromMongoDBWithDictionary:responseDictionary];
 
 //    barcodeID = @"04976400";
-    NSDictionary *dictionary = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:@"04976400"];
-    NSLog(@"%@", dictionary);
+    
+    NSString *string = [[[CorpInfo alloc] init] checkForCorpWithBarcode:@"04976400"];
+
+    if (string != nil) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:navController animated:YES completion:nil];
+        
+    } else {
+        [self showAlert];
+    }
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -116,17 +126,21 @@
         }
         
         
-        if (detectionString != nil)
-        {
+        if (detectionString != nil) {
             _label.text = @"Product Found!";
 //            [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", detectionString]];
             barcodeID = detectionString;
             break;
-        }
-        else
+        } else {
             _label.text = @"(none)";
-            NSLog(@"Didn't Scan Properly!");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                            message:@"There was a problem scanning please try again."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
         }
+    }
     
     [_session stopRunning];
 }
