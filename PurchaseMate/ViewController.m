@@ -29,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tabBarController.title = @"Scan";
     
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -79,6 +78,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     _label.text = @"Scan a product to begin";
+    self.tabBarController.title = @"Scan";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
