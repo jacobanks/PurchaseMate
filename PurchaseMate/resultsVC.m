@@ -30,11 +30,11 @@
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
-    self.tabBarController.navigationItem.backBarButtonItem =
+/*    self.tabBarController.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@""
                                      style:UIBarButtonItemStylePlain
                                     target:nil
-                                    action:nil];
+                                    action:nil]; */
     
     // set scrollview content size
     self.scrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height);
@@ -42,7 +42,6 @@
     
     // get corporation info
     corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcodeID];
-    NSLog(@"%@", corpInfo);
     
     if ([corpInfo[@"politicalInfo"] count] != 0){
         
@@ -175,15 +174,13 @@
     UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 45)];
     [report setImage:[UIImage imageNamed:@"warningTriangle"] forState:UIControlStateNormal];
     [report addTarget:self action:@selector(openReportView) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
+    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-//    self.view.backgroundColor = [UIColor whiteColor];
-    //    self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    self.tabBarController.title = @"Results";
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

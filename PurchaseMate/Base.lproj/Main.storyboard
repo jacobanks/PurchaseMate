@@ -127,7 +127,7 @@
         <!--Results-->
         <scene sceneID="EQm-zL-MDl">
             <objects>
-                <viewController storyboardIdentifier="results" title="Results" id="eR0-js-a8Z" customClass="resultsVC" sceneMemberID="viewController">
+                <viewController title="Results" id="eR0-js-a8Z" customClass="resultsVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNK-kw-MaJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,6 +275,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JV6-42-AzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="873.5" y="238.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BaQ-2R-KyQ">
+            <objects>
+                <tabBarController storyboardIdentifier="results" id="uKc-Iw-BsV" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="TNg-kO-GPX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eR0-js-a8Z" kind="relationship" relationship="viewControllers" id="Yi6-zm-lnL"/>
+                        <segue destination="Enw-2V-boP" kind="relationship" relationship="viewControllers" id="8Jm-FT-VLQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czc-LA-uer" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351.5" y="985.5"/>
         </scene>
         <!--ReportTVC-->
         <scene sceneID="o3c-Yn-iJ0">

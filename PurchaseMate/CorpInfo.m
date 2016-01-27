@@ -36,11 +36,12 @@
     
     NSMutableDictionary *corpInfo = [NSMutableDictionary
                                      dictionaryWithDictionary:@{
-                                        @"corpName" : corpName,
-                                        @"orgDict" : orgDict,
-                                        @"politicalInfo" : politicalDictionary,
-                                        @"ethics" : ethicsString
-                                    }];
+                                                                @"productName" : productName,
+                                                                @"corpName" : corpName,
+                                                                @"orgDict" : orgDict,
+                                                                @"politicalInfo" : politicalDictionary,
+                                                                @"ethics" : ethicsString
+                                                                }];
     
     return corpInfo;
 }

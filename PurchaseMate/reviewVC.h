@@ -10,7 +10,9 @@
 #import "ViewController.h"
 #import "RateView.h"
 
-@interface reviewVC : UIViewController <RateViewDelegate>
+@interface reviewVC : UIViewController <RateViewDelegate> {
+    NSDictionary *corpInfo;
+}
 
 @property (strong, nonatomic) RateView *ratingView;
 @property (strong, nonatomic) NSString *ratingString;

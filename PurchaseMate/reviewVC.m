@@ -19,6 +19,8 @@
     // Do any additional setup after loading the view.
     self.title = @"Review";
     
+    corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcodeID];
+
     UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height)];
     scrollview.showsVerticalScrollIndicator = YES;
     scrollview.scrollEnabled = YES;
@@ -30,13 +32,13 @@
     [self addShadowtoView:self.corpTitleView];
     
     self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 30)];
-//    self.corpLabel.text = organizationName;
+    self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
     self.corpLabel.textAlignment = NSTextAlignmentCenter;
     self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
     [self.corpTitleView addSubview:self.corpLabel];
     
     self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 20)];
-//    self.productLabel.text = productName;
+    self.productLabel.text = corpInfo[@"productName"];
     self.productLabel.textAlignment = NSTextAlignmentCenter;
     self.productLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
     self.productLabel.alpha = 0.7 ;
@@ -172,22 +174,12 @@
     
     [scrollview addSubview:self.explainView];
     
-    self.submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.submitButton.frame = CGRectMake(10, 610, self.view.frame.size.width - 20, 60);
-    self.submitButton.backgroundColor = [UIColor whiteColor];
-    [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
-    [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1] forState:UIControlStateNormal];
-    [self.submitButton setTitleColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:0.3] forState:UIControlStateHighlighted];
-//    [self.submitButton addTarget:self action:@selector(submitClicked:) forControlEvents:UIControlEventTouchUpInside];
-    self.submitButton.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.submitButton.layer.shadowOpacity = 0.5;
-    self.submitButton.layer.shadowRadius = 2;
-    self.submitButton.layer.shadowOffset = CGSizeMake(0,0);
-    self.submitButton.layer.cornerRadius = 15;
-    [scrollview addSubview:self.submitButton];
-    
     [self.view addSubview:scrollview];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.tabBarController.title = @"Review";
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:nil];
 }
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(int)rating {
@@ -249,49 +241,48 @@
     }
 }
 
-//- (void)submitClicked:(id)sender {
-//
-//    
-//    if (self.buyQuestionString == nil || self.ratingString == nil || [self.whyArray count] == 0) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
-//                                              message:@"You need to fill out all fields before continuing!"
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-//        [alert show];
-//        
-//    } else {
-//            NSDictionary *userReview = @{
-//                                         @"corporation" : organizationName,
-//                                         @"product" : productName,
-//                                         @"buyQuestion" : self.buyQuestionString,
-//                                         @"why" : self.whyArray,
-//                                         @"rating" : self.ratingString,
-//                                         @"review" : self.explainTextView.text
-//                                         };
-//        
-//        NSError *error = nil;
-//        if (error) {
-//            NSLog(@"%@", error);
-//        }
-//        
-//        //Connect to MongoDB
-//        MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
-//        MongoDBCollection *collection = [dbConn collectionWithName:@"reviewsDB.review"];
-//        [collection insertDictionary:userReview writeConcern:nil error:&error];
-//        
-//        self.tabBarController.selectedIndex = 0;
-//        
-//        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
-//        [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
-//        
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You!"
-//                                                        message:@"Thank you for reviewing this corporation!"
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"Ok"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//    }
-//}
+- (void)submitClicked:(id)sender {
+    
+    if (self.buyQuestionString == nil || self.ratingString == nil || [self.whyArray count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                              message:@"You need to fill out all fields before continuing!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        
+    } else {
+            NSDictionary *userReview = @{
+                                         @"corporation" : corpInfo[@"orgDict"][@"orgname"],
+                                         @"product" : corpInfo[@"productName"],
+                                         @"buyQuestion" : self.buyQuestionString,
+                                         @"why" : self.whyArray,
+                                         @"rating" : self.ratingString,
+                                         @"review" : self.explainTextView.text
+                                         };
+        
+        NSError *error = nil;
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        
+        //Connect to MongoDB
+        MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+        MongoDBCollection *collection = [dbConn collectionWithName:@"reviewsDB.review"];
+        [collection insertDictionary:userReview writeConcern:nil error:&error];
+        
+        self.tabBarController.selectedIndex = 0;
+        
+        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
+        [[NSUserDefaults standardUserDefaults] setInteger:stars += 1 forKey:@"stars"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You!"
+                                                        message:@"Thank you for reviewing this corporation!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
 
 
 @end
