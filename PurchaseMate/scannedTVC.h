@@ -1,13 +1,13 @@
 //
-//  reviewedTVC.h
+//  scannedTVC.h
 //  PurchaseMate
 //
-//  Created by Jacob Banks on 1/20/16.
+//  Created by Jacob Banks on 2/3/16.
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface reviewedTVC : UITableViewController
+@interface scannedTVC : UITableViewController
 
 @end

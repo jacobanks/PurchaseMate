@@ -1,30 +1,27 @@
 //
-//  reviewedTVC.m
+//  scannedTVC.m
 //  PurchaseMate
 //
-//  Created by Jacob Banks on 1/20/16.
+//  Created by Jacob Banks on 2/3/16.
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "reviewedTVC.h"
+#import "scannedTVC.h"
 
-@interface reviewedTVC ()
+@interface scannedTVC ()
 
 @end
 
-@implementation reviewedTVC
+@implementation scannedTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    self.tabBarController.title = @"Reviewed Products";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -53,7 +53,7 @@
         NSString *lobbyingString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"lobbying"]];
         NSString *repubString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"repubs"]];
         NSString *demString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"dems"]];
-        NSString *indiString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"indivs"]];
+        NSString *indiString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"outside"]];
         NSString *ethicsString = [NSString stringWithFormat:@"%@", corpInfo[@"ethics"]];
 
         NSString *formattedLobbyingString = [formatter stringFromNumber:[NSNumber numberWithInteger:lobbyingString.integerValue]];
