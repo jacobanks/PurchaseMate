@@ -44,7 +44,7 @@
     corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcodeID];
     
     if ([corpInfo[@"politicalInfo"] count] != 0){
-        
+
         self.title = corpInfo[@"orgDict"][@"orgname"];
 
         NSNumberFormatter *formatter = [NSNumberFormatter new];
