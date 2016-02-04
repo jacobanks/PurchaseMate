@@ -35,11 +35,6 @@
     _highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
     _highlightView.layer.borderWidth = 3;
     
-    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
-    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
-    [testScan addTarget:self action:@selector(scanProduct) forControlEvents:UIControlEventTouchUpInside];
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
-    
     _label = [[UILabel alloc] init];
     _label.frame = CGRectMake(0, self.view.bounds.size.height - 80, self.view.bounds.size.width, 30);
     _label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
@@ -79,6 +74,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     _label.text = @"Scan a product to begin";
     self.tabBarController.title = @"Scan";
+    
+    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
+    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
+    [testScan addTarget:self action:@selector(scanProduct) forControlEvents:UIControlEventTouchUpInside];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

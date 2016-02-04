@@ -34,6 +34,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.title = @"Random";
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {

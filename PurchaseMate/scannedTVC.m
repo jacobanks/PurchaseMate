@@ -26,6 +26,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.title = @"Scanned Products";
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {
