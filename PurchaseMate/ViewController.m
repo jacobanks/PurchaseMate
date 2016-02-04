@@ -96,7 +96,8 @@
     barcodeID = @"04976400";
     __block NSString *corpName;
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
         corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:barcodeID];
@@ -140,18 +141,29 @@
         
         if (detectionString != nil) {
             _label.text = @"Product Found!";
-            NSString *corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:detectionString];
+            __block NSString *corpName;
             
-            if (corpName != nil) {
-                barcodeID = detectionString;
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-                [self presentViewController:navController animated:YES completion:nil];
-                
-            } else {
-                [self showAlert];
-            }
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.labelText = @"Loading...";
+            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                // Do something...
+                corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:detectionString];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (corpName != nil) {
+                        barcodeID = detectionString;
+                        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                        [self presentViewController:navController animated:YES completion:nil];
+                        
+                    } else {
+                        barcodeID = nil;
+                        [self showAlert];
+                    }
+                    
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                });
+            });
             
             break;
         } else {

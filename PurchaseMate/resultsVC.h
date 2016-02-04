@@ -12,6 +12,7 @@
 #import "reportTVC.h"
 #import <QuartzCore/QuartzCore.h>
 #import "CorpInfo.h"
+#import "MBProgressHUD.h"
 
 @import AMScrollingNavbar;
 
