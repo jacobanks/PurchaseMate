@@ -13,6 +13,7 @@
 #import "ObjCMongoDB.h"
 #import "resultsVC.h"
 #import "CorpInfo.h"
+#import "MBProgressHUD.h"
 
 extern NSString *barcodeID;
 

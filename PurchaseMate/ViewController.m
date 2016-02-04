@@ -94,19 +94,27 @@
 - (void)scanProduct {
 
     barcodeID = @"04976400";
+    __block NSString *corpName;
     
-    NSString *corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:barcodeID];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        // Do something...
+        corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:barcodeID];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (corpName != nil) {
+                
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                [self presentViewController:navController animated:YES completion:nil];
+                
+            } else {
+                [self showAlert];
+            }
 
-    if (corpName != nil) {
-        
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:navController animated:YES completion:nil];
-        
-    } else {
-        [self showAlert];
-    }
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection

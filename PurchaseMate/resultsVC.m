@@ -179,7 +179,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    self.tabBarController.title = @"Results";
+    self.tabBarController.title = corpInfo[@"orgDict"][@"orgname"];
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
 }
 
