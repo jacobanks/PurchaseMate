@@ -19,6 +19,10 @@
     
     UIView *_highlightView;
     UILabel *_label;
+    
+    NSMutableArray *barcodeArray;
+    NSUserDefaults *userDefaults;
+
 }
 
 
@@ -29,6 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // initialize array of barcodes to display on scannedTVC
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    barcodeArray = [[NSMutableArray alloc] init];
     
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -109,6 +117,11 @@
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                 [self presentViewController:navController animated:YES completion:nil];
                 
+                [barcodeArray addObject:barcodeID];
+                [userDefaults setObject:barcodeArray forKey:@"barcodes"];
+                [userDefaults synchronize];
+                NSLog(@"Barcode Array: %@", [userDefaults valueForKey:@"barcodes"]);
+                
             } else {
                 [self showAlert];
             }
@@ -155,6 +168,12 @@
                         resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                         [self presentViewController:navController animated:YES completion:nil];
+                        
+                        // add values to barcodeArray to display on scannedTVC
+                        barcodeArray = [[userDefaults valueForKey:@"barcodes"] mutableCopy];
+                        [barcodeArray addObject:detectionString];
+                        [userDefaults setObject:barcodeArray forKey:@"barcodes"];
+                        [userDefaults synchronize];
                         
                     } else {
                         barcodeID = nil;
