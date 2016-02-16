@@ -42,9 +42,7 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             [self.tableView reloadData];
-
             [MBProgressHUD hideHUDForView:self.tabBarController.navigationController.view animated:YES];
         });
     });
@@ -70,8 +68,8 @@
     
     scannedTableViewCell *cell = (scannedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"scannedCell"];
     
-    cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][0]];
-    cell.subtitleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][1]];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][1]];
+    cell.subtitleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][0]];
     cell.barcodeLabel.text = [NSString stringWithFormat:@"%@", self.barcodeArray[indexPath.row]];
     
     return cell;
