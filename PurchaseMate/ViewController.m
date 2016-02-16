@@ -127,8 +127,6 @@
                     [barcodeArray insertObject:barcodeID atIndex:0];
                     [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                     [userDefaults synchronize];
-                    NSLog(@"barcode array: %@, barcode defaults: %@", barcodeArray, [userDefaults valueForKey:@"barcodes"]);
-
                 }
                 
             } else {
@@ -190,7 +188,6 @@
                             [barcodeArray insertObject:detectionString atIndex:0];
                             [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                             [userDefaults synchronize];
-                            NSLog(@"barcode array: %@, barcode defaults: %@", barcodeArray, [userDefaults valueForKey:@"barcodes"]);
                         }
                         
                     } else {
