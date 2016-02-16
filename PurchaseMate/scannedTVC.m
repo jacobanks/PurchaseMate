@@ -29,6 +29,8 @@
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
     
     self.barcodeArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] valueForKey:@"barcodes"]];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

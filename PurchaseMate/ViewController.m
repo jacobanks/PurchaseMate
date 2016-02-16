@@ -119,9 +119,16 @@
                 
                 barcodeArray = [NSMutableArray arrayWithArray:[userDefaults valueForKey:@"barcodes"]];
                 if (![barcodeArray containsObject:barcodeID]) {
-                    [barcodeArray addObject:barcodeID];
+                    [barcodeArray insertObject:barcodeID atIndex:0];
                     [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                     [userDefaults synchronize];
+                } else {
+                    [barcodeArray removeObject:barcodeID];
+                    [barcodeArray insertObject:barcodeID atIndex:0];
+                    [userDefaults setObject:barcodeArray forKey:@"barcodes"];
+                    [userDefaults synchronize];
+                    NSLog(@"barcode array: %@, barcode defaults: %@", barcodeArray, [userDefaults valueForKey:@"barcodes"]);
+
                 }
                 
             } else {
@@ -174,9 +181,16 @@
                         // add values to barcodeArray to display on scannedTVC
                         barcodeArray = [NSMutableArray arrayWithArray:[userDefaults valueForKey:@"barcodes"]];
                         if (![barcodeArray containsObject:detectionString]) {
-                            [barcodeArray addObject:detectionString];
+                            [barcodeArray insertObject:detectionString atIndex:0];
                             [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                             [userDefaults synchronize];
+                        } else {
+                            // delete the barcode from array and then readd it so it is at the top of tableview
+                            [barcodeArray removeObject:detectionString];
+                            [barcodeArray insertObject:detectionString atIndex:0];
+                            [userDefaults setObject:barcodeArray forKey:@"barcodes"];
+                            [userDefaults synchronize];
+                            NSLog(@"barcode array: %@, barcode defaults: %@", barcodeArray, [userDefaults valueForKey:@"barcodes"]);
                         }
                         
                     } else {
