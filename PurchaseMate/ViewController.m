@@ -201,7 +201,7 @@
             
             break;
         } else {
-            _label.text = @"(none)";
+            _label.text = @"There was a problem!";
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                             message:@"There was a problem scanning please try again."
                                                            delegate:nil

@@ -26,6 +26,7 @@
 }
 
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
+
     NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
     NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
 

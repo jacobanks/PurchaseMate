@@ -30,7 +30,24 @@
     
     self.barcodeArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] valueForKey:@"barcodes"]];
     
-    [self.tableView reloadData];
+    self.neededCorpInfo = [[NSMutableDictionary alloc] init];
+
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tabBarController.navigationController.view animated:YES];
+    hud.labelText = @"Loading...";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        // Do something...
+        for (int i = 0; i < self.barcodeArray.count; i++) {
+            self.corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:self.barcodeArray[i]];
+            [self.neededCorpInfo setValue:[NSArray arrayWithObjects:self.corpInfo[@"orgDict"][@"orgname"], self.corpInfo[@"productName"], nil] forKey:[NSString stringWithFormat:@"%i", i]];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+
+            [MBProgressHUD hideHUDForView:self.tabBarController.navigationController.view animated:YES];
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +62,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.barcodeArray count];
+    return [self.neededCorpInfo count];
 }
 
 
@@ -53,16 +70,15 @@
     
     scannedTableViewCell *cell = (scannedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"scannedCell"];
     
-    self.corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:self.barcodeArray[indexPath.row]];
-    
-    cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.corpInfo[@"orgDict"][@"orgname"]];
-    cell.subtitleLabel.text = [NSString stringWithFormat:@"%@", self.corpInfo[@"productName"]];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][0]];
+    cell.subtitleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][1]];
     cell.barcodeLabel.text = [NSString stringWithFormat:@"%@", self.barcodeArray[indexPath.row]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     barcodeID = self.barcodeArray[indexPath.row];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
