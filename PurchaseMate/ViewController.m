@@ -117,10 +117,12 @@
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                 [self presentViewController:navController animated:YES completion:nil];
                 
-                [barcodeArray addObject:barcodeID];
-                [userDefaults setObject:barcodeArray forKey:@"barcodes"];
-                [userDefaults synchronize];
-                NSLog(@"Barcode Array: %@", [userDefaults valueForKey:@"barcodes"]);
+                barcodeArray = [NSMutableArray arrayWithArray:[userDefaults valueForKey:@"barcodes"]];
+                if (![barcodeArray containsObject:barcodeID]) {
+                    [barcodeArray addObject:barcodeID];
+                    [userDefaults setObject:barcodeArray forKey:@"barcodes"];
+                    [userDefaults synchronize];
+                }
                 
             } else {
                 [self showAlert];
@@ -170,10 +172,12 @@
                         [self presentViewController:navController animated:YES completion:nil];
                         
                         // add values to barcodeArray to display on scannedTVC
-                        barcodeArray = [[userDefaults valueForKey:@"barcodes"] mutableCopy];
-                        [barcodeArray addObject:detectionString];
-                        [userDefaults setObject:barcodeArray forKey:@"barcodes"];
-                        [userDefaults synchronize];
+                        barcodeArray = [NSMutableArray arrayWithArray:[userDefaults valueForKey:@"barcodes"]];
+                        if (![barcodeArray containsObject:detectionString]) {
+                            [barcodeArray addObject:detectionString];
+                            [userDefaults setObject:barcodeArray forKey:@"barcodes"];
+                            [userDefaults synchronize];
+                        }
                         
                     } else {
                         barcodeID = nil;
