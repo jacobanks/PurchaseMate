@@ -28,6 +28,7 @@
 		161C43841B2CA88100F3F8F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43831B2CA88100F3F8F4 /* CoreGraphics.framework */; };
 		161C43861B2CA89000F3F8F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43851B2CA89000F3F8F4 /* UIKit.framework */; };
 		161C43881B2CA89500F3F8F4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43871B2CA89500F3F8F4 /* AVFoundation.framework */; };
+		1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */; };
 		16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */; };
 		164ED8A31B67F312008BBD86 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164ED8A21B67F312008BBD86 /* Bolts.framework */; };
 		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
@@ -1660,6 +1661,8 @@
 		161C43851B2CA89000F3F8F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		161C43871B2CA89500F3F8F4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1633D5F81C72EE4F00AD9961 /* scannedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannedTableViewCell.h; sourceTree = "<group>"; };
+		1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scannedTableViewCell.m; sourceTree = "<group>"; };
 		16446D8B1B30A38F00AFD340 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		16446D8D1B30A39B00AFD340 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		164ED8A21B67F312008BBD86 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -4003,6 +4006,8 @@
 			children = (
 				16D968671C631671007B89D7 /* scannedTVC.h */,
 				16D968681C631671007B89D7 /* scannedTVC.m */,
+				1633D5F81C72EE4F00AD9961 /* scannedTableViewCell.h */,
+				1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */,
 			);
 			name = Scanned;
 			sourceTree = "<group>";
@@ -4164,6 +4169,7 @@
 				169A658F1B4388640040F74C /* PNPieChart.m in Sources */,
 				169A658D1B4388640040F74C /* PNLineChartData.m in Sources */,
 				161C43611B2CA80900F3F8F4 /* AppDelegate.m in Sources */,
+				1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */,
 				16FEBEDF1C4FFD0E006B8212 /* randomTVC.m in Sources */,
 				169A658B1B4388640040F74C /* PNGenericChart.m in Sources */,
 				16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */,

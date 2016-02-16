@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CorpInfo.h"
 
 @interface scannedTVC : UITableViewController
+
+@property (strong, nonatomic) NSMutableArray *barcodeArray;
+@property (strong, nonatomic) NSDictionary *corpInfo;
 
 @end
