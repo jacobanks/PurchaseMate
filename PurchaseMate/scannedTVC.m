@@ -62,4 +62,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    barcodeID = self.barcodeArray[indexPath.row];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
 @end
