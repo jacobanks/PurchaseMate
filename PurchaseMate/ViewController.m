@@ -205,8 +205,8 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                             message:@"There was a problem scanning please try again."
                                                            delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"OK", nil];
             [alert show];
         }
     }
@@ -220,15 +220,22 @@
 - (void)showAlert {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                     message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
-                                                   delegate:nil
+                                                   delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:navController animated:YES completion:nil];
+        
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+//    [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        [_highlightView removeFromSuperview];
+        [_session startRunning];
+    }
 }
 
 @end

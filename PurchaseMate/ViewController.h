@@ -17,7 +17,7 @@
 
 extern NSString *barcodeID;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 
 @end
 

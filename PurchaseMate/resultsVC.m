@@ -11,7 +11,7 @@
 
 @interface resultsVC ()
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel, *lobbyingLabel, *republicanLabel, *democratLabel, *indiLabel, *repubTitleLabel,
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel, *corpLabel, *lobbyingLabel, *republicanLabel, *democratLabel, *indiLabel, *repubTitleLabel,
 *demoTitleLabel, *lobbyTitleLabel, *indiTitleLabel, *ethicsLabel, *ethicsTitleLabel;
 @property (nonatomic, strong) UILabel *noDataLabel, *starsLabel;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
@@ -40,8 +40,6 @@
     self.scrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height);
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 700);
     
-    self.title = @"Results";
-    
     // get corporation info
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading...";
@@ -59,6 +57,7 @@
         self.noDataLabel.hidden = NO;
         self.ethicsLabel.hidden = YES;
         self.ethicsTitleLabel.hidden = YES;
+        self.corpLabel.hidden = YES;
         
         self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, SCREEN_WIDTH, 100)];
         self.noDataLabel.text = @"No Data";
@@ -85,7 +84,8 @@
                 self.noDataLabel.hidden = YES;
                 self.ethicsLabel.hidden = NO;
                 self.ethicsTitleLabel.hidden = NO;
-                
+                self.corpLabel.hidden = NO;
+
                 self.title = corpInfo[@"orgDict"][@"orgname"];
                 
                 NSNumberFormatter *formatter = [NSNumberFormatter new];
@@ -109,6 +109,8 @@
                 self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedIndiString];
                 self.ethicsLabel.text = corpInfo[@"ethics"];
                 
+                self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
+                
                 // check if there is no data for ethics rating
                 if (![ethicsString isEqual:@"(null)"]) {
                     
@@ -128,7 +130,8 @@
                 }
                 
                 self.titleLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.titleLabel.frame.origin.y, self.scrollView.frame.size.width, self.titleLabel.frame.size.height);
-                
+                self.corpLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.corpLabel.frame.origin.y, self.scrollView.frame.size.width, self.corpLabel.frame.size.height);
+
                 self.lobbyTitleLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.lobbyTitleLabel.frame.origin.y, self.scrollView.frame.size.width, self.lobbyTitleLabel.frame.size.height);
                 self.lobbyingLabel.frame = CGRectMake(self.scrollView.frame.origin.x, self.lobbyingLabel.frame.origin.y, self.scrollView.frame.size.width, self.lobbyingLabel.frame.size.height);
                 
@@ -148,13 +151,13 @@
                 }
                 
                 // initial setup for graphs
-                PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
+                PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 120.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
                 republicanChart.backgroundColor = [UIColor clearColor];
                 [republicanChart setStrokeColor:PNRed];
                 [republicanChart strokeChart];
                 [self.scrollView addSubview:republicanChart];
                 
-                PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 90.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
+                PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 120.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
                 democratChart.backgroundColor = [UIColor clearColor];
                 [democratChart setStrokeColor:PNBlue];
                 [democratChart strokeChart];
@@ -203,7 +206,8 @@
                 self.noDataLabel.hidden = NO;
                 self.ethicsLabel.hidden = YES;
                 self.ethicsTitleLabel.hidden = YES;
-                
+                self.corpLabel.hidden = YES;
+
                 self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, SCREEN_WIDTH, 100)];
                 self.noDataLabel.text = @"No Data";
                 self.noDataLabel.adjustsFontSizeToFitWidth = NO;
@@ -224,7 +228,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    self.tabBarController.title = corpInfo[@"orgDict"][@"orgname"];
+    self.tabBarController.title = @"Results";
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
 }
 
