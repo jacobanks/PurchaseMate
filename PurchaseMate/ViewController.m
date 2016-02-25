@@ -111,7 +111,7 @@
 
 - (void)scanProduct {
 
-    barcodeID = @"04976400";
+    barcodeID = @"0497600";
     __block NSString *corpName;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -201,7 +201,6 @@
                         }
                         
                     } else {
-                        barcodeID = nil;
                         [self showAlert];
                     }
                     
@@ -231,8 +230,8 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                     message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
                                                    delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Report", nil];
     [alert show];
         
 //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -245,6 +244,11 @@
     if (buttonIndex == [alertView cancelButtonIndex]) {
         [_highlightView removeFromSuperview];
         [_session startRunning];
+    } else {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        reportTVC *vc = (reportTVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"report"];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:navController animated:YES completion:nil];
     }
 }
 
