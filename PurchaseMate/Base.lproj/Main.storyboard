@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" id="2i8-xy-I9j"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="scanBarIcon" selectedImage="scanBarIcon" id="2i8-xy-I9j"/>
                     <navigationItem key="navigationItem" id="k4U-Vr-Gzh">
                         <barButtonItem key="backBarButtonItem" title="Scan Again" id="mOo-2X-LSg"/>
                     </navigationItem>
@@ -75,7 +75,7 @@
                             <outlet property="delegate" destination="Aye-g3-Ffa" id="uNo-c0-yP2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="My Scans" id="lle-tV-s4Y"/>
+                    <tabBarItem key="tabBarItem" title="My Scans" image="myScanBarIcon" selectedImage="myScanBarIcon" id="lle-tV-s4Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48D-nR-lyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,11 +109,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.023529411760000001" green="0.70980392160000005" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.023529411760000001" green="0.70980392160000005" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JEA-Kk-0wI" kind="relationship" relationship="viewControllers" id="rye-VJ-tnB"/>
                         <segue destination="J1d-FG-7sE" kind="relationship" relationship="viewControllers" id="EHB-GQ-LdL"/>
                         <segue destination="Aye-g3-Ffa" kind="relationship" relationship="viewControllers" id="UbL-pg-Cfd"/>
                     </connections>
@@ -132,7 +129,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="randomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="randomCell" rowHeight="67" id="8gE-Em-SSL">
-                                <rect key="frame" x="0.0" y="92" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gE-Em-SSL" id="QTR-Kw-dsb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
@@ -268,7 +265,7 @@
                                         <rect key="frame" x="16" y="52" width="343" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -377,14 +374,14 @@
                                                     <rect key="frame" x="16" y="48" width="350" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T8z-xn-1fH">
                                                     <rect key="frame" x="16" y="15" width="350" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -436,7 +433,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="myScanBarIcon" width="29" height="33"/>
         <image name="resultsTabBarIcon" width="30" height="30"/>
+        <image name="scanBarIcon" width="30" height="22"/>
         <image name="starTabBarIcon" width="30" height="30"/>
         <image name="warningTriangle" width="25" height="25"/>
     </resources>

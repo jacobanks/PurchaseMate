@@ -3692,7 +3692,7 @@
 				161C435F1B2CA80900F3F8F4 /* AppDelegate.h */,
 				161C43601B2CA80900F3F8F4 /* AppDelegate.m */,
 				161C43651B2CA80900F3F8F4 /* Main.storyboard */,
-				16F4AFE71BC7033D0007C322 /* ViewControllers */,
+				16F4AFE71BC7033D0007C322 /* View Controllers */,
 				16FEBEE81C5005B8006B8212 /* Backend */,
 				16F4AFE61BC703050007C322 /* External */,
 				161C43681B2CA80900F3F8F4 /* Images.xcassets */,
@@ -3943,7 +3943,7 @@
 			name = External;
 			sourceTree = "<group>";
 		};
-		16F4AFE71BC7033D0007C322 /* ViewControllers */ = {
+		16F4AFE71BC7033D0007C322 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				16F4AFE81BC703490007C322 /* Scan View */,
@@ -3953,7 +3953,7 @@
 				16F4AFEA1BC703600007C322 /* Review */,
 				16F4AFEB1BC703650007C322 /* Report */,
 			);
-			name = ViewControllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		16F4AFE81BC703490007C322 /* Scan View */ = {
