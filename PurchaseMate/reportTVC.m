@@ -87,7 +87,7 @@
         PFObject *reportObject = [PFObject objectWithClassName:@"Reports"];
         reportObject[@"Product_Name"] = ![self.productLabel.text isEqualToString:@"Label"] ? self.productLabel.text : self.productTextField.text;
         reportObject[@"Company_Name"] = ![self.corpLabel.text isEqualToString:@"Label"] ? self.corpLabel.text : self.corpTextField.text;
-        reportObject[@"barcode"] = barcodeID;
+        reportObject[@"barcode"] = barcodeID != nil ? barcodeID : @"No barcode";
         reportObject[@"report"] = self.reportTextView.text;
         [reportObject saveInBackground];
         

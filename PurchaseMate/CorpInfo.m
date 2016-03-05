@@ -63,7 +63,7 @@
     id attributes = [jsonArray objectForKey:@"attributes"];
     NSDictionary *responseDictionary = attributes;
 
-    if (![responseDictionary count] == 0) {
+    if ([responseDictionary count] != 0) {
         if (responseDictionary[@"Brand"]) {
             //Has Brand Attribute
             return responseDictionary[@"Brand"];
