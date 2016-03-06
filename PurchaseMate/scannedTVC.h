@@ -17,4 +17,6 @@
 
 @property (strong, nonatomic) NSDictionary *neededCorpInfo;
 
+- (void)loadTableView:(NSNotification *)notification;
+
 @end

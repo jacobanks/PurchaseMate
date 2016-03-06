@@ -20,18 +20,29 @@
     
     self.clearsSelectionOnViewWillAppear = YES;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
-
-}
+    
+    [self loadTableView:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadTableView:)
+                                                 name:@"loadTableView"
+                                               object:nil];}
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.title = @"Scanned Products";
     
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
-    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)loadTableView:(NSNotification *)notification {
     self.barcodeArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] valueForKey:@"barcodes"]];
     
     self.neededCorpInfo = [[NSMutableDictionary alloc] init];
-
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tabBarController.navigationController.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -46,11 +57,6 @@
             [MBProgressHUD hideHUDForView:self.tabBarController.navigationController.view animated:YES];
         });
     });
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

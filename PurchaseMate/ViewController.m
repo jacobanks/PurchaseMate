@@ -202,12 +202,14 @@
                             [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                             [userDefaults synchronize];
                         } else {
-                            // delete the barcode from array and then readd it so it is at the top of tableview
+                            // delete the barcode from array and then re-add it so it is at the top of tableview
                             [barcodeArray removeObject:detectionString];
                             [barcodeArray insertObject:detectionString atIndex:0];
                             [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                             [userDefaults synchronize];
                         }
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
                         
                     } else {
                         [self showAlert];
