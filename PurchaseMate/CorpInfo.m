@@ -98,10 +98,6 @@
         //We have it
         id corp = [result objectForKey:@"Corp"];
         NSDictionary *corpDictionary = corp;
-        
-//        [self getEthicsRatingWithName:[NSString stringWithFormat:@"%@", corpDictionary]];
-//        
-//        [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpDictionary]];
 
         return [NSString stringWithFormat:@"%@", corpDictionary];
     }

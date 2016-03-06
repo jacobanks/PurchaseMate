@@ -111,7 +111,7 @@
 
 - (void)scanProduct {
 
-    barcodeID = @"605388716552";
+    barcodeID = @"016000159501";
     __block NSString *corpName;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -169,7 +169,16 @@
         }
         
         
-        if (detectionString != nil) {
+        if (!detectionString) {
+            _label.text = @"There was a problem!";
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                            message:@"There was a problem scanning please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+        } else {
             _label.text = @"Product Found!";
             __block NSString *corpName;
             
@@ -207,16 +216,6 @@
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                 });
             });
-            
-            break;
-        } else {
-            _label.text = @"There was a problem!";
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                            message:@"There was a problem scanning please try again."
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"OK", nil];
-            [alert show];
         }
     }
     
