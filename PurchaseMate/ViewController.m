@@ -119,7 +119,7 @@
 
 - (void)scanProduct {
 
-    barcodeID = @"016000159501";
+    barcodeID = @"0022000159335";
     __block NSString *corpName;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
