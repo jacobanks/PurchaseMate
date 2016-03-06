@@ -15,6 +15,7 @@
 #import "CameraFocusSquare.h"
 
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioServices.h>
 
 @interface ViewController () <AVCaptureMetadataOutputObjectsDelegate>
 {
@@ -193,6 +194,7 @@
             hud.labelText = @"Loading...";
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
                 // Do something...
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                 corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:detectionString];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (corpName != nil) {
