@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "XMLReader.h"
-#import "AppDelegate.h"
-#import "ObjCMongoDB.h"
-#import "resultsVC.h"
-#import "CorpInfo.h"
-#import "MBProgressHUD.h"
 
 extern NSString *barcodeID;
 

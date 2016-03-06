@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 #import "RateView.h"
+#import "MBProgressHUD.h"
+#import "CorpInfo.h"
 
 @interface reviewVC : UIViewController <RateViewDelegate> {
     NSDictionary *corpInfo;

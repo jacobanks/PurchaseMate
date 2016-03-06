@@ -51,6 +51,7 @@
 		169A65961B4389250040F74C /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65951B4389250040F74C /* UICountingLabel.m */; };
 		16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AEC56C1B83F7F700E538C0 /* RateView.m */; };
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
+		16D830681C8BD1AB00407300 /* CameraFocusSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D830671C8BD1AB00407300 /* CameraFocusSquare.m */; };
 		16D968691C631671007B89D7 /* scannedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D968681C631671007B89D7 /* scannedTVC.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
 		16FEBEDF1C4FFD0E006B8212 /* randomTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */; };
@@ -1729,6 +1730,8 @@
 		16CC11421B2E026300D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16D1B3391B2D2DAC00C9E185 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		16D830661C8BD1AB00407300 /* CameraFocusSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFocusSquare.h; sourceTree = "<group>"; };
+		16D830671C8BD1AB00407300 /* CameraFocusSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocusSquare.m; sourceTree = "<group>"; };
 		16D968671C631671007B89D7 /* scannedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannedTVC.h; sourceTree = "<group>"; };
 		16D968681C631671007B89D7 /* scannedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scannedTVC.m; sourceTree = "<group>"; };
 		16E45E991B41EBA100932B9E /* resultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
@@ -3930,6 +3933,15 @@
 			path = x86_64;
 			sourceTree = "<group>";
 		};
+		16D830691C8BD1AF00407300 /* Camera Focus Square */ = {
+			isa = PBXGroup;
+			children = (
+				16D830661C8BD1AB00407300 /* CameraFocusSquare.h */,
+				16D830671C8BD1AB00407300 /* CameraFocusSquare.m */,
+			);
+			name = "Camera Focus Square";
+			sourceTree = "<group>";
+		};
 		16F4AFE61BC703050007C322 /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -3961,6 +3973,7 @@
 			children = (
 				161C43621B2CA80900F3F8F4 /* ViewController.h */,
 				161C43631B2CA80900F3F8F4 /* ViewController.m */,
+				16D830691C8BD1AF00407300 /* Camera Focus Square */,
 			);
 			name = "Scan View";
 			sourceTree = "<group>";
@@ -4165,6 +4178,7 @@
 				169A658E1B4388640040F74C /* PNLineChartDataItem.m in Sources */,
 				169A65921B4388640040F74C /* PNScatterChartData.m in Sources */,
 				169A658A1B4388640040F74C /* PNColor.m in Sources */,
+				16D830681C8BD1AB00407300 /* CameraFocusSquare.m in Sources */,
 				161C43641B2CA80900F3F8F4 /* ViewController.m in Sources */,
 				169A658F1B4388640040F74C /* PNPieChart.m in Sources */,
 				169A658D1B4388640040F74C /* PNLineChartData.m in Sources */,
