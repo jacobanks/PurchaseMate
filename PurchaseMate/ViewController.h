@@ -11,7 +11,7 @@
 
 extern NSString *barcodeID;
 
-@interface ViewController : UIViewController <UIAlertViewDelegate>
+@interface ViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 
 - (void)scanProduct:(NSString *)barcode;
 

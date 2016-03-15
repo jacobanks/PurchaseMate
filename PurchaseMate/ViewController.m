@@ -123,13 +123,19 @@
 - (void)loadSearchView {
     UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     
-    searchView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    searchView = [[UIVisualEffectView alloc] init];
+    
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        searchView.effect = blurEffect;
+    } completion:nil];
+    
     CGSize viewSize = [[UIScreen mainScreen] bounds].size;
     searchView.frame = CGRectMake(0, 0, self.view.frame.size.width, viewSize.height);
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(viewTapped:)];
     tap.numberOfTapsRequired = 1;
     [searchView addGestureRecognizer:tap];
+    
     [[UIApplication sharedApplication].keyWindow addSubview:searchView];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, searchView.center.y - 120, searchView.frame.size.width, 30)];
@@ -139,6 +145,33 @@
     [titleLabel setTextColor:[UIColor whiteColor]];
     [searchView addSubview:titleLabel];
     
+    UITextField *barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(searchView.frame.origin.x + 10, searchView.center.y - 60, searchView.frame.size.width - 20, 40)];
+    [barcodeTextField setPlaceholder:@"Barcode Number"];
+    [barcodeTextField setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.4]];
+    [barcodeTextField setBorderStyle:UITextBorderStyleRoundedRect];
+    [barcodeTextField setUserInteractionEnabled:YES];
+    [barcodeTextField setTintColor:[UIColor whiteColor]];
+    [barcodeTextField setTextColor:[UIColor whiteColor]];
+    [barcodeTextField setKeyboardType:UIKeyboardTypeNumberPad];
+    [searchView addSubview:barcodeTextField];
+   
+    UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(searchView.frame.size.width - 120, 30, 100, 30)];
+    [searchButton setTitle:@"Search" forState:UIControlStateNormal];
+    [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    searchButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    searchButton.layer.borderWidth = 2;
+    searchButton.layer.cornerRadius = 5;
+    [searchButton addTarget:self action:@selector(scanProduct:) forControlEvents:UIControlEventTouchUpInside];
+    [searchView addSubview:searchButton];
+    
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 100, 30)];
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    cancelButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    cancelButton.layer.borderWidth = 2;
+    cancelButton.layer.cornerRadius = 5;
+    [cancelButton addTarget:self action:@selector(viewTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [searchView addSubview:cancelButton];
 }
 
 - (void)scanProduct:(NSString *)barcode {
@@ -293,7 +326,12 @@
 }
 
 - (void)viewTapped:(UITapGestureRecognizer *)recognizer {
-    [searchView removeFromSuperview];
+
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        searchView.alpha = 0;
+    }completion:^(BOOL isFinished){
+        [searchView removeFromSuperview];
+    }];
 }
 
 @end
