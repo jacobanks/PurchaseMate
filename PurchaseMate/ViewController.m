@@ -101,10 +101,7 @@
     label.text = @"Scan a product to begin";
     self.tabBarController.title = @"Scan";
     
-    UIButton *testScan = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 45)];
-    [testScan setTitle:@"Test Scan" forState:UIControlStateNormal];
-    [testScan addTarget:self action:@selector(loadSearchView) forControlEvents:UIControlEventTouchUpInside];
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:testScan];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(loadSearchView)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
