@@ -33,6 +33,7 @@
     NSUserDefaults *userDefaults;
 
     UIVisualEffectView *searchView;
+    UITextField *barcodeTextField;
 }
 
 
@@ -145,7 +146,7 @@
     [titleLabel setTextColor:[UIColor whiteColor]];
     [searchView addSubview:titleLabel];
     
-    UITextField *barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(searchView.frame.origin.x + 10, searchView.center.y - 60, searchView.frame.size.width - 20, 40)];
+    barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(searchView.frame.origin.x + 10, searchView.center.y - 60, searchView.frame.size.width - 20, 40)];
     [barcodeTextField setPlaceholder:@"Barcode Number"];
     [barcodeTextField setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.4]];
     [barcodeTextField setBorderStyle:UITextBorderStyleRoundedRect];
@@ -161,7 +162,7 @@
     searchButton.layer.borderColor = [UIColor whiteColor].CGColor;
     searchButton.layer.borderWidth = 2;
     searchButton.layer.cornerRadius = 5;
-    [searchButton addTarget:self action:@selector(scanProduct:) forControlEvents:UIControlEventTouchUpInside];
+    [searchButton addTarget:self action:@selector(searchAction) forControlEvents:UIControlEventTouchUpInside];
     [searchView addSubview:searchButton];
     
     UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 100, 30)];
@@ -174,8 +175,14 @@
     [searchView addSubview:cancelButton];
 }
 
-- (void)scanProduct:(NSString *)barcode {
+- (void)searchAction {
+    [self viewTapped:nil];
+    [self scanProduct:barcodeTextField.text];
+}
 
+- (void)scanProduct:(NSString *)barcode {
+    // 04976400
+    
     __block NSString *corpName;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -210,6 +217,7 @@
                 
             } else {
                 [self showAlert];
+                barcodeID = barcode;
             }
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];

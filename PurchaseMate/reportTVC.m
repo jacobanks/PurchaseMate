@@ -99,6 +99,8 @@
         
         [message show];
         
+        barcodeID = nil;
+        
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
         
