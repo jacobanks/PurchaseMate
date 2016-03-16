@@ -173,7 +173,7 @@
 }
 
 - (void)searchAction {
-    if (!barcodeTextField.text) {
+    if ([barcodeTextField.text length] > 0 || barcodeTextField.text != nil || [barcodeTextField.text isEqual:@""] == FALSE) {
         [self viewTapped:nil];
         [self scanProduct:barcodeTextField.text];
     } else {
