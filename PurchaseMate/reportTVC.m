@@ -94,7 +94,7 @@
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Thank You!"
                                                           message:@"Thank you for submitting a report! We will review this and fix the problem."
                                                          delegate:nil
-                                                cancelButtonTitle:@"OK"
+                                                cancelButtonTitle:@"Ok"
                                                 otherButtonTitles:nil];
         
         [message show];
@@ -107,7 +107,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                         message:@"You need to fill out the report field first!"
                                                        delegate:nil
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
         [alert show];
     }

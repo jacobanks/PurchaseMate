@@ -173,8 +173,17 @@
 }
 
 - (void)searchAction {
-    [self viewTapped:nil];
-    [self scanProduct:barcodeTextField.text];
+    if (!barcodeTextField.text) {
+        [self viewTapped:nil];
+        [self scanProduct:barcodeTextField.text];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                        message:@"You need to fill out the barcode field first!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)scanProduct:(NSString *)barcode {
