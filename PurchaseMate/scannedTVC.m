@@ -83,6 +83,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     barcodeID = self.barcodeArray[indexPath.row];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
