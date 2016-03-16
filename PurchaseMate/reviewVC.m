@@ -37,13 +37,13 @@
             self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, self.view.frame.size.width, 120)];
             [self addShadowtoView:self.corpTitleView];
             
-            self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 30)];
+            self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 40)];
             self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
             self.corpLabel.textAlignment = NSTextAlignmentCenter;
             self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
             [self.corpTitleView addSubview:self.corpLabel];
             
-            self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 20)];
+            self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 30)];
             self.productLabel.text = corpInfo[@"productName"];
             self.productLabel.textAlignment = NSTextAlignmentCenter;
             self.productLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
