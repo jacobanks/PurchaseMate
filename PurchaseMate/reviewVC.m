@@ -189,7 +189,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.title = @"Review";
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(submitClicked:)];
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(submitClicked:)];
 }
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(int)rating {
