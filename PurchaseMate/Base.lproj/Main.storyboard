@@ -119,59 +119,6 @@
             </objects>
             <point key="canvasLocation" x="-663.5" y="238.5"/>
         </scene>
-        <!--Random Products-->
-        <scene sceneID="Xy9-8s-rWD">
-            <objects>
-                <tableViewController id="JEA-Kk-0wI" customClass="randomTVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f3S-M3-fvp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="randomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="randomCell" rowHeight="67" id="8gE-Em-SSL">
-                                <rect key="frame" x="0.0" y="28" width="375" height="67"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gE-Em-SSL" id="QTR-Kw-dsb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sprite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qc2-Cf-ect">
-                                            <rect key="frame" x="8" y="34" width="230" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coca-Cola" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fzw-Cf-56F">
-                                            <rect key="frame" x="8" y="8" width="230" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcode ID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="nFq-HZ-eUS">
-                                            <rect key="frame" x="246" y="22" width="121" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JEA-Kk-0wI" id="Ffm-AC-0N3"/>
-                            <outlet property="delegate" destination="JEA-Kk-0wI" id="l0f-rv-U3a"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Random Products" id="bI6-8J-vUM"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OM2-nR-XqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-177.5" y="-527.5"/>
-        </scene>
         <!--Results-->
         <scene sceneID="EQm-zL-MDl">
             <objects>
@@ -472,9 +419,9 @@
     </scenes>
     <resources>
         <image name="myScanBarIcon" width="24" height="25"/>
-        <image name="resultsTabBarIcon" width="30" height="30"/>
+        <image name="resultsTabBarIcon" width="22" height="16"/>
         <image name="scanBarIcon" width="30" height="22"/>
-        <image name="starTabBarIcon" width="30" height="30"/>
+        <image name="starTabBarIcon" width="30" height="28"/>
         <image name="warningTriangle" width="25" height="25"/>
     </resources>
 </document>
