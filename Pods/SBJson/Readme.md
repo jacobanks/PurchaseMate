@@ -1,85 +1,60 @@
-SBJson (aka json-framework)
-===========================
+JSON (JavaScript Object Notation) is a light-weight data interchange format
+that's easy to read and write for humans and computers alike. This library
+implements chunk-based JSON parsing and generation in Objective-C.
 
-JSON (JavaScript Object Notation) is a light-weight data interchange format that's easy to read and write for humans and computers alike. This library implements strict JSON parsing and generation in Objective-C.
+[![Build Status](https://travis-ci.org/stig/json-framework.png?branch=master)](https://travis-ci.org/stig/json-framework)
 
-New Features, Changes, and Notable Enhancements in 3.0
-------------------------------------------------------
+Features
+========
 
-### JSON Stream Support
+SBJson's number one feature is chunk-based operation. Feed the parser one or
+more chunks of UTF8-encoded data and it will call a block you provide with each
+root-level document or array. Or, optionally, for each top-level entry in each
+root-level array. See more in the [Version 4 API
+docs](http://cocoadocs.org/docsets/SBJson/4.0.0/Classes/SBJson4Parser.html).
 
-We now support parsing of documents split into several NSData chunks, like those returned by *NSURLConnection*. This means you can start parsing a JSON document before it is fully downloaded. Depending how you configure the delegates you can chose to have the entire document delivered to your process when it's finished parsing, or delivered bit-by-bit as records on a particular level finishes downloading. For more details see *SBJsonStreamParser* and *SBJsonStreamParserAdapter* in the [API docs][api].
+Other features:
 
-There is also support for *writing to* JSON streams. This means you can write huge JSON documents to disk, or an HTTP destination, without having to hold the entire structure in memory. You can use this to generate a stream of tick data for a stock trading simulation, for example. For more information see *SBJsonStreamWriter* in the [API docs][api].
+* Configurable recursion limit. For safety SBJson defaults to a max nesting
+  level of 32 for all input. This can be configured if necessary.
+* The writer can optionally sort dictionary keys so output is consistent across writes.
+* The writer can optionally create human-readable (indented) output.
 
-### Parse and write UTF8-encoded NSData
+API Documentation
+=================
 
-The internals of *SBJsonParser* and *SBJsonWriter* have been rewritten to be NSData based. It is no longer necessary to convert data returned by NSURLConnection into an NSString before feeding it to the parser. The old NSString-oriented API methods still exists, but now converts their inputs to NSData objects and delegates to the new methods.
-
-### Project renamed to SBJson
-
-The project was renamed to avoid clashing with Apple's private JSON.framework. (And to make it easier to Google for.)
-
-* If you copy the classes into your project then all you need to update is to change the header inclusion from `#import "JSON.h"` to `#import "SBJson.h"`.
-* If you link to the library rather than copy the classes you have to change the library you link to. On the Mac `JSON.framework` became `SBJson.framework`. On iOS `libjson.a` became `libsbjson-ios.a`. In both cases you now have to `#import <SBJson/SBJson.h>` in your code.
-
-### API documentation integrated with Xcode
-
-The *InstallDocumentation.sh* script allows you to generate [API documentation][api] from the source and install it into Xcode, so it's always at your fingertips. (This script requires [Doxygen][] to be installed.) After running the script from the top-level directory, open Xcode's documentation window and search for SBJson. (You might have to close and re-open Xcode for the changes to take effect.)
-
-### TweetStream Example Project
-
-An example project showing how to use the new streaming functionality to interact with Twitter's multi-document streams. This also shows how to link to the iOS static lib rather than having to copy the classes into your project.
-
-### DisplayPretty Example Project
-
-A small Mac example project showing how to link to an external JSON framework rather than copying the sources into your project. This is a fully functional (though simplistic) application that takes JSON input from a text field and presents it nicely formatted into another text field.
-
-Features also present in previous versions
-------------------------------------------
-
-* BSD license.
-* Super-simple high-level API: Calling `-JSONValue` on any NSString instance parses the JSON text in that string, and calling `-JSONRepresentation` on any NSArray or NSDictionary returns an NSString with the JSON representation of the object.
-* The *SBJsonParser* and *SBJsonWriter* classes provides an object-oriented API providing a good balance between simplicity and flexibility.
-* Configurable recursion depth limit for added security.
-* Supports (but does not require) garbage collection.
-* Sorted dictionary keys in JSON output.
-* Pretty-printing of JSON output.
+Please see the [API Documentation](http://cocoadocs.org/docsets/SBJson) for more details.
 
 Installation
 ============
 
-The simplest way to start using JSON in your application is to copy all the source files (the contents of the `Classes` folder) into your own Xcode project.
+The preferred way to use SBJson is by using
+[CocoaPods](http://cocoapods.org/?q=sbjson). In your Podfile use:
 
-1. In the Finder, navigate to the `$PATH_TO_SBJSON/Classes` folder and select all the files.
-1. Drag-and-drop them into your Xcode project.
-1. Tick the **Copy items into destination group's folder** option.
-1. Use `#import "SBJson.h"` in  your source files.
+    pod 'SBJson', '~> 4.0.1'
 
-That should be it. Now create that Twitter client!
+If you depend on a third-party library that requires an earlier version of
+SBJson---or want to install both version 3 and 4 in the same app to do a gradual
+transition---you can instead use:
 
-Upgrading
----------
+    pod 'SBJson4', '~> 4.0.1'
 
-If you're upgrading from a previous version, make sure you're deleting the old SBJson classes first, moving all the files to Trash.
+An alternative that I no longer recommend is to copy all the source files (the
+contents of the `src/main/objc` folder) into your own Xcode project.
 
+Examples
+========
 
-Linking rather than copying
----------------------------
+* https://github.com/stig/ChunkedDelivery - a toy example showing how one can use `NSURLSessionDataDelegate` to do chunked delivery.
+* https://github.com/stig/DisplayPretty - a very brief example using SBJson 4 to reflow JSON on OS X.
 
-Copying the SBJson classes into your project isn't the only way to use this framework. (Though it is the simplest.) With Xcode 4's workspaces it has become much simpler to link to dependant projects. The examples in the distribution link to the iOS library and Mac framework, respectively.
+Support
+=======
 
-* [Linking to JSON Framework on iOS](http://github.com/stig/JsonSampleIPhone)
-* [Linking to JSON Framework on the Mac](http://github.com/stig/JsonSampleMac)
+* Check [StackOverflow questions tagged with SBJson](http://stackoverflow.com/questions/tagged/sbjson) if you have questions about how to use the library. I eventually read all questions with this tag.
+* Use the [issue tracker](http://github.com/stig/json-framework/issues) if you have found a bug.
 
+License
+=======
 
-Links
-=====
-
-* [GitHub project page](http://github.com/stig/json-framework).
-* [Example Projects](http://github.com/stig/json-framework/Examples).
-* [Online API docs](http://stig.github.com/json-framework/api).
-* [Frequently Asked Questions](http://github.com/stig/json-framework/wiki/FrequentlyAskedQuestions)
-
-[api]: http://stig.github.com/json-framework/api/3.0/
-[Doxygen]: http://doxygen.org
+BSD. See LICENSE for details.

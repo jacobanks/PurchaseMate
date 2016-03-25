@@ -14,9 +14,7 @@
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 
-@import AMScrollingNavbar;
-
-@interface resultsVC : UIViewController <ScrollingNavigationControllerDelegate> {
+@interface resultsVC : UIViewController {
     NSDictionary *corpInfo;
 }
 

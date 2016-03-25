@@ -1,5 +1,4 @@
 PODS:
-  - AMScrollingNavbar (2.0.9)
   - MBProgressHUD (0.9.2)
   - mongo-c-driver (0.8.1)
   - ObjCMongoDB (0.12.0):
@@ -16,20 +15,17 @@ PODS:
     - ObjCMongoDB/OrderedDictionary (~> 0.12.0)
   - ObjCMongoDB/OrderedDictionary (0.12.0):
     - mongo-c-driver (~> 0.8.1)
-  - SBJson (3.0.4)
+  - SBJson (4.0.2)
 
 DEPENDENCIES:
-  - AMScrollingNavbar (~> 2.0.1)
   - MBProgressHUD (~> 0.9.2)
-  - mongo-c-driver
   - ObjCMongoDB (~> 0.12.0)
-  - SBJson (~> 3.0.0)
+  - SBJson (~> 4.0.0)
 
 SPEC CHECKSUMS:
-  AMScrollingNavbar: 6ee57388f84b8f33f31a7944abf51b9afa16bafd
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   mongo-c-driver: 56558b8009f8d27549b23b62ce64fe33b9818703
   ObjCMongoDB: 465dffcaf56a852381ee34bef0f98828398c8cfc
-  SBJson: 69a98861fe3f4e9a02393700b2600284925fa73c
+  SBJson: c18691cc18375b14664ff0fec841f8c4faef1934
 
 COCOAPODS: 0.39.0
