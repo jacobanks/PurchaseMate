@@ -200,7 +200,7 @@
             if (corpName != nil) {
                 barcodeID = barcode;
                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                resultsVC *vc = (resultsVC*)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                 [self presentViewController:navController animated:YES completion:nil];
                 
