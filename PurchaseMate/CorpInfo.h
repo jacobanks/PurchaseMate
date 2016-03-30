@@ -24,4 +24,6 @@
 
 - (NSString *)getEthicsRatingWithName:(NSString *)name;
 
+- (NSDictionary *)getCorpDictionary;
+
 @end

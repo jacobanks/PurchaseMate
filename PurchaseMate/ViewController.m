@@ -188,16 +188,17 @@
 - (void)scanProduct:(NSString *)barcode {
     // 04976400
     
-    __block NSDictionary *corpInfo;
-    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcode];
+        
+        CorpInfo *corpInfo = [[CorpInfo alloc] init];
+        NSDictionary *corpData = [corpInfo getCorpInfoWithBarcode:barcode];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (corpInfo != nil) {
+            if (corpData != nil) {
                 barcodeID = barcode;
                 
                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -218,10 +219,7 @@
                     [userDefaults setObject:barcodeArray forKey:@"barcodes"];
                     [userDefaults synchronize];
                 }
-                
-                [[NSUserDefaults standardUserDefaults] setObject:corpInfo forKey:@"currentInfo"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
+
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
                 
             } else {

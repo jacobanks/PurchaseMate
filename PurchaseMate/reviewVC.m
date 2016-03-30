@@ -23,8 +23,9 @@
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
-        corpInfo = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"currentInfo"];
-
+        CorpInfo *corpInfo = [[CorpInfo alloc] init];
+        self.corpData = corpInfo.getCorpDictionary;
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height)];
@@ -38,13 +39,13 @@
             [self addShadowtoView:self.corpTitleView];
             
             self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 40)];
-            self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
+            self.corpLabel.text = self.corpData[@"orgDict"][@"orgname"];
             self.corpLabel.textAlignment = NSTextAlignmentCenter;
             self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
             [self.corpTitleView addSubview:self.corpLabel];
             
             self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 30)];
-            self.productLabel.text = corpInfo[@"productName"];
+            self.productLabel.text = self.corpData[@"productName"];
             self.productLabel.textAlignment = NSTextAlignmentCenter;
             self.productLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
             self.productLabel.alpha = 0.7 ;
@@ -263,8 +264,8 @@
         
     } else {
             NSDictionary *userReview = @{
-                                         @"corporation" : corpInfo[@"orgDict"][@"orgname"],
-                                         @"product" : corpInfo[@"productName"],
+                                         @"corporation" : self.corpData[@"orgDict"][@"orgname"],
+                                         @"product" : self.corpData[@"productName"],
                                          @"buyQuestion" : self.buyQuestionString,
                                          @"why" : self.whyArray,
                                          @"rating" : self.ratingString,

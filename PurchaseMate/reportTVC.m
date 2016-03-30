@@ -39,15 +39,16 @@
         
         self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
         
-        NSDictionary *corpInfo = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"currentInfo"];
+        CorpInfo *corpInfo = [[CorpInfo alloc] init];
+        NSDictionary *corpData = corpInfo.getCorpDictionary;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (corpInfo != nil) {
                 self.labelsView.hidden = NO;
                 self.textFieldView.hidden = YES;
                 
-                self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
-                self.productLabel.text = corpInfo[@"productName"];
+                self.corpLabel.text = corpData[@"orgDict"][@"orgname"];
+                self.productLabel.text = corpData[@"productName"];
             } else {
                 self.labelsView.hidden = YES;
                 self.textFieldView.hidden = NO;

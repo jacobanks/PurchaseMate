@@ -10,6 +10,8 @@
 
 @implementation CorpInfo
 
+static NSMutableDictionary *corpDict;
+
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
 
     NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
@@ -23,7 +25,7 @@
             
             NSString *ethicsString = [self getEthicsRatingWithName:corpName];
             
-            NSMutableDictionary *corpInfo = [NSMutableDictionary
+            corpDict = [NSMutableDictionary
                                              dictionaryWithDictionary:@{
                                                                         @"productName" : productName,
                                                                         @"corpName" : corpName,
@@ -31,11 +33,15 @@
                                                                         @"politicalInfo" : politicalDictionary,
                                                                         @"ethics" : ethicsString
                                                                         }];
-            return corpInfo;
+            return corpDict;
         }
     }
     
     return nil;
+}
+
+- (NSDictionary *)getCorpDictionary {
+    return corpDict;
 }
 
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString {

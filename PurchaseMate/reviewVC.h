@@ -12,9 +12,7 @@
 #import "MBProgressHUD.h"
 #import "CorpInfo.h"
 
-@interface reviewVC : UIViewController <RateViewDelegate> {
-    NSDictionary *corpInfo;
-}
+@interface reviewVC : UIViewController <RateViewDelegate>
 
 @property (strong, nonatomic) RateView *ratingView;
 @property (strong, nonatomic) NSString *ratingString;
@@ -46,6 +44,7 @@
 
 @property (strong, nonatomic) NSString *buyQuestionString;
 @property (strong, nonatomic) NSMutableArray *whyArray;
-@property (strong, nonatomic) NSDictionary *dict;
+
+@property (strong, nonatomic) NSDictionary *corpData;
 
 @end

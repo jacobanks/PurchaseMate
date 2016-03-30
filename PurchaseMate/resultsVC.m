@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIView *starsView;
 @property (nonatomic, strong) IBOutlet UIView *lobbyingView, *independentView, *equityView;
 @property (nonatomic, strong) IBOutlet UITableViewCell *contributionsCell, *partyCell;
+@property (nonatomic, strong) NSDictionary *corpData;
 
 @end
 
@@ -41,7 +42,8 @@
         self.partyCell.hidden = YES;
         self.contributionsCell.hidden = YES;
 
-        corpInfo = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"currentInfo"];
+        CorpInfo *corpInfo = [[CorpInfo alloc] init];
+        self.corpData = corpInfo.getCorpDictionary;
 
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -66,11 +68,11 @@
             NSNumberFormatter *formatter = [NSNumberFormatter new];
             [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
             
-            NSString *lobbyingString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"lobbying"]];
-            NSString *repubString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"repubs"]];
-            NSString *demString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"dems"]];
-            NSString *indiString = [NSString stringWithFormat:@"%@", corpInfo[@"politicalInfo"][@"outside"]];
-            NSString *ethicsString = [NSString stringWithFormat:@"%@", corpInfo[@"ethics"]];
+            NSString *lobbyingString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"lobbying"]];
+            NSString *repubString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"repubs"]];
+            NSString *demString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"dems"]];
+            NSString *indiString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"outside"]];
+            NSString *ethicsString = [NSString stringWithFormat:@"%@", self.corpData[@"ethics"]];
             
             NSString *formattedLobbyingString = [formatter stringFromNumber:[NSNumber numberWithInteger:lobbyingString.integerValue]];
             NSString *formattedRepubsString = [formatter stringFromNumber:[NSNumber numberWithInteger:repubString.integerValue]];
@@ -82,10 +84,10 @@
             self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedRepubsString];
             self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedDemsString];
             self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedIndiString];
-            self.ethicsLabel.text = corpInfo[@"ethics"];
+            self.ethicsLabel.text = self.corpData[@"ethics"];
             
-            self.productLabel.text = corpInfo[@"productName"];
-            self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
+            self.productLabel.text = self.corpData[@"productName"];
+            self.corpLabel.text = self.corpData[@"orgDict"][@"orgname"];
             
             // check if there is no data for ethics rating
             if (![ethicsString isEqual:@"(null)"]) {

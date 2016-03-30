@@ -54,7 +54,6 @@
 		16D830681C8BD1AB00407300 /* CameraFocusSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D830671C8BD1AB00407300 /* CameraFocusSquare.m */; };
 		16D968691C631671007B89D7 /* scannedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D968681C631671007B89D7 /* scannedTVC.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
-		16FEBEDF1C4FFD0E006B8212 /* randomTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */; };
 		16FEBEE71C5005AA006B8212 /* CorpInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEE61C5005AA006B8212 /* CorpInfo.m */; };
 		35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B7B836E94DBCE8CDDD41B /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -1736,8 +1735,6 @@
 		16D968681C631671007B89D7 /* scannedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scannedTVC.m; sourceTree = "<group>"; };
 		16E45E991B41EBA100932B9E /* resultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
 		16E45E9A1B41EBA100932B9E /* resultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsVC.m; sourceTree = "<group>"; };
-		16FEBEDD1C4FFD0E006B8212 /* randomTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = randomTVC.h; sourceTree = "<group>"; };
-		16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = randomTVC.m; sourceTree = "<group>"; };
 		16FEBEE51C5005AA006B8212 /* CorpInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorpInfo.h; sourceTree = "<group>"; };
 		16FEBEE61C5005AA006B8212 /* CorpInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorpInfo.m; sourceTree = "<group>"; };
 		2C7B7B836E94DBCE8CDDD41B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3959,7 +3956,6 @@
 			isa = PBXGroup;
 			children = (
 				16F4AFE81BC703490007C322 /* Scan View */,
-				16FEBEE01C4FFD1A006B8212 /* Random Products */,
 				16FEBEE41C4FFD46006B8212 /* Scanned */,
 				16F4AFE91BC703500007C322 /* Results */,
 				16F4AFEA1BC703600007C322 /* Review */,
@@ -4003,15 +3999,6 @@
 				165582FF1B3DFFD200819716 /* reportTVC.m */,
 			);
 			name = Report;
-			sourceTree = "<group>";
-		};
-		16FEBEE01C4FFD1A006B8212 /* Random Products */ = {
-			isa = PBXGroup;
-			children = (
-				16FEBEDD1C4FFD0E006B8212 /* randomTVC.h */,
-				16FEBEDE1C4FFD0E006B8212 /* randomTVC.m */,
-			);
-			name = "Random Products";
 			sourceTree = "<group>";
 		};
 		16FEBEE41C4FFD46006B8212 /* Scanned */ = {
@@ -4184,7 +4171,6 @@
 				169A658D1B4388640040F74C /* PNLineChartData.m in Sources */,
 				161C43611B2CA80900F3F8F4 /* AppDelegate.m in Sources */,
 				1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */,
-				16FEBEDF1C4FFD0E006B8212 /* randomTVC.m in Sources */,
 				169A658B1B4388640040F74C /* PNGenericChart.m in Sources */,
 				16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */,
 				169A65911B4388640040F74C /* PNScatterChart.m in Sources */,

@@ -14,8 +14,6 @@
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 
-@interface resultsVC : UITableViewController {
-    NSDictionary *corpInfo;
-}
+@interface resultsVC : UITableViewController
 
 @end

@@ -92,9 +92,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [[NSUserDefaults standardUserDefaults] setObject:self.corpInfo forKey:@"currentInfo"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
             barcodeID = self.barcodeArray[indexPath.row];
             
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
