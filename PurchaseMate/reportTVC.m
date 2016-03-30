@@ -8,9 +8,7 @@
 
 #import "reportTVC.h"
 
-@interface reportTVC () {
-    NSDictionary *corpInfo;
-}
+@interface reportTVC ()
 
 @end
 
@@ -41,13 +39,10 @@
         
         self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
         
-        NSString *corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:barcodeID];
-        if (corpName != nil) {
-            corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcodeID];
-        }
+        NSDictionary *corpInfo = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"currentInfo"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (corpName != nil) {
+            if (corpInfo != nil) {
                 self.labelsView.hidden = NO;
                 self.textFieldView.hidden = YES;
                 

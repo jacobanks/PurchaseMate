@@ -41,8 +41,8 @@
         self.partyCell.hidden = YES;
         self.contributionsCell.hidden = YES;
 
-        corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcodeID];
-        
+        corpInfo = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"currentInfo"];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             
             self.partyCell.hidden = NO;
@@ -85,6 +85,7 @@
             self.ethicsLabel.text = corpInfo[@"ethics"];
             
             self.productLabel.text = corpInfo[@"productName"];
+            self.corpLabel.text = corpInfo[@"orgDict"][@"orgname"];
             
             // check if there is no data for ethics rating
             if (![ethicsString isEqual:@"(null)"]) {

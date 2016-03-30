@@ -85,11 +85,26 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    barcodeID = self.barcodeArray[indexPath.row];
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:navController animated:YES completion:nil];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tabBarController.navigationController.view animated:YES];
+    hud.labelText = @"Loading...";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        self.corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:self.barcodeArray[indexPath.row]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [[NSUserDefaults standardUserDefaults] setObject:self.corpInfo forKey:@"currentInfo"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            barcodeID = self.barcodeArray[indexPath.row];
+            
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self presentViewController:navController animated:YES completion:nil];
+            
+            [MBProgressHUD hideHUDForView:self.tabBarController.navigationController.view animated:YES];
+        });
+    });
 }
 
 @end

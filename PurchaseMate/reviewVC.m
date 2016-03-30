@@ -23,7 +23,7 @@
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
-        corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcodeID];
+        corpInfo = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"currentInfo"];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             

@@ -10,41 +10,32 @@
 
 @implementation CorpInfo
 
-- (NSString *)checkForCorpWithBarcode:(NSString* )ID {
-    
+- (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
+
     NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
     if (productName == nil) {
         return nil;
     } else {
         NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
         if (corpName != nil) {
-            return corpName;
+            NSDictionary *orgDict = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
+            NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgDict[@"orgid"]]];
+            
+            NSString *ethicsString = [self getEthicsRatingWithName:corpName];
+            
+            NSMutableDictionary *corpInfo = [NSMutableDictionary
+                                             dictionaryWithDictionary:@{
+                                                                        @"productName" : productName,
+                                                                        @"corpName" : corpName,
+                                                                        @"orgDict" : orgDict,
+                                                                        @"politicalInfo" : politicalDictionary,
+                                                                        @"ethics" : ethicsString
+                                                                        }];
+            return corpInfo;
         }
     }
     
     return nil;
-}
-
-- (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
-
-    NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://www.outpan.com/api/get-product.php?apikey=cbf4f07abd482df99358395a75b6340a&barcode=%@", ID]];
-    NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
-
-    NSDictionary *orgDict = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
-    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgDict[@"orgid"]]];
-
-    NSString *ethicsString = [self getEthicsRatingWithName:corpName];
-    
-    NSMutableDictionary *corpInfo = [NSMutableDictionary
-                                     dictionaryWithDictionary:@{
-                                                                @"productName" : productName,
-                                                                @"corpName" : corpName,
-                                                                @"orgDict" : orgDict,
-                                                                @"politicalInfo" : politicalDictionary,
-                                                                @"ethics" : ethicsString
-                                                                }];
-    
-    return corpInfo;
 }
 
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString {

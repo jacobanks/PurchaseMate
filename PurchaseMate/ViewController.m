@@ -188,17 +188,18 @@
 - (void)scanProduct:(NSString *)barcode {
     // 04976400
     
-    __block NSString *corpName;
+    __block NSDictionary *corpInfo;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        corpName = [[[CorpInfo alloc] init] checkForCorpWithBarcode:barcode];
+        corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcode];
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (corpName != nil) {
+            if (corpInfo != nil) {
                 barcodeID = barcode;
+                
                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -218,6 +219,9 @@
                     [userDefaults synchronize];
                 }
                 
+                [[NSUserDefaults standardUserDefaults] setObject:corpInfo forKey:@"currentInfo"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
                 
             } else {
@@ -235,46 +239,33 @@
     CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barCodeObject;
     NSString *detectionString = nil;
-    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
+    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
                               AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
                               AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
     
     for (AVMetadataObject *metadata in metadataObjects) {
+        for (NSString *type in barCodeTypes) {
+            if ([metadata.type isEqualToString:type])
+            {
+                barCodeObject = (AVMetadataMachineReadableCodeObject *)[prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+                highlightViewRect = barCodeObject.bounds;
+                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
+                break;
+            }
+        }
         
-        if ((metadata.type != AVMetadataObjectTypeUPCECode) || (metadata.type != AVMetadataObjectTypeEAN13Code) || (metadata.type != AVMetadataObjectTypeEAN8Code)) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
-                                                            message:@"We do not currently support that type of barcode."
+        
+        if (!detectionString) {
+            label.text = @"There was a problem!";
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                            message:@"There was a problem scanning please try again."
                                                            delegate:self
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
             [alert show];
-            
         } else {
-            
-            for (NSString *type in barCodeTypes) {
-                if ([metadata.type isEqualToString:type])
-                {
-                    barCodeObject = (AVMetadataMachineReadableCodeObject *)[prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
-                    highlightViewRect = barCodeObject.bounds;
-                    detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
-                    break;
-                }
-            }
-            
-            
-            if (!detectionString) {
-                label.text = @"There was a problem!";
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                                message:@"There was a problem scanning please try again."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil];
-                [alert show];
-            } else {
-                label.text = @"Product Found!";
-                [self scanProduct:detectionString];
-            }
-
+            label.text = @"Product Found!";
+            [self scanProduct:detectionString];
         }
     }
     
