@@ -43,7 +43,7 @@
         NSDictionary *corpData = corpInfo.getCorpDictionary;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (corpInfo != nil) {
+            if (corpData != nil) {
                 self.labelsView.hidden = NO;
                 self.textFieldView.hidden = YES;
                 

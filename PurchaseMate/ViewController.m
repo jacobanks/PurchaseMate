@@ -12,12 +12,13 @@
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 #import "CameraFocusSquare.h"
+#import "searchView.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate>
+@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate, searchViewDelegate>
 {
     AVCaptureSession *session;
     AVCaptureDevice *device;
@@ -30,9 +31,6 @@
     
     NSMutableArray *barcodeArray;
     NSUserDefaults *userDefaults;
-
-    UIVisualEffectView *searchView;
-    UITextField *barcodeTextField;
 }
 
 
@@ -118,76 +116,15 @@
 }
 
 - (void)loadSearchView {
-    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    
-    searchView = [[UIVisualEffectView alloc] init];
-    
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        searchView.effect = blurEffect;
-    } completion:nil];
-    
     CGSize viewSize = [[UIScreen mainScreen] bounds].size;
-    searchView.frame = CGRectMake(0, 0, self.view.frame.size.width, viewSize.height);
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(viewTapped:)];
-    tap.numberOfTapsRequired = 1;
-    [searchView addGestureRecognizer:tap];
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:searchView];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, searchView.center.y - 120, searchView.frame.size.width, 30)];
-    [titleLabel setText:@"Enter a barcode number below"];
-    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:[UIFont boldSystemFontOfSize:17]];
-    [titleLabel setTextColor:[UIColor whiteColor]];
-    [searchView addSubview:titleLabel];
-    
-    barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(searchView.frame.origin.x + 10, searchView.center.y - 60, searchView.frame.size.width - 20, 40)];
-    [barcodeTextField setPlaceholder:@"Barcode Number"];
-    [barcodeTextField setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.4]];
-    [barcodeTextField setBorderStyle:UITextBorderStyleRoundedRect];
-    [barcodeTextField setUserInteractionEnabled:YES];
-    [barcodeTextField setTintColor:[UIColor whiteColor]];
-    [barcodeTextField setTextColor:[UIColor whiteColor]];
-    [barcodeTextField setKeyboardType:UIKeyboardTypeNumberPad];
-    [searchView addSubview:barcodeTextField];
-   
-    UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(searchView.frame.size.width - 120, 30, 100, 30)];
-    [searchButton setTitle:@"Search" forState:UIControlStateNormal];
-    [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    searchButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    searchButton.layer.borderWidth = 2;
-    searchButton.layer.cornerRadius = 5;
-    [searchButton addTarget:self action:@selector(searchAction) forControlEvents:UIControlEventTouchUpInside];
-    [searchView addSubview:searchButton];
-    
-    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 100, 30)];
-    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    cancelButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    cancelButton.layer.borderWidth = 2;
-    cancelButton.layer.cornerRadius = 5;
-    [cancelButton addTarget:self action:@selector(viewTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [searchView addSubview:cancelButton];
-}
-
-- (void)searchAction {
-    if ([barcodeTextField.text length] > 0 || barcodeTextField.text != nil || [barcodeTextField.text isEqual:@""] == FALSE) {
-        [self viewTapped:nil];
-        [self scanProduct:barcodeTextField.text];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                        message:@"You need to fill out the barcode field first!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
+    searchView *view = [[searchView alloc] initWithFrame:CGRectMake(0, 0, viewSize.width, viewSize.height)];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+    view.delegate = self;
 }
 
 - (void)scanProduct:(NSString *)barcode {
+    NSLog(@"Called");
     // 04976400
-    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -337,15 +274,6 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:navController animated:YES completion:nil];
     }
-}
-
-- (void)viewTapped:(UITapGestureRecognizer *)recognizer {
-
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        searchView.alpha = 0;
-    }completion:^(BOOL isFinished){
-        [searchView removeFromSuperview];
-    }];
 }
 
 @end

@@ -13,11 +13,6 @@ extern NSString *barcodeID;
 
 @interface ViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
 
-- (void)scanProduct:(NSString *)barcode;
-
-- (void)viewTapped:(UITapGestureRecognizer *)recognizer;
-- (void)loadSearchView;
-
 - (void)focus:(CGPoint)aPoint;
 - (void)showAlert;
 
