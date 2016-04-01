@@ -3695,9 +3695,9 @@
 				161C435F1B2CA80900F3F8F4 /* AppDelegate.h */,
 				161C43601B2CA80900F3F8F4 /* AppDelegate.m */,
 				161C43651B2CA80900F3F8F4 /* Main.storyboard */,
-				16F4AFE71BC7033D0007C322 /* View Controllers */,
-				16FEBEE81C5005B8006B8212 /* Backend */,
-				16F4AFE61BC703050007C322 /* External */,
+				1663CE761CAE4B1E00E92486 /* Model */,
+				1663CE771CAE4B2700E92486 /* View */,
+				1663CE781CAE4B3900E92486 /* Controller */,
 				161C43681B2CA80900F3F8F4 /* Images.xcassets */,
 				161C436A1B2CA80900F3F8F4 /* LaunchScreen.xib */,
 				161C435B1B2CA80900F3F8F4 /* Supporting Files */,
@@ -3763,13 +3763,73 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1663CE751CAE453300E92486 /* Custom Search View */ = {
+		1663CE751CAE453300E92486 /* searchView */ = {
 			isa = PBXGroup;
 			children = (
 				1663CE721CAE36F600E92486 /* searchView.h */,
 				1663CE731CAE36F600E92486 /* searchView.m */,
 			);
-			name = "Custom Search View";
+			name = searchView;
+			sourceTree = "<group>";
+		};
+		1663CE761CAE4B1E00E92486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1663CE7B1CAE4C3200E92486 /* CorpInfo */,
+				16CC11281B2E012200D09552 /* XMLParser */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1663CE771CAE4B2700E92486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1663CE791CAE4B9E00E92486 /* RateView */,
+				1663CE7A1CAE4BA600E92486 /* UICountingLabel */,
+				169A65671B4388640040F74C /* PNChart */,
+				16D830691C8BD1AF00407300 /* CameraFocusSquare */,
+				1663CE751CAE453300E92486 /* searchView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1663CE781CAE4B3900E92486 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16F4AFE81BC703490007C322 /* Scan View */,
+				16FEBEE41C4FFD46006B8212 /* Scanned */,
+				16F4AFE91BC703500007C322 /* Results */,
+				16F4AFEA1BC703600007C322 /* Review */,
+				16F4AFEB1BC703650007C322 /* Report */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1663CE791CAE4B9E00E92486 /* RateView */ = {
+			isa = PBXGroup;
+			children = (
+				16AEC56B1B83F7F700E538C0 /* RateView.h */,
+				16AEC56C1B83F7F700E538C0 /* RateView.m */,
+			);
+			name = RateView;
+			sourceTree = "<group>";
+		};
+		1663CE7A1CAE4BA600E92486 /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				169A65941B4389250040F74C /* UICountingLabel.h */,
+				169A65951B4389250040F74C /* UICountingLabel.m */,
+			);
+			name = UICountingLabel;
+			sourceTree = "<group>";
+		};
+		1663CE7B1CAE4C3200E92486 /* CorpInfo */ = {
+			isa = PBXGroup;
+			children = (
+				16FEBEE51C5005AA006B8212 /* CorpInfo.h */,
+				16FEBEE61C5005AA006B8212 /* CorpInfo.m */,
+			);
+			name = CorpInfo;
 			sourceTree = "<group>";
 		};
 		169A65671B4388640040F74C /* PNChart */ = {
@@ -3942,38 +4002,13 @@
 			path = x86_64;
 			sourceTree = "<group>";
 		};
-		16D830691C8BD1AF00407300 /* Camera Focus Square */ = {
+		16D830691C8BD1AF00407300 /* CameraFocusSquare */ = {
 			isa = PBXGroup;
 			children = (
 				16D830661C8BD1AB00407300 /* CameraFocusSquare.h */,
 				16D830671C8BD1AB00407300 /* CameraFocusSquare.m */,
 			);
-			name = "Camera Focus Square";
-			sourceTree = "<group>";
-		};
-		16F4AFE61BC703050007C322 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				16AEC56B1B83F7F700E538C0 /* RateView.h */,
-				16AEC56C1B83F7F700E538C0 /* RateView.m */,
-				169A65941B4389250040F74C /* UICountingLabel.h */,
-				169A65951B4389250040F74C /* UICountingLabel.m */,
-				169A65671B4388640040F74C /* PNChart */,
-				16CC11281B2E012200D09552 /* XMLParser */,
-			);
-			name = External;
-			sourceTree = "<group>";
-		};
-		16F4AFE71BC7033D0007C322 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				16F4AFE81BC703490007C322 /* Scan View */,
-				16FEBEE41C4FFD46006B8212 /* Scanned */,
-				16F4AFE91BC703500007C322 /* Results */,
-				16F4AFEA1BC703600007C322 /* Review */,
-				16F4AFEB1BC703650007C322 /* Report */,
-			);
-			name = "View Controllers";
+			name = CameraFocusSquare;
 			sourceTree = "<group>";
 		};
 		16F4AFE81BC703490007C322 /* Scan View */ = {
@@ -3981,8 +4016,6 @@
 			children = (
 				161C43621B2CA80900F3F8F4 /* ViewController.h */,
 				161C43631B2CA80900F3F8F4 /* ViewController.m */,
-				1663CE751CAE453300E92486 /* Custom Search View */,
-				16D830691C8BD1AF00407300 /* Camera Focus Square */,
 			);
 			name = "Scan View";
 			sourceTree = "<group>";
@@ -4023,15 +4056,6 @@
 				1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */,
 			);
 			name = Scanned;
-			sourceTree = "<group>";
-		};
-		16FEBEE81C5005B8006B8212 /* Backend */ = {
-			isa = PBXGroup;
-			children = (
-				16FEBEE51C5005AA006B8212 /* CorpInfo.h */,
-				16FEBEE61C5005AA006B8212 /* CorpInfo.m */,
-			);
-			name = Backend;
 			sourceTree = "<group>";
 		};
 		DE3A871597C2CDA7B86A963A /* Pods */ = {
