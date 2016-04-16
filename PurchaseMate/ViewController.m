@@ -99,6 +99,15 @@
     self.tabBarController.title = @"Scan";
     
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(loadSearchView)];
+    
+    UIButton *flash = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 15, 25)];
+    flash.tintColor = [UIColor whiteColor];
+    UIImage *image = [[UIImage imageNamed:@"lightningBolt.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [flash setImage:image forState:UIControlStateNormal];
+    [flash addTarget:self action:@selector(toggleFlashlight) forControlEvents:UIControlEventTouchUpInside];
+    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:flash];
+    
+//    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toggleFlashlight)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -167,6 +176,25 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
+}
+
+- (void)toggleFlashlight {
+    // check if flashlight available
+    Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
+    if (captureDeviceClass != nil) {
+        if ([device hasTorch] && [device hasFlash]) {
+            
+            [device lockForConfiguration:nil];
+            if (device.torchMode == AVCaptureTorchModeOff) {
+                [device setTorchMode:AVCaptureTorchModeOn];
+                [device setFlashMode:AVCaptureFlashModeOn];
+            } else {
+                [device setTorchMode:AVCaptureTorchModeOff];
+                [device setFlashMode:AVCaptureFlashModeOff];
+            }
+            [device unlockForConfiguration];
+        }
+    }
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection

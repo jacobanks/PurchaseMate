@@ -63,7 +63,6 @@
         cancelButton.layer.cornerRadius = 5;
         [cancelButton addTarget:self action:@selector(viewTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self.searchEffectView addSubview:cancelButton];
-
     }
     return self;
 }

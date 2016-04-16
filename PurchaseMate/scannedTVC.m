@@ -31,6 +31,7 @@
     self.tabBarController.title = @"Scanned Products";
     
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    self.tabBarController.navigationItem.leftBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {
