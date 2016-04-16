@@ -102,9 +102,9 @@
     
     UIButton *flash = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 15, 25)];
     flash.tintColor = [UIColor whiteColor];
-    UIImage *image = [[UIImage imageNamed:@"lightningBolt.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [flash setImage:image forState:UIControlStateNormal];
-    [flash addTarget:self action:@selector(toggleFlashlight) forControlEvents:UIControlEventTouchUpInside];
+    UIImage *offImage = [[UIImage imageNamed:@"lightningBoltOff"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [flash setImage:offImage forState:UIControlStateNormal];
+    [flash addTarget:self action:@selector(toggleFlashlight:) forControlEvents:UIControlEventTouchUpInside];
     self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:flash];
     
 //    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toggleFlashlight)];
@@ -178,7 +178,18 @@
     });
 }
 
-- (void)toggleFlashlight {
+- (void)toggleFlashlight:(id)sender {
+    
+    if ([sender isSelected]) {
+        UIImage *offImage = [[UIImage imageNamed:@"lightningBoltOff"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [sender setImage:offImage forState:UIControlStateNormal];
+        [sender setSelected:NO];
+    } else {
+        UIImage *onImage = [[UIImage imageNamed:@"lightningBoltOn"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [sender setImage:onImage forState:UIControlStateSelected];
+        [sender setSelected:YES];
+    }
+    
     // check if flashlight available
     Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
     if (captureDeviceClass != nil) {
