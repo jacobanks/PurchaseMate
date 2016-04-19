@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "CameraFocusSquare.h"
 #import "searchView.h"
+#import "reportTVC.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
@@ -38,8 +39,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
@@ -219,8 +219,7 @@
     
     for (AVMetadataObject *metadata in metadataObjects) {
         for (NSString *type in barCodeTypes) {
-            if ([metadata.type isEqualToString:type])
-            {
+            if ([metadata.type isEqualToString:type]) {
                 barCodeObject = (AVMetadataMachineReadableCodeObject *)[prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
                 highlightViewRect = barCodeObject.bounds;
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
@@ -275,19 +274,21 @@
     Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
     if (captureDeviceClass != nil) {
         AVCaptureDevice *localDevice = [captureDeviceClass defaultDeviceWithMediaType:AVMediaTypeVideo];
-        if([localDevice isFocusPointOfInterestSupported] &&
-           [localDevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+        if([localDevice isFocusPointOfInterestSupported] && [localDevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
             CGRect screenRect = [[UIScreen mainScreen] bounds];
             double screenWidth = screenRect.size.width;
             double screenHeight = screenRect.size.height;
             double focus_x = aPoint.x/screenWidth;
             double focus_y = aPoint.y/screenHeight;
+            
             if([localDevice lockForConfiguration:nil]) {
                 [localDevice setFocusPointOfInterest:CGPointMake(focus_x,focus_y)];
                 [localDevice setFocusMode:AVCaptureFocusModeAutoFocus];
+                
                 if ([localDevice isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
                     [localDevice setExposureMode:AVCaptureExposureModeAutoExpose];
                 }
+                
                 [localDevice unlockForConfiguration];
             }
         }

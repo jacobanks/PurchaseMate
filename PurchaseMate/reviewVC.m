@@ -7,6 +7,9 @@
 //
 
 #import "reviewVC.h"
+#import "ViewController.h"
+#import "MBProgressHUD.h"
+#import "CorpInfo.h"
 
 @interface reviewVC ()
 
@@ -28,12 +31,12 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.view.frame.size.height)];
+            UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.frame.size.height)];
             scrollview.showsVerticalScrollIndicator = YES;
             scrollview.scrollEnabled = YES;
             scrollview.userInteractionEnabled = YES;
             [self.view addSubview:scrollview];
-            scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, 800);
+            scrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 800);
             
             self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, self.view.frame.size.width, 120)];
             [self addShadowtoView:self.corpTitleView];

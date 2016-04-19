@@ -7,10 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import "MBProgressHUD.h"
-#import "ViewController.h"
-#import "CorpInfo.h"
 
 @interface reportTVC : UITableViewController <UITextViewDelegate>
 

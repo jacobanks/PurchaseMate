@@ -8,6 +8,8 @@
 
 #import "scannedTVC.h"
 #import "scannedTableViewCell.h"
+#import "CorpInfo.h"
+#import "MBProgressHUD.h"
 
 @interface scannedTVC ()
 
@@ -22,10 +24,12 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
     [self loadTableView:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadTableView:)
                                                  name:@"loadTableView"
-                                               object:nil];}
+                                               object:nil];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     self.tabBarController.title = @"Scanned Products";
@@ -92,7 +96,6 @@
         self.corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:self.barcodeArray[indexPath.row]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             barcodeID = self.barcodeArray[indexPath.row];
             
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

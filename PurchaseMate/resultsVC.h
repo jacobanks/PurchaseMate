@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PNChart.h"
-#import "reviewVC.h"
-#import "reportTVC.h"
 #import <QuartzCore/QuartzCore.h>
-#import "CorpInfo.h"
-#import "MBProgressHUD.h"
 
 @interface resultsVC : UITableViewController
 

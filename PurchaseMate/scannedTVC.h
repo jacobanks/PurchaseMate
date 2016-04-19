@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CorpInfo.h"
-#import "MBProgressHUD.h"
 
 @interface scannedTVC : UITableViewController
 

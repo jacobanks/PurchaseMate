@@ -7,6 +7,11 @@
 //
 
 #import "reportTVC.h"
+#import "MBProgressHUD.h"
+#import "ViewController.h"
+#import "CorpInfo.h"
+
+#import <Parse/Parse.h>
 
 @interface reportTVC ()
 

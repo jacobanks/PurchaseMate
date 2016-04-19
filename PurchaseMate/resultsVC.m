@@ -8,6 +8,11 @@
 
 #import "resultsVC.h"
 #import "ViewController.h"
+#import "PNChart.h"
+#import "reviewVC.h"
+#import "reportTVC.h"
+#import "CorpInfo.h"
+#import "MBProgressHUD.h"
 
 @interface resultsVC ()
 
