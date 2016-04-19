@@ -285,7 +285,7 @@
             if([localDevice lockForConfiguration:nil]) {
                 [localDevice setFocusPointOfInterest:CGPointMake(focus_x,focus_y)];
                 [localDevice setFocusMode:AVCaptureFocusModeAutoFocus];
-                if ([localDevice isExposureModeSupported:AVCaptureExposureModeAutoExpose]){
+                if ([localDevice isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
                     [localDevice setExposureMode:AVCaptureExposureModeAutoExpose];
                 }
                 [localDevice unlockForConfiguration];

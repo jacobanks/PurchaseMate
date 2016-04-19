@@ -171,7 +171,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.tabBarController.title = @"Results";
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
+//    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
+    
+    UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    done.tintColor = [UIColor whiteColor];
+    UIImage *offImage = [[UIImage imageNamed:@"cross.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [done setImage:offImage forState:UIControlStateNormal];
+    [done addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:done];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

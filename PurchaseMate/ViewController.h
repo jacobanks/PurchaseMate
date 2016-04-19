@@ -15,6 +15,8 @@ extern NSString *barcodeID;
 
 - (void)focus:(CGPoint)aPoint;
 - (void)showAlert;
+- (void)scanProduct:(NSString *)barcode;
+- (void)toggleFlashlight:(id)sender;
 
 @end
 
