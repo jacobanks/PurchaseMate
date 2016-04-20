@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import <Parse/Parse.h>
 #import "ViewController.h"
 #import "resultsVC.h"
 

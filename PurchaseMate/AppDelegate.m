@@ -16,9 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    [Parse setApplicationId:@"8qRzMOAeLczoJtCzWO6xVSH9h4NdNTsaGZELj9c1" clientKey:@"X0EK1KO7tV7nKfi2SFAAuKH9cy9Io9THTLAxOm8A"];
-    
+        
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1.0] }
                                              forState:UIControlStateSelected];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1.0]];

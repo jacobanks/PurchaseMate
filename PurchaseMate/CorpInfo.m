@@ -142,8 +142,8 @@ static NSMutableDictionary *corpDict;
     NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
     
     id score = [result objectForKey:@"Score:"];
-    NSDictionary *scoreDict = score;
-    return [NSString stringWithFormat:@"%@", scoreDict];
+    
+    return [NSString stringWithFormat:@"%@", score];
 }
 
 @end
