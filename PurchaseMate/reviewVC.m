@@ -66,23 +66,23 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.frame.size.height)];
+            UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame))];
             scrollview.showsVerticalScrollIndicator = YES;
             scrollview.scrollEnabled = YES;
             scrollview.userInteractionEnabled = YES;
             [self.view addSubview:scrollview];
             scrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 800);
             
-            self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, self.view.frame.size.width, 120)];
+            self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, CGRectGetWidth(self.view.frame), 120)];
             [self addShadowtoView:self.corpTitleView];
             
-            self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.corpTitleView.frame.size.width, 40)];
+            self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.corpTitleView.frame), 40)];
             self.corpLabel.text = self.corpData[@"orgDict"][@"orgname"];
             self.corpLabel.textAlignment = NSTextAlignmentCenter;
             self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
             [self.corpTitleView addSubview:self.corpLabel];
             
-            self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, self.corpTitleView.frame.size.width, 30)];
+            self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, CGRectGetWidth(self.corpTitleView.frame), 30)];
             self.productLabel.text = self.corpData[@"productName"];
             self.productLabel.textAlignment = NSTextAlignmentCenter;
             self.productLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
@@ -91,7 +91,7 @@
             
             [scrollview addSubview:self.corpTitleView];
             
-            self.rateView = [[UIView alloc] initWithFrame:CGRectMake(0, 122, self.view.frame.size.width, 80)];
+            self.rateView = [[UIView alloc] initWithFrame:CGRectMake(0, 122, CGRectGetWidth(self.view.frame), 80)];
             [self addShadowtoView:self.rateView];
             
             self.rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 30, 100, 20)];
@@ -100,7 +100,7 @@
             self.rateLabel.alpha = 0.7;
             [self.rateView addSubview:self.rateLabel];
             
-            self.ratingView = [[RateView alloc] initWithFrame:CGRectMake(100, 15, self.view.frame.size.width / 2 + 60, 50)];
+            self.ratingView = [[RateView alloc] initWithFrame:CGRectMake(100, 15, CGRectGetWidth(self.view.frame) / 2 + 60, 50)];
             self.ratingView.notSelectedImage = [UIImage imageNamed:@"starEmpty"];
             self.ratingView.fullSelectedImage = [UIImage imageNamed:@"starFull"];
             self.ratingView.rating = 0;
@@ -111,28 +111,31 @@
             
             [scrollview addSubview:self.rateView];
             
-            self.buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 203, self.view.frame.size.width, 127)];
+            self.buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 203, CGRectGetWidth(self.view.frame), 127)];
             [self addShadowtoView:self.buyView];
             
-            self.buyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
+            self.buyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
             self.buyLabel.text = @"Would you buy this product?";
             self.buyLabel.textAlignment = NSTextAlignmentCenter;
             self.buyLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
             self.buyLabel.alpha = 0.7;
             [self.buyView addSubview:self.buyLabel];
             
-            self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, self.view.frame.size.width / 2 - 6, 77)];
+            self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
             [self.yesButton setTitle:@"Yes" forState:UIControlStateNormal];
             [self.yesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
             [self.yesButton setTitleColor:[UIColor colorWithRed:85.0/255.0 green:85.0/255.0 blue:85.0/255.0 alpha:0.3] forState:UIControlStateHighlighted];
-            [self.yesButton addTarget:self action:@selector(yesClicked:) forControlEvents:UIControlEventTouchUpInside];
+            
             self.yesButton.backgroundColor = [UIColor whiteColor];
+            
             self.yesButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
             self.yesButton.layer.borderWidth = 2;
             self.yesButton.layer.cornerRadius = 5;
+            
+            [self.yesButton addTarget:self action:@selector(yesClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.buyView addSubview:self.yesButton];
             
-            self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 2, 45, self.view.frame.size.width / 2 - 6, 77)];
+            self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 2, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
             [self.noButton setTitle:@"No" forState:UIControlStateNormal];
             [self.noButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             [self.noButton setTitleColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -145,10 +148,10 @@
             
             [scrollview addSubview:self.buyView];
             
-            self.whyView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, self.view.frame.size.width, 120)];
+            self.whyView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, CGRectGetWidth(self.view.frame), 120)];
             [self addShadowtoView:self.whyView];
             
-            self.whyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
+            self.whyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
             self.whyLabel.text = @"Why/Why not?";
             self.whyLabel.textAlignment = NSTextAlignmentCenter;
             self.whyLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
@@ -157,7 +160,7 @@
             
             self.whyArray = [[NSMutableArray alloc] init];
             
-            self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 150, 35, 130, 35)];
+            self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - 150, 35, 130, 35)];
             [self.ethicsButton setTitle:@"Ethics" forState:UIControlStateNormal];
             [self.ethicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self.ethicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -168,7 +171,7 @@
             [self.ethicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.whyView addSubview:self.ethicsButton];
             
-            self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 20, 35, 130, 35)];
+            self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 20, 35, 130, 35)];
             [self.politicsButton setTitle:@"Politics" forState:UIControlStateNormal];
             [self.politicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self.politicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -179,7 +182,7 @@
             [self.politicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.whyView addSubview:self.politicsButton];
             
-            self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 150, 80, 130, 35)];
+            self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - 150, 80, 130, 35)];
             [self.gmoButton setTitle:@"GMO" forState:UIControlStateNormal];
             [self.gmoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self.gmoButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -190,7 +193,7 @@
             [self.gmoButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.whyView addSubview:self.gmoButton];
             
-            self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 + 20, 80, 130, 35)];
+            self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 20, 80, 130, 35)];
             [self.originButton setTitle:@"Origin" forState:UIControlStateNormal];
             [self.originButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self.originButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
@@ -203,17 +206,17 @@
             
             [scrollview addSubview:self.whyView];
             
-            self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 452, self.view.frame.size.width, 140)];
+            self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 452, CGRectGetWidth(self.view.frame), 140)];
             [self addShadowtoView:self.explainView];
             
-            self.explainTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 25)];
+            self.explainTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
             self.explainTitleLabel.text = @"Further Review/Comments";
             self.explainTitleLabel.textAlignment = NSTextAlignmentCenter;
             self.explainTitleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
             self.explainTitleLabel.alpha = 0.7;
             [self.explainView addSubview:self.explainTitleLabel];
             
-            self.explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.explainTitleLabel.center.y + 15, self.explainView.frame.size.width, 100)];
+            self.explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.explainTitleLabel.center.y + 15, CGRectGetWidth(self.explainView.frame), 100)];
             self.explainTextView.editable = YES;
             [self.explainView addSubview:self.explainTextView];
             

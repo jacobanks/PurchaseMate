@@ -36,24 +36,24 @@
         
         [self addSubview:self.searchEffectView];
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.searchEffectView.center.y - 120, self.searchEffectView.frame.size.width, 30)];
-        [titleLabel setText:@"Enter a barcode number below"];
-        [titleLabel setTextAlignment:NSTextAlignmentCenter];
-        [titleLabel setFont:[UIFont boldSystemFontOfSize:17]];
-        [titleLabel setTextColor:[UIColor whiteColor]];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.searchEffectView.center.y - 120, CGRectGetWidth(self.searchEffectView.frame), 30)];
+        titleLabel.text = @"Enter a barcode number below";
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.font = [UIFont boldSystemFontOfSize:17];
+        titleLabel.textColor = [UIColor whiteColor];
         [self.searchEffectView addSubview:titleLabel];
         
-        self.barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.searchEffectView.frame.origin.x + 10, self.searchEffectView.center.y - 60, self.searchEffectView.frame.size.width - 20, 40)];
-        [self.barcodeTextField setPlaceholder:@"Barcode Number"];
-        [self.barcodeTextField setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.4]];
-        [self.barcodeTextField setBorderStyle:UITextBorderStyleRoundedRect];
-        [self.barcodeTextField setUserInteractionEnabled:YES];
-        [self.barcodeTextField setTintColor:[UIColor whiteColor]];
-        [self.barcodeTextField setTextColor:[UIColor whiteColor]];
-        [self.barcodeTextField setKeyboardType:UIKeyboardTypeNumberPad];
+        self.barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.searchEffectView.frame) + 10, self.searchEffectView.center.y - 60, CGRectGetWidth(self.searchEffectView.frame) - 20, 40)];
+        self.barcodeTextField.placeholder = @"Barcode Number";
+        self.barcodeTextField.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];
+        self.barcodeTextField.borderStyle = UITextBorderStyleRoundedRect;
+        self.barcodeTextField.userInteractionEnabled = YES;
+        self.barcodeTextField.tintColor = [UIColor whiteColor];
+        self.barcodeTextField.textColor = [UIColor whiteColor];
+        self.barcodeTextField.keyboardType = UIKeyboardTypeNumberPad;
         [self.searchEffectView addSubview:self.barcodeTextField];
         
-        UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(self.searchEffectView.frame.size.width - 120, 30, 100, 30)];
+        UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.searchEffectView.frame) - 120, 30, 100, 30)];
         [searchButton setTitle:@"Search" forState:UIControlStateNormal];
         [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         searchButton.layer.borderColor = [UIColor whiteColor].CGColor;

@@ -158,15 +158,15 @@
 
             
             // set labels to be set at the center of the graphs
-            self.republicanLabel.frame = CGRectMake(republicanChart.frame.origin.x, republicanChart.frame.origin.y, republicanChart.frame.size.width, republicanChart.frame.size.height);
-            self.repubTitleLabel.frame = CGRectMake(republicanChart.frame.origin.x, self.repubTitleLabel.frame.origin.y, republicanChart.frame.size.width, self.repubTitleLabel.frame.size.height);
+            self.republicanLabel.frame = CGRectMake(CGRectGetMinX(republicanChart.frame), CGRectGetMinY(republicanChart.frame), CGRectGetWidth(republicanChart.frame), CGRectGetHeight(republicanChart.frame));
+            self.repubTitleLabel.frame = CGRectMake(CGRectGetMinX(republicanChart.frame),CGRectGetMinY(self.repubTitleLabel.frame), CGRectGetWidth(republicanChart.frame), CGRectGetHeight(self.repubTitleLabel.frame));
             
-            self.democratLabel.frame = CGRectMake(democratChart.frame.origin.x, democratChart.frame.origin.y, democratChart.frame.size.width, democratChart.frame.size.height);
-            self.demoTitleLabel.frame = CGRectMake(democratChart.frame.origin.x, self.demoTitleLabel.frame.origin.y, democratChart.frame.size.width, self.demoTitleLabel.frame.size.height);
+            self.democratLabel.frame = CGRectMake(CGRectGetMinX(democratChart.frame), CGRectGetMinY(democratChart.frame), CGRectGetWidth(democratChart.frame), CGRectGetHeight(democratChart.frame));
+            self.demoTitleLabel.frame = CGRectMake(CGRectGetMinX(democratChart.frame), CGRectGetMinY(self.demoTitleLabel.frame), CGRectGetWidth(democratChart.frame), CGRectGetHeight(self.demoTitleLabel.frame));
             
             //        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
             //        if (stars != 0) {
-            //            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 110, self.view.frame.size.width, 50)];
+            //            self.starsView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.viewframe) - 110, self.view.frame.size.width, 50)];
             //            [self.starsView setBackgroundColor:[UIColor colorWithRed:122/255.0 green:218/255.0 blue:255/255 alpha:1]];
             //
             //            self.starsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 375, 50)];
