@@ -16,17 +16,39 @@
 
 @interface resultsVC ()
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel, *corpLabel, *productLabel, *lobbyingLabel, *republicanLabel, *democratLabel, *indiLabel, *repubTitleLabel,
-*demoTitleLabel, *lobbyTitleLabel, *indiTitleLabel, *ethicsLabel, *ethicsTitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *corpLabel;
+@property (nonatomic, strong) IBOutlet UILabel *productLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *republicanLabel;
+@property (nonatomic, strong) IBOutlet UILabel *repubTitleLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *democratLabel;
+@property (nonatomic, strong) IBOutlet UILabel *demoTitleLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *lobbyingLabel;
+@property (nonatomic, strong) IBOutlet UILabel *lobbyTitleLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *ethicsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *ethicsTitleLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *indiTitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *indiLabel;
+
 @property (nonatomic, strong) UILabel *starsLabel;
+
 @property (nonatomic, strong) UIView *starsView;
 @property (nonatomic, strong) IBOutlet UIView *lobbyingView, *independentView, *equityView;
+
 @property (nonatomic, strong) IBOutlet UITableViewCell *contributionsCell, *partyCell;
 @property (nonatomic, strong) NSDictionary *corpData;
 
 @end
 
 @implementation resultsVC
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -199,6 +221,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+
 - (void)openReportView {
     [self performSegueWithIdentifier:@"report" sender:nil];
 }
@@ -206,15 +230,5 @@
 - (void)dismissView {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

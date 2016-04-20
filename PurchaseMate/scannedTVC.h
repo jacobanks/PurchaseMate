@@ -10,11 +10,6 @@
 
 @interface scannedTVC : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *barcodeArray;
-@property (strong, nonatomic) NSDictionary *corpInfo;
-
-@property (strong, nonatomic) NSDictionary *neededCorpInfo;
-
 - (void)loadTableView:(NSNotification *)notification;
 
 @end

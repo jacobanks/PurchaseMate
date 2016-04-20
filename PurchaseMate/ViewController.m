@@ -19,25 +19,26 @@
 #import <AudioToolbox/AudioServices.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate, searchViewDelegate>
-{
-    AVCaptureSession *session;
-    AVCaptureDevice *device;
-    AVCaptureDeviceInput *input;
-    AVCaptureMetadataOutput *output;
-    AVCaptureVideoPreviewLayer *prevLayer;
+@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate, searchViewDelegate, UIAlertViewDelegate, UITextFieldDelegate>
+
+    @property(strong, nonatomic) AVCaptureSession *session;
+    @property(strong, nonatomic) AVCaptureDevice *device;
+    @property(strong, nonatomic) AVCaptureDeviceInput *input;
+    @property(strong, nonatomic) AVCaptureMetadataOutput *output;
+    @property(strong, nonatomic) AVCaptureVideoPreviewLayer *prevLayer;
     
-    UIView *highlightView;
-    UILabel *label;
-    
-    NSMutableArray *barcodeArray;
-    NSUserDefaults *userDefaults;
-}
+    @property(strong, nonatomic) UIView *highlightView;
+    @property(strong, nonatomic) UILabel *bottomLabel;
+
+    @property(strong, nonatomic) NSMutableArray *barcodeArray;
+    @property(strong, nonatomic) NSUserDefaults *userDefaults;
 
 
 @end
 
 @implementation ViewController
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,53 +50,53 @@
     self.navigationController.navigationBar.translucent = NO;
     
     // initialize array of barcodes to display on scannedTVC
-    userDefaults = [NSUserDefaults standardUserDefaults];
-    barcodeArray = [[NSMutableArray alloc] init];
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    self.barcodeArray = [[NSMutableArray alloc] init];
     
-    highlightView = [[UIView alloc] init];
-    highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
-    highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
-    highlightView.layer.borderWidth = 3;
+    self.highlightView = [[UIView alloc] init];
+    self.highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+    self.highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.highlightView.layer.borderWidth = 3;
     
-    label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, self.view.bounds.size.height - 80, self.view.bounds.size.width, 30);
-    label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont fontWithName:@"Default" size:15];
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:label];
+    self.bottomLabel = [[UILabel alloc] init];
+    self.bottomLabel.frame = CGRectMake(0, self.view.bounds.size.height - 80, self.view.bounds.size.width, 30);
+    self.bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    self.bottomLabel.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
+    self.bottomLabel.textColor = [UIColor whiteColor];
+    self.bottomLabel.font = [UIFont fontWithName:@"Default" size:15];
+    self.bottomLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:self.bottomLabel];
     
-    session = [[AVCaptureSession alloc] init];
-    device = [AVCaptureDevice defaultDeviceWithMediaType: AVMediaTypeVideo];
+    self.session = [[AVCaptureSession alloc] init];
+    self.device = [AVCaptureDevice defaultDeviceWithMediaType: AVMediaTypeVideo];
     NSError *error = nil;
     
-    input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
-    if (input) {
-        [session addInput:input];
+    self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
+    if (self.input) {
+        [self.session addInput:self.input];
     } else {
         NSLog(@"Error: %@", error);
     }
     
-    output = [[AVCaptureMetadataOutput alloc] init];
-    [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [session addOutput:output];
+    self. output = [[AVCaptureMetadataOutput alloc] init];
+    [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    [self.session addOutput:self.output];
     
-    output.metadataObjectTypes = [output availableMetadataObjectTypes];
+    self.output.metadataObjectTypes = [self.output availableMetadataObjectTypes];
     
-    prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:session];
-    prevLayer.frame = self.view.bounds;
-    prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.view.layer addSublayer:prevLayer];
+    self.prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
+    self.prevLayer.frame = self.view.bounds;
+    self.prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    [self.view.layer addSublayer:self.prevLayer];
     
-    [self.view bringSubviewToFront:highlightView];
-    [self.view bringSubviewToFront:label];
+    [self.view bringSubviewToFront:self.highlightView];
+    [self.view bringSubviewToFront:self.bottomLabel];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    label.text = @"Scan a product to begin";
+    self.bottomLabel.text = @"Scan a product to begin";
     self.tabBarController.title = @"Scan";
     
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(loadSearchView)];
@@ -116,12 +117,12 @@
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
-    [session startRunning];
+    [self.session startRunning];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [highlightView removeFromSuperview];
-    [session stopRunning];
+    [self.highlightView removeFromSuperview];
+    [self.session stopRunning];
 }
 
 - (void)loadSearchView {
@@ -131,8 +132,9 @@
     view.delegate = self;
 }
 
+#pragma mark - Actions
+
 - (void)scanProduct:(NSString *)barcode {
-    NSLog(@"Called");
     // 04976400
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading...";
@@ -153,17 +155,17 @@
                 [self presentViewController:navController animated:YES completion:nil];
                 
                 // add values to barcodeArray to display on scannedTVC
-                barcodeArray = [NSMutableArray arrayWithArray:[userDefaults valueForKey:@"barcodes"]];
-                if (![barcodeArray containsObject:barcode]) {
-                    [barcodeArray insertObject:barcode atIndex:0];
-                    [userDefaults setObject:barcodeArray forKey:@"barcodes"];
-                    [userDefaults synchronize];
+                self.barcodeArray = [NSMutableArray arrayWithArray:[self.userDefaults valueForKey:@"barcodes"]];
+                if (![self.barcodeArray containsObject:barcode]) {
+                    [self.barcodeArray insertObject:barcode atIndex:0];
+                    [self.userDefaults setObject:self.barcodeArray forKey:@"barcodes"];
+                    [self.userDefaults synchronize];
                 } else {
                     // delete the barcode from array and then re-add it so it is at the top of tableview
-                    [barcodeArray removeObject:barcode];
-                    [barcodeArray insertObject:barcode atIndex:0];
-                    [userDefaults setObject:barcodeArray forKey:@"barcodes"];
-                    [userDefaults synchronize];
+                    [self.barcodeArray removeObject:barcode];
+                    [self.barcodeArray insertObject:barcode atIndex:0];
+                    [self.userDefaults setObject:self.barcodeArray forKey:@"barcodes"];
+                    [self.userDefaults synchronize];
                 }
 
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
@@ -193,20 +195,35 @@
     // check if flashlight available
     Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
     if (captureDeviceClass != nil) {
-        if ([device hasTorch] && [device hasFlash]) {
+        if ([self.device hasTorch] && [self.device hasFlash]) {
             
-            [device lockForConfiguration:nil];
-            if (device.torchMode == AVCaptureTorchModeOff) {
-                [device setTorchMode:AVCaptureTorchModeOn];
-                [device setFlashMode:AVCaptureFlashModeOn];
+            [self.device lockForConfiguration:nil];
+            
+            if (self.device.torchMode == AVCaptureTorchModeOff) {
+                [self.device setTorchMode:AVCaptureTorchModeOn];
+                [self.device setFlashMode:AVCaptureFlashModeOn];
             } else {
-                [device setTorchMode:AVCaptureTorchModeOff];
-                [device setFlashMode:AVCaptureFlashModeOff];
+                [self.device setTorchMode:AVCaptureTorchModeOff];
+                [self.device setFlashMode:AVCaptureFlashModeOff];
             }
-            [device unlockForConfiguration];
+            
+            [self.device unlockForConfiguration];
         }
     }
 }
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)showAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Report", nil];
+    [alert show];
+}
+
+#pragma mark - AVCaptureMetadataOutputObjectsDelegate
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
@@ -220,7 +237,7 @@
     for (AVMetadataObject *metadata in metadataObjects) {
         for (NSString *type in barCodeTypes) {
             if ([metadata.type isEqualToString:type]) {
-                barCodeObject = (AVMetadataMachineReadableCodeObject *)[prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+                barCodeObject = (AVMetadataMachineReadableCodeObject *)[self.prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
                 highlightViewRect = barCodeObject.bounds;
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 break;
@@ -229,7 +246,7 @@
         
         
         if (!detectionString) {
-            label.text = @"There was a problem!";
+            self.bottomLabel.text = @"There was a problem!";
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                             message:@"There was a problem scanning please try again."
                                                            delegate:self
@@ -237,16 +254,18 @@
                                                   otherButtonTitles:nil];
             [alert show];
         } else {
-            label.text = @"Product Found!";
+            self.bottomLabel.text = @"Product Found!";
             [self scanProduct:detectionString];
         }
     }
     
-    [self.view addSubview:highlightView];
-    highlightView.frame = highlightViewRect;
+    [self.view addSubview:self.highlightView];
+    self.highlightView.frame = highlightViewRect;
     
-    [session stopRunning];
+    [self.session stopRunning];
 }
+
+#pragma mark - Camera View Actions
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
@@ -281,7 +300,7 @@
             double focus_x = aPoint.x/screenWidth;
             double focus_y = aPoint.y/screenHeight;
             
-            if([localDevice lockForConfiguration:nil]) {
+            if ([localDevice lockForConfiguration:nil]) {
                 [localDevice setFocusPointOfInterest:CGPointMake(focus_x,focus_y)];
                 [localDevice setFocusMode:AVCaptureFocusModeAutoFocus];
                 
@@ -295,19 +314,12 @@
     }
 }
 
-- (void)showAlert {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Report", nil];
-    [alert show];
-}
+#pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
-        [highlightView removeFromSuperview];
-        [session startRunning];
+        [self.highlightView removeFromSuperview];
+        [self.session startRunning];
     } else {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         reportTVC *vc = (reportTVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"report"];

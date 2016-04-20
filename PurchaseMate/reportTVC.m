@@ -13,11 +13,24 @@
 
 #import <Parse/Parse.h>
 
-@interface reportTVC ()
+@interface reportTVC () <UITextViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UITextView *reportTextView;
+@property (nonatomic, strong) IBOutlet UILabel *corpLabel;
+@property (nonatomic, strong) IBOutlet UILabel *productLabel;
+@property (nonatomic, strong) IBOutlet UILabel *barcodeLabel;
+
+@property (nonatomic, strong) IBOutlet UITextField *corpTextField;
+@property (nonatomic, strong) IBOutlet UITextField *productTextField;
+
+@property (nonatomic, strong) IBOutlet UIView *labelsView;
+@property (nonatomic, strong) IBOutlet UIView *textFieldView;
 
 @end
 
 @implementation reportTVC
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,6 +95,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+
 - (void)submitAction:(id)sender {
     
     if (![self.reportTextView.text isEqual:@"Report any missing information or problems here..."]) {
@@ -118,12 +133,15 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UITextViewDelegate
+
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     
     if ([textView.text isEqualToString:@"Report any missing information or problems here..."]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor];
     }
+    
     [textView becomeFirstResponder];
 }
 
@@ -133,6 +151,7 @@
         textView.text = @"Report any missing information or problems here...";
         textView.textColor = [UIColor lightGrayColor];
     }
+    
     [textView resignFirstResponder];
 }
 

@@ -13,9 +13,15 @@
 
 @interface scannedTVC ()
 
+@property (strong, nonatomic) NSMutableArray *barcodeArray;
+@property (strong, nonatomic) NSDictionary *corpInfo;
+@property (strong, nonatomic) NSDictionary *neededCorpInfo;
+
 @end
 
 @implementation scannedTVC
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -11,11 +11,46 @@
 #import "MBProgressHUD.h"
 #import "CorpInfo.h"
 
-@interface reviewVC ()
+@interface reviewVC () <RateViewDelegate>
+
+@property (strong, nonatomic) RateView *ratingView;
+@property (strong, nonatomic) NSString *ratingString;
+
+
+@property (strong, nonatomic) UIView *corpTitleView;
+@property (strong, nonatomic) UIView *rateView;
+@property (strong, nonatomic) UIView *buyView;
+@property (strong, nonatomic) UIView *whyView;
+@property (strong, nonatomic) UIView *explainView;
+
+@property (strong, nonatomic) UILabel *corpLabel;
+@property (strong, nonatomic) UILabel *productLabel;
+@property (strong, nonatomic) UILabel *rateLabel;
+@property (strong, nonatomic) UILabel *buyLabel;
+@property (strong, nonatomic) UILabel *whyLabel;
+@property (strong, nonatomic) UILabel *explainTitleLabel;
+
+
+@property (strong, nonatomic) UIButton *yesButton;
+@property (strong, nonatomic) UIButton *noButton;
+@property (strong, nonatomic) UIButton *ethicsButton;
+@property (strong, nonatomic) UIButton *gmoButton;
+@property (strong, nonatomic) UIButton *politicsButton;
+@property (strong, nonatomic) UIButton *originButton;
+@property (strong, nonatomic) UIButton *submitButton;
+
+@property (strong, nonatomic) UITextView *explainTextView;
+
+@property (strong, nonatomic) NSString *buyQuestionString;
+@property (strong, nonatomic) NSMutableArray *whyArray;
+
+@property (strong, nonatomic) NSDictionary *corpData;
 
 @end
 
 @implementation reviewVC
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -197,10 +232,6 @@
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(submitClicked:)];
 }
 
-- (void)rateView:(RateView *)rateView ratingDidChange:(int)rating {
-    self.ratingString = [NSString stringWithFormat:@"%d", rating];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -215,9 +246,7 @@
     view.layer.cornerRadius = 5;
 }
 
-- (void)rateClicked:(id)sender {
-    //Have Rate button logic here
-}
+#pragma mark - Actions
 
 - (void)yesClicked:(id)sender {
     self.buyQuestionString = @"Yes";
@@ -299,5 +328,10 @@
     }
 }
 
+#pragma mark - RateViewDelegate
+
+- (void)rateView:(RateView *)rateView ratingDidChange:(int)rating {
+    self.ratingString = [NSString stringWithFormat:@"%d", rating];
+}
 
 @end

@@ -9,6 +9,13 @@
 #import "searchView.h"
 #import "ViewController.h"
 
+@interface searchView ()
+
+@property(strong, nonatomic) UIVisualEffectView *searchEffectView;
+@property(strong, nonatomic) UITextField *barcodeTextField;
+
+@end
+
 @implementation searchView
 
 - (id)initWithFrame:(CGRect)frame {

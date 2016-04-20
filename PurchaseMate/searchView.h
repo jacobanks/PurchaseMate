@@ -16,10 +16,7 @@
 
 @interface searchView : UIView
 
-@property UIVisualEffectView *searchEffectView;
-@property UITextField *barcodeTextField;
-
-@property id <searchViewDelegate> delegate;
+@property(weak, nonatomic) id <searchViewDelegate> delegate;
 
 - (void)viewTapped:(UITapGestureRecognizer *)recognizer;
 - (void)searchAction;
