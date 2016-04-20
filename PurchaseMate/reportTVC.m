@@ -11,8 +11,6 @@
 #import "ViewController.h"
 #import "CorpInfo.h"
 
-#import <Parse/Parse.h>
-
 @interface reportTVC () <UITextViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextView *reportTextView;
@@ -100,12 +98,17 @@
 - (void)submitAction:(id)sender {
     
     if (![self.reportTextView.text isEqual:@"Report any missing information or problems here..."]) {
-        PFObject *reportObject = [PFObject objectWithClassName:@"Reports"];
-        reportObject[@"Product_Name"] = ![self.productLabel.text isEqualToString:@"Label"] ? self.productLabel.text : self.productTextField.text;
-        reportObject[@"Company_Name"] = ![self.corpLabel.text isEqualToString:@"Label"] ? self.corpLabel.text : self.corpTextField.text;
-        reportObject[@"barcode"] = barcodeID != nil ? barcodeID : @"No barcode";
-        reportObject[@"report"] = self.reportTextView.text;
-        [reportObject saveInBackground];
+        
+        NSDictionary *reportInfo = @{ @"productName" : ![self.productLabel.text isEqualToString:@"Label"] ? self.productLabel.text : self.productTextField.text,
+                                      @"corpName" : ![self.corpLabel.text isEqualToString:@"Label"] ? self.corpLabel.text : self.corpTextField.text,
+                                      @"barcode" : barcodeID != nil ? barcodeID : @"No barcode",
+                                      @"report"  : self.reportTextView.text
+                                     };
+        
+        NSError *error = nil;
+        MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+        MongoDBCollection *collection = [dbConn collectionWithName:@"reportDB.reports"];
+        [collection insertDictionary:reportInfo writeConcern:nil error:&error];
         
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Thank You!"
                                                           message:@"Thank you for submitting a report! We will review this and fix the problem."

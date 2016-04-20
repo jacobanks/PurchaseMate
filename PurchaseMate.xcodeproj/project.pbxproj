@@ -30,9 +30,7 @@
 		161C43881B2CA89500F3F8F4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43871B2CA89500F3F8F4 /* AVFoundation.framework */; };
 		1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */; };
 		16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */; };
-		164ED8A31B67F312008BBD86 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164ED8A21B67F312008BBD86 /* Bolts.framework */; };
 		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
-		164ED8AA1B685BD6008BBD86 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164ED8A91B685BD6008BBD86 /* Parse.framework */; };
 		165583001B3DFFD200819716 /* reportTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 165582FF1B3DFFD200819716 /* reportTVC.m */; };
 		1663CE741CAE36F600E92486 /* searchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1663CE731CAE36F600E92486 /* searchView.m */; };
 		169A65861B4388640040F74C /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65691B4388640040F74C /* PNBar.m */; };
@@ -1752,7 +1750,6 @@
 			files = (
 				160F3EBE1B3E5214006816D1 /* AudioToolbox.framework in Frameworks */,
 				160F3EC61B3E525E006816D1 /* SystemConfiguration.framework in Frameworks */,
-				164ED8A31B67F312008BBD86 /* Bolts.framework in Frameworks */,
 				160F3EC41B3E524C006816D1 /* Security.framework in Frameworks */,
 				16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */,
 				160F3EC31B3E5240006816D1 /* libstdc++.6.dylib in Frameworks */,
@@ -1763,7 +1760,6 @@
 				160F3EBD1B3E5209006816D1 /* Accounts.framework in Frameworks */,
 				160F3EBB1B3E5202006816D1 /* Social.framework in Frameworks */,
 				160F3EBA1B3E51FC006816D1 /* AdSupport.framework in Frameworks */,
-				164ED8AA1B685BD6008BBD86 /* Parse.framework in Frameworks */,
 				161C43881B2CA89500F3F8F4 /* AVFoundation.framework in Frameworks */,
 				161C43861B2CA89000F3F8F4 /* UIKit.framework in Frameworks */,
 				161C43841B2CA88100F3F8F4 /* CoreGraphics.framework in Frameworks */,

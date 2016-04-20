@@ -25,14 +25,11 @@ static NSMutableDictionary *corpDict;
             
             NSString *ethicsString = [self getEthicsRatingWithName:corpName];
             
-            corpDict = [NSMutableDictionary
-                                             dictionaryWithDictionary:@{
-                                                                        @"productName" : productName,
+            corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
                                                                         @"corpName" : corpName,
                                                                         @"orgDict" : orgDict,
                                                                         @"politicalInfo" : politicalDictionary,
-                                                                        @"ethics" : ethicsString
-                                                                        }];
+                                                                        @"ethics" : ethicsString }];
             return corpDict;
         }
     }
