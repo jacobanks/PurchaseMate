@@ -20,7 +20,6 @@
 @property (strong, nonatomic) UIView *corpTitleView;
 @property (strong, nonatomic) UIView *rateView;
 @property (strong, nonatomic) UIView *buyView;
-@property (strong, nonatomic) UIView *whyView;
 @property (strong, nonatomic) UIView *explainView;
 
 @property (strong, nonatomic) UILabel *corpLabel;
@@ -33,16 +32,10 @@
 
 @property (strong, nonatomic) UIButton *yesButton;
 @property (strong, nonatomic) UIButton *noButton;
-@property (strong, nonatomic) UIButton *ethicsButton;
-@property (strong, nonatomic) UIButton *gmoButton;
-@property (strong, nonatomic) UIButton *politicsButton;
-@property (strong, nonatomic) UIButton *originButton;
-@property (strong, nonatomic) UIButton *submitButton;
 
 @property (strong, nonatomic) UITextView *explainTextView;
 
 @property (strong, nonatomic) NSString *buyQuestionString;
-@property (strong, nonatomic) NSMutableArray *whyArray;
 
 @property (strong, nonatomic) NSDictionary *corpData;
 
@@ -71,7 +64,7 @@
             scrollview.scrollEnabled = YES;
             scrollview.userInteractionEnabled = YES;
             [self.view addSubview:scrollview];
-            scrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 800);
+            scrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame) + 20);
             
             self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, CGRectGetWidth(self.view.frame), 120)];
             [self addShadowtoView:self.corpTitleView];
@@ -148,65 +141,7 @@
             
             [scrollview addSubview:self.buyView];
             
-            self.whyView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, CGRectGetWidth(self.view.frame), 120)];
-            [self addShadowtoView:self.whyView];
-            
-            self.whyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
-            self.whyLabel.text = @"Why/Why not?";
-            self.whyLabel.textAlignment = NSTextAlignmentCenter;
-            self.whyLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
-            self.whyLabel.alpha = 0.7;
-            [self.whyView addSubview:self.whyLabel];
-            
-            self.whyArray = [[NSMutableArray alloc] init];
-            
-            self.ethicsButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - 150, 35, 130, 35)];
-            [self.ethicsButton setTitle:@"Ethics" forState:UIControlStateNormal];
-            [self.ethicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [self.ethicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
-            self.ethicsButton.backgroundColor = [UIColor whiteColor];
-            self.ethicsButton.layer.borderColor = [UIColor blackColor].CGColor;
-            self.ethicsButton.layer.borderWidth = 2;
-            self.ethicsButton.layer.cornerRadius = 5;
-            [self.ethicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [self.whyView addSubview:self.ethicsButton];
-            
-            self.politicsButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 20, 35, 130, 35)];
-            [self.politicsButton setTitle:@"Politics" forState:UIControlStateNormal];
-            [self.politicsButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [self.politicsButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
-            self.politicsButton.backgroundColor = [UIColor whiteColor];
-            self.politicsButton.layer.borderColor = [UIColor blackColor].CGColor;
-            self.politicsButton.layer.borderWidth = 2;
-            self.politicsButton.layer.cornerRadius = 5;
-            [self.politicsButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [self.whyView addSubview:self.politicsButton];
-            
-            self.gmoButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - 150, 80, 130, 35)];
-            [self.gmoButton setTitle:@"GMO" forState:UIControlStateNormal];
-            [self.gmoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [self.gmoButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
-            self.gmoButton.backgroundColor = [UIColor whiteColor];
-            self.gmoButton.layer.borderColor = [UIColor blackColor].CGColor;
-            self.gmoButton.layer.borderWidth = 2;
-            self.gmoButton.layer.cornerRadius = 5;
-            [self.gmoButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [self.whyView addSubview:self.gmoButton];
-            
-            self.originButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 20, 80, 130, 35)];
-            [self.originButton setTitle:@"Origin" forState:UIControlStateNormal];
-            [self.originButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [self.originButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
-            self.originButton.backgroundColor = [UIColor whiteColor];
-            self.originButton.layer.borderColor = [UIColor blackColor].CGColor;
-            self.originButton.layer.borderWidth = 2;
-            self.originButton.layer.cornerRadius = 5;
-            [self.originButton addTarget:self action:@selector(whyButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [self.whyView addSubview:self.originButton];
-            
-            [scrollview addSubview:self.whyView];
-            
-            self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 452, CGRectGetWidth(self.view.frame), 140)];
+            self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, CGRectGetWidth(self.view.frame), 140)];
             [self addShadowtoView:self.explainView];
             
             self.explainTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
@@ -271,26 +206,9 @@
 
 }
 
-- (void)whyButtonClicked:(UIButton *)button {
-    
-    if ([self.whyArray containsObject:button.titleLabel.text]) {
-        [self.whyArray removeObject:button.titleLabel.text];
-    } else {
-        [self.whyArray addObject:button.titleLabel.text];
-    }
-    
-    if (button.backgroundColor == [UIColor whiteColor]) {
-        button.backgroundColor = [UIColor blackColor];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    } else {
-        button.backgroundColor = [UIColor whiteColor];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }
-}
-
 - (void)submitClicked:(id)sender {
     
-    if (self.buyQuestionString == nil || self.ratingString == nil || [self.whyArray count] == 0) {
+    if (self.buyQuestionString == nil || self.ratingString == nil) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
                                               message:@"You need to fill out all fields before continuing!"
                                                        delegate:nil
@@ -302,7 +220,6 @@
                                          @"corporation" : self.corpData[@"orgDict"][@"orgname"],
                                          @"product" : self.corpData[@"productName"],
                                          @"buyQuestion" : self.buyQuestionString,
-                                         @"why" : self.whyArray,
                                          @"rating" : self.ratingString,
                                          @"review" : self.explainTextView.text
                                          };
