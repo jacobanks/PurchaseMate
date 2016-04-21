@@ -272,21 +272,16 @@
     CGPoint touchPoint = [touch locationInView:touch.view];
     [self focus:touchPoint];
     
-    CameraFocusSquare *camFocus = [[CameraFocusSquare alloc] init];
-    
-    if (camFocus) {
-        [camFocus removeFromSuperview];
-    }
-
-    camFocus = [[CameraFocusSquare alloc] initWithFrame:CGRectMake(touchPoint.x - 40, touchPoint.y - 40, 80, 80)];
-    [camFocus setBackgroundColor:[UIColor clearColor]];
+    CameraFocusSquare *camFocus = [[CameraFocusSquare alloc] initWithFrame:CGRectMake(touchPoint.x - 40, touchPoint.y - 40, 80, 80)];
+    camFocus.backgroundColor = [UIColor clearColor];
     [self.view addSubview:camFocus];
     [camFocus setNeedsDisplay];
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.5];
-    [camFocus setAlpha:0.0];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:1.5 animations:^{
+        camFocus.alpha = 0;
+    } completion:^(BOOL finished) {
+        [camFocus removeFromSuperview];
+    }];
 }
 
 - (void)focus:(CGPoint)aPoint {

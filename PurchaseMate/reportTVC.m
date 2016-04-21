@@ -120,7 +120,7 @@
         
         barcodeID = nil;
         
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
