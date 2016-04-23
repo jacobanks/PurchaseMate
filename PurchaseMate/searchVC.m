@@ -19,11 +19,13 @@
 
 @implementation searchVC
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, (self.view.frame.size.height - 114));
+    CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, (self.view.frame.size.height - 113));
     self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
     [self.collectionView  setDataSource:self];
     [self.collectionView  setDelegate:self];
@@ -36,10 +38,19 @@
     self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    self.tabBarController.title = @"Discover";
+    self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    self.tabBarController.navigationItem.leftBarButtonItem = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UICollectionView DataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -53,10 +64,12 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     searchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor greenColor];
-
-    cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.corpsArray[indexPath.row]];
+    cell.backgroundColor = [UIColor colorWithRed:225.0/255.0 green:105.0/255.0 blue:12.0/255.0 alpha:0.75];
+    cell.layer.masksToBounds = YES;
+    cell.layer.cornerRadius = 6;
     
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.corpsArray[indexPath.row]];
+
     return cell;
 }
 
@@ -65,7 +78,7 @@
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(20, 10, 20, 10);  // top, left, bottom, right
+    return UIEdgeInsetsMake(10, 12, 10, 12);  // top, left, bottom, right
 }
 
 @end

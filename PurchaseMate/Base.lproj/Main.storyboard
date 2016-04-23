@@ -342,7 +342,7 @@
             </objects>
             <point key="canvasLocation" x="351.5" y="238.5"/>
         </scene>
-        <!--Search-->
+        <!--Discover-->
         <scene sceneID="3IQ-B6-q2e">
             <objects>
                 <viewController id="fWB-vd-rP4" customClass="searchVC" sceneMemberID="viewController">
@@ -351,7 +351,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="gdW-KJ-6Uo"/>
+                    <tabBarItem key="tabBarItem" title="Discover" id="gdW-KJ-6Uo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiW-p2-1bA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
