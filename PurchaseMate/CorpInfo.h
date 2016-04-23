@@ -18,6 +18,7 @@
 
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString;
 - (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary;
+- (NSArray *)getAllCorps;
 
 - (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring;
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString;

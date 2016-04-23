@@ -99,6 +99,33 @@ static NSMutableDictionary *corpDict;
     return nil;
 }
 
+- (NSArray *)getAllCorps {
+    
+    NSError *error = nil;
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    //Connect to MongoDB
+    MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+    MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
+    
+    NSArray *results = [collection findAllWithError:&error];
+    NSMutableArray *corpArray = [[NSMutableArray alloc] init];;
+    
+    for (BSONDocument *resultDoc in results) {
+        
+        NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
+        id corp = [result objectForKey:@"Corp"];
+        
+        if (![corpArray containsObject:corp]) {
+            [corpArray insertObject:corp atIndex:0];
+        }
+    }
+    
+    return corpArray;
+}
+
 - (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring {
     
     NSURL *URL = [[NSURL alloc] initWithString:[urlstring stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
