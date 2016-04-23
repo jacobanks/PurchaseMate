@@ -24,6 +24,41 @@
             </objects>
             <point key="canvasLocation" x="-177.5" y="238.5"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="tM0-lB-Ija">
+            <objects>
+                <collectionViewController id="Dgy-pN-5gK" customClass="searchViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dp3-35-fyH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I3C-YW-8dR">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iW2-ci-bek" customClass="searchViewCell">
+                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Dgy-pN-5gK" id="J0s-IE-LZo"/>
+                            <outlet property="delegate" destination="Dgy-pN-5gK" id="46o-sA-Fjs"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Search" id="yfr-ue-7Jg"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfu-Qp-xuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177.5" y="-527.5"/>
+        </scene>
         <!--My Scans-->
         <scene sceneID="8ty-zA-rCw">
             <objects>
@@ -80,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48D-nR-lyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177.5" y="991.5"/>
+            <point key="canvasLocation" x="-177.5" y="985.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0pD-NT-kqR">
@@ -112,6 +147,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="J1d-FG-7sE" kind="relationship" relationship="viewControllers" id="EHB-GQ-LdL"/>
+                        <segue destination="Dgy-pN-5gK" kind="relationship" relationship="viewControllers" id="pOk-13-Avs"/>
                         <segue destination="Aye-g3-Ffa" kind="relationship" relationship="viewControllers" id="UbL-pg-Cfd"/>
                     </connections>
                 </tabBarController>

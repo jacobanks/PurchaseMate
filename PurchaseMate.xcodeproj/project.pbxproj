@@ -49,6 +49,8 @@
 		169A65931B4388640040F74C /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65851B4388640040F74C /* PNScatterChartDataItem.m */; };
 		169A65961B4389250040F74C /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65951B4389250040F74C /* UICountingLabel.m */; };
 		16AEC56D1B83F7F700E538C0 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AEC56C1B83F7F700E538C0 /* RateView.m */; };
+		16C10D361CCB4988001B2001 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C10D351CCB4988001B2001 /* searchViewController.m */; };
+		16C10D3A1CCB4BAB001B2001 /* searchViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C10D391CCB4BAB001B2001 /* searchViewCell.m */; };
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
 		16D830681C8BD1AB00407300 /* CameraFocusSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D830671C8BD1AB00407300 /* CameraFocusSquare.m */; };
 		16D968691C631671007B89D7 /* scannedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D968681C631671007B89D7 /* scannedTVC.m */; };
@@ -1716,6 +1718,10 @@
 		169A65951B4389250040F74C /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		16AEC56B1B83F7F700E538C0 /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
 		16AEC56C1B83F7F700E538C0 /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
+		16C10D341CCB4988001B2001 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
+		16C10D351CCB4988001B2001 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
+		16C10D381CCB4BAB001B2001 /* searchViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewCell.h; sourceTree = "<group>"; };
+		16C10D391CCB4BAB001B2001 /* searchViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewCell.m; sourceTree = "<group>"; };
 		16CC112B1B2E025200D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16CC112D1B2E025200D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
 		16CC112F1B2E025200D09552 /* libchilkatIos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libchilkatIos.a; sourceTree = "<group>"; };
@@ -3762,6 +3768,8 @@
 		1663CE751CAE453300E92486 /* searchView */ = {
 			isa = PBXGroup;
 			children = (
+				16C10D381CCB4BAB001B2001 /* searchViewCell.h */,
+				16C10D391CCB4BAB001B2001 /* searchViewCell.m */,
 				1663CE721CAE36F600E92486 /* searchView.h */,
 				1663CE731CAE36F600E92486 /* searchView.m */,
 			);
@@ -3792,6 +3800,7 @@
 		1663CE781CAE4B3900E92486 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				16C10D371CCB4997001B2001 /* Search View Controller */,
 				16F4AFE81BC703490007C322 /* Scan View */,
 				16FEBEE41C4FFD46006B8212 /* Scanned */,
 				16F4AFE91BC703500007C322 /* Results */,
@@ -3863,6 +3872,15 @@
 				169A65851B4388640040F74C /* PNScatterChartDataItem.m */,
 			);
 			path = PNChart;
+			sourceTree = "<group>";
+		};
+		16C10D371CCB4997001B2001 /* Search View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16C10D341CCB4988001B2001 /* searchViewController.h */,
+				16C10D351CCB4988001B2001 /* searchViewController.m */,
+			);
+			name = "Search View Controller";
 			sourceTree = "<group>";
 		};
 		16CC11281B2E012200D09552 /* XMLParser */ = {
@@ -4207,8 +4225,10 @@
 				169A658B1B4388640040F74C /* PNGenericChart.m in Sources */,
 				16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */,
 				1663CE741CAE36F600E92486 /* searchView.m in Sources */,
+				16C10D361CCB4988001B2001 /* searchViewController.m in Sources */,
 				169A65911B4388640040F74C /* PNScatterChart.m in Sources */,
 				165583001B3DFFD200819716 /* reportTVC.m in Sources */,
+				16C10D3A1CCB4BAB001B2001 /* searchViewCell.m in Sources */,
 				16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */,
 				169A65881B4388640040F74C /* PNChartLabel.m in Sources */,
 				169A65861B4388640040F74C /* PNBar.m in Sources */,
