@@ -36,6 +36,9 @@
     [self.view addSubview:self.collectionView];
     
     self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
+    
+    NSArray *productsArray = [[[CorpInfo alloc] init] getAllProductsWithCorpName:@"Coca-Cola Co"];
+    NSLog(@"%@", productsArray);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -79,6 +82,12 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(10, 12, 10, 12);  // top, left, bottom, right
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+//    searchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    NSLog(@"Selected");
 }
 
 @end

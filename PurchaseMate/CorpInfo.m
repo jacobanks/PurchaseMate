@@ -126,6 +126,35 @@ static NSMutableDictionary *corpDict;
     return corpArray;
 }
 
+- (NSArray *)getAllProductsWithCorpName:(NSString *)CorpName {
+    NSError *error = nil;
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    //Connect to MongoDB
+    MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
+    MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
+    
+    MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
+    [predicate keyPath:@"Corp" matches:CorpName];
+    NSArray *results = [collection findWithPredicate:predicate error:&error];
+    NSMutableArray *productArray = [[NSMutableArray alloc] init];;
+    
+    for (BSONDocument *resultDoc in results) {
+        
+        NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
+        id product = [result objectForKey:@"Name"];
+        
+        if (![productArray containsObject:product]) {
+            [productArray insertObject:product atIndex:0];
+        }
+    }
+    
+    return productArray;
+
+}
+
 - (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring {
     
     NSURL *URL = [[NSURL alloc] initWithString:[urlstring stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
