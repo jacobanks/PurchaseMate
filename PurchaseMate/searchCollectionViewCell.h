@@ -1,5 +1,5 @@
 //
-//  searchViewController.h
+//  searchCollectionViewCell.h
 //  PurchaseMate
 //
 //  Created by Jacob Banks on 4/23/16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface searchViewController : UICollectionViewController
+@interface searchCollectionViewCell : UICollectionViewCell
+
+@property (strong, nonatomic) UILabel *titleLabel;
 
 @end

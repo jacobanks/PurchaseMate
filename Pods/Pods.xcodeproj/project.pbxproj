@@ -13,7 +13,7 @@
 		<key>00B79ECF86CDB440D387E96D7A5A944F</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>DCEF5564C24CE52BA875D3AEE0892544</string>
+			<string>3DC06D8E2ADCB7608BCA7BA30B3F11A2</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -66,25 +66,10 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>01129E0E76051B2EE44A9C89A669B63D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MongoWriteConcern.h</string>
-			<key>path</key>
-			<string>Mongo/MongoWriteConcern.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>014F3CDE78C9A488013C3BA70CBE2095</key>
 		<dict>
 			<key>fileRef</key>
-			<string>625A0FDD8115F6EE272E728BAF31C12C</string>
+			<string>2D6003695ABEA41BBCB3DBB2DE554AE1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -95,25 +80,25 @@
 				</array>
 			</dict>
 		</dict>
-		<key>03456DF22C020E32AFCD497FEA68B5D3</key>
+		<key>03AE9C77C8344AC3F7635EF9CB73F788</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>MongoUpdateRequest.m</string>
+			<string>BSONDocument.h</string>
 			<key>path</key>
-			<string>Mongo/MongoUpdateRequest.m</string>
+			<string>BSON/BSONDocument.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>04261DCABE9B9F4808C64CC79AF230E5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B4120B9FFDA382680A496D9C2653759F</string>
+			<string>E1CD39F921DA4589327B807114CCFBCA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -127,7 +112,7 @@
 		<key>053B8B2CB1F65C04EA8CBB37FE5AD86F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>651B1431ECC12E49A2E30E9496C4E2E0</string>
+			<string>EA208773E8B08AF5B5D1775222BDA619</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -138,21 +123,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>070093E0D77F8423D8E2D29DB14372DB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1301C74BBA80A7DD8D18FE9AF3E9D63E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>074E99A620EDB20AD18C6A73F5F3D66B</key>
+		<key>065345EA8A392B1C358B819CF8F075B2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -161,31 +132,61 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>BSONDocument.m</string>
+			<string>BSONEncoder.m</string>
 			<key>path</key>
-			<string>BSON/BSONDocument.m</string>
+			<string>BSON/BSONEncoder.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>07D268F2E35A32E8FEBC7BD49B3357C3</key>
+		<key>06585D8AF63F3A25790C3BD432205578</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>290AFC736F121DE5927381F621ACC08F</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0689E4A48F71521D2D075BE2EDE56FD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2515D90671CB374133696AFF08387F16</string>
+				<string>6F594A415EB7F57F55E226791032D356</string>
+				<string>EC0E6419DB32CCE01CD3F55A418219F4</string>
+				<string>7F4D114AB9A128060BA9D158DED19F9B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>NSString+BSONAdditions.m</string>
+			<string>ObjCMongoDB</string>
 			<key>path</key>
-			<string>BSON/NSString+BSONAdditions.m</string>
+			<string>ObjCMongoDB</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0697BD044763FCE64487E1AB40062330</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>330FC049772A380B2B4B293B1878252A</string>
+				<string>6FC7D2D81DC2D4AE49862C6A9B584D55</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
 		</dict>
 		<key>0A226835D6474C1A04EDB1C1F1E019F5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0E15170E24309792118EF25E2595149A</string>
+			<string>C3EF214F03110042469B4F5FBC8557EA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -201,10 +202,38 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>0B2EFF54A9AF8C908F0445C7A82F12CA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>BSONDecoder.m</string>
+			<key>path</key>
+			<string>BSON/BSONDecoder.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0B66D14B851D1E340166C9DE71982B6D</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>E61CE3B6DFA1FE6B3E296965C76C0E10</string>
+			<key>remoteInfo</key>
+			<string>MBProgressHUD</string>
+		</dict>
 		<key>0BDF42099AC6A7BBCBA8D54F33793728</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2364D0FA09045DCCCE2A3720E7F1BDC1</string>
+			<string>2A57F0AB6E07771440BAC2ED14F9A18C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -215,16 +244,33 @@
 				</array>
 			</dict>
 		</dict>
-		<key>0E15170E24309792118EF25E2595149A</key>
+		<key>0C57C60071C6DAAF60D1C50FAC861E2B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>env.c</string>
+			<string>Mongo_PrivateInterfaces.h</string>
 			<key>path</key>
-			<string>src/env.c</string>
+			<string>Mongo/Mongo_PrivateInterfaces.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0DD9FB117F48DB60068126856E7DB733</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MongoWriteConcern.h</string>
+			<key>path</key>
+			<string>Mongo/MongoWriteConcern.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -279,10 +325,23 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
+		<key>0F50336DA7723FFC7858EC5F9285C871</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjCMongoDB-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>0F6FCF15CC1F4F05C46539443FDA2AAB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5C4D556E4F0ECA3674D67AA6993F0593</string>
+			<string>669F5476E6C9D64074E421178B8EA23A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -293,10 +352,23 @@
 				</array>
 			</dict>
 		</dict>
+		<key>1015AA61005D59C9EB35FEE46AE35179</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MBProgressHUD.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>10345A82D8750E931A4672C868E947CE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>899FB6F2C962B8984977EDE8889A5E45</string>
+			<string>C506E054DD64100D2F323D30EA626344</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -305,53 +377,10 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>10C75E6D980BBE20DB4CF198DC714C76</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>OrderedDictionary.m</string>
-			<key>path</key>
-			<string>OrderedDictionary/OrderedDictionary.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>11A93CAB25A37DEA2DC8CDA6343CEC39</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1301C74BBA80A7DD8D18FE9AF3E9D63E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SBJson4Parser.h</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4Parser.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>1374DD4E5C5B672E6C4AEE70B8F27C06</key>
 		<dict>
 			<key>fileRef</key>
-			<string>37A90560D22A41BDE7CFD8E647D269B7</string>
+			<string>1A1C559F445148A69DDE6BE70E899DB8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -362,36 +391,10 @@
 				</array>
 			</dict>
 		</dict>
-		<key>139C6D195274CB0BA14368CF079C9775</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>SBJson</string>
-			<key>target</key>
-			<string>8BD4114525B725D11EB13AFD0E670470</string>
-			<key>targetProxy</key>
-			<string>8EE5DC64D01B36FFA304D367C31C246E</string>
-		</dict>
-		<key>13CC9F423BAAA0AD97FBA40C411DF87E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MongoFindRequest.m</string>
-			<key>path</key>
-			<string>Mongo/MongoFindRequest.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>141E9F1626FE34EE75CDC2B7581B19F3</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6B2682670893DD330C137326B1EC49F1</string>
+			<string>1015AA61005D59C9EB35FEE46AE35179</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -444,23 +447,10 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>14858FDE56A346E026F60FCECE281E1F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>15FC2A9FA789A4DB129A6B62FA39DE4A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A6A608D9863D864BFCBFD78B2255B33A</string>
+			<string>60153274A9F8649642B1E3BA40832D43</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -469,7 +459,20 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>169A5E32B220C92117E9514DB6F3ABA3</key>
+		<key>17A50197F3117CE446DF74B0B04708B3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bcon.c</string>
+			<key>path</key>
+			<string>src/bcon.c</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>19FAA076E04B43DC5BE31B3F7F645516</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -478,48 +481,24 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>MongoPredicate.m</string>
+			<string>BSONIterator.m</string>
 			<key>path</key>
-			<string>Mongo/MongoPredicate.m</string>
+			<string>BSON/BSONIterator.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>175520CA3AE143F3EC02A5DB7E7D170F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B0AA74205DF001639BDB6515FE4BA7A7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>18E2F851CA5D46FC675B0CE6408A71C9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DF0F762152B182C8EA4ACE65B86F5907</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>192E71F45E8B68DF70D0BD7C1400ACE2</key>
+		<key>1A1C559F445148A69DDE6BE70E899DB8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSManagedObject+BSONCoding.h</string>
 			<key>path</key>
-			<string>MBProgressHUD-dummy.m</string>
+			<string>BSON/NSManagedObject+BSONCoding.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -539,7 +518,7 @@
 		<key>1CD8F60523ECAB1291F6961F04B13154</key>
 		<dict>
 			<key>fileRef</key>
-			<string>07D268F2E35A32E8FEBC7BD49B3357C3</string>
+			<string>564E3F6E11D7CF0581219549B64EFA91</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -547,21 +526,6 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
-		</dict>
-		<key>1DDB1B9D71C97FA52E2F29302483A695</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BSON_Helper.h</string>
-			<key>path</key>
-			<string>BSON/BSON_Helper.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1E2BA1F299716B5C21833BA62851E55D</key>
 		<dict>
@@ -586,7 +550,7 @@
 		<key>1E7623B9420C3E71FAE3287C0CECA040</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8D703988FC54140EF1DF6FD627FA6593</string>
+			<string>7E36469FCBA158C942BF35FBAD6BE584</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -597,19 +561,57 @@
 				</array>
 			</dict>
 		</dict>
-		<key>1F1AB51002604965F11565E22C28136C</key>
+		<key>20B8F0DEDD5D762D6EC1448450D3D212</key>
 		<dict>
-			<key>fileRef</key>
-			<string>70465DE30202AED91BE05AAF6C268FF0</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MongoConnection+Diagnostics.h</string>
+			<key>path</key>
+			<string>Mongo/MongoConnection+Diagnostics.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1FF771BA5E40A7E35504EF5D85A89482</key>
+		<key>22FD24A4417053047F371204253B7826</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFEAC1AA9B1F796B96556E8B7163D3F2</string>
+				<string>B48EE6C2A31ADBFC903589F74F8AAF7D</string>
+				<string>1015AA61005D59C9EB35FEE46AE35179</string>
+				<string>6721F7BD712D9140AE93E2BF1EC830FC</string>
+				<string>95126B665D0C4726B1F02D97E4934341</string>
+				<string>669F5476E6C9D64074E421178B8EA23A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/MBProgressHUD</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>248261B939D7E70BD239673FD89870FB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BSONDecoder.h</string>
+			<key>path</key>
+			<string>BSON/BSONDecoder.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24A8CEEA74D5E60714AFAF0125D09288</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -617,14 +619,69 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSDictionary+BSONAdditions.m</string>
 			<key>path</key>
-			<string>BSON/NSDictionary+BSONAdditions.m</string>
+			<string>mongo-c-driver-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2364D0FA09045DCCCE2A3720E7F1BDC1</key>
+		<key>2515D90671CB374133696AFF08387F16</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>787DF6623DAE1A37161ACEE2307A6CB7</string>
+				<string>C6746DF7163391DA390763A3F63F216C</string>
+				<string>93C2EA3CF7C7C84D9E44812A9B1EDF71</string>
+				<string>4551F77ADB75B7F7937A426D94E1D13E</string>
+				<string>248261B939D7E70BD239673FD89870FB</string>
+				<string>0B2EFF54A9AF8C908F0445C7A82F12CA</string>
+				<string>03AE9C77C8344AC3F7635EF9CB73F788</string>
+				<string>F79B61B15DD681C7BD71A4F94D09FB0F</string>
+				<string>D5AF68E24A6306EBEC2F90095565007B</string>
+				<string>065345EA8A392B1C358B819CF8F075B2</string>
+				<string>D0A785473F3AC17A3CC4BD1EDC175FC7</string>
+				<string>19FAA076E04B43DC5BE31B3F7F645516</string>
+				<string>B3259E82CE4DBF63A9670A1CC7677550</string>
+				<string>F5D93A363014BBB6436A9DD2B9015E84</string>
+				<string>EFF0FE5C0919650D3B8D6E50D69696D7</string>
+				<string>9F0C6EE1339C41FAA630F1C65711CC35</string>
+				<string>A2E0D9C7C9909FB40A7E25C29B36A173</string>
+				<string>83733606A92015E566CDEB19B6FE85A7</string>
+				<string>1A1C559F445148A69DDE6BE70E899DB8</string>
+				<string>AF6F13261423788EB7531A7B9C3C4E14</string>
+				<string>57431FB739743358B4B5348C59A9043E</string>
+				<string>564E3F6E11D7CF0581219549B64EFA91</string>
+				<string>E1CD39F921DA4589327B807114CCFBCA</string>
+				<string>93883E238C7C2C1378AE3900F379BA9C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BSON</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>25768665C249885E598BA8D9424EDE04</key>
+		<dict>
+			<key>fileRef</key>
+			<string>248261B939D7E70BD239673FD89870FB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>290AFC736F121DE5927381F621ACC08F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EF057973A5536CB41A75CC0617F1173</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2A57F0AB6E07771440BAC2ED14F9A18C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -639,21 +696,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>25768665C249885E598BA8D9424EDE04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DF75832B3CDE4515E66765C7A895943D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>25E2A789C0C69EAFFB8483ABEF1ADBFF</key>
+		<key>2A950AD1AF80A10E6D4C509B078A1721</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -662,67 +705,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>MongoConnection.h</string>
+			<string>encoding.h</string>
 			<key>path</key>
-			<string>Mongo/MongoConnection.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>27408B1BF0A144B7A12BE510D3F30931</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SBJson4StreamWriterState.m</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamWriterState.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>28FEF7E2D571C5BAFB2CB75EC6544869</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MongoConnection+Diagnostics.m</string>
-			<key>path</key>
-			<string>Mongo/MongoConnection+Diagnostics.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2AC6EE83D1B7EDA9FBFE82A10A892CF3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>mongo-c-driver.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2AFAD87E1A570203164DF586FD695DF3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SBJson4StreamTokeniser.m</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamTokeniser.m</string>
+			<string>src/encoding.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -739,7 +724,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2C594AE76F1A2BCE9212F37739A82FB8</key>
+		<key>2C53B87588D84C1D4E742EBEF5FE8078</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBProgressHUD.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D6003695ABEA41BBCB3DBB2DE554AE1</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -748,9 +746,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>bcon.h</string>
+			<string>md5.h</string>
 			<key>path</key>
-			<string>src/bcon.h</string>
+			<string>src/md5.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -782,24 +780,10 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>2DF9E1783E28366376EF57A0380078B6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DA27B90997738B72CB1AA4D7D462D511</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Project</string>
-				</array>
-			</dict>
-		</dict>
 		<key>2E583B182D9172BE15654935813276C4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C3EF54A8125BC3BD5BA9A0914BEF6FEB</string>
+			<string>CF51722E5BFB46BF40722DFF6D741540</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -808,303 +792,18 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>30A364BD820C5DC62491603244DE8605</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2AFAD87E1A570203164DF586FD695DF3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>30E3EC46B70D2651867018AF88C601F4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>994805DE2F1B6B0B0DB5400803C56930</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>32FF7121444A5C2FFE37DB786CD5DC75</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSDictionary+BSONAdditions.h</string>
-			<key>path</key>
-			<string>BSON/NSDictionary+BSONAdditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3362A68C822236D4E6B0C6B1284CA416</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>11A93CAB25A37DEA2DC8CDA6343CEC39</string>
-				<string>961FD5C94EED86AC19BADF69F098EB20</string>
-				<string>6B2682670893DD330C137326B1EC49F1</string>
-				<string>192E71F45E8B68DF70D0BD7C1400ACE2</string>
-				<string>558DF7C0ED4287B740AA375E359A635A</string>
-				<string>5C4D556E4F0ECA3674D67AA6993F0593</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/MBProgressHUD</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>35891D504DDC91E0933A262F6B71A8EF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SBJson4StreamWriter.m</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamWriter.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>37A90560D22A41BDE7CFD8E647D269B7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSManagedObject+BSONCoding.h</string>
-			<key>path</key>
-			<string>BSON/NSManagedObject+BSONCoding.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>380081A8728B05C3FCAC2846454AEEBF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9EF057973A5536CB41A75CC0617F1173</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>384F47A8CAF439AE374938F9552AEF40</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SBJson4StreamParserState.h</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamParserState.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>38FE0A5AC087B199FA35A0E3CA1A0A67</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E9C593747ED7765073CBBD68C7673D05</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>39DD6B3276382E749FECB9D54A586292</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSArray+MongoAdditions.m</string>
-			<key>path</key>
-			<string>Mongo/NSArray+MongoAdditions.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>39E59F605AA4F5C5A7412DB14E0389C2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>582C7205FAF3ABC3E4694B16D5ECA91D</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0E1A0562E915DD903EF291F4D96FCDC6</string>
-				<string>448C77C8B2B45FD5B40CAE6C481E12FC</string>
-				<string>F5FD0C44D163B1BAEB9FC5640418EFE4</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>4D814FD60F6E69829298189CA562815A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>ObjCMongoDB</string>
-			<key>productName</key>
-			<string>ObjCMongoDB</string>
-			<key>productReference</key>
-			<string>8D5F60E6BCF91EEEF6F68090F7A64F5A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>3A07A370B8AB0B2AFC43EFC2E6D59030</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2BCC458FDD5F692BBB2BFC64BB5701FC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>3AF4248C285ED8DFF77B861473016998</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BSONTypes.h</string>
-			<key>path</key>
-			<string>BSON/BSONTypes.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3C05F808EB4D21FD2290332985C93910</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SBJson4StreamWriter.h</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamWriter.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3D7EC109C73B06A929FD46F34E681BD7</key>
+		<key>2F101C5BB0553AC3985E6B7099280009</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXTargetDependency</string>
 			<key>name</key>
-			<string>ObjCMongoDB</string>
+			<string>MBProgressHUD</string>
 			<key>target</key>
-			<string>39E59F605AA4F5C5A7412DB14E0389C2</string>
+			<string>E61CE3B6DFA1FE6B3E296965C76C0E10</string>
 			<key>targetProxy</key>
-			<string>77E28866FAECE35C4B999EBFB3F5A0FC</string>
+			<string>0B66D14B851D1E340166C9DE71982B6D</string>
 		</dict>
-		<key>3E440B5F0F49495DE926330429DEEE3D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>501854B6F5E6CC9A32C0BC3763245935</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>3E4B3D9B15BA5AECA201DAA95436C5FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E158A165291F09A100B4137BEBE7A09A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>3EFEB46C8E06DC5D2A112ECD2E5D3638</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3A07A370B8AB0B2AFC43EFC2E6D59030</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>40C42F3F5DD94F29414FB7BF431221AC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>920F30930205B2AEC78FD44260A9FED8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>41475DA76D6E73436245F3F608821DC2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>bson.h</string>
-			<key>path</key>
-			<string>src/bson.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>42121D024002B3928F63204FA6C777FD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>encoding.c</string>
-			<key>path</key>
-			<string>src/encoding.c</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>42C9076C0211320605027FCB68C2FF88</key>
+		<key>300B836C3A403B76D75D5986A1B4E15E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1113,354 +812,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>BSONDecoder.m</string>
+			<string>MongoConnection+Diagnostics.m</string>
 			<key>path</key>
-			<string>BSON/BSONDecoder.m</string>
+			<string>Mongo/MongoConnection+Diagnostics.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>433EF4A98AC210663FEC157667173BC7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A5048E61A24A5C01F59CAF61739A3DD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>436E497297473DC2BC7C13202E5C0D94</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSManagedObject+BSONCoding.m</string>
-			<key>path</key>
-			<string>BSON/NSManagedObject+BSONCoding.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>43C235CD0982DC17EBC7F47172BA5260</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>SBJson.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>441BC5D3AC9DA1DC56203BB507B4B731</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D9B0D925DF698CC5011473A6AB512F64</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>448C77C8B2B45FD5B40CAE6C481E12FC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>380081A8728B05C3FCAC2846454AEEBF</string>
-				<string>9AAFAF6EB13F9E609DB104BDCC7944AC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>4B18813ACBDD722560B57B2FEB5706BD</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>701856A76B27F635B40BAA0366B70FD0</string>
-			<key>remoteInfo</key>
-			<string>mongo-c-driver</string>
-		</dict>
-		<key>4B7E4CCBE0121A91E8AFA326C6F63429</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8C3608A8EE1D1D3434B7C4122881CC3F</string>
-				<string>EF6363A72FA784B1F68A453E04171848</string>
-				<string>8D5F60E6BCF91EEEF6F68090F7A64F5A</string>
-				<string>DD78EBA8D5C8D4F610910F6B40F4AB9E</string>
-				<string>E93E854C48FCC2A9367C37DC823FBEA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4CC2E0113FA199E69D6E54A9A1013BAB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>encoding.h</string>
-			<key>path</key>
-			<string>src/encoding.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4D814FD60F6E69829298189CA562815A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>mongo-c-driver</string>
-			<key>target</key>
-			<string>701856A76B27F635B40BAA0366B70FD0</string>
-			<key>targetProxy</key>
-			<string>DDE91F2563F06F22E9F89F581A8B7C37</string>
-		</dict>
-		<key>501854B6F5E6CC9A32C0BC3763245935</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MongoTypes.m</string>
-			<key>path</key>
-			<string>Mongo/MongoTypes.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5220F301ADA2B394D95C5FD6A4889589</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCD1F89C2905FC7D5944E580294BBCA1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>5280DF7E101EF52858321D9F5AC0DCC3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3C05F808EB4D21FD2290332985C93910</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>52F251CB1A9389CE6EA786EDF598B66B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>668713EAF635B983D8DA77F4A67E4E7F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>547C551A47370525E21BCBDC3BC3C5A3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSArray+MongoAdditions.h</string>
-			<key>path</key>
-			<string>Mongo/NSArray+MongoAdditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>54ED8AFB3060AA2C86E0792075DCED56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>27408B1BF0A144B7A12BE510D3F30931</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>558DF7C0ED4287B740AA375E359A635A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MBProgressHUD-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>56256984C45AC1C87BB23255D579148E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SBJson-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>575ABC8B75BC39AD4AAC0F8198F1B070</key>
-		<dict>
-			<key>fileRef</key>
-			<string>926EAA5A929BE48E7DB7A59761F50AC8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>57CED99F39711D9A0F77239DCD39B715</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A2AAFCD607EE5C99ADE47DD4E3D8A2DF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>582C7205FAF3ABC3E4694B16D5ECA91D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>9E2AC4C754E3D7154ED876A9180F43F0</string>
-				<string>00B79ECF86CDB440D387E96D7A5A944F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5B995F1571C2F90130091E4DB43E8ECC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10C75E6D980BBE20DB4CF198DC714C76</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>5BA8F815BA179D29689CEA8B1039BC6E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>84F91B3DB61DC63539E5164AA3ECF8C7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>6591E5E8BBA50992AA5BE3BC5ED3BE2F</string>
-				<string>A44C7F1D1BB77BA1D5813A2DEFA48D9D</string>
-				<string>3EFEB46C8E06DC5D2A112ECD2E5D3638</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>F8739B49FC53F41C2903C8CAA95B99A1</string>
-				<string>3D7EC109C73B06A929FD46F34E681BD7</string>
-				<string>139C6D195274CB0BA14368CF079C9775</string>
-				<string>7B3B612FE8A6CD3603DCDA3B17242079</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>DD78EBA8D5C8D4F610910F6B40F4AB9E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>5BFB06E2B0893D91E452D1C3B5A94B5B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>01129E0E76051B2EE44A9C89A669B63D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>5C4D556E4F0ECA3674D67AA6993F0593</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MBProgressHUD-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FA13EB1EF1FC1DD092724CCEA005734</key>
+		<key>330FC049772A380B2B4B293B1878252A</key>
 		<dict>
 			<key>baseConfigurationReference</key>
 			<string>977577C045EDA9D9D1F46E2598D19FC7</string>
@@ -1522,10 +880,32 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>5FED711FBB1610A877E7ABDC1CD1BEEB</key>
+		<key>345FD5BD3E9159B6B5FB58CC4D71061E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoTypes.m</string>
+			<key>path</key>
+			<string>Mongo/MongoTypes.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>380081A8728B05C3FCAC2846454AEEBF</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E5F8A870E0F3E5B0FAC75EFA39CD3CC3</string>
+			<string>9EF057973A5536CB41A75CC0617F1173</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>38FE0A5AC087B199FA35A0E3CA1A0A67</key>
+		<dict>
+			<key>fileRef</key>
+			<string>065345EA8A392B1C358B819CF8F075B2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1534,10 +914,77 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>60936834B074499EEA0345F8263A325D</key>
+		<key>39E59F605AA4F5C5A7412DB14E0389C2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>582C7205FAF3ABC3E4694B16D5ECA91D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>0E1A0562E915DD903EF291F4D96FCDC6</string>
+				<string>448C77C8B2B45FD5B40CAE6C481E12FC</string>
+				<string>F5FD0C44D163B1BAEB9FC5640418EFE4</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>4D814FD60F6E69829298189CA562815A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ObjCMongoDB</string>
+			<key>productName</key>
+			<string>ObjCMongoDB</string>
+			<key>productReference</key>
+			<string>D5D642A54C9130D2B3E861B2170A14B9</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>3B36B8BB57AB66E448BCF37B86BF826B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoFindRequest.m</string>
+			<key>path</key>
+			<string>Mongo/MongoFindRequest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3DC06D8E2ADCB7608BCA7BA30B3F11A2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ObjCMongoDB.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E440B5F0F49495DE926330429DEEE3D</key>
 		<dict>
 			<key>fileRef</key>
-			<string>32FF7121444A5C2FFE37DB786CD5DC75</string>
+			<string>345FD5BD3E9159B6B5FB58CC4D71061E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>3E4B3D9B15BA5AECA201DAA95436C5FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BBD46C6D61B185FB51F957492EC0434B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1548,7 +995,587 @@
 				</array>
 			</dict>
 		</dict>
-		<key>610768998DDA9A6649C2F8F2D72BD137</key>
+		<key>4052E477C4A6405A5DBCDB2DFD67F9F8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>40C42F3F5DD94F29414FB7BF431221AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>920F30930205B2AEC78FD44260A9FED8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>42A925711B4F0AD5BC81A3B7783AC82A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>numbers.c</string>
+			<key>path</key>
+			<string>src/numbers.c</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>433EF4A98AC210663FEC157667173BC7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>57431FB739743358B4B5348C59A9043E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4401F475B62A9A51935130509F10357E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>0697BD044763FCE64487E1AB40062330</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4C5B98A8C4CB6408DA99701275DB24C4</string>
+				<string>06585D8AF63F3A25790C3BD432205578</string>
+				<string>7115C3AD820591453897AD6E4572D280</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>2F101C5BB0553AC3985E6B7099280009</string>
+				<string>B0EA51F7C0E11873BA831A0EB2DA088A</string>
+				<string>B132443F35BF12ADC990573DF0FA5978</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>803F241BA831DC8245F7793628A448EA</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>441BC5D3AC9DA1DC56203BB507B4B731</key>
+		<dict>
+			<key>fileRef</key>
+			<string>03AE9C77C8344AC3F7635EF9CB73F788</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>448C77C8B2B45FD5B40CAE6C481E12FC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>380081A8728B05C3FCAC2846454AEEBF</string>
+				<string>9AAFAF6EB13F9E609DB104BDCC7944AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4551F77ADB75B7F7937A426D94E1D13E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BSONCoding.h</string>
+			<key>path</key>
+			<string>BSON/BSONCoding.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>48B3A8625F3E5B243707233366AB2C6F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>bson.h</string>
+			<key>path</key>
+			<string>src/bson.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4AF16EA6966C37C83C313118D63E54C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>693CEFC713E53F3EECFD2793D15C7645</string>
+				<string>D0D025F391B8EF8919B6D56F892015E8</string>
+				<string>0689E4A48F71521D2D075BE2EDE56FD4</string>
+				<string>96CC5A0A75C9DD840BAC401E3D5B3D8C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4C5B98A8C4CB6408DA99701275DB24C4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>76DB5E15FC2F082370EF80DC78841F11</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4D814FD60F6E69829298189CA562815A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>mongo-c-driver</string>
+			<key>target</key>
+			<string>701856A76B27F635B40BAA0366B70FD0</string>
+			<key>targetProxy</key>
+			<string>DDE91F2563F06F22E9F89F581A8B7C37</string>
+		</dict>
+		<key>5220F301ADA2B394D95C5FD6A4889589</key>
+		<dict>
+			<key>fileRef</key>
+			<string>78AC4A7A9690FF2C5CC40255AE17B731</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>52F251CB1A9389CE6EA786EDF598B66B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8A8EA8B3ABCE50091974495B655D320B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>5585D587387787D5452C80CCB961A4E9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoDBCollection.m</string>
+			<key>path</key>
+			<string>Mongo/MongoDBCollection.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>564E3F6E11D7CF0581219549B64EFA91</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSString+BSONAdditions.m</string>
+			<key>path</key>
+			<string>BSON/NSString+BSONAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>57431FB739743358B4B5348C59A9043E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSString+BSONAdditions.h</string>
+			<key>path</key>
+			<string>BSON/NSString+BSONAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>575ABC8B75BC39AD4AAC0F8198F1B070</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F0C6EE1339C41FAA630F1C65711CC35</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>57CED99F39711D9A0F77239DCD39B715</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AC8EAEB4F0275AD0E25A68FB9B55249D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>582C7205FAF3ABC3E4694B16D5ECA91D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9E2AC4C754E3D7154ED876A9180F43F0</string>
+				<string>00B79ECF86CDB440D387E96D7A5A944F</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>5B6C1301CA0EA750A6E521629FB92F8F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+MongoAdditions.h</string>
+			<key>path</key>
+			<string>Mongo/NSArray+MongoAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5B995F1571C2F90130091E4DB43E8ECC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8F66BA58C3A33106064C26FB3308E95C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>5BFB06E2B0893D91E452D1C3B5A94B5B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0DD9FB117F48DB60068126856E7DB733</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>5FED711FBB1610A877E7ABDC1CD1BEEB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81BD13466FA00690FF2C696128665E62</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>60153274A9F8649642B1E3BA40832D43</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>mongo.c</string>
+			<key>path</key>
+			<string>src/mongo.c</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>60936834B074499EEA0345F8263A325D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A2E0D9C7C9909FB40A7E25C29B36A173</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6225B07DBA68B5F84AADFB8A4683A8D1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>20B8F0DEDD5D762D6EC1448450D3D212</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>63362E6E9732AF7995D4BD3D2E13BFEE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9B6FB0120AACF3A8722E7914E90A2625</string>
+				<string>FB104AEA0465366E889F1F63A4112C43</string>
+				<string>D5D642A54C9130D2B3E861B2170A14B9</string>
+				<string>803F241BA831DC8245F7793628A448EA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6488DB2C9BB99C53077D390CE673DD56</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>40C42F3F5DD94F29414FB7BF431221AC</string>
+				<string>7223F2D78A55A3B6DF2F4C9373E140BC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>65F77796152F9CE764A3142F020C35DA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>93C2EA3CF7C7C84D9E44812A9B1EDF71</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Private</string>
+				</array>
+			</dict>
+		</dict>
+		<key>669F5476E6C9D64074E421178B8EA23A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBProgressHUD-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>66D140713AAFF35090F6C2EFF4235E62</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0B2EFF54A9AF8C908F0445C7A82F12CA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>6721F7BD712D9140AE93E2BF1EC830FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBProgressHUD-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>68BD2AE1C28EEEA561A3C56732A95AC1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BCC458FDD5F692BBB2BFC64BB5701FC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>693CEFC713E53F3EECFD2793D15C7645</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E36469FCBA158C942BF35FBAD6BE584</string>
+				<string>2C53B87588D84C1D4E742EBEF5FE8078</string>
+				<string>22FD24A4417053047F371204253B7826</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MBProgressHUD</string>
+			<key>path</key>
+			<string>MBProgressHUD</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B0B7037A497AFF5BE45785B35172698</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoPredicate.m</string>
+			<key>path</key>
+			<string>Mongo/MongoPredicate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6B62CF340FC02E601253CAA4B917996D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>93883E238C7C2C1378AE3900F379BA9C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>6C04EA1DDCFF8E514BF619FCE99239FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjCMongoDB-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6C45366D128D6FEC3309D8F13384AB3C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CB3F1FE13B8430EE6EB0F68A005E8C2E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>6F594A415EB7F57F55E226791032D356</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FE21F9398C489ACE66E5928A313F69FA</string>
+				<string>CB3F1FE13B8430EE6EB0F68A005E8C2E</string>
+				<string>0C57C60071C6DAAF60D1C50FAC861E2B</string>
+				<string>FEF67A60C873163580C7C4A25774D684</string>
+				<string>7E7D3B28972CBD98E8D9F90D4AE6EF1D</string>
+				<string>20B8F0DEDD5D762D6EC1448450D3D212</string>
+				<string>300B836C3A403B76D75D5986A1B4E15E</string>
+				<string>2A57F0AB6E07771440BAC2ED14F9A18C</string>
+				<string>81BD13466FA00690FF2C696128665E62</string>
+				<string>EA208773E8B08AF5B5D1775222BDA619</string>
+				<string>5585D587387787D5452C80CCB961A4E9</string>
+				<string>BA335352283BD1CE334810B1F99192B9</string>
+				<string>3B36B8BB57AB66E448BCF37B86BF826B</string>
+				<string>A5B52D751930C8815E25C0A1FD46C128</string>
+				<string>CF51722E5BFB46BF40722DFF6D741540</string>
+				<string>B031E1F9E9A1D60E3D8A51655585FA9E</string>
+				<string>6B0B7037A497AFF5BE45785B35172698</string>
+				<string>8A8EA8B3ABCE50091974495B655D320B</string>
+				<string>345FD5BD3E9159B6B5FB58CC4D71061E</string>
+				<string>B2A7CE471711DF9D3E13C2AB9A478FC9</string>
+				<string>DC7D476CB8B6CC01B6190DA1A82DA14E</string>
+				<string>0DD9FB117F48DB60068126856E7DB733</string>
+				<string>78AC4A7A9690FF2C5CC40255AE17B731</string>
+				<string>5B6C1301CA0EA750A6E521629FB92F8F</string>
+				<string>FAEE6BECB1E12E9A18DCF45C70160ACF</string>
+				<string>AF3CBA669A00BEC916D446DF4E2D2F0A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Mongo</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6FC7D2D81DC2D4AE49862C6A9B584D55</key>
 		<dict>
 			<key>baseConfigurationReference</key>
 			<string>DA312349A49333542E6F4B36B329960E</string>
@@ -1610,212 +1637,6 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>6225B07DBA68B5F84AADFB8A4683A8D1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>857F56BFEB10904E7B9D0B66D69B73EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>625A0FDD8115F6EE272E728BAF31C12C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>md5.h</string>
-			<key>path</key>
-			<string>src/md5.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>647B88A0DE4F9AF0857C32ADBB2D2D6F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6488DB2C9BB99C53077D390CE673DD56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>40C42F3F5DD94F29414FB7BF431221AC</string>
-				<string>7223F2D78A55A3B6DF2F4C9373E140BC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>651B1431ECC12E49A2E30E9496C4E2E0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MongoDBCollection.h</string>
-			<key>path</key>
-			<string>Mongo/MongoDBCollection.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6591E5E8BBA50992AA5BE3BC5ED3BE2F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C3BE2852C252B8F6E308E85F165DFCED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>65F77796152F9CE764A3142F020C35DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B265B70AFB519AD01F43685D81019E49</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>668713EAF635B983D8DA77F4A67E4E7F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MongoTypes.h</string>
-			<key>path</key>
-			<string>Mongo/MongoTypes.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>66D140713AAFF35090F6C2EFF4235E62</key>
-		<dict>
-			<key>fileRef</key>
-			<string>42C9076C0211320605027FCB68C2FF88</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>682893CB73CF245276EBA25748C4C27D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSData+BSONAdditions.h</string>
-			<key>path</key>
-			<string>BSON/NSData+BSONAdditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6B2682670893DD330C137326B1EC49F1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>MBProgressHUD.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6B62CF340FC02E601253CAA4B917996D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B1A79EE48506614199830ACAEE8EEF72</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>6B8E6B65A7FB685134B27FCA40F63251</key>
-		<dict>
-			<key>fileRef</key>
-			<string>384F47A8CAF439AE374938F9552AEF40</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Project</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6C00909C274213F3A4D64E6D38CFB5EF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BSONEncoder.h</string>
-			<key>path</key>
-			<string>BSON/BSONEncoder.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6C45366D128D6FEC3309D8F13384AB3C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>87424F7067149D4A4016372981730AF8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
 		<key>701856A76B27F635B40BAA0366B70FD0</key>
 		<dict>
 			<key>buildConfigurationList</key>
@@ -1837,24 +1658,22 @@
 			<key>productName</key>
 			<string>mongo-c-driver</string>
 			<key>productReference</key>
-			<string>EF6363A72FA784B1F68A453E04171848</string>
+			<string>FB104AEA0465366E889F1F63A4112C43</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>70465DE30202AED91BE05AAF6C268FF0</key>
+		<key>7115C3AD820591453897AD6E4572D280</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>68BD2AE1C28EEEA561A3C56732A95AC1</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SBJson4Parser.m</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4Parser.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>7223F2D78A55A3B6DF2F4C9373E140BC</key>
 		<dict>
@@ -1863,23 +1682,10 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>74693182D10DD25B67A15EBDE34BD074</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MBProgressHUD.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>74BA171D1DEE02DBA9DEE5C76D701FF6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>87DBEC699ED67163A3323BE27C389808</string>
+			<string>DE8E68FDC46F3AF1A2EDFF6931CEB7A5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1914,29 +1720,25 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>75DEB26B787E18F3DCC0AF5438089268</key>
+		<key>75FE44F75CCFEFF5E149E1C116E56B66</key>
 		<dict>
-			<key>fileRef</key>
-			<string>56256984C45AC1C87BB23255D579148E</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>765E31C8F3B120AAE6CF86829B6EFCA0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E63C4740A866D6633AAD62B83D18FD7D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>OrderedDictionary.h</string>
+			<key>path</key>
+			<string>OrderedDictionary/OrderedDictionary.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>7691AB8BA21D17327761A377F5E79448</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BC75720D66196D23D04CAE6180C1CDDC</string>
+			<string>AF3CBA669A00BEC916D446DF4E2D2F0A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1947,56 +1749,37 @@
 				</array>
 			</dict>
 		</dict>
-		<key>76987C4887A6E608E22D619EFD9DFBC1</key>
+		<key>76DB5E15FC2F082370EF80DC78841F11</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>894E5DA93A9F359521A89826BE6DA777</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MongoDBCollection.m</string>
-			<key>path</key>
-			<string>Mongo/MongoDBCollection.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
-		<key>7704A61E0E5581510B9A2327B2861C0B</key>
+		<key>775C6B74AD35842C3A65F089966EC334</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>FA81A8D980DD69723AB90AFA46EBF46B</string>
-				<string>BC1EA330AEF629F658970E0F143DDCD7</string>
-				<string>EA4169898FD886C356CB3D280BE96CC5</string>
-				<string>9E0154C3B1904B53DFC9379EAD54E411</string>
+				<string>4052E477C4A6405A5DBCDB2DFD67F9F8</string>
+				<string>CDBC447EB9E6030E9F52BB1E99F3D861</string>
+				<string>8598338A92FEB47A4823109DFC3341D5</string>
+				<string>24A8CEEA74D5E60714AFAF0125D09288</string>
+				<string>BA922BA67CE2B961C209E13EBE2B4788</string>
+				<string>BBD46C6D61B185FB51F957492EC0434B</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>ObjCMongoDB</string>
+			<string>Support Files</string>
 			<key>path</key>
-			<string>ObjCMongoDB</string>
+			<string>../Target Support Files/mongo-c-driver</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>77E28866FAECE35C4B999EBFB3F5A0FC</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>39E59F605AA4F5C5A7412DB14E0389C2</string>
-			<key>remoteInfo</key>
-			<string>ObjCMongoDB</string>
 		</dict>
 		<key>7845F378BBBE4C74EB9C7AE457CD6FF8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>03456DF22C020E32AFCD497FEA68B5D3</string>
+			<string>DC7D476CB8B6CC01B6190DA1A82DA14E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2005,19 +1788,35 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>798DB89A598A56F880A56E9A0C8EB61C</key>
+		<key>787DF6623DAE1A37161ACEE2307A6CB7</key>
 		<dict>
-			<key>fileRef</key>
-			<string>A5AD2C2F579128C379DD5FD7CF2F0F95</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BSON_Helper.h</string>
+			<key>path</key>
+			<string>BSON/BSON_Helper.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>78AC4A7A9690FF2C5CC40255AE17B731</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoWriteConcern.m</string>
+			<key>path</key>
+			<string>Mongo/MongoWriteConcern.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>79A9DEDC89FE8336BF5FEDAAF75BF7FC</key>
 		<dict>
@@ -2030,38 +1829,14 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7AB10F5805ADC5AF8DA918128C6D65EB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>bcon.c</string>
-			<key>path</key>
-			<string>src/bcon.c</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7B3B612FE8A6CD3603DCDA3B17242079</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>mongo-c-driver</string>
-			<key>target</key>
-			<string>701856A76B27F635B40BAA0366B70FD0</string>
-			<key>targetProxy</key>
-			<string>4B18813ACBDD722560B57B2FEB5706BD</string>
-		</dict>
 		<key>7DB346D0F39D3F0E887471402A8071AB</key>
 		<dict>
 			<key>children</key>
 			<array>
 				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
 				<string>A7A975334459E588B9BBC2FCF45363DE</string>
-				<string>F6D36EBA80ACC3AE23EBAEE2DCB17E3B</string>
-				<string>4B7E4CCBE0121A91E8AFA326C6F63429</string>
+				<string>4AF16EA6966C37C83C313118D63E54C7</string>
+				<string>63362E6E9732AF7995D4BD3D2E13BFEE</string>
 				<string>B7B80995527643776607AFFA75B91E24</string>
 			</array>
 			<key>isa</key>
@@ -2069,10 +1844,23 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>7E36469FCBA158C942BF35FBAD6BE584</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBProgressHUD.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>7E76955017D046ACD45BFD4EC0D072FA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E44D6E9205F7CA6C76478FC4DD558A20</string>
+			<string>F5D93A363014BBB6436A9DD2B9015E84</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2080,11 +1868,26 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
+		</dict>
+		<key>7E7D3B28972CBD98E8D9F90D4AE6EF1D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoConnection.m</string>
+			<key>path</key>
+			<string>Mongo/MongoConnection.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>7EC8B0D7476F0A34035A31E2748FBADE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C1A39587FCC177727712921DC84C6CE4</string>
+			<string>42A925711B4F0AD5BC81A3B7783AC82A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2093,10 +1896,45 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>7F4D114AB9A128060BA9D158DED19F9B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B2A7E9C2327421CAA1ED6541C1AC821F</string>
+				<string>97130D2696899D2E419DE1A0DC40840A</string>
+				<string>3DC06D8E2ADCB7608BCA7BA30B3F11A2</string>
+				<string>A07EF52BF76A72D86F820D360D8F06E1</string>
+				<string>6C04EA1DDCFF8E514BF619FCE99239FD</string>
+				<string>0F50336DA7723FFC7858EC5F9285C871</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/ObjCMongoDB</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>803F241BA831DC8245F7793628A448EA</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods.framework</string>
+			<key>path</key>
+			<string>Pods.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>80CF39B3CB4F9D66108F147B408DD7AD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>074E99A620EDB20AD18C6A73F5F3D66B</string>
+			<string>F79B61B15DD681C7BD71A4F94D09FB0F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2108,7 +1946,7 @@
 		<key>813A628A0D1BFA870BA0A85EB1EB9541</key>
 		<dict>
 			<key>fileRef</key>
-			<string>AFEB9B8DE9C5E446C9AC4B1CE2813257</string>
+			<string>CD48F95BA227D7F4455AB717994D7410</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2119,39 +1957,66 @@
 				</array>
 			</dict>
 		</dict>
-		<key>84F91B3DB61DC63539E5164AA3ECF8C7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5FA13EB1EF1FC1DD092724CCEA005734</string>
-				<string>610768998DDA9A6649C2F8F2D72BD137</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>857F56BFEB10904E7B9D0B66D69B73EA</key>
+		<key>81BD13466FA00690FF2C696128665E62</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>MongoConnection+Diagnostics.h</string>
+			<string>MongoCursor.m</string>
 			<key>path</key>
-			<string>Mongo/MongoConnection+Diagnostics.h</string>
+			<string>Mongo/MongoCursor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>83733606A92015E566CDEB19B6FE85A7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSDictionary+BSONAdditions.m</string>
+			<key>path</key>
+			<string>BSON/NSDictionary+BSONAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>853A5E926EBBB3407B2EA8F33262883C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>39E59F605AA4F5C5A7412DB14E0389C2</string>
+			<key>remoteInfo</key>
+			<string>ObjCMongoDB</string>
+		</dict>
+		<key>8598338A92FEB47A4823109DFC3341D5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>mongo-c-driver.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>86255F5EF43955E05EB64DEFE7E5E819</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8FD3C3AFACD023B0A69FFBA91F7397BC</string>
+			<string>0F50336DA7723FFC7858EC5F9285C871</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2161,36 +2026,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>870BDE0F8F79EE402D6FE98133410C4D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BSONIterator.m</string>
-			<key>path</key>
-			<string>BSON/BSONIterator.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>87424F7067149D4A4016372981730AF8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Mongo_Helper.m</string>
-			<key>path</key>
-			<string>Mongo/Mongo_Helper.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>87B213035BAC5F75386F62D3C75D2342</key>
 		<dict>
@@ -2202,36 +2037,6 @@
 			<string>text.plist.xml</string>
 			<key>path</key>
 			<string>Pods-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>87DBEC699ED67163A3323BE27C389808</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>env.h</string>
-			<key>path</key>
-			<string>src/env.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>894434A16C32059C08BECB2539C1F7DE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>OrderedDictionary.h</string>
-			<key>path</key>
-			<string>OrderedDictionary/OrderedDictionary.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2248,48 +2053,25 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>899FB6F2C962B8984977EDE8889A5E45</key>
+		<key>8A8EA8B3ABCE50091974495B655D320B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>gridfs.c</string>
+			<string>MongoTypes.h</string>
 			<key>path</key>
-			<string>src/gridfs.c</string>
+			<string>Mongo/MongoTypes.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8BD4114525B725D11EB13AFD0E670470</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>ADBA035311A18D0228F9492645EA1526</string>
-			<key>buildPhases</key>
-			<array>
-				<string>A4C18157D98AA8FDF6DAFC781D81BC7C</string>
-				<string>FDE8580D254E324EFBB8F8965D1B2E84</string>
-				<string>A9807FC4D4C4780C6D7DA9CF600541A7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SBJson</string>
-			<key>productName</key>
-			<string>SBJson</string>
-			<key>productReference</key>
-			<string>E93E854C48FCC2A9367C37DC823FBEA8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
 		</dict>
 		<key>8C1177C29C589002D37715D2EC04D883</key>
 		<dict>
 			<key>fileRef</key>
-			<string>3AF4248C285ED8DFF77B861473016998</string>
+			<string>B3259E82CE4DBF63A9670A1CC7677550</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2299,74 +2081,11 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>8C3608A8EE1D1D3434B7C4122881CC3F</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>MBProgressHUD.framework</string>
-			<key>path</key>
-			<string>MBProgressHUD.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8CBD6BDC0F4439936A5B10321B28658F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9EF057973A5536CB41A75CC0617F1173</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8D55EA8C03AEAE0FB9AD9ABFA778CD19</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>E61CE3B6DFA1FE6B3E296965C76C0E10</string>
-			<key>remoteInfo</key>
-			<string>MBProgressHUD</string>
-		</dict>
-		<key>8D5F60E6BCF91EEEF6F68090F7A64F5A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>ObjCMongoDB.framework</string>
-			<key>path</key>
-			<string>ObjCMongoDB.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8D703988FC54140EF1DF6FD627FA6593</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MBProgressHUD.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8E6501EB2C3F49F4B47EE87D1540A9DE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BD38AF374A4385A94122859146391486</string>
+			<string>B2A7CE471711DF9D3E13C2AB9A478FC9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2377,36 +2096,25 @@
 				</array>
 			</dict>
 		</dict>
-		<key>8EE5DC64D01B36FFA304D367C31C246E</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>8BD4114525B725D11EB13AFD0E670470</string>
-			<key>remoteInfo</key>
-			<string>SBJson</string>
-		</dict>
-		<key>8FD3C3AFACD023B0A69FFBA91F7397BC</key>
+		<key>8F66BA58C3A33106064C26FB3308E95C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>OrderedDictionary.m</string>
 			<key>path</key>
-			<string>ObjCMongoDB-umbrella.h</string>
+			<string>OrderedDictionary/OrderedDictionary.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>90110D171D5F522DF00FD8E22443AEB9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>682893CB73CF245276EBA25748C4C27D</string>
+			<string>EFF0FE5C0919650D3B8D6E50D69696D7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2416,26 +2124,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>91FBAD4287E6710180B8B443DA8F48B3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9CEF7B87709ADC0436E12A04270EE406</string>
-				<string>94EDB1CC3C54C90C007242C14CAA9648</string>
-				<string>43C235CD0982DC17EBC7F47172BA5260</string>
-				<string>56256984C45AC1C87BB23255D579148E</string>
-				<string>E030AB0F3E2648249E85DD25DAF30538</string>
-				<string>A5AD2C2F579128C379DD5FD7CF2F0F95</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/SBJson</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>920F30930205B2AEC78FD44260A9FED8</key>
 		<dict>
@@ -2450,7 +2138,7 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>926EAA5A929BE48E7DB7A59761F50AC8</key>
+		<key>93883E238C7C2C1378AE3900F379BA9C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2459,35 +2147,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>NSData+BSONAdditions.m</string>
+			<string>ObjCBSON.m</string>
 			<key>path</key>
-			<string>BSON/NSData+BSONAdditions.m</string>
+			<string>BSON/ObjCBSON.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>94EDB1CC3C54C90C007242C14CAA9648</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SBJson.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>961FD5C94EED86AC19BADF69F098EB20</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MBProgressHUD.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>976BCE3E36AB119134E646A39053B65B</key>
+		<key>93C2EA3CF7C7C84D9E44812A9B1EDF71</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2496,9 +2162,59 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>MongoFindRequest.h</string>
+			<string>BSON_PrivateInterfaces.h</string>
 			<key>path</key>
-			<string>Mongo/MongoFindRequest.h</string>
+			<string>BSON/BSON_PrivateInterfaces.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95126B665D0C4726B1F02D97E4934341</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBProgressHUD-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95C2481FD94D8AC232AFAEBB2E9E0267</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>encoding.c</string>
+			<key>path</key>
+			<string>src/encoding.c</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>96CC5A0A75C9DD840BAC401E3D5B3D8C</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>SBJson</string>
+			<key>path</key>
+			<string>SBJson</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>97130D2696899D2E419DE1A0DC40840A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ObjCMongoDB.modulemap</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2518,7 +2234,7 @@
 		<key>983A34467C39F298C69F39BC18D146CE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>74693182D10DD25B67A15EBDE34BD074</string>
+			<string>2C53B87588D84C1D4E742EBEF5FE8078</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2530,7 +2246,7 @@
 		<key>98E8D226516435144F0E57A000253D78</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C6D31D0BEC596718D5EABBC91239C10D</string>
+			<string>7E7D3B28972CBD98E8D9F90D4AE6EF1D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2539,25 +2255,10 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>994805DE2F1B6B0B0DB5400803C56930</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SBJson4StreamParser.h</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamParser.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>9A29405F3F5A79FDAAB87A281EB3CAC5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>39DD6B3276382E749FECB9D54A586292</string>
+			<string>FAEE6BECB1E12E9A18DCF45C70160ACF</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2573,79 +2274,25 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>9AC7ACB29CF03D402C5399FFCEDE7E99</key>
+		<key>9B6FB0120AACF3A8722E7914E90A2625</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>43C235CD0982DC17EBC7F47172BA5260</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/SBJson/SBJson-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/SBJson/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/SBJson/SBJson.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>SBJson</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>9CEF7B87709ADC0436E12A04270EE406</key>
-		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
 			<key>includeInIndex</key>
-			<string>1</string>
+			<string>0</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>MBProgressHUD.framework</string>
 			<key>path</key>
-			<string>Info.plist</string>
+			<string>MBProgressHUD.framework</string>
 			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>9D86B6239D8C3BA2D7F34282C732CFDD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BDBB9FCF6326FC857CA7FFCD5C229B92</string>
+			<string>0C57C60071C6DAAF60D1C50FAC861E2B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2659,7 +2306,7 @@
 		<key>9DB77BEBA809C5973D66C832546DBCF4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DE5F3D96F6C89621310D4A3D99112FEE</string>
+			<string>4551F77ADB75B7F7937A426D94E1D13E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2670,86 +2317,10 @@
 				</array>
 			</dict>
 		</dict>
-		<key>9E0154C3B1904B53DFC9379EAD54E411</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>647B88A0DE4F9AF0857C32ADBB2D2D6F</string>
-				<string>EE8D18DCC13C4150619A15A602C226BE</string>
-				<string>DCEF5564C24CE52BA875D3AEE0892544</string>
-				<string>E9813A265A43393FE4FE389EF09B8E03</string>
-				<string>BEBF03B91E054BA4B8A9DC64990946DF</string>
-				<string>8FD3C3AFACD023B0A69FFBA91F7397BC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/ObjCMongoDB</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9E162F94ECAC83E998EDC150D943CF4A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>43C235CD0982DC17EBC7F47172BA5260</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/SBJson/SBJson-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/SBJson/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/SBJson/SBJson.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>SBJson</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
 		<key>9E2AC4C754E3D7154ED876A9180F43F0</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>DCEF5564C24CE52BA875D3AEE0892544</string>
+			<string>3DC06D8E2ADCB7608BCA7BA30B3F11A2</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -2802,20 +2373,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>9EC2689E57D755DFA20314764A35A47F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C0A9DF448E5A161A53DE37CB9427C70C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>9ECCB5570B7FBF8D348655FFA0FE9C90</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -2843,107 +2400,22 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>A004BFE943DA059C59832622C35BA4D0</key>
+		<key>9F0C6EE1339C41FAA630F1C65711CC35</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Mongo_Helper.h</string>
+			<string>NSData+BSONAdditions.m</string>
 			<key>path</key>
-			<string>Mongo/Mongo_Helper.h</string>
+			<string>BSON/NSData+BSONAdditions.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A0F7D2278D27F383A3B54355935013F5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1FF771BA5E40A7E35504EF5D85A89482</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>A2AAFCD607EE5C99ADE47DD4E3D8A2DF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>md5.c</string>
-			<key>path</key>
-			<string>src/md5.c</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A44C7F1D1BB77BA1D5813A2DEFA48D9D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>ABEE670A7C2DA2CCA5D6F13101AE17CE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A4C18157D98AA8FDF6DAFC781D81BC7C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>75DEB26B787E18F3DCC0AF5438089268</string>
-				<string>1F1AB51002604965F11565E22C28136C</string>
-				<string>765E31C8F3B120AAE6CF86829B6EFCA0</string>
-				<string>175520CA3AE143F3EC02A5DB7E7D170F</string>
-				<string>30A364BD820C5DC62491603244DE8605</string>
-				<string>AAE516EED4576744528F3173CCC8C9A1</string>
-				<string>54ED8AFB3060AA2C86E0792075DCED56</string>
-				<string>D9DEEFDE112ED904DB14F7428DCB6ACC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A4CC3C94A35E26C86F7DFD4165A6C7E9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>169A5E32B220C92117E9514DB6F3ABA3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>A5048E61A24A5C01F59CAF61739A3DD7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSString+BSONAdditions.h</string>
-			<key>path</key>
-			<string>BSON/NSString+BSONAdditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A5469BC49EA20A4075FFF7DA2ED28961</key>
+		<key>A07EF52BF76A72D86F820D360D8F06E1</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2952,11 +2424,23 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>mongo-c-driver-dummy.m</string>
+			<string>ObjCMongoDB-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A5652CCF96528D12FE06DE2C5477B158</key>
+		<key>A0F7D2278D27F383A3B54355935013F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>83733606A92015E566CDEB19B6FE85A7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>A2E0D9C7C9909FB40A7E25C29B36A173</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2965,13 +2449,25 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>SBJson4Writer.h</string>
+			<string>NSDictionary+BSONAdditions.h</string>
 			<key>path</key>
-			<string>src/main/objc/SBJson4Writer.h</string>
+			<string>BSON/NSDictionary+BSONAdditions.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A5AD2C2F579128C379DD5FD7CF2F0F95</key>
+		<key>A4CC3C94A35E26C86F7DFD4165A6C7E9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6B0B7037A497AFF5BE45785B35172698</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
+			</dict>
+		</dict>
+		<key>A5B52D751930C8815E25C0A1FD46C128</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2979,21 +2475,10 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SBJson-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A6A608D9863D864BFCBFD78B2255B33A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>mongo.c</string>
+			<string>MongoKeyedPredicate.h</string>
 			<key>path</key>
-			<string>src/mongo.c</string>
+			<string>Mongo/MongoKeyedPredicate.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3084,57 +2569,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A826CCD59561C768A34EA0B3D6C7D235</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C0A9DF448E5A161A53DE37CB9427C70C</string>
-				<string>1301C74BBA80A7DD8D18FE9AF3E9D63E</string>
-				<string>70465DE30202AED91BE05AAF6C268FF0</string>
-				<string>994805DE2F1B6B0B0DB5400803C56930</string>
-				<string>E63C4740A866D6633AAD62B83D18FD7D</string>
-				<string>384F47A8CAF439AE374938F9552AEF40</string>
-				<string>B0AA74205DF001639BDB6515FE4BA7A7</string>
-				<string>DF0F762152B182C8EA4ACE65B86F5907</string>
-				<string>2AFAD87E1A570203164DF586FD695DF3</string>
-				<string>3C05F808EB4D21FD2290332985C93910</string>
-				<string>35891D504DDC91E0933A262F6B71A8EF</string>
-				<string>DA27B90997738B72CB1AA4D7D462D511</string>
-				<string>27408B1BF0A144B7A12BE510D3F30931</string>
-				<string>A5652CCF96528D12FE06DE2C5477B158</string>
-				<string>FE1A3EFD24AAB21E7C932AF4173240C0</string>
-				<string>91FBAD4287E6710180B8B443DA8F48B3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>SBJson</string>
-			<key>path</key>
-			<string>SBJson</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A9807FC4D4C4780C6D7DA9CF600541A7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>798DB89A598A56F880A56E9A0C8EB61C</string>
-				<string>9EC2689E57D755DFA20314764A35A47F</string>
-				<string>070093E0D77F8423D8E2D29DB14372DB</string>
-				<string>30E3EC46B70D2651867018AF88C601F4</string>
-				<string>6B8E6B65A7FB685134B27FCA40F63251</string>
-				<string>18E2F851CA5D46FC675B0CE6408A71C9</string>
-				<string>5280DF7E101EF52858321D9F5AC0DCC3</string>
-				<string>2DF9E1783E28366376EF57A0380078B6</string>
-				<string>DE38726F84BAA7D141321B557F90DC02</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>A98CD6E2480F9144D2F5282E6E1C4A0A</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -3173,7 +2607,7 @@
 		<key>AA2C5BFC8C892C6C18E8A0D282F218C1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>547C551A47370525E21BCBDC3BC3C5A3</string>
+			<string>5B6C1301CA0EA750A6E521629FB92F8F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3184,60 +2618,70 @@
 				</array>
 			</dict>
 		</dict>
-		<key>AA377CF4DEBFAFCE5543F8A33C703404</key>
+		<key>AC8EAEB4F0275AD0E25A68FB9B55249D</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>14858FDE56A346E026F60FCECE281E1F</string>
-				<string>EFCA21FABD2A5BAC6FD62E63A963B058</string>
-				<string>2AC6EE83D1B7EDA9FBFE82A10A892CF3</string>
-				<string>A5469BC49EA20A4075FFF7DA2ED28961</string>
-				<string>F4A3A2A03DB26565825B1C9F0FCC1317</string>
-				<string>E158A165291F09A100B4137BEBE7A09A</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Support Files</string>
+			<string>md5.c</string>
 			<key>path</key>
-			<string>../Target Support Files/mongo-c-driver</string>
+			<string>src/md5.c</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>AAE516EED4576744528F3173CCC8C9A1</key>
+		<key>AF3CBA669A00BEC916D446DF4E2D2F0A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ObjCMongoDB.h</string>
+			<key>path</key>
+			<string>Mongo/ObjCMongoDB.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AF6F13261423788EB7531A7B9C3C4E14</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSManagedObject+BSONCoding.m</string>
+			<key>path</key>
+			<string>BSON/NSManagedObject+BSONCoding.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFEAC1AA9B1F796B96556E8B7163D3F2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B02E83715C81925245DF3C95463C323C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>35891D504DDC91E0933A262F6B71A8EF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>ABEE670A7C2DA2CCA5D6F13101AE17CE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9EF057973A5536CB41A75CC0617F1173</string>
+			<string>24A8CEEA74D5E60714AFAF0125D09288</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>ADBA035311A18D0228F9492645EA1526</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>9AC7ACB29CF03D402C5399FFCEDE7E99</string>
-				<string>9E162F94ECAC83E998EDC150D943CF4A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF50FF41F264349D572C1DC753FDC4D0</key>
+		<key>B031E1F9E9A1D60E3D8A51655585FA9E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3252,47 +2696,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>AFEB9B8DE9C5E446C9AC4B1CE2813257</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>mongo.h</string>
-			<key>path</key>
-			<string>src/mongo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B02E83715C81925245DF3C95463C323C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A5469BC49EA20A4075FFF7DA2ED28961</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B0AA74205DF001639BDB6515FE4BA7A7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SBJson4StreamParserState.m</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamParserState.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>B0B3F8BA1BC5D13941B128018D137593</key>
 		<dict>
 			<key>fileRef</key>
-			<string>41475DA76D6E73436245F3F608821DC2</string>
+			<string>48B3A8625F3E5B243707233366AB2C6F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3303,25 +2710,32 @@
 				</array>
 			</dict>
 		</dict>
-		<key>B1A79EE48506614199830ACAEE8EEF72</key>
+		<key>B0EA51F7C0E11873BA831A0EB2DA088A</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>PBXTargetDependency</string>
 			<key>name</key>
-			<string>ObjCBSON.m</string>
-			<key>path</key>
-			<string>BSON/ObjCBSON.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>ObjCMongoDB</string>
+			<key>target</key>
+			<string>39E59F605AA4F5C5A7412DB14E0389C2</string>
+			<key>targetProxy</key>
+			<string>853A5E926EBBB3407B2EA8F33262883C</string>
+		</dict>
+		<key>B132443F35BF12ADC990573DF0FA5978</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>mongo-c-driver</string>
+			<key>target</key>
+			<string>701856A76B27F635B40BAA0366B70FD0</string>
+			<key>targetProxy</key>
+			<string>D4D10A62291B502E179EEECBD4868565</string>
 		</dict>
 		<key>B1ECA36B83ABE18F07F0948F714E10BB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>28FEF7E2D571C5BAFB2CB75EC6544869</string>
+			<string>300B836C3A403B76D75D5986A1B4E15E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3330,7 +2744,7 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>B265B70AFB519AD01F43685D81019E49</key>
+		<key>B2A7CE471711DF9D3E13C2AB9A478FC9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3339,13 +2753,26 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>BSON_PrivateInterfaces.h</string>
+			<string>MongoUpdateRequest.h</string>
 			<key>path</key>
-			<string>BSON/BSON_PrivateInterfaces.h</string>
+			<string>Mongo/MongoUpdateRequest.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B4120B9FFDA382680A496D9C2653759F</key>
+		<key>B2A7E9C2327421CAA1ED6541C1AC821F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B3259E82CE4DBF63A9670A1CC7677550</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3354,9 +2781,35 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>ObjCBSON.h</string>
+			<string>BSONTypes.h</string>
 			<key>path</key>
-			<string>BSON/ObjCBSON.h</string>
+			<string>BSON/BSONTypes.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B48EE6C2A31ADBFC903589F74F8AAF7D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>MBProgressHUD.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B6D8D5AE8E0F553D0A4CB8522D56E736</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>bcon.h</string>
+			<key>path</key>
+			<string>src/bcon.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3376,7 +2829,7 @@
 		<key>B83D72E7030B48ADC764A7D912761EB3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>25E2A789C0C69EAFFB8483ABEF1ADBFF</string>
+			<string>FEF67A60C873163580C7C4A25774D684</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3387,10 +2840,40 @@
 				</array>
 			</dict>
 		</dict>
+		<key>BA0E5E2EBAFF5CC4F4EBF53CF348AD01</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>gridfs.h</string>
+			<key>path</key>
+			<string>src/gridfs.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA335352283BD1CE334810B1F99192B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MongoFindRequest.h</string>
+			<key>path</key>
+			<string>Mongo/MongoFindRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>BA3AE9DDB3BEE2A643220F88CA33918C</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>2AC6EE83D1B7EDA9FBFE82A10A892CF3</string>
+			<string>8598338A92FEB47A4823109DFC3341D5</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -3463,7 +2946,7 @@
 		<key>BA8973542E4C29BBD83E888E99ADA163</key>
 		<dict>
 			<key>fileRef</key>
-			<string>76987C4887A6E608E22D619EFD9DFBC1</string>
+			<string>5585D587387787D5452C80CCB961A4E9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3472,52 +2955,27 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>BA922BA67CE2B961C209E13EBE2B4788</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>mongo-c-driver-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>BB010EE04BA829E196554A00A951AA7C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>192E71F45E8B68DF70D0BD7C1400ACE2</string>
+			<string>6721F7BD712D9140AE93E2BF1EC830FC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>BC1EA330AEF629F658970E0F143DDCD7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A004BFE943DA059C59832622C35BA4D0</string>
-				<string>87424F7067149D4A4016372981730AF8</string>
-				<string>BDBB9FCF6326FC857CA7FFCD5C229B92</string>
-				<string>25E2A789C0C69EAFFB8483ABEF1ADBFF</string>
-				<string>C6D31D0BEC596718D5EABBC91239C10D</string>
-				<string>857F56BFEB10904E7B9D0B66D69B73EA</string>
-				<string>28FEF7E2D571C5BAFB2CB75EC6544869</string>
-				<string>2364D0FA09045DCCCE2A3720E7F1BDC1</string>
-				<string>E5F8A870E0F3E5B0FAC75EFA39CD3CC3</string>
-				<string>651B1431ECC12E49A2E30E9496C4E2E0</string>
-				<string>76987C4887A6E608E22D619EFD9DFBC1</string>
-				<string>976BCE3E36AB119134E646A39053B65B</string>
-				<string>13CC9F423BAAA0AD97FBA40C411DF87E</string>
-				<string>FAF547F69D56C2BB4C8927E792FEF8B7</string>
-				<string>C3EF54A8125BC3BD5BA9A0914BEF6FEB</string>
-				<string>AF50FF41F264349D572C1DC753FDC4D0</string>
-				<string>169A5E32B220C92117E9514DB6F3ABA3</string>
-				<string>668713EAF635B983D8DA77F4A67E4E7F</string>
-				<string>501854B6F5E6CC9A32C0BC3763245935</string>
-				<string>BD38AF374A4385A94122859146391486</string>
-				<string>03456DF22C020E32AFCD497FEA68B5D3</string>
-				<string>01129E0E76051B2EE44A9C89A669B63D</string>
-				<string>CCD1F89C2905FC7D5944E580294BBCA1</string>
-				<string>547C551A47370525E21BCBDC3BC3C5A3</string>
-				<string>39DD6B3276382E749FECB9D54A586292</string>
-				<string>BC75720D66196D23D04CAE6180C1CDDC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Mongo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC75720D66196D23D04CAE6180C1CDDC</key>
+		<key>BBD46C6D61B185FB51F957492EC0434B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3525,47 +2983,15 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ObjCMongoDB.h</string>
 			<key>path</key>
-			<string>Mongo/ObjCMongoDB.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BD38AF374A4385A94122859146391486</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MongoUpdateRequest.h</string>
-			<key>path</key>
-			<string>Mongo/MongoUpdateRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BDBB9FCF6326FC857CA7FFCD5C229B92</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Mongo_PrivateInterfaces.h</string>
-			<key>path</key>
-			<string>Mongo/Mongo_PrivateInterfaces.h</string>
+			<string>mongo-c-driver-umbrella.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>BEB4C480ABF30F8F3CFA56EB04C1B807</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1DDB1B9D71C97FA52E2F29302483A695</string>
+			<string>787DF6623DAE1A37161ACEE2307A6CB7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3576,58 +3002,17 @@
 				</array>
 			</dict>
 		</dict>
-		<key>BEBF03B91E054BA4B8A9DC64990946DF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ObjCMongoDB-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C0A9DF448E5A161A53DE37CB9427C70C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SBJson4.h</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C1A39587FCC177727712921DC84C6CE4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>numbers.c</string>
-			<key>path</key>
-			<string>src/numbers.c</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>C1D131A4A360227029762189EDD6BBE8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E9813A265A43393FE4FE389EF09B8E03</string>
+			<string>A07EF52BF76A72D86F820D360D8F06E1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
 		<key>C2B934A8896C8F4E73F9447AAE84C074</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>2AC6EE83D1B7EDA9FBFE82A10A892CF3</string>
+			<string>8598338A92FEB47A4823109DFC3341D5</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -3680,32 +3065,36 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>C3BE2852C252B8F6E308E85F165DFCED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>894E5DA93A9F359521A89826BE6DA777</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C3EF54A8125BC3BD5BA9A0914BEF6FEB</key>
+		<key>C3EF214F03110042469B4F5FBC8557EA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>MongoKeyedPredicate.m</string>
+			<string>env.c</string>
 			<key>path</key>
-			<string>Mongo/MongoKeyedPredicate.m</string>
+			<string>src/env.c</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C4AD9ED9573DD36D349B6EAD111D1B6D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bson.c</string>
+			<key>path</key>
+			<string>src/bson.c</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C4AE07C7BAEDF1CE8862F0E90ED78737</key>
 		<dict>
 			<key>fileRef</key>
-			<string>894434A16C32059C08BECB2539C1F7DE</string>
+			<string>75FE44F75CCFEFF5E149E1C116E56B66</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3716,7 +3105,20 @@
 				</array>
 			</dict>
 		</dict>
-		<key>C6D31D0BEC596718D5EABBC91239C10D</key>
+		<key>C506E054DD64100D2F323D30EA626344</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>gridfs.c</string>
+			<key>path</key>
+			<string>src/gridfs.c</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6746DF7163391DA390763A3F63F216C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3725,31 +3127,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>MongoConnection.m</string>
+			<string>BSON_Helper.m</string>
 			<key>path</key>
-			<string>Mongo/MongoConnection.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C7E03BFD266693B3B78BCF33D78E478F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>gridfs.h</string>
-			<key>path</key>
-			<string>src/gridfs.h</string>
+			<string>BSON/BSON_Helper.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C7F41E3465A4D85463891E808132AFA0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4CC2E0113FA199E69D6E54A9A1013BAB</string>
+			<string>2A950AD1AF80A10E6D4C509B078A1721</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3763,7 +3150,7 @@
 		<key>C84F9667C5A42299E888C1B882BCA289</key>
 		<dict>
 			<key>fileRef</key>
-			<string>13CC9F423BAAA0AD97FBA40C411DF87E</string>
+			<string>3B36B8BB57AB66E448BCF37B86BF826B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3775,7 +3162,7 @@
 		<key>CAF1C3F6A726C90353F7C8F294D78766</key>
 		<dict>
 			<key>fileRef</key>
-			<string>42121D024002B3928F63204FA6C777FD</string>
+			<string>95C2481FD94D8AC232AFAEBB2E9E0267</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3783,6 +3170,21 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
+		</dict>
+		<key>CB3F1FE13B8430EE6EB0F68A005E8C2E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Mongo_Helper.m</string>
+			<key>path</key>
+			<string>Mongo/Mongo_Helper.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>CBC0F7C552B739C909B650A0F42F7F38</key>
 		<dict>
@@ -3797,25 +3199,36 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>CCD1F89C2905FC7D5944E580294BBCA1</key>
+		<key>CD48F95BA227D7F4455AB717994D7410</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>MongoWriteConcern.m</string>
+			<string>mongo.h</string>
 			<key>path</key>
-			<string>Mongo/MongoWriteConcern.m</string>
+			<string>src/mongo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CDBC447EB9E6030E9F52BB1E99F3D861</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>mongo-c-driver.modulemap</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>CEFD1E3070EEFE165FD9A323173D1B79</key>
 		<dict>
 			<key>fileRef</key>
-			<string>976BCE3E36AB119134E646A39053B65B</string>
+			<string>BA335352283BD1CE334810B1F99192B9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3826,20 +3239,18 @@
 				</array>
 			</dict>
 		</dict>
-		<key>CFCF5921B083D59614B32978C52C765D</key>
+		<key>CF51722E5BFB46BF40722DFF6D741540</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>8D703988FC54140EF1DF6FD627FA6593</string>
-				<string>74693182D10DD25B67A15EBDE34BD074</string>
-				<string>3362A68C822236D4E6B0C6B1284CA416</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>MBProgressHUD</string>
+			<string>MongoKeyedPredicate.m</string>
 			<key>path</key>
-			<string>MBProgressHUD</string>
+			<string>Mongo/MongoKeyedPredicate.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3856,10 +3267,55 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>D0A785473F3AC17A3CC4BD1EDC175FC7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BSONIterator.h</string>
+			<key>path</key>
+			<string>BSON/BSONIterator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D0D025F391B8EF8919B6D56F892015E8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>17A50197F3117CE446DF74B0B04708B3</string>
+				<string>B6D8D5AE8E0F553D0A4CB8522D56E736</string>
+				<string>C4AD9ED9573DD36D349B6EAD111D1B6D</string>
+				<string>48B3A8625F3E5B243707233366AB2C6F</string>
+				<string>95C2481FD94D8AC232AFAEBB2E9E0267</string>
+				<string>2A950AD1AF80A10E6D4C509B078A1721</string>
+				<string>C3EF214F03110042469B4F5FBC8557EA</string>
+				<string>DE8E68FDC46F3AF1A2EDFF6931CEB7A5</string>
+				<string>C506E054DD64100D2F323D30EA626344</string>
+				<string>BA0E5E2EBAFF5CC4F4EBF53CF348AD01</string>
+				<string>AC8EAEB4F0275AD0E25A68FB9B55249D</string>
+				<string>2D6003695ABEA41BBCB3DBB2DE554AE1</string>
+				<string>60153274A9F8649642B1E3BA40832D43</string>
+				<string>CD48F95BA227D7F4455AB717994D7410</string>
+				<string>42A925711B4F0AD5BC81A3B7783AC82A</string>
+				<string>775C6B74AD35842C3A65F089966EC334</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>mongo-c-driver</string>
+			<key>path</key>
+			<string>mongo-c-driver</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>D11D47E715057989758BE902E8DD4138</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FAABCE4B9311F79414219237E75A265D</string>
+			<string>D0A785473F3AC17A3CC4BD1EDC175FC7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3873,7 +3329,7 @@
 		<key>D162972874D7C8494593EEB6A6729ABC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6C00909C274213F3A4D64E6D38CFB5EF</string>
+			<string>D5AF68E24A6306EBEC2F90095565007B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3887,7 +3343,7 @@
 		<key>D2EDD25F42B0C424A6C9E7E58C589B48</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E06497B8C3E229C895A546988434A3EB</string>
+			<string>C4AD9ED9573DD36D349B6EAD111D1B6D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3922,7 +3378,7 @@
 			<key>mainGroup</key>
 			<string>7DB346D0F39D3F0E887471402A8071AB</string>
 			<key>productRefGroup</key>
-			<string>4B7E4CCBE0121A91E8AFA326C6F63429</string>
+			<string>63362E6E9732AF7995D4BD3D2E13BFEE</string>
 			<key>projectDirPath</key>
 			<string></string>
 			<key>projectReferences</key>
@@ -3934,14 +3390,56 @@
 				<string>E61CE3B6DFA1FE6B3E296965C76C0E10</string>
 				<string>701856A76B27F635B40BAA0366B70FD0</string>
 				<string>39E59F605AA4F5C5A7412DB14E0389C2</string>
-				<string>5BA8F815BA179D29689CEA8B1039BC6E</string>
-				<string>8BD4114525B725D11EB13AFD0E670470</string>
+				<string>4401F475B62A9A51935130509F10357E</string>
 			</array>
+		</dict>
+		<key>D4D10A62291B502E179EEECBD4868565</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>701856A76B27F635B40BAA0366B70FD0</string>
+			<key>remoteInfo</key>
+			<string>mongo-c-driver</string>
+		</dict>
+		<key>D5AF68E24A6306EBEC2F90095565007B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BSONEncoder.h</string>
+			<key>path</key>
+			<string>BSON/BSONEncoder.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D5D642A54C9130D2B3E861B2170A14B9</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ObjCMongoDB.framework</string>
+			<key>path</key>
+			<string>ObjCMongoDB.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>D7D7FA86FF0AD86F10489D7341B19132</key>
 		<dict>
 			<key>fileRef</key>
-			<string>870BDE0F8F79EE402D6FE98133410C4D</string>
+			<string>19FAA076E04B43DC5BE31B3F7F645516</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3949,48 +3447,6 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
-		</dict>
-		<key>D9B0D925DF698CC5011473A6AB512F64</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BSONDocument.h</string>
-			<key>path</key>
-			<string>BSON/BSONDocument.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D9DEEFDE112ED904DB14F7428DCB6ACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FE1A3EFD24AAB21E7C932AF4173240C0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks</string>
-			</dict>
-		</dict>
-		<key>DA27B90997738B72CB1AA4D7D462D511</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SBJson4StreamWriterState.h</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamWriterState.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>DA312349A49333542E6F4B36B329960E</key>
 		<dict>
@@ -4005,63 +3461,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>DB5DA39D1C12E5D3D3DFB2651D18628B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7AB10F5805ADC5AF8DA918128C6D65EB</string>
-				<string>2C594AE76F1A2BCE9212F37739A82FB8</string>
-				<string>E06497B8C3E229C895A546988434A3EB</string>
-				<string>41475DA76D6E73436245F3F608821DC2</string>
-				<string>42121D024002B3928F63204FA6C777FD</string>
-				<string>4CC2E0113FA199E69D6E54A9A1013BAB</string>
-				<string>0E15170E24309792118EF25E2595149A</string>
-				<string>87DBEC699ED67163A3323BE27C389808</string>
-				<string>899FB6F2C962B8984977EDE8889A5E45</string>
-				<string>C7E03BFD266693B3B78BCF33D78E478F</string>
-				<string>A2AAFCD607EE5C99ADE47DD4E3D8A2DF</string>
-				<string>625A0FDD8115F6EE272E728BAF31C12C</string>
-				<string>A6A608D9863D864BFCBFD78B2255B33A</string>
-				<string>AFEB9B8DE9C5E446C9AC4B1CE2813257</string>
-				<string>C1A39587FCC177727712921DC84C6CE4</string>
-				<string>AA377CF4DEBFAFCE5543F8A33C703404</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>mongo-c-driver</string>
-			<key>path</key>
-			<string>mongo-c-driver</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCEF5564C24CE52BA875D3AEE0892544</key>
+		<key>DC7D476CB8B6CC01B6190DA1A82DA14E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MongoUpdateRequest.m</string>
 			<key>path</key>
-			<string>ObjCMongoDB.xcconfig</string>
+			<string>Mongo/MongoUpdateRequest.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DD78EBA8D5C8D4F610910F6B40F4AB9E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods.framework</string>
-			<key>path</key>
-			<string>Pods.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>DDE91F2563F06F22E9F89F581A8B7C37</key>
 		<dict>
@@ -4076,21 +3489,7 @@
 			<key>remoteInfo</key>
 			<string>mongo-c-driver</string>
 		</dict>
-		<key>DE38726F84BAA7D141321B557F90DC02</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A5652CCF96528D12FE06DE2C5477B158</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>DE5F3D96F6C89621310D4A3D99112FEE</key>
+		<key>DE8E68FDC46F3AF1A2EDFF6931CEB7A5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4099,16 +3498,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>BSONCoding.h</string>
+			<string>env.h</string>
 			<key>path</key>
-			<string>BSON/BSONCoding.h</string>
+			<string>src/env.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>DED4A7FA715883DAF62DCBA2B3467CCD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>436E497297473DC2BC7C13202E5C0D94</string>
+			<string>AF6F13261423788EB7531A7B9C3C4E14</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4120,7 +3519,7 @@
 		<key>DEE8D3AD57764DA23032DDD9D63A1392</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2C594AE76F1A2BCE9212F37739A82FB8</string>
+			<string>B6D8D5AE8E0F553D0A4CB8522D56E736</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4131,7 +3530,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>DF0F762152B182C8EA4ACE65B86F5907</key>
+		<key>E1CD39F921DA4589327B807114CCFBCA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4140,70 +3539,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>SBJson4StreamTokeniser.h</string>
+			<string>ObjCBSON.h</string>
 			<key>path</key>
-			<string>src/main/objc/SBJson4StreamTokeniser.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DF75832B3CDE4515E66765C7A895943D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BSONDecoder.h</string>
-			<key>path</key>
-			<string>BSON/BSONDecoder.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E030AB0F3E2648249E85DD25DAF30538</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SBJson-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E06497B8C3E229C895A546988434A3EB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>bson.c</string>
-			<key>path</key>
-			<string>src/bson.c</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E158A165291F09A100B4137BEBE7A09A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>mongo-c-driver-umbrella.h</string>
+			<string>BSON/ObjCBSON.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E3145714DC5B186855AFB85C109B7BA9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>AF50FF41F264349D572C1DC753FDC4D0</string>
+			<string>B031E1F9E9A1D60E3D8A51655585FA9E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4213,36 +3558,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>E44D6E9205F7CA6C76478FC4DD558A20</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BSONTypes.m</string>
-			<key>path</key>
-			<string>BSON/BSONTypes.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E5F8A870E0F3E5B0FAC75EFA39CD3CC3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MongoCursor.m</string>
-			<key>path</key>
-			<string>Mongo/MongoCursor.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
@@ -4265,24 +3580,9 @@
 			<key>productName</key>
 			<string>MBProgressHUD</string>
 			<key>productReference</key>
-			<string>8C3608A8EE1D1D3434B7C4122881CC3F</string>
+			<string>9B6FB0120AACF3A8722E7914E90A2625</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>E63C4740A866D6633AAD62B83D18FD7D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SBJson4StreamParser.m</string>
-			<key>path</key>
-			<string>src/main/objc/SBJson4StreamParser.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>E68DB4340246EEE9C368C943D1492DDB</key>
 		<dict>
@@ -4324,55 +3624,27 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E93E854C48FCC2A9367C37DC823FBEA8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SBJson.framework</string>
-			<key>path</key>
-			<string>SBJson.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>E9813A265A43393FE4FE389EF09B8E03</key>
+		<key>EA208773E8B08AF5B5D1775222BDA619</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ObjCMongoDB-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E9C593747ED7765073CBBD68C7673D05</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>BSONEncoder.m</string>
+			<string>MongoDBCollection.h</string>
 			<key>path</key>
-			<string>BSON/BSONEncoder.m</string>
+			<string>Mongo/MongoDBCollection.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>EA4169898FD886C356CB3D280BE96CC5</key>
+		<key>EC0E6419DB32CCE01CD3F55A418219F4</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>894434A16C32059C08BECB2539C1F7DE</string>
-				<string>10C75E6D980BBE20DB4CF198DC714C76</string>
+				<string>75FE44F75CCFEFF5E149E1C116E56B66</string>
+				<string>8F66BA58C3A33106064C26FB3308E95C</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -4384,7 +3656,7 @@
 		<key>EDB6D0B4531BFBB06B523D81A7CC5773</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A004BFE943DA059C59832622C35BA4D0</string>
+			<string>FE21F9398C489ACE66E5928A313F69FA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4394,17 +3666,6 @@
 					<string>Private</string>
 				</array>
 			</dict>
-		</dict>
-		<key>EE8D18DCC13C4150619A15A602C226BE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>ObjCMongoDB.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>EE987672555EDB136E5A47C02DD9DEB8</key>
 		<dict>
@@ -4419,25 +3680,10 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>EF6363A72FA784B1F68A453E04171848</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>mongo_c_driver.framework</string>
-			<key>path</key>
-			<string>mongo_c_driver.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
 		<key>EF9333AF1E81B83A4C56BE7DC73ABC82</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6B2682670893DD330C137326B1EC49F1</string>
+			<string>1015AA61005D59C9EB35FEE46AE35179</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -4490,21 +3736,10 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>EFCA21FABD2A5BAC6FD62E63A963B058</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>mongo-c-driver.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>EFE86141E81BCD51573BAD3AA4436EB3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7AB10F5805ADC5AF8DA918128C6D65EB</string>
+			<string>17A50197F3117CE446DF74B0B04708B3</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4513,10 +3748,25 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
+		<key>EFF0FE5C0919650D3B8D6E50D69696D7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSData+BSONAdditions.h</string>
+			<key>path</key>
+			<string>BSON/NSData+BSONAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>F13E4FFD731386469858D477D13D1953</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FAF547F69D56C2BB4C8927E792FEF8B7</string>
+			<string>A5B52D751930C8815E25C0A1FD46C128</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4527,16 +3777,18 @@
 				</array>
 			</dict>
 		</dict>
-		<key>F4A3A2A03DB26565825B1C9F0FCC1317</key>
+		<key>F5D93A363014BBB6436A9DD2B9015E84</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>BSONTypes.m</string>
 			<key>path</key>
-			<string>mongo-c-driver-prefix.pch</string>
+			<string>BSON/BSONTypes.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4581,37 +3833,25 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>F6D36EBA80ACC3AE23EBAEE2DCB17E3B</key>
+		<key>F79B61B15DD681C7BD71A4F94D09FB0F</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>CFCF5921B083D59614B32978C52C765D</string>
-				<string>DB5DA39D1C12E5D3D3DFB2651D18628B</string>
-				<string>7704A61E0E5581510B9A2327B2861C0B</string>
-				<string>A826CCD59561C768A34EA0B3D6C7D235</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Pods</string>
+			<string>BSONDocument.m</string>
+			<key>path</key>
+			<string>BSON/BSONDocument.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F8739B49FC53F41C2903C8CAA95B99A1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>MBProgressHUD</string>
-			<key>target</key>
-			<string>E61CE3B6DFA1FE6B3E296965C76C0E10</string>
-			<key>targetProxy</key>
-			<string>8D55EA8C03AEAE0FB9AD9ABFA778CD19</string>
 		</dict>
 		<key>F94E2784EEC77D6258680CF05918D1BE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C7E03BFD266693B3B78BCF33D78E478F</string>
+			<string>BA0E5E2EBAFF5CC4F4EBF53CF348AD01</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4622,71 +3862,35 @@
 				</array>
 			</dict>
 		</dict>
-		<key>FA81A8D980DD69723AB90AFA46EBF46B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1DDB1B9D71C97FA52E2F29302483A695</string>
-				<string>FDA36EE73FE32FF66E9E5DE3D28459FD</string>
-				<string>B265B70AFB519AD01F43685D81019E49</string>
-				<string>DE5F3D96F6C89621310D4A3D99112FEE</string>
-				<string>DF75832B3CDE4515E66765C7A895943D</string>
-				<string>42C9076C0211320605027FCB68C2FF88</string>
-				<string>D9B0D925DF698CC5011473A6AB512F64</string>
-				<string>074E99A620EDB20AD18C6A73F5F3D66B</string>
-				<string>6C00909C274213F3A4D64E6D38CFB5EF</string>
-				<string>E9C593747ED7765073CBBD68C7673D05</string>
-				<string>FAABCE4B9311F79414219237E75A265D</string>
-				<string>870BDE0F8F79EE402D6FE98133410C4D</string>
-				<string>3AF4248C285ED8DFF77B861473016998</string>
-				<string>E44D6E9205F7CA6C76478FC4DD558A20</string>
-				<string>682893CB73CF245276EBA25748C4C27D</string>
-				<string>926EAA5A929BE48E7DB7A59761F50AC8</string>
-				<string>32FF7121444A5C2FFE37DB786CD5DC75</string>
-				<string>1FF771BA5E40A7E35504EF5D85A89482</string>
-				<string>37A90560D22A41BDE7CFD8E647D269B7</string>
-				<string>436E497297473DC2BC7C13202E5C0D94</string>
-				<string>A5048E61A24A5C01F59CAF61739A3DD7</string>
-				<string>07D268F2E35A32E8FEBC7BD49B3357C3</string>
-				<string>B4120B9FFDA382680A496D9C2653759F</string>
-				<string>B1A79EE48506614199830ACAEE8EEF72</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BSON</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FAABCE4B9311F79414219237E75A265D</key>
+		<key>FAEE6BECB1E12E9A18DCF45C70160ACF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>BSONIterator.h</string>
+			<string>NSArray+MongoAdditions.m</string>
 			<key>path</key>
-			<string>BSON/BSONIterator.h</string>
+			<string>Mongo/NSArray+MongoAdditions.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FAF547F69D56C2BB4C8927E792FEF8B7</key>
+		<key>FB104AEA0465366E889F1F63A4112C43</key>
 		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
 			<key>includeInIndex</key>
-			<string>1</string>
+			<string>0</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>MongoKeyedPredicate.h</string>
+			<string>mongo_c_driver.framework</string>
 			<key>path</key>
-			<string>Mongo/MongoKeyedPredicate.h</string>
+			<string>mongo_c_driver.framework</string>
 			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>FB45FFD90572718D82AB9092B750F0CA</key>
 		<dict>
@@ -4759,7 +3963,7 @@
 		<key>FBB00C81D16556441A3D6014B1D3E474</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FDA36EE73FE32FF66E9E5DE3D28459FD</string>
+			<string>C6746DF7163391DA390763A3F63F216C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4768,46 +3972,33 @@
 				<string>-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks</string>
 			</dict>
 		</dict>
-		<key>FDA36EE73FE32FF66E9E5DE3D28459FD</key>
+		<key>FE21F9398C489ACE66E5928A313F69FA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>BSON_Helper.m</string>
+			<string>Mongo_Helper.h</string>
 			<key>path</key>
-			<string>BSON/BSON_Helper.m</string>
+			<string>Mongo/Mongo_Helper.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FDE8580D254E324EFBB8F8965D1B2E84</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8CBD6BDC0F4439936A5B10321B28658F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FE1A3EFD24AAB21E7C932AF4173240C0</key>
+		<key>FEF67A60C873163580C7C4A25774D684</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>SBJson4Writer.m</string>
+			<string>MongoConnection.h</string>
 			<key>path</key>
-			<string>src/main/objc/SBJson4Writer.m</string>
+			<string>Mongo/MongoConnection.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
