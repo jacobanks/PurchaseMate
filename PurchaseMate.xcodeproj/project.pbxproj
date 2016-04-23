@@ -3768,8 +3768,6 @@
 		1663CE751CAE453300E92486 /* searchView */ = {
 			isa = PBXGroup;
 			children = (
-				16909D331CCBEF6F0095E74D /* searchCollectionViewCell.h */,
-				16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */,
 				1663CE721CAE36F600E92486 /* searchView.h */,
 				1663CE731CAE36F600E92486 /* searchView.m */,
 			);
@@ -3793,6 +3791,8 @@
 				169A65671B4388640040F74C /* PNChart */,
 				16D830691C8BD1AF00407300 /* CameraFocusSquare */,
 				1663CE751CAE453300E92486 /* searchView */,
+				16909D361CCBF5320095E74D /* Search Collection Cell */,
+				16909D371CCBF54D0095E74D /* Scanned TableView Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -3800,8 +3800,8 @@
 		1663CE781CAE4B3900E92486 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				16C10D371CCB4997001B2001 /* Search View Controller */,
 				16F4AFE81BC703490007C322 /* Scan View */,
+				16C10D371CCB4997001B2001 /* Search View Controller */,
 				16FEBEE41C4FFD46006B8212 /* Scanned */,
 				16F4AFE91BC703500007C322 /* Results */,
 				16F4AFEA1BC703600007C322 /* Review */,
@@ -3835,6 +3835,24 @@
 				16FEBEE61C5005AA006B8212 /* CorpInfo.m */,
 			);
 			name = CorpInfo;
+			sourceTree = "<group>";
+		};
+		16909D361CCBF5320095E74D /* Search Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				16909D331CCBEF6F0095E74D /* searchCollectionViewCell.h */,
+				16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */,
+			);
+			name = "Search Collection Cell";
+			sourceTree = "<group>";
+		};
+		16909D371CCBF54D0095E74D /* Scanned TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1633D5F81C72EE4F00AD9961 /* scannedTableViewCell.h */,
+				1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */,
+			);
+			name = "Scanned TableView Cell";
 			sourceTree = "<group>";
 		};
 		169A65671B4388640040F74C /* PNChart */ = {
@@ -4066,8 +4084,6 @@
 			children = (
 				16D968671C631671007B89D7 /* scannedTVC.h */,
 				16D968681C631671007B89D7 /* scannedTVC.m */,
-				1633D5F81C72EE4F00AD9961 /* scannedTableViewCell.h */,
-				1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */,
 			);
 			name = Scanned;
 			sourceTree = "<group>";

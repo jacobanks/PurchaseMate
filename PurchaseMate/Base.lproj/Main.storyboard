@@ -34,7 +34,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="scannedCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="scannedCell" rowHeight="67" id="jIA-wQ-0r5" customClass="scannedTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jIA-wQ-0r5" id="6Or-cu-hc0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
@@ -112,8 +112,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="J1d-FG-7sE" kind="relationship" relationship="viewControllers" id="EHB-GQ-LdL"/>
-                        <segue destination="Aye-g3-Ffa" kind="relationship" relationship="viewControllers" id="UbL-pg-Cfd"/>
                         <segue destination="fWB-vd-rP4" kind="relationship" relationship="viewControllers" id="6R1-MI-uMc"/>
+                        <segue destination="Aye-g3-Ffa" kind="relationship" relationship="viewControllers" id="UbL-pg-Cfd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4p0-N0-ZVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,7 +342,7 @@
             </objects>
             <point key="canvasLocation" x="351.5" y="238.5"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="3IQ-B6-q2e">
             <objects>
                 <viewController id="fWB-vd-rP4" customClass="searchVC" sceneMemberID="viewController">
@@ -351,7 +351,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gdW-KJ-6Uo"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="gdW-KJ-6Uo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiW-p2-1bA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

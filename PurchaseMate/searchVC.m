@@ -23,7 +23,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+    CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, (self.view.frame.size.height - 114));
+    self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
     [self.collectionView  setDataSource:self];
     [self.collectionView  setDelegate:self];
     
@@ -60,7 +61,11 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(175, 175);
+    return CGSizeMake(170, 170);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(20, 10, 20, 10);  // top, left, bottom, right
 }
 
 @end

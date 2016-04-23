@@ -14,9 +14,9 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 87.5, CGRectGetWidth(frame) - 20, 20)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, CGRectGetWidth(frame) - 20, 20)];
         self.titleLabel.font = [UIFont systemFontOfSize:18];
-        
+        self.titleLabel.adjustsFontSizeToFitWidth = YES;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.backgroundColor = [UIColor redColor];
