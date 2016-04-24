@@ -44,6 +44,13 @@
     self.tabBarController.title = @"Discover";
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
     self.tabBarController.navigationItem.leftBarButtonItem = nil;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @""
+                                   style: UIBarButtonItemStylePlain
+                                   target: nil action: nil];
+    
+    [self.tabBarController.navigationItem setBackBarButtonItem: backButton];
 }
 
 - (void)didReceiveMemoryWarning {

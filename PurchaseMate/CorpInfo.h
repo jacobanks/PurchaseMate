@@ -15,13 +15,15 @@
 @interface CorpInfo : NSObject
 
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID;
+- (NSDictionary *)getCorpInfoWithCorpName:(NSString *)corp andProductName:(NSString *)productName;
 
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString;
 - (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary;
+    
 - (NSArray *)getAllCorps;
 - (NSArray *)getAllProductsWithCorpName:(NSString *)CorpName;
 
-- (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring;
+- (NSString *)getOrgIDWithURL:(NSString *)urlstring;
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString;
 
 - (NSString *)getEthicsRatingWithName:(NSString *)name;

@@ -36,6 +36,21 @@ static NSMutableDictionary *corpDict;
     return nil;
 }
 
+- (NSDictionary *)getCorpInfoWithCorpName:(NSString *)corp andProductName:(NSString *)productName {
+    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corp]];
+    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
+    
+    NSString *ethicsString = [self getEthicsRatingWithName:corp];
+    
+    corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
+                                                                @"corpName" : corp,
+                                                                @"politicalInfo" : politicalDictionary,
+                                                                @"ethics" : ethicsString }];
+    return corpDict;
+}
+
+
+
 - (NSDictionary *)getCorpDictionary {
     return corpDict;
 }
