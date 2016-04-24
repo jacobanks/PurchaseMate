@@ -82,7 +82,10 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(170, 170);
+    // iphone 5 140
+    // iphone 6 170
+    // iphone 6 plus
+    return CGSizeMake((self.view.frame.size.width / 2) - 20, (self.view.frame.size.width / 2) - 20);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
