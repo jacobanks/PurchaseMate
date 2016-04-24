@@ -151,6 +151,8 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 #pragma mark - keyboard movements
@@ -177,6 +179,7 @@
         [self scanProduct:self.barcodeTextField.text];
     }
     
+    self.barcodeTextField.text = @"";
     [self keyboardWillHide:nil];
 }
 
