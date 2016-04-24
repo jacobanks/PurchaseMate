@@ -20,14 +20,13 @@ static NSMutableDictionary *corpDict;
     } else {
         NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
         if (corpName != nil) {
-            NSDictionary *orgDict = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
-            NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgDict[@"orgid"]]];
+            NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
+            NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
             
             NSString *ethicsString = [self getEthicsRatingWithName:corpName];
             
             corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
                                                                         @"corpName" : corpName,
-                                                                        @"orgDict" : orgDict,
                                                                         @"politicalInfo" : politicalDictionary,
                                                                         @"ethics" : ethicsString }];
             return corpDict;
@@ -155,20 +154,22 @@ static NSMutableDictionary *corpDict;
 
 }
 
-- (NSDictionary *)getOrgIDWithURL:(NSString *)urlstring {
+- (NSString *)getOrgIDWithURL:(NSString *)urlstring {
     
     NSURL *URL = [[NSURL alloc] initWithString:[urlstring stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
     NSError *error = nil;
     
-    NSDictionary *dictionary = [XMLReader dictionaryForXMLData:data error:&error];
+    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    NSString *orgID;
     
-    id response = [dictionary objectForKey:@"response"];
-    NSDictionary *responseDictionary = response;
-    id organization = [responseDictionary objectForKey:@"organization"];
-    NSDictionary *orgDict = organization;
+    if ([results[@"response"][@"organization"] count] > 1) {
+        orgID = results[@"response"][@"organization"][0][@"@attributes"][@"orgid"];
+    } else {
+        orgID = results[@"response"][@"organization"][@"@attributes"][@"orgid"];
+    }
     
-    return orgDict;
+    return orgID;
 }
 
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString {

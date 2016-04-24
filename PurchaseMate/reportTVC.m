@@ -63,7 +63,7 @@
                 self.labelsView.hidden = NO;
                 self.textFieldView.hidden = YES;
                 
-                self.corpLabel.text = corpData[@"orgDict"][@"orgname"];
+                self.corpLabel.text = corpData[@"corpName"];
                 self.productLabel.text = corpData[@"productName"];
             } else {
                 self.labelsView.hidden = YES;

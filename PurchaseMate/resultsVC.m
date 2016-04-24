@@ -114,7 +114,7 @@
             self.ethicsLabel.text = self.corpData[@"ethics"];
             
             self.productLabel.text = self.corpData[@"productName"];
-            self.corpLabel.text = self.corpData[@"orgDict"][@"orgname"];
+            self.corpLabel.text = self.corpData[@"corpName"];
             
             // check if there is no data for ethics rating
             if (![ethicsString isEqual:@"(null)"]) {

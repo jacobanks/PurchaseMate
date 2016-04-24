@@ -70,7 +70,7 @@
             [self addShadowtoView:self.corpTitleView];
             
             self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.corpTitleView.frame), 40)];
-            self.corpLabel.text = self.corpData[@"orgDict"][@"orgname"];
+            self.corpLabel.text = self.corpData[@"corpName"];
             self.corpLabel.textAlignment = NSTextAlignmentCenter;
             self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
             [self.corpTitleView addSubview:self.corpLabel];
@@ -217,7 +217,7 @@
         
     } else {
             NSDictionary *userReview = @{
-                                         @"corporation" : self.corpData[@"orgDict"][@"orgname"],
+                                         @"corporation" : self.corpData[@"corpName"][@"orgname"],
                                          @"product" : self.corpData[@"productName"],
                                          @"buyQuestion" : self.buyQuestionString,
                                          @"rating" : self.ratingString,

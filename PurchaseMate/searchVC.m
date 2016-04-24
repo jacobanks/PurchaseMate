@@ -7,6 +7,7 @@
 //
 
 #import "searchVC.h"
+#import "productsVC.h"
 #import "searchCollectionViewCell.h"
 #import "CorpInfo.h"
 
@@ -36,9 +37,6 @@
     [self.view addSubview:self.collectionView];
     
     self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
-    
-    NSArray *productsArray = [[[CorpInfo alloc] init] getAllProductsWithCorpName:@"Coca-Cola Co"];
-    NSLog(@"%@", productsArray);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,7 +85,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 //    searchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    NSLog(@"Selected");
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    productsVC *vc = (productsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"products"];
+    vc.corpString = [NSString stringWithFormat:@"%@", self.corpsArray[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

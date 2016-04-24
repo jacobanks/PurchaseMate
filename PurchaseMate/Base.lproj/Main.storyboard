@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JV6-42-AzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873.5" y="238.5"/>
+            <point key="canvasLocation" x="825.5" y="1014.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BaQ-2R-KyQ">
@@ -160,7 +160,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czc-LA-uer" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351.5" y="985.5"/>
+            <point key="canvasLocation" x="335.5" y="238.5"/>
         </scene>
         <!--Results-->
         <scene sceneID="pO2-XK-tAF">
@@ -340,7 +340,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W71-HY-eyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351.5" y="238.5"/>
+            <point key="canvasLocation" x="825.5" y="238.5"/>
         </scene>
         <!--Discover-->
         <scene sceneID="3IQ-B6-q2e">
@@ -352,10 +352,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" id="gdW-KJ-6Uo"/>
+                    <connections>
+                        <segue destination="No0-qa-yyU" kind="push" id="tPH-uq-ShQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiW-p2-1bA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-177.5" y="-527.5"/>
+        </scene>
+        <!--ProductsVC-->
+        <scene sceneID="P7p-ox-mrV">
+            <objects>
+                <viewController storyboardIdentifier="products" useStoryboardIdentifierAsRestorationIdentifier="YES" id="No0-qa-yyU" customClass="productsVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DOs-IV-bT5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MKa-IP-ZTz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0w5-Ca-Ldg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335.5" y="-527.5"/>
         </scene>
         <!--ReportTVC-->
         <scene sceneID="o3c-Yn-iJ0">
@@ -473,7 +491,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgc-hX-dPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351.5" y="-527.5"/>
+            <point key="canvasLocation" x="1309.5" y="238.5"/>
         </scene>
     </scenes>
     <resources>

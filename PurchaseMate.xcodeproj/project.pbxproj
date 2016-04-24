@@ -35,6 +35,7 @@
 		1663CE741CAE36F600E92486 /* searchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1663CE731CAE36F600E92486 /* searchView.m */; };
 		16909D321CCBEDDD0095E74D /* searchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D311CCBEDDD0095E74D /* searchVC.m */; };
 		16909D351CCBEF6F0095E74D /* searchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */; };
+		16909D3A1CCC07600095E74D /* productsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D391CCC07600095E74D /* productsVC.m */; };
 		169A65861B4388640040F74C /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65691B4388640040F74C /* PNBar.m */; };
 		169A65871B4388640040F74C /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A656B1B4388640040F74C /* PNBarChart.m */; };
 		169A65881B4388640040F74C /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A656F1B4388640040F74C /* PNChartLabel.m */; };
@@ -1688,6 +1689,8 @@
 		16909D311CCBEDDD0095E74D /* searchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchVC.m; sourceTree = "<group>"; };
 		16909D331CCBEF6F0095E74D /* searchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchCollectionViewCell.h; sourceTree = "<group>"; };
 		16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCollectionViewCell.m; sourceTree = "<group>"; };
+		16909D381CCC07600095E74D /* productsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productsVC.h; sourceTree = "<group>"; };
+		16909D391CCC07600095E74D /* productsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productsVC.m; sourceTree = "<group>"; };
 		169A65681B4388640040F74C /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
 		169A65691B4388640040F74C /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
 		169A656A1B4388640040F74C /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
@@ -3802,6 +3805,7 @@
 			children = (
 				16F4AFE81BC703490007C322 /* Scan View */,
 				16C10D371CCB4997001B2001 /* Search View Controller */,
+				16909D3B1CCC076D0095E74D /* Products */,
 				16FEBEE41C4FFD46006B8212 /* Scanned */,
 				16F4AFE91BC703500007C322 /* Results */,
 				16F4AFEA1BC703600007C322 /* Review */,
@@ -3853,6 +3857,15 @@
 				1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */,
 			);
 			name = "Scanned TableView Cell";
+			sourceTree = "<group>";
+		};
+		16909D3B1CCC076D0095E74D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16909D381CCC07600095E74D /* productsVC.h */,
+				16909D391CCC07600095E74D /* productsVC.m */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		169A65671B4388640040F74C /* PNChart */ = {
@@ -4227,6 +4240,7 @@
 				169A65901B4388640040F74C /* PNPieChartDataItem.m in Sources */,
 				164ED8A81B681816008BBD86 /* reviewVC.m in Sources */,
 				169A65961B4389250040F74C /* UICountingLabel.m in Sources */,
+				16909D3A1CCC07600095E74D /* productsVC.m in Sources */,
 				169A65931B4388640040F74C /* PNScatterChartDataItem.m in Sources */,
 				169A65891B4388640040F74C /* PNCircleChart.m in Sources */,
 				169A658E1B4388640040F74C /* PNLineChartDataItem.m in Sources */,
