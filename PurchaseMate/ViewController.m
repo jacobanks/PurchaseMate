@@ -64,9 +64,8 @@
     [self.view addSubview:self.bottomView];
     
     self.bottomLabel = [[UILabel alloc] init];
-    self.bottomLabel.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
+    self.bottomLabel.frame = CGRectMake(0, 2, self.view.bounds.size.width, 30);
     self.bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-//    self.bottomLabel.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
     self.bottomLabel.textColor = [UIColor whiteColor];
     self.bottomLabel.font = [UIFont fontWithName:@"Default" size:15];
     self.bottomLabel.textAlignment = NSTextAlignmentCenter;
