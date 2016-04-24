@@ -351,9 +351,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Discover" id="gdW-KJ-6Uo"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="search" id="gdW-KJ-6Uo"/>
                     <connections>
-                        <segue destination="No0-qa-yyU" kind="push" id="tPH-uq-ShQ"/>
+                        <segue destination="No0-qa-yyU" kind="push" identifier="id" id="tPH-uq-ShQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiW-p2-1bA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,6 +498,7 @@
         <image name="myScanBarIcon" width="24" height="25"/>
         <image name="resultsTabBarIcon" width="22" height="16"/>
         <image name="scanBarIcon" width="30" height="22"/>
+        <image name="search" width="28" height="27"/>
         <image name="starTabBarIcon" width="30" height="28"/>
     </resources>
 </document>
