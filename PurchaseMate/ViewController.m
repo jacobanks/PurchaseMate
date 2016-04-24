@@ -12,26 +12,27 @@
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 #import "CameraFocusSquare.h"
-#import "searchView.h"
 #import "reportTVC.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate, searchViewDelegate, UIAlertViewDelegate, UITextFieldDelegate>
+@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate, UITextFieldDelegate>
 
-    @property(strong, nonatomic) AVCaptureSession *session;
-    @property(strong, nonatomic) AVCaptureDevice *device;
-    @property(strong, nonatomic) AVCaptureDeviceInput *input;
-    @property(strong, nonatomic) AVCaptureMetadataOutput *output;
-    @property(strong, nonatomic) AVCaptureVideoPreviewLayer *prevLayer;
+    @property (strong, nonatomic) AVCaptureSession *session;
+    @property (strong, nonatomic) AVCaptureDevice *device;
+    @property (strong, nonatomic) AVCaptureDeviceInput *input;
+    @property (strong, nonatomic) AVCaptureMetadataOutput *output;
+    @property (strong, nonatomic) AVCaptureVideoPreviewLayer *prevLayer;
     
-    @property(strong, nonatomic) UIView *highlightView;
-    @property(strong, nonatomic) UILabel *bottomLabel;
+    @property (strong, nonatomic) UIView *highlightView;
+    @property (strong, nonatomic) UIView *bottomView;
+    @property (strong, nonatomic) UILabel *bottomLabel;
+    @property (strong, nonatomic) UITextField *barcodeTextField;
 
-    @property(strong, nonatomic) NSMutableArray *barcodeArray;
-    @property(strong, nonatomic) NSUserDefaults *userDefaults;
+    @property (strong, nonatomic) NSMutableArray *barcodeArray;
+    @property (strong, nonatomic) NSUserDefaults *userDefaults;
 
 
 @end
@@ -58,14 +59,38 @@
     self.highlightView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.highlightView.layer.borderWidth = 3;
     
+    self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 200, CGRectGetWidth(self.view.frame), 100)];
+    self.bottomView.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.7];
+    [self.view addSubview:self.bottomView];
+    
     self.bottomLabel = [[UILabel alloc] init];
-    self.bottomLabel.frame = CGRectMake(0, self.view.bounds.size.height - 80, self.view.bounds.size.width, 30);
+    self.bottomLabel.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
     self.bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    self.bottomLabel.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
+//    self.bottomLabel.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.5];
     self.bottomLabel.textColor = [UIColor whiteColor];
     self.bottomLabel.font = [UIFont fontWithName:@"Default" size:15];
     self.bottomLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:self.bottomLabel];
+    [self.bottomView addSubview:self.bottomLabel];
+    
+    self.barcodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.bottomView.frame) + 10, 35, CGRectGetWidth(self.bottomView.frame) - 20, 40)];
+    self.barcodeTextField.placeholder = @"Barcode Number";
+    self.barcodeTextField.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.2];
+    self.barcodeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    self.barcodeTextField.userInteractionEnabled = YES;
+    self.barcodeTextField.tintColor = [UIColor whiteColor];
+    self.barcodeTextField.textColor = [UIColor whiteColor];
+    self.barcodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    [self.bottomView addSubview:self.barcodeTextField];
+    
+    UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    numberToolbar.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbar.items = [NSArray arrayWithObjects:
+                           [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(keyboardWillHide:)],
+                           [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(searchFromKeyboard)],
+                           nil];
+    [numberToolbar sizeToFit];
+    self.barcodeTextField.inputAccessoryView = numberToolbar;
     
     self.session = [[AVCaptureSession alloc] init];
     self.device = [AVCaptureDevice defaultDeviceWithMediaType: AVMediaTypeVideo];
@@ -90,17 +115,15 @@
     [self.view.layer addSublayer:self.prevLayer];
     
     [self.view bringSubviewToFront:self.highlightView];
-    [self.view bringSubviewToFront:self.bottomLabel];
+    [self.view bringSubviewToFront:self.bottomView];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    self.bottomLabel.text = @"Scan a product to begin";
+    self.bottomLabel.text = @"Scan a barcode to begin";
     self.tabBarController.title = @"Scan";
-    
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(loadSearchView)];
-    
+        
     UIButton *flash = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 15, 25)];
     flash.tintColor = [UIColor whiteColor];
     UIImage *offImage = [[UIImage imageNamed:@"lightningBoltOff"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -108,7 +131,8 @@
     [flash addTarget:self action:@selector(toggleFlashlight:) forControlEvents:UIControlEventTouchUpInside];
     self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:flash];
     
-//    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toggleFlashlight)];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -125,11 +149,36 @@
     [self.session stopRunning];
 }
 
-- (void)loadSearchView {
-    CGSize viewSize = [[UIScreen mainScreen] bounds].size;
-    searchView *view = [[searchView alloc] initWithFrame:CGRectMake(0, 0, viewSize.width, viewSize.height)];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];
-    view.delegate = self;
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+#pragma mark - keyboard movements
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bottomView.frame = CGRectMake(0, self.bottomView.frame.origin.y - keyboardSize.height + 45, CGRectGetWidth(self.view.frame), 100);
+    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bottomView.frame = CGRectMake(0, self.view.bounds.size.height - 140, CGRectGetWidth(self.view.frame), 100);
+    }];
+    
+    [self.barcodeTextField resignFirstResponder];
+}
+
+- (void)searchFromKeyboard {
+    
+    if ([self.barcodeTextField.text length] > 0 && self.barcodeTextField.text != nil && ![self.barcodeTextField.text isEqual:@""]) {
+        [self scanProduct:self.barcodeTextField.text];
+    }
+    
+    [self keyboardWillHide:nil];
 }
 
 #pragma mark - Actions
@@ -282,6 +331,8 @@
     } completion:^(BOOL finished) {
         [camFocus removeFromSuperview];
     }];
+    
+    [self.barcodeTextField resignFirstResponder];
 }
 
 - (void)focus:(CGPoint)aPoint {

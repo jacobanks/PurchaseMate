@@ -32,7 +32,6 @@
 		16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */; };
 		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
 		165583001B3DFFD200819716 /* reportTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 165582FF1B3DFFD200819716 /* reportTVC.m */; };
-		1663CE741CAE36F600E92486 /* searchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1663CE731CAE36F600E92486 /* searchView.m */; };
 		16909D321CCBEDDD0095E74D /* searchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D311CCBEDDD0095E74D /* searchVC.m */; };
 		16909D351CCBEF6F0095E74D /* searchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */; };
 		16909D3A1CCC07600095E74D /* productsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D391CCC07600095E74D /* productsVC.m */; };
@@ -1683,8 +1682,6 @@
 		165583301B3E06E500819716 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		165583321B3E087700819716 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		165583351B3E09F900819716 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		1663CE721CAE36F600E92486 /* searchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchView.h; sourceTree = "<group>"; };
-		1663CE731CAE36F600E92486 /* searchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchView.m; sourceTree = "<group>"; };
 		16909D301CCBEDDD0095E74D /* searchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchVC.h; sourceTree = "<group>"; };
 		16909D311CCBEDDD0095E74D /* searchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchVC.m; sourceTree = "<group>"; };
 		16909D331CCBEF6F0095E74D /* searchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchCollectionViewCell.h; sourceTree = "<group>"; };
@@ -3768,15 +3765,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1663CE751CAE453300E92486 /* searchView */ = {
-			isa = PBXGroup;
-			children = (
-				1663CE721CAE36F600E92486 /* searchView.h */,
-				1663CE731CAE36F600E92486 /* searchView.m */,
-			);
-			name = searchView;
-			sourceTree = "<group>";
-		};
 		1663CE761CAE4B1E00E92486 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3793,7 +3781,6 @@
 				1663CE7A1CAE4BA600E92486 /* UICountingLabel */,
 				169A65671B4388640040F74C /* PNChart */,
 				16D830691C8BD1AF00407300 /* CameraFocusSquare */,
-				1663CE751CAE453300E92486 /* searchView */,
 				16909D361CCBF5320095E74D /* Search Collection Cell */,
 				16909D371CCBF54D0095E74D /* Scanned TableView Cell */,
 			);
@@ -4256,7 +4243,6 @@
 				1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */,
 				169A658B1B4388640040F74C /* PNGenericChart.m in Sources */,
 				16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */,
-				1663CE741CAE36F600E92486 /* searchView.m in Sources */,
 				169A65911B4388640040F74C /* PNScatterChart.m in Sources */,
 				165583001B3DFFD200819716 /* reportTVC.m in Sources */,
 				16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */,
