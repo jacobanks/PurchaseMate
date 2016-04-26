@@ -53,7 +53,11 @@
         self.labelsView.hidden = YES;
         self.textFieldView.hidden = YES;
         
-        self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
+        if (barcodeID != nil) {
+            self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
+        } else {
+            self.barcodeLabel.text = @"No Barcode";
+        }
         
         CorpInfo *corpInfo = [[CorpInfo alloc] init];
         NSDictionary *corpData = corpInfo.getCorpDictionary;
