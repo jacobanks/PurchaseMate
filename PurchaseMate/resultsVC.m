@@ -137,7 +137,14 @@
             int repubRandomINT = arc4random() %51 + 50;
             int demoRandomINT = arc4random() %51 + 50;
             
-            if (repubString.intValue < demString.intValue) {
+            if (repubString.intValue == 0 && demString.intValue == 0) {
+                repubRandomINT = 1;
+                demoRandomINT = 1;
+            } else if (repubString.intValue == 0) {
+                repubRandomINT = 1;
+            } else if (demString.intValue == 0) {
+                demoRandomINT = 1;
+            } else if (repubString.intValue < demString.intValue) {
                 repubRandomINT = demoRandomINT - 30;
             } else {
                 demoRandomINT = repubRandomINT - 30;
