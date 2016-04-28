@@ -206,6 +206,14 @@
     [done setImage:offImage forState:UIControlStateNormal];
     [done addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:done];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @""
+                                   style: UIBarButtonItemStylePlain
+                                   target: nil action: nil];
+    
+    [self.tabBarController.navigationItem setBackBarButtonItem: backButton];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
