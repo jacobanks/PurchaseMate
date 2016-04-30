@@ -116,10 +116,9 @@
             
             self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
             [self.yesButton setTitle:@"Yes" forState:UIControlStateNormal];
-            [self.yesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-            [self.yesButton setTitleColor:[UIColor colorWithRed:85.0/255.0 green:85.0/255.0 blue:85.0/255.0 alpha:0.3] forState:UIControlStateHighlighted];
-            
-            self.yesButton.backgroundColor = [UIColor whiteColor];
+            [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.yesButton.backgroundColor = [UIColor darkGrayColor];
+            self.yesButton.alpha = 0.5;
             
             self.yesButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
             self.yesButton.layer.borderWidth = 2;
@@ -130,10 +129,11 @@
             
             self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 2, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
             [self.noButton setTitle:@"No" forState:UIControlStateNormal];
-            [self.noButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-            [self.noButton setTitleColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:0.3] forState:UIControlStateHighlighted];
+            [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [self.noButton addTarget:self action:@selector(noClicked:) forControlEvents:UIControlEventTouchUpInside];
-            self.noButton.backgroundColor = [UIColor whiteColor];
+            self.noButton.backgroundColor = [UIColor redColor];
+            self.noButton.alpha = 0.5;
+            
             self.noButton.layer.borderColor = [UIColor redColor].CGColor;
             self.noButton.layer.borderWidth = 2;
             self.noButton.layer.cornerRadius = 5;
@@ -190,20 +190,22 @@
     self.buyQuestionString = @"Yes";
     self.yesButton.backgroundColor = [UIColor darkGrayColor];
     [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.yesButton.alpha = 1.0;
     
-    self.noButton.backgroundColor = [UIColor whiteColor];
-    [self.noButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-
+    self.noButton.backgroundColor = [UIColor redColor];
+    [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.noButton.alpha = 0.5;
 }
 
 - (void)noClicked:(id)sender {
     self.buyQuestionString = @"No";
     self.noButton.backgroundColor = [UIColor redColor];
     [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.noButton.alpha = 1.0;
     
-    self.yesButton.backgroundColor = [UIColor whiteColor];
-    [self.yesButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-
+    self.yesButton.backgroundColor = [UIColor darkGrayColor];
+    [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.yesButton.alpha = 0.5;
 }
 
 - (void)submitClicked:(id)sender {
