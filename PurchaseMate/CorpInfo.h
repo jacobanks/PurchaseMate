@@ -16,6 +16,7 @@
 
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID;
 - (NSDictionary *)getCorpInfoWithCorpName:(NSString *)corp andProductName:(NSString *)productName;
+- (NSDictionary *)getCorpAndNameWithBarcode:(NSString *)barcode;
 
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString;
 - (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary;

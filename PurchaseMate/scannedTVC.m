@@ -59,7 +59,7 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
         for (int i = 0; i < self.barcodeArray.count; i++) {
-            self.corpInfo = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:self.barcodeArray[i]];
+            self.corpInfo = [[[CorpInfo alloc] init] getCorpAndNameWithBarcode:self.barcodeArray[i]];
             [self.neededCorpInfo setValue:[NSArray arrayWithObjects:self.corpInfo[@"corpName"], self.corpInfo[@"productName"], nil] forKey:[NSString stringWithFormat:@"%i", i]];
         }
         

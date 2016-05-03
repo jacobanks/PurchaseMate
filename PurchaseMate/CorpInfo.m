@@ -49,7 +49,16 @@ static NSMutableDictionary *corpDict;
     return corpDict;
 }
 
+- (NSDictionary *)getCorpAndNameWithBarcode:(NSString *)barcode {
+    
+    NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", barcode]];
+    NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
 
+    corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
+                                                                @"corpName" : corpName }];
+    
+    return corpDict;
+}
 
 - (NSDictionary *)getCorpDictionary {
     return corpDict;
