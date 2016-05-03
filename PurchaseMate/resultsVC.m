@@ -191,11 +191,6 @@
             //
             //            [self.view addSubview:self.starsView];
             //        }
-
-            UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 45)];
-            [report setImage:[UIImage imageNamed:@"warningTriangle"] forState:UIControlStateNormal];
-            [report addTarget:self action:@selector(openReportView) forControlEvents:UIControlEventTouchUpInside];
-            self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
@@ -207,12 +202,17 @@
     self.tabBarController.title = @"Results";
 //    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
     
+    UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 45)];
+    [report setImage:[UIImage imageNamed:@"warningTriangle"] forState:UIControlStateNormal];
+    [report addTarget:self action:@selector(openReportView) forControlEvents:UIControlEventTouchUpInside];
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:report];
+    
     UIButton *done = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     done.tintColor = [UIColor whiteColor];
     UIImage *offImage = [[UIImage imageNamed:@"cross"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [done setImage:offImage forState:UIControlStateNormal];
     [done addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
-    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:done];
+    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:done];
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: @""

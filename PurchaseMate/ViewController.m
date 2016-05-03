@@ -155,7 +155,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
-#pragma mark - keyboard movements
+#pragma mark - Keyboard Movements
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
