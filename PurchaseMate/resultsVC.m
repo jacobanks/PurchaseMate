@@ -68,9 +68,8 @@
         // Do something...
         self.partyCell.hidden = YES;
         self.contributionsCell.hidden = YES;
-
-        CorpInfo *corpInfo = [[CorpInfo alloc] init];
-        self.corpData = corpInfo.getCorpDictionary;
+        
+        self.corpData = [[[CorpInfo alloc] init] getCorpDictionary];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             

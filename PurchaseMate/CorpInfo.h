@@ -15,7 +15,7 @@
 @interface CorpInfo : NSObject
 
 - (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID;
-- (NSDictionary *)getCorpInfoWithCorpName:(NSString *)corp andProductName:(NSString *)productName;
+- (NSDictionary *)getCorpInfo:(NSString *)corp andProductName:(NSString *)productName;
 - (NSDictionary *)getCorpAndNameWithBarcode:(NSString *)barcode;
 
 - (NSDictionary *)getDataFromOutPan:(NSString *)urlString;

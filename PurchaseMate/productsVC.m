@@ -85,9 +85,8 @@
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 
-        CorpInfo *corpInfo = [[CorpInfo alloc] init];
-        NSDictionary *corpData = [corpInfo getCorpInfoWithCorpName:self.corpString andProductName:self.productsArray[indexPath.row]];
-        
+        NSDictionary *corpData = [[[CorpInfo alloc] init] getCorpInfoWithCorpName:self.corpString andProductName:self.productsArray[indexPath.row]];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (corpData != nil) {

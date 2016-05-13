@@ -54,8 +54,7 @@
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
-        CorpInfo *corpInfo = [[CorpInfo alloc] init];
-        self.corpData = corpInfo.getCorpDictionary;
+        self.corpData = [[[CorpInfo alloc] init] getCorpDictionary];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -165,9 +164,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     self.tabBarController.title = @"Review";
     
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(submitClicked:)];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:YES];
 }
 
 - (void)didReceiveMemoryWarning {

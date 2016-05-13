@@ -34,7 +34,6 @@
     @property (strong, nonatomic) NSMutableArray *barcodeArray;
     @property (strong, nonatomic) NSUserDefaults *userDefaults;
 
-
 @end
 
 @implementation ViewController
@@ -119,7 +118,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    [super viewWillAppear:YES];
     self.bottomLabel.text = @"Scan a barcode to begin";
     self.tabBarController.title = @"Scan";
         
@@ -193,9 +192,8 @@
         // Do something...
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         
-        CorpInfo *corpInfo = [[CorpInfo alloc] init];
-        NSDictionary *corpData = [corpInfo getCorpInfoWithBarcode:barcode];
-        
+        NSDictionary *corpData = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcode];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             if (corpData != nil) {
                 barcodeID = barcode;

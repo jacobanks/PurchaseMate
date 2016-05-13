@@ -59,8 +59,7 @@
             self.barcodeLabel.text = @"No Barcode";
         }
         
-        CorpInfo *corpInfo = [[CorpInfo alloc] init];
-        NSDictionary *corpData = corpInfo.getCorpDictionary;
+        NSDictionary *corpData = [[[CorpInfo alloc] init] getCorpDictionary];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (corpData != nil) {

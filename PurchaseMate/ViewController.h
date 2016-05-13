@@ -19,4 +19,3 @@ extern NSString *barcodeID;
 - (void)toggleFlashlight:(id)sender;
 
 @end
-
