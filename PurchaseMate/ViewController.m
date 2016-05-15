@@ -119,7 +119,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    self.bottomLabel.text = @"Scan a barcode to begin";
+    self.bottomLabel.text = @"Scan or enter a barcode to begin";
     self.tabBarController.title = @"Scan";
         
     UIButton *flash = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 15, 25)];
