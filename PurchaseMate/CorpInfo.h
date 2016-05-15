@@ -14,21 +14,27 @@
 
 @interface CorpInfo : NSObject
 
-- (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID;
-- (NSDictionary *)getCorpInfo:(NSString *)corp andProductName:(NSString *)productName;
-- (NSDictionary *)getCorpAndNameWithBarcode:(NSString *)barcode;
+// GETTERS
+- (NSDictionary *)getPoliticalInfoWithBarcode:(NSString *)barcode;
+- (NSDictionary *)getPoliticalInfoWithCorpName:(NSString *)corpName andProductName:(NSString *)productName;
 
-- (NSDictionary *)getDataFromOutPan:(NSString *)urlString;
-- (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary;
-    
-- (NSArray *)getAllCorps;
-- (NSArray *)getAllProductsWithCorpName:(NSString *)CorpName;
+- (NSDictionary *)getNamesWithBarcode:(NSString *)barcode;
 
+- (NSDictionary *)getCorpDictionary;
+
+// OUTPAN.COM API
+- (NSDictionary *)getBrandFromOutPan:(NSString *)urlString;
+
+// OPENSECRETS.COM API
 - (NSString *)getOrgIDWithURL:(NSString *)urlstring;
 - (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString;
 
-- (NSString *)getEthicsRatingWithName:(NSString *)name;
+// MONGODB
+- (NSString *)getCorpFromMongoDBWithBrandName:(NSDictionary *)productNameDictionary;
 
-- (NSDictionary *)getCorpDictionary;
+- (NSArray *)getAllCorps;
+- (NSArray *)getAllProductsWithCorpName:(NSString *)corpName;
+
+- (NSString *)getEthicsRatingWithName:(NSString *)name;
 
 @end

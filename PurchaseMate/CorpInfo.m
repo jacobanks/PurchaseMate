@@ -12,13 +12,15 @@
 
 static NSMutableDictionary *corpDict;
 
-- (NSDictionary *)getCorpInfoWithBarcode:(NSString *)ID {
+#pragma mark - GETTERS
 
-    NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", ID]];
+- (NSDictionary *)getPoliticalInfoWithBarcode:(NSString *)barcode {
+
+    NSDictionary *productName = [self getBrandFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", barcode]];
     if (productName == nil) {
         return nil;
     } else {
-        NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
+        NSString *corpName = [self getCorpFromMongoDBWithBrandName:productName];
         if (corpName != nil) {
             NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
             NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
@@ -36,23 +38,23 @@ static NSMutableDictionary *corpDict;
     return nil;
 }
 
-- (NSDictionary *)getCorpInfoWithCorpName:(NSString *)corp andProductName:(NSString *)productName {
-    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corp]];
+- (NSDictionary *)getPoliticalInfoWithCorpName:(NSString *)corpName andProductName:(NSString *)productName {
+    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
     NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
     
-    NSString *ethicsString = [self getEthicsRatingWithName:corp];
+    NSString *ethicsString = [self getEthicsRatingWithName:corpName];
     
     corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
-                                                                @"corpName" : corp,
+                                                                @"corpName" : corpName,
                                                                 @"politicalInfo" : politicalDictionary,
                                                                 @"ethics" : ethicsString }];
     return corpDict;
 }
 
-- (NSDictionary *)getCorpAndNameWithBarcode:(NSString *)barcode {
+- (NSDictionary *)getNamesWithBarcode:(NSString *)barcode {
     
-    NSDictionary *productName = [self getDataFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", barcode]];
-    NSString *corpName = [self getDataFromMongoDBWithDictionary:productName];
+    NSDictionary *productName = [self getBrandFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", barcode]];
+    NSString *corpName = [self getCorpFromMongoDBWithBrandName:productName];
 
     corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
                                                                 @"corpName" : corpName }];
@@ -64,7 +66,9 @@ static NSMutableDictionary *corpDict;
     return corpDict;
 }
 
-- (NSDictionary *)getDataFromOutPan:(NSString *)urlString {
+#pragma mark - OUTPAN.COM API
+
+- (NSDictionary *)getBrandFromOutPan:(NSString *)urlString {
     
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
@@ -94,7 +98,45 @@ static NSMutableDictionary *corpDict;
     return nil;
 }
 
-- (NSString *)getDataFromMongoDBWithDictionary:(NSDictionary *)responseDictionary {
+#pragma mark - OPENSECRETS.COM API
+
+- (NSString *)getOrgIDWithURL:(NSString *)urlstring {
+    
+    NSURL *URL = [[NSURL alloc] initWithString:[urlstring stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
+    NSError *error = nil;
+    
+    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    NSString *orgID;
+    
+    if ([results[@"response"][@"organization"] count] > 1) {
+        orgID = results[@"response"][@"organization"][0][@"@attributes"][@"orgid"];
+    } else {
+        orgID = results[@"response"][@"organization"][@"@attributes"][@"orgid"];
+    }
+    
+    return orgID;
+}
+
+- (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString {
+    
+    NSURL *URL = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
+    NSError *error = nil;
+    
+    NSDictionary *dictionary = [XMLReader dictionaryForXMLData:data error:&error];
+    
+    id response = [dictionary objectForKey:@"response"];
+    NSDictionary *responseDictionary = response;
+    id organization = [responseDictionary objectForKey:@"organization"];
+    NSDictionary *summaryDict = organization;
+    
+    return summaryDict;
+}
+
+#pragma mark - MONGODB
+
+- (NSString *)getCorpFromMongoDBWithBrandName:(NSDictionary *)brandNameDictionary {
     
     NSError *error = nil;
     if (error) {
@@ -106,7 +148,7 @@ static NSMutableDictionary *corpDict;
     MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
     
     MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
-    [predicate keyPath:@"Name" matches:responseDictionary];
+    [predicate keyPath:@"Name" matches:brandNameDictionary];
     BSONDocument *resultDoc = [collection findOneWithPredicate:predicate error:&error];
     NSDictionary *result = [BSONDecoder decodeDictionaryWithDocument:resultDoc];
     
@@ -149,7 +191,7 @@ static NSMutableDictionary *corpDict;
     return corpArray;
 }
 
-- (NSArray *)getAllProductsWithCorpName:(NSString *)CorpName {
+- (NSArray *)getAllProductsWithCorpName:(NSString *)corpName {
     NSError *error = nil;
     if (error) {
         NSLog(@"%@", error);
@@ -160,7 +202,7 @@ static NSMutableDictionary *corpDict;
     MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
     
     MongoKeyedPredicate *predicate = [MongoKeyedPredicate predicate];
-    [predicate keyPath:@"Corp" matches:CorpName];
+    [predicate keyPath:@"Corp" matches:corpName];
     NSArray *results = [collection findWithPredicate:predicate error:&error];
     NSMutableArray *productArray = [[NSMutableArray alloc] init];;
     
@@ -176,40 +218,6 @@ static NSMutableDictionary *corpDict;
     
     return productArray;
 
-}
-
-- (NSString *)getOrgIDWithURL:(NSString *)urlstring {
-    
-    NSURL *URL = [[NSURL alloc] initWithString:[urlstring stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-    NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
-    NSError *error = nil;
-    
-    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-    NSString *orgID;
-    
-    if ([results[@"response"][@"organization"] count] > 1) {
-        orgID = results[@"response"][@"organization"][0][@"@attributes"][@"orgid"];
-    } else {
-        orgID = results[@"response"][@"organization"][@"@attributes"][@"orgid"];
-    }
-    
-    return orgID;
-}
-
-- (NSDictionary *)getSummaryWithOrgID:(NSString *)urlString {
-    
-    NSURL *URL = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-    NSData *data = [[NSData alloc] initWithContentsOfURL:URL];
-    NSError *error = nil;
-    
-    NSDictionary *dictionary = [XMLReader dictionaryForXMLData:data error:&error];
-    
-    id response = [dictionary objectForKey:@"response"];
-    NSDictionary *responseDictionary = response;
-    id organization = [responseDictionary objectForKey:@"organization"];
-    NSDictionary *summaryDict = organization;
-    
-    return summaryDict;
 }
 
 - (NSString *)getEthicsRatingWithName:(NSString *)name {

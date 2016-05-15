@@ -192,7 +192,7 @@
         // Do something...
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         
-        NSDictionary *corpData = [[[CorpInfo alloc] init] getCorpInfoWithBarcode:barcode];
+        NSDictionary *corpData = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:barcode];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             if (corpData != nil) {
