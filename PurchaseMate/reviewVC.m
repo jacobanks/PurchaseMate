@@ -11,7 +11,7 @@
 #import "MBProgressHUD.h"
 #import "CorpInfo.h"
 
-@interface reviewVC () <RateViewDelegate>
+@interface reviewVC () <RateViewDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) RateView *ratingView;
 @property (strong, nonatomic) NSString *ratingString;
@@ -29,6 +29,7 @@
 @property (strong, nonatomic) UILabel *whyLabel;
 @property (strong, nonatomic) UILabel *explainTitleLabel;
 
+@property (strong, nonatomic) UIScrollView *scrollView;
 
 @property (strong, nonatomic) UIButton *yesButton;
 @property (strong, nonatomic) UIButton *noButton;
@@ -58,12 +59,12 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame))];
-            scrollview.showsVerticalScrollIndicator = YES;
-            scrollview.scrollEnabled = YES;
-            scrollview.userInteractionEnabled = YES;
-            [self.view addSubview:scrollview];
-            scrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame) + 20);
+            self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame))];
+            self.scrollView.showsVerticalScrollIndicator = YES;
+            self.scrollView.scrollEnabled = YES;
+            self.scrollView.userInteractionEnabled = YES;
+            self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+            self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame) + 20);
             
             self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, CGRectGetWidth(self.view.frame), 120)];
             [self addShadowtoView:self.corpTitleView];
@@ -81,7 +82,7 @@
             self.productLabel.alpha = 0.7 ;
             [self.corpTitleView addSubview:self.productLabel];
             
-            [scrollview addSubview:self.corpTitleView];
+            [self.scrollView addSubview:self.corpTitleView];
             
             self.rateView = [[UIView alloc] initWithFrame:CGRectMake(0, 122, CGRectGetWidth(self.view.frame), 80)];
             [self addShadowtoView:self.rateView];
@@ -101,7 +102,7 @@
             self.ratingView.delegate = self;
             [self.rateView addSubview:self.ratingView];
             
-            [scrollview addSubview:self.rateView];
+            [self.scrollView addSubview:self.rateView];
             
             self.buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 203, CGRectGetWidth(self.view.frame), 127)];
             [self addShadowtoView:self.buyView];
@@ -138,7 +139,7 @@
             self.noButton.layer.cornerRadius = 5;
             [self.buyView addSubview:self.noButton];
             
-            [scrollview addSubview:self.buyView];
+            [self.scrollView addSubview:self.buyView];
             
             self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, CGRectGetWidth(self.view.frame), 140)];
             [self addShadowtoView:self.explainView];
@@ -152,11 +153,12 @@
             
             self.explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.explainTitleLabel.center.y + 15, CGRectGetWidth(self.explainView.frame), 100)];
             self.explainTextView.editable = YES;
+            self.explainTextView.delegate = self;
             [self.explainView addSubview:self.explainTextView];
             
-            [scrollview addSubview:self.explainView];
+            [self.scrollView addSubview:self.explainView];
             
-            [self.view addSubview:scrollview];
+            [self.view addSubview:self.scrollView];
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
@@ -168,6 +170,17 @@
     self.tabBarController.title = @"Review";
     
     self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(submitClicked:)];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -258,6 +271,31 @@
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(int)rating {
     self.ratingString = [NSString stringWithFormat:@"%d", rating];
+}
+
+#pragma mark - UITextViewDelegate
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary *userInfo = [notification userInfo];
+    CGRect keyboardInfoFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGRect windowFrame = [self.view.window convertRect:self.view.frame fromView:self.view];
+    CGRect keyboardFrame = CGRectIntersection (windowFrame, keyboardInfoFrame);
+    CGRect coveredFrame = [self.view.window convertRect:keyboardFrame toView:self.view];
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake (0.0, 0.0, coveredFrame.size.height + 20, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
+    
+    [self.scrollView scrollRectToVisible:self.explainTextView.superview.frame animated:YES];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 @end
