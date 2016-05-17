@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kCO-GL-AdO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kCO-GL-AdO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jIA-wQ-0r5" id="6Or-cu-hc0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sprite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yhg-g3-NEG">
@@ -177,7 +177,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ey-N4-QXf" id="lax-KA-883">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="206.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coca-Cola Co" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dlv-Cv-MZl">
@@ -271,7 +271,7 @@
                                         <rect key="frame" x="0.0" y="207" width="375" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PRp-5m-1i0" id="r42-tC-Eur">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="173.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yj1-tA-Cat">
@@ -347,10 +347,11 @@
             <objects>
                 <viewController id="fWB-vd-rP4" customClass="searchVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ttK-p9-wUS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Discover" image="search" id="gdW-KJ-6Uo"/>
                     <connections>
                         <segue destination="No0-qa-yyU" kind="push" identifier="id" id="tPH-uq-ShQ"/>
@@ -391,7 +392,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ahg-EC-zRh" id="o88-Wh-Mae">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="nTp-mG-Dhv">
@@ -448,7 +449,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Itn-uY-6rp" id="hy8-vV-goV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" text="Report any missing information or problems here..." textAlignment="natural" id="YxQ-Un-Nnh">

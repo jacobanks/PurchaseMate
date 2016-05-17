@@ -10,6 +10,7 @@
 #import "productsVC.h"
 #import "searchCollectionViewCell.h"
 #import "CorpInfo.h"
+#import "MBProgressHUD.h"
 
 @interface searchVC ()
 
@@ -25,18 +26,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, (self.view.frame.size.height - 113));
-    self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
-    [self.collectionView  setDataSource:self];
-    [self.collectionView  setDelegate:self];
-    
-    [self.collectionView  registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    [self.collectionView  setBackgroundColor:[UIColor whiteColor]];
-    
-    [self.view addSubview:self.collectionView];
-    
-    self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading...";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+            self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
+            [self.collectionView setDataSource:self];
+            [self.collectionView setDelegate:self];
+            
+            [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+            [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+            
+            [self.view addSubview:self.collectionView];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
