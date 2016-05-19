@@ -236,7 +236,7 @@
         
     } else {
             NSDictionary *userReview = @{
-                                         @"corporation" : self.corpData[@"corpName"][@"orgname"],
+                                         @"corporation" : self.corpData[@"corpName"],
                                          @"product" : self.corpData[@"productName"],
                                          @"buyQuestion" : self.buyQuestionString,
                                          @"rating" : self.ratingString,
@@ -276,7 +276,6 @@
 #pragma mark - UITextViewDelegate
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    NSLog(@"first");
     NSDictionary *userInfo = [notification userInfo];
     CGRect keyboardInfoFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
@@ -291,8 +290,6 @@
     [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
     
     [self.scrollView scrollRectToVisible:self.explainTextView.superview.frame animated:YES];
-    
-    NSLog(@"Second");
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {

@@ -18,7 +18,7 @@
         self.titleLabel.font = [UIFont systemFontOfSize:18];
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.textColor = [UIColor darkGrayColor];
         [self.contentView addSubview:self.titleLabel];
     }
     
