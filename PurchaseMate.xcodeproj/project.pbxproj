@@ -29,6 +29,7 @@
 		161C43861B2CA89000F3F8F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43851B2CA89000F3F8F4 /* UIKit.framework */; };
 		161C43881B2CA89500F3F8F4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43871B2CA89500F3F8F4 /* AVFoundation.framework */; };
 		1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */; };
+		163876C41CED93CB006D1981 /* PurchaseMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 163876C31CED93CB006D1981 /* PurchaseMateTests.m */; };
 		16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */; };
 		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
 		165583001B3DFFD200819716 /* reportTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 165582FF1B3DFFD200819716 /* reportTVC.m */; };
@@ -58,6 +59,16 @@
 		16FEBEE71C5005AA006B8212 /* CorpInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEE61C5005AA006B8212 /* CorpInfo.m */; };
 		35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B7B836E94DBCE8CDDD41B /* Pods.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		163876C61CED93CB006D1981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 161C43501B2CA80900F3F8F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 161C43571B2CA80900F3F8F4;
+			remoteInfo = PurchaseMate;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		160F3EB91B3E51FC006816D1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -1655,8 +1666,6 @@
 		161C43661B2CA80900F3F8F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		161C43681B2CA80900F3F8F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		161C436B1B2CA80900F3F8F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		161C43761B2CA80900F3F8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		161C43771B2CA80900F3F8F4 /* PurchaseMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseMateTests.m; sourceTree = "<group>"; };
 		161C43811B2CA87600F3F8F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		161C43831B2CA88100F3F8F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		161C43851B2CA89000F3F8F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1664,6 +1673,9 @@
 		161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1633D5F81C72EE4F00AD9961 /* scannedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannedTableViewCell.h; sourceTree = "<group>"; };
 		1633D5F91C72EE4F00AD9961 /* scannedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scannedTableViewCell.m; sourceTree = "<group>"; };
+		163876C11CED93CB006D1981 /* PurchaseMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		163876C31CED93CB006D1981 /* PurchaseMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseMateTests.m; sourceTree = "<group>"; };
+		163876C51CED93CB006D1981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16446D8B1B30A38F00AFD340 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		16446D8D1B30A39B00AFD340 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		164ED8A21B67F312008BBD86 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -1771,6 +1783,13 @@
 				161C43841B2CA88100F3F8F4 /* CoreGraphics.framework in Frameworks */,
 				161C43821B2CA87700F3F8F4 /* Foundation.framework in Frameworks */,
 				35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		163876BE1CED93CB006D1981 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3676,8 +3695,8 @@
 			isa = PBXGroup;
 			children = (
 				161C435A1B2CA80900F3F8F4 /* PurchaseMate */,
+				163876C21CED93CB006D1981 /* PurchaseMateTests */,
 				161C438B1B2CA94600F3F8F4 /* Frameworks */,
-				161C43741B2CA80900F3F8F4 /* PurchaseMateTests */,
 				161C43591B2CA80900F3F8F4 /* Products */,
 				DE3A871597C2CDA7B86A963A /* Pods */,
 			);
@@ -3687,6 +3706,7 @@
 			isa = PBXGroup;
 			children = (
 				161C43581B2CA80900F3F8F4 /* PurchaseMate.app */,
+				163876C11CED93CB006D1981 /* PurchaseMateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3712,23 +3732,6 @@
 			children = (
 				161C435C1B2CA80900F3F8F4 /* Info.plist */,
 				161C435D1B2CA80900F3F8F4 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		161C43741B2CA80900F3F8F4 /* PurchaseMateTests */ = {
-			isa = PBXGroup;
-			children = (
-				161C43771B2CA80900F3F8F4 /* PurchaseMateTests.m */,
-				161C43751B2CA80900F3F8F4 /* Supporting Files */,
-			);
-			path = PurchaseMateTests;
-			sourceTree = "<group>";
-		};
-		161C43751B2CA80900F3F8F4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				161C43761B2CA80900F3F8F4 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -3763,6 +3766,15 @@
 				2C7B7B836E94DBCE8CDDD41B /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		163876C21CED93CB006D1981 /* PurchaseMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				163876C31CED93CB006D1981 /* PurchaseMateTests.m */,
+				163876C51CED93CB006D1981 /* Info.plist */,
+			);
+			path = PurchaseMateTests;
 			sourceTree = "<group>";
 		};
 		1663CE761CAE4B1E00E92486 /* Model */ = {
@@ -4120,6 +4132,24 @@
 			productReference = 161C43581B2CA80900F3F8F4 /* PurchaseMate.app */;
 			productType = "com.apple.product-type.application";
 		};
+		163876C01CED93CB006D1981 /* PurchaseMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 163876C81CED93CB006D1981 /* Build configuration list for PBXNativeTarget "PurchaseMateTests" */;
+			buildPhases = (
+				163876BD1CED93CB006D1981 /* Sources */,
+				163876BE1CED93CB006D1981 /* Frameworks */,
+				163876BF1CED93CB006D1981 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				163876C71CED93CB006D1981 /* PBXTargetDependency */,
+			);
+			name = PurchaseMateTests;
+			productName = PurchaseMateTests;
+			productReference = 163876C11CED93CB006D1981 /* PurchaseMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -4138,6 +4168,10 @@
 							};
 						};
 					};
+					163876C01CED93CB006D1981 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 161C43571B2CA80900F3F8F4;
+					};
 				};
 			};
 			buildConfigurationList = 161C43531B2CA80900F3F8F4 /* Build configuration list for PBXProject "PurchaseMate" */;
@@ -4154,6 +4188,7 @@
 			projectRoot = "";
 			targets = (
 				161C43571B2CA80900F3F8F4 /* PurchaseMate */,
+				163876C01CED93CB006D1981 /* PurchaseMateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -4166,6 +4201,13 @@
 				161C43671B2CA80900F3F8F4 /* Main.storyboard in Resources */,
 				161C436C1B2CA80900F3F8F4 /* LaunchScreen.xib in Resources */,
 				161C43691B2CA80900F3F8F4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		163876BF1CED93CB006D1981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4257,7 +4299,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		163876BD1CED93CB006D1981 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163876C41CED93CB006D1981 /* PurchaseMateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		163876C71CED93CB006D1981 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 161C43571B2CA80900F3F8F4 /* PurchaseMate */;
+			targetProxy = 163876C61CED93CB006D1981 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		161C43651B2CA80900F3F8F4 /* Main.storyboard */ = {
@@ -4415,6 +4473,35 @@
 			};
 			name = Release;
 		};
+		163876C91CED93CB006D1981 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = PurchaseMateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = srh.PurchaseMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PurchaseMate.app/PurchaseMate";
+			};
+			name = Debug;
+		};
+		163876CA1CED93CB006D1981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = PurchaseMateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = srh.PurchaseMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PurchaseMate.app/PurchaseMate";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4435,6 +4522,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		163876C81CED93CB006D1981 /* Build configuration list for PBXNativeTarget "PurchaseMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163876C91CED93CB006D1981 /* Debug */,
+				163876CA1CED93CB006D1981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

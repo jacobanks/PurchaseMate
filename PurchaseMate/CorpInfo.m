@@ -8,6 +8,11 @@
 
 #import "CorpInfo.h"
 
+#define OPENSECRETS_URL "http://www.opensecrets.org/api/?"
+#define OPENSECRETS_APIKEY "0c8623858008df89e64bb8b1d7e4ca3d"
+
+#define OUTPAN_APIKEY "cbf4f07abd482df99358395a75b6340a"
+
 @implementation CorpInfo
 
 static NSMutableDictionary *corpDict;
@@ -16,14 +21,14 @@ static NSMutableDictionary *corpDict;
 
 - (NSDictionary *)getPoliticalInfoWithBarcode:(NSString *)barcode {
 
-    NSDictionary *productName = [self getBrandFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", barcode]];
+    NSDictionary *productName = [self getBrandFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=%s", barcode, OUTPAN_APIKEY]];
     if (productName == nil) {
         return nil;
     } else {
         NSString *corpName = [self getCorpFromMongoDBWithBrandName:productName];
         if (corpName != nil) {
-            NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
-            NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
+            NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"%smethod=getOrgs&org=%@&output=json&apikey=%s", OPENSECRETS_URL, corpName, OPENSECRETS_APIKEY]];
+            NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"%smethod=orgSummary&id=%@&apikey=%s", OPENSECRETS_URL, orgID, OPENSECRETS_APIKEY]];
             
             NSString *ethicsString = [self getEthicsRatingWithName:corpName];
             
@@ -39,8 +44,8 @@ static NSMutableDictionary *corpDict;
 }
 
 - (NSDictionary *)getPoliticalInfoWithCorpName:(NSString *)corpName andProductName:(NSString *)productName {
-    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=getOrgs&org=%@&output=json&apikey=0c8623858008df89e64bb8b1d7e4ca3d", corpName]];
-    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"http://www.opensecrets.org/api/?method=orgSummary&id=%@&apikey=0c8623858008df89e64bb8b1d7e4ca3d", orgID]];
+    NSString *orgID = [self getOrgIDWithURL:[NSString stringWithFormat:@"%smethod=getOrgs&org=%@&output=json&apikey=%s", OPENSECRETS_URL, corpName, OPENSECRETS_APIKEY]];
+    NSDictionary *politicalDictionary = [self getSummaryWithOrgID:[NSString stringWithFormat:@"%smethod=orgSummary&id=%@&apikey=%s", OPENSECRETS_URL, orgID, OPENSECRETS_APIKEY]];
     
     NSString *ethicsString = [self getEthicsRatingWithName:corpName];
     
@@ -53,7 +58,7 @@ static NSMutableDictionary *corpDict;
 
 - (NSDictionary *)getNamesWithBarcode:(NSString *)barcode {
     
-    NSDictionary *productName = [self getBrandFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=cbf4f07abd482df99358395a75b6340a", barcode]];
+    NSDictionary *productName = [self getBrandFromOutPan:[NSString stringWithFormat:@"https://api.outpan.com/v2/products/%@?apikey=%s", barcode, OUTPAN_APIKEY]];
     NSString *corpName = [self getCorpFromMongoDBWithBrandName:productName];
 
     NSDictionary *corpDict = [NSMutableDictionary dictionaryWithDictionary:@{ @"productName" : productName,
@@ -197,7 +202,6 @@ static NSMutableDictionary *corpDict;
         NSLog(@"%@", error);
     }
     
-    //Connect to MongoDB
     MongoConnection *dbConn = [MongoConnection connectionForServer:@"45.55.207.148" error:&error];
     MongoDBCollection *collection = [dbConn collectionWithName:@"productDB.product"];
     
