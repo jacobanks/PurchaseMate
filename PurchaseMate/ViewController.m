@@ -120,14 +120,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.bottomLabel.text = @"Scan or enter a barcode to begin";
-    self.tabBarController.title = @"Scan";
+    self.title = @"Scan";
         
     UIButton *flash = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 15, 25)];
     flash.tintColor = [UIColor whiteColor];
     UIImage *offImage = [[UIImage imageNamed:@"lightningBoltOff"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [flash setImage:offImage forState:UIControlStateNormal];
     [flash addTarget:self action:@selector(toggleFlashlight:) forControlEvents:UIControlEventTouchUpInside];
-    self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:flash];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:flash];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];

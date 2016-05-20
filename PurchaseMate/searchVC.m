@@ -26,6 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -33,7 +39,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-            CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
             [self.collectionView setDataSource:self];
             [self.collectionView setDelegate:self];
@@ -50,16 +56,21 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    self.tabBarController.title = @"Discover";
-    self.tabBarController.navigationItem.rightBarButtonItem = nil;
-    self.tabBarController.navigationItem.leftBarButtonItem = nil;
-    
+    self.title = @"Discover";
+       
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: @""
                                    style: UIBarButtonItemStylePlain
                                    target: nil action: nil];
     
-    [self.tabBarController.navigationItem setBackBarButtonItem: backButton];
+    [self.navigationItem setBackBarButtonItem: backButton];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {

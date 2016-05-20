@@ -32,7 +32,7 @@
 
         dispatch_async(dispatch_get_main_queue(), ^{
             UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-            CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, (self.view.frame.size.height));
+            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 50);
             self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
             [self.collectionView setDataSource:self];
             [self.collectionView setDelegate:self];

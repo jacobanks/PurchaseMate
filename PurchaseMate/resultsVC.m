@@ -199,7 +199,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.tabBarController.title = @"Results";
-//    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)];
     
     UIButton *report = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 45)];
     [report setImage:[UIImage imageNamed:@"warningTriangle"] forState:UIControlStateNormal];

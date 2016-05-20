@@ -25,7 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+
     self.clearsSelectionOnViewWillAppear = YES;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
@@ -38,10 +43,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.tabBarController.title = @"Scanned Products";
-    
-    self.tabBarController.navigationItem.rightBarButtonItem = nil;
-    self.tabBarController.navigationItem.leftBarButtonItem = nil;
+    self.title = @"Scanned Products";
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,7 +63,7 @@
     
     self.neededCorpInfo = [[NSMutableDictionary alloc] init];
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tabBarController.navigationController.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         // Do something...
@@ -65,7 +74,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-            [MBProgressHUD hideHUDForView:self.tabBarController.navigationController.view animated:YES];
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
         });
     });
 }
@@ -96,7 +105,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tabBarController.navigationController.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     hud.labelText = @"Loading...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         self.corpInfo = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:self.barcodeArray[indexPath.row]];
@@ -109,7 +118,7 @@
             UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
             [self presentViewController:navController animated:YES completion:nil];
             
-            [MBProgressHUD hideHUDForView:self.tabBarController.navigationController.view animated:YES];
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
         });
     });
 }
