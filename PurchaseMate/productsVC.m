@@ -73,7 +73,7 @@
     
     cell.backgroundColor = [UIColor whiteColor];
     cell.layer.borderWidth = 1;
-    cell.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    cell.layer.borderColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1].CGColor;
     cell.layer.masksToBounds = YES;
     cell.layer.cornerRadius = 6;
     
