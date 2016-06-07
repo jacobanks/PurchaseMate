@@ -24,8 +24,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *republicanLabel;
 @property (nonatomic, strong) IBOutlet UILabel *repubTitleLabel;
 
-@property (nonatomic, strong) IBOutlet UILabel *democratLabel;
-@property (nonatomic, strong) IBOutlet UILabel *demoTitleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *demLabel;
+@property (nonatomic, strong) IBOutlet UILabel *demTitleLabel;
 
 @property (nonatomic, strong) IBOutlet UILabel *lobbyingLabel;
 @property (nonatomic, strong) IBOutlet UILabel *lobbyTitleLabel;
@@ -97,7 +97,7 @@
             NSString *lobbyingString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"lobbying"]];
             NSString *repubString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"repubs"]];
             NSString *demString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"dems"]];
-            NSString *indiString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"outside"]];
+            NSString *indiString = [NSString stringWithFormat:@"%@", self.corpData[@"politicalInfo"][@"gave_to_pac"]];
             NSString *ethicsString = [NSString stringWithFormat:@"%@", self.corpData[@"ethics"]];
             
             NSString *formattedLobbyingString = [formatter stringFromNumber:[NSNumber numberWithInteger:lobbyingString.integerValue]];
@@ -108,7 +108,7 @@
             
             self.lobbyingLabel.text = [NSString stringWithFormat:@"$%@", formattedLobbyingString];
             self.republicanLabel.text = [NSString stringWithFormat:@"$%@", formattedRepubsString];
-            self.democratLabel.text = [NSString stringWithFormat:@"$%@", formattedDemsString];
+            self.demLabel.text = [NSString stringWithFormat:@"$%@", formattedDemsString];
             self.indiLabel.text = [NSString stringWithFormat:@"$%@", formattedIndiString];
             self.ethicsLabel.text = self.corpData[@"ethics"];
             
@@ -134,29 +134,29 @@
             }
             
             int repubRandomINT = arc4random() %51 + 50;
-            int demoRandomINT = arc4random() %51 + 50;
+            int demRandomINT = arc4random() %51 + 50;
             
             if (repubString.intValue == 0 && demString.intValue == 0) {
                 repubRandomINT = 1;
-                demoRandomINT = 1;
+                demRandomINT = 1;
             } else if (repubString.intValue == 0) {
                 repubRandomINT = 1;
             } else if (demString.intValue == 0) {
-                demoRandomINT = 1;
+                demRandomINT = 1;
             } else if (repubString.intValue < demString.intValue) {
-                repubRandomINT = demoRandomINT - 30;
+                repubRandomINT = demRandomINT - 30;
             } else {
-                demoRandomINT = repubRandomINT - 30;
+                demRandomINT = repubRandomINT - 30;
             }
             
             // initial setup for graphs
-            PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 60.0, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
+            PNCircleChart *republicanChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.repubTitleLabel.frame) + 30, SCREEN_WIDTH / 2 + 6, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:repubRandomINT] clockwise:NO];
             republicanChart.backgroundColor = [UIColor clearColor];
             [republicanChart setStrokeColor:PNRed];
             [republicanChart strokeChart];
             [self.partyCell addSubview:republicanChart];
             
-            PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, 60.0, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demoRandomINT] clockwise:NO];
+            PNCircleChart *democratChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.demTitleLabel.frame) + 30, SCREEN_WIDTH * 1.45, 90.0) total:[NSNumber numberWithInt:100] current:[NSNumber numberWithInt:demRandomINT] clockwise:NO];
             democratChart.backgroundColor = [UIColor clearColor];
             [democratChart setStrokeColor:PNBlue];
             [democratChart strokeChart];
@@ -167,8 +167,8 @@
             self.republicanLabel.frame = CGRectMake(CGRectGetMinX(republicanChart.frame), CGRectGetMinY(republicanChart.frame), CGRectGetWidth(republicanChart.frame), CGRectGetHeight(republicanChart.frame));
             self.repubTitleLabel.frame = CGRectMake(CGRectGetMinX(republicanChart.frame),CGRectGetMinY(self.repubTitleLabel.frame), CGRectGetWidth(republicanChart.frame), CGRectGetHeight(self.repubTitleLabel.frame));
             
-            self.democratLabel.frame = CGRectMake(CGRectGetMinX(democratChart.frame), CGRectGetMinY(democratChart.frame), CGRectGetWidth(democratChart.frame), CGRectGetHeight(democratChart.frame));
-            self.demoTitleLabel.frame = CGRectMake(CGRectGetMinX(democratChart.frame), CGRectGetMinY(self.demoTitleLabel.frame), CGRectGetWidth(democratChart.frame), CGRectGetHeight(self.demoTitleLabel.frame));
+            self.demLabel.frame = CGRectMake(CGRectGetMinX(democratChart.frame), CGRectGetMinY(democratChart.frame), CGRectGetWidth(democratChart.frame), CGRectGetHeight(democratChart.frame));
+            self.demTitleLabel.frame = CGRectMake(CGRectGetMinX(democratChart.frame), CGRectGetMinY(self.demTitleLabel.frame), CGRectGetWidth(democratChart.frame), CGRectGetHeight(self.demTitleLabel.frame));
             
             //        NSInteger stars = [[NSUserDefaults standardUserDefaults] integerForKey:@"stars"];
             //        if (stars != 0) {
