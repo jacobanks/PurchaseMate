@@ -32,6 +32,7 @@
 		163876C41CED93CB006D1981 /* PurchaseMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 163876C31CED93CB006D1981 /* PurchaseMateTests.m */; };
 		16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */; };
 		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
+		1653A4951D0B1B7000829D66 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1653A4941D0B1B7000829D66 /* Reachability.m */; };
 		165583001B3DFFD200819716 /* reportTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 165582FF1B3DFFD200819716 /* reportTVC.m */; };
 		16909D321CCBEDDD0095E74D /* searchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D311CCBEDDD0095E74D /* searchVC.m */; };
 		16909D351CCBEF6F0095E74D /* searchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */; };
@@ -55,6 +56,7 @@
 		16D1B33B1B2D2DAC00C9E185 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D1B33A1B2D2DAC00C9E185 /* XMLReader.m */; };
 		16D830681C8BD1AB00407300 /* CameraFocusSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D830671C8BD1AB00407300 /* CameraFocusSquare.m */; };
 		16D968691C631671007B89D7 /* scannedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D968681C631671007B89D7 /* scannedTVC.m */; };
+		16DA5FC41D0B22580091978A /* CWStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DA5FC31D0B22580091978A /* CWStatusBarNotification.m */; };
 		16E45E9B1B41EBA100932B9E /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E45E9A1B41EBA100932B9E /* resultsVC.m */; };
 		16FEBEE71C5005AA006B8212 /* CorpInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FEBEE61C5005AA006B8212 /* CorpInfo.m */; };
 		35EBECD2EDC5D81F5D4DA68E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B7B836E94DBCE8CDDD41B /* Pods.framework */; };
@@ -1682,6 +1684,8 @@
 		164ED8A61B681816008BBD86 /* reviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reviewVC.h; sourceTree = "<group>"; };
 		164ED8A71B681816008BBD86 /* reviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reviewVC.m; sourceTree = "<group>"; };
 		164ED8A91B685BD6008BBD86 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1653A4931D0B1B7000829D66 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1653A4941D0B1B7000829D66 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		165582FE1B3DFFD200819716 /* reportTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reportTVC.h; sourceTree = "<group>"; };
 		165582FF1B3DFFD200819716 /* reportTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reportTVC.m; sourceTree = "<group>"; };
 		165583201B3E065D00819716 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
@@ -1752,6 +1756,8 @@
 		16D830671C8BD1AB00407300 /* CameraFocusSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocusSquare.m; sourceTree = "<group>"; };
 		16D968671C631671007B89D7 /* scannedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannedTVC.h; sourceTree = "<group>"; };
 		16D968681C631671007B89D7 /* scannedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scannedTVC.m; sourceTree = "<group>"; };
+		16DA5FC21D0B22580091978A /* CWStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStatusBarNotification.h; sourceTree = "<group>"; };
+		16DA5FC31D0B22580091978A /* CWStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStatusBarNotification.m; sourceTree = "<group>"; };
 		16E45E991B41EBA100932B9E /* resultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
 		16E45E9A1B41EBA100932B9E /* resultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsVC.m; sourceTree = "<group>"; };
 		16FEBEE51C5005AA006B8212 /* CorpInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorpInfo.h; sourceTree = "<group>"; };
@@ -3777,11 +3783,22 @@
 			path = PurchaseMateTests;
 			sourceTree = "<group>";
 		};
+		1653A4961D0B1B7600829D66 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				1653A4931D0B1B7000829D66 /* Reachability.h */,
+				1653A4941D0B1B7000829D66 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		1663CE761CAE4B1E00E92486 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1663CE7B1CAE4C3200E92486 /* CorpInfo */,
 				16CC11281B2E012200D09552 /* XMLParser */,
+				1653A4961D0B1B7600829D66 /* Reachability */,
+				16DA5FC11D0B22580091978A /* CWStatusBarNotification */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -4055,6 +4072,15 @@
 			name = CameraFocusSquare;
 			sourceTree = "<group>";
 		};
+		16DA5FC11D0B22580091978A /* CWStatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				16DA5FC21D0B22580091978A /* CWStatusBarNotification.h */,
+				16DA5FC31D0B22580091978A /* CWStatusBarNotification.m */,
+			);
+			path = CWStatusBarNotification;
+			sourceTree = "<group>";
+		};
 		16F4AFE81BC703490007C322 /* Scan View */ = {
 			isa = PBXGroup;
 			children = (
@@ -4277,8 +4303,10 @@
 				169A658A1B4388640040F74C /* PNColor.m in Sources */,
 				16909D351CCBEF6F0095E74D /* searchCollectionViewCell.m in Sources */,
 				16D830681C8BD1AB00407300 /* CameraFocusSquare.m in Sources */,
+				1653A4951D0B1B7000829D66 /* Reachability.m in Sources */,
 				161C43641B2CA80900F3F8F4 /* ViewController.m in Sources */,
 				169A658F1B4388640040F74C /* PNPieChart.m in Sources */,
+				16DA5FC41D0B22580091978A /* CWStatusBarNotification.m in Sources */,
 				169A658D1B4388640040F74C /* PNLineChartData.m in Sources */,
 				16909D321CCBEDDD0095E74D /* searchVC.m in Sources */,
 				161C43611B2CA80900F3F8F4 /* AppDelegate.m in Sources */,
@@ -4530,6 +4558,7 @@
 				163876CA1CED93CB006D1981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

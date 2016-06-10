@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
+#import "CWStatusBarNotification.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) CWStatusBarNotification *networkErrorBar;
 
 @end
 
@@ -21,6 +25,22 @@
                                              forState:UIControlStateSelected];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1.0]];
 
+    Reachability *reach = [Reachability reachabilityWithHostname:@"https://api.outpan.com"];
+    reach.reachableBlock = ^(Reachability *reach) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideNetworkError];
+            _isReachable = YES;
+            NSLog(@"REACHABLE!");
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability *reach) {
+        [self showNetworkError];
+        _isReachable = NO;
+        NSLog(@"UNREACHABLE!");
+    };
+    
+    [reach startNotifier];
 
     return YES;
 }
@@ -45,6 +65,33 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)reachabilityChanged:(NSNotification*)note {
+    Reachability * reach = [note object];
+    if([reach connectionRequired]) {
+        [self hideNetworkError];
+        _isReachable = YES;
+    } else {
+        [self showNetworkError];
+        _isReachable = NO;
+    }
+}
+
+- (void)showNetworkError{
+    self.networkErrorBar = [CWStatusBarNotification new];
+    
+    _networkErrorBar.notificationLabelBackgroundColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:85.0/255.0 alpha:1.0];
+    _networkErrorBar.notificationLabelTextColor = [UIColor whiteColor];
+    self.networkErrorBar.notificationAnimationInStyle = CWNotificationAnimationStyleTop;
+    self.networkErrorBar.notificationAnimationOutStyle = CWNotificationAnimationStyleTop;
+    self.networkErrorBar.notificationStyle = CWNotificationStyleNavigationBarNotification;
+    
+    [_networkErrorBar displayNotificationWithMessage:@"No signal. Data connection required" completion:nil];
+}
+
+- (void)hideNetworkError {
+    [self.networkErrorBar dismissNotification];
 }
 
 @end

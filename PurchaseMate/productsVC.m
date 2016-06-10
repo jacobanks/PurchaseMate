@@ -10,6 +10,7 @@
 #import "CorpInfo.h"
 #import "searchCollectionViewCell.h"
 #import "MBProgressHUD.h"
+#import "resultsVC.h"
 
 @interface productsVC ()
 

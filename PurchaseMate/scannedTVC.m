@@ -9,6 +9,7 @@
 #import "scannedTVC.h"
 #import "scannedTableViewCell.h"
 #import "CorpInfo.h"
+#import "resultsVC.h"
 #import "MBProgressHUD.h"
 
 @interface scannedTVC ()

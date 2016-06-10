@@ -114,7 +114,6 @@
     
     [self.view bringSubviewToFront:self.highlightView];
     [self.view bringSubviewToFront:self.bottomView];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
