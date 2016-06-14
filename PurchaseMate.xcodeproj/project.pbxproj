@@ -4122,6 +4122,7 @@
 				161C43561B2CA80900F3F8F4 /* Resources */,
 				CDD2B30AB9B1619611E8E222 /* Copy Pods Resources */,
 				95FA458911E9512233BC98FA /* Embed Pods Frameworks */,
+				16DD6AD81D10A8EB0067008A /* Fabric Script */,
 			);
 			buildRules = (
 			);
@@ -4214,6 +4215,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16DD6AD81D10A8EB0067008A /* Fabric Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d274bcfdab1e52f4d7066a69eed6719fe71942c9 cceffa0c608c420ec651be1183057c26f62fd6475b0bf9ab67d6bacab9aa108f";
+		};
 		95FA458911E9512233BC98FA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4530,6 +4545,7 @@
 				163876CA1CED93CB006D1981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
