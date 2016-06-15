@@ -78,7 +78,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor darkGrayColor];
     cell.layer.borderWidth = 1;
     cell.layer.borderColor = [UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1].CGColor;
     cell.layer.masksToBounds = YES;
