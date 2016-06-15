@@ -32,26 +32,32 @@
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-            self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
-            [self.collectionView setDataSource:self];
-            [self.collectionView setDelegate:self];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            self.corpsArray = [[[CorpInfo alloc] init] getAllCorps];
             
-            [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-            [self.collectionView setBackgroundColor:[UIColor whiteColor]];
-            
-            [self.view addSubview:self.collectionView];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+                CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+                self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
+                [self.collectionView setDataSource:self];
+                [self.collectionView setDelegate:self];
+                
+                [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+                [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+                
+                [self.view addSubview:self.collectionView];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         });
-    });
+    
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

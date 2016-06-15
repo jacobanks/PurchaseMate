@@ -25,23 +25,23 @@
                                              forState:UIControlStateSelected];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:6.0/255.0 green:181.0/255.0 blue:124.0/255.0 alpha:1.0]];
 
-    Reachability *reach = [Reachability reachabilityWithHostname:@"https://api.outpan.com"];
+    Reachability *reach = [Reachability reachabilityWithHostName:@"google.com"];
     reach.reachableBlock = ^(Reachability *reach) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideNetworkError];
             _isReachable = YES;
-            NSLog(@"REACHABLE!");
         });
     };
     
     reach.unreachableBlock = ^(Reachability *reach) {
-        [self showNetworkError];
-        _isReachable = NO;
-        NSLog(@"UNREACHABLE!");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showNetworkError];
+            _isReachable = NO;
+        });
     };
     
     [reach startNotifier];
-
+    
     return YES;
 }
 
@@ -65,17 +65,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
--(void)reachabilityChanged:(NSNotification*)note {
-    Reachability * reach = [note object];
-    if([reach connectionRequired]) {
-        [self hideNetworkError];
-        _isReachable = YES;
-    } else {
-        [self showNetworkError];
-        _isReachable = NO;
-    }
 }
 
 - (void)showNetworkError{

@@ -51,118 +51,124 @@
     // Do any additional setup after loading the view.
     self.title = @"Review";
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        // Do something...
-        self.corpData = [[[CorpInfo alloc] init] getCorpDictionary];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            // Do something...
+            self.corpData = [[[CorpInfo alloc] init] getCorpDictionary];
             
-            self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame))];
-            self.scrollView.showsVerticalScrollIndicator = YES;
-            self.scrollView.scrollEnabled = YES;
-            self.scrollView.userInteractionEnabled = YES;
-            self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-            self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame) + 20);
-            
-            self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, CGRectGetWidth(self.view.frame), 120)];
-            [self addShadowtoView:self.corpTitleView];
-            
-            self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.corpTitleView.frame), 40)];
-            self.corpLabel.text = self.corpData[@"corpName"];
-            self.corpLabel.textAlignment = NSTextAlignmentCenter;
-            self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
-            [self.corpTitleView addSubview:self.corpLabel];
-            
-            self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, CGRectGetWidth(self.corpTitleView.frame), 30)];
-            self.productLabel.text = self.corpData[@"productName"];
-            self.productLabel.textAlignment = NSTextAlignmentCenter;
-            self.productLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
-            self.productLabel.alpha = 0.7 ;
-            [self.corpTitleView addSubview:self.productLabel];
-            
-            [self.scrollView addSubview:self.corpTitleView];
-            
-            self.rateView = [[UIView alloc] initWithFrame:CGRectMake(0, 122, CGRectGetWidth(self.view.frame), 80)];
-            [self addShadowtoView:self.rateView];
-            
-            self.rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 30, 100, 20)];
-            self.rateLabel.text = @"Rate:";
-            self.rateLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
-            self.rateLabel.alpha = 0.7;
-            [self.rateView addSubview:self.rateLabel];
-            
-            self.ratingView = [[RateView alloc] initWithFrame:CGRectMake(100, 15, CGRectGetWidth(self.view.frame) / 2 + 60, 50)];
-            self.ratingView.notSelectedImage = [UIImage imageNamed:@"starEmpty"];
-            self.ratingView.fullSelectedImage = [UIImage imageNamed:@"starFull"];
-            self.ratingView.rating = 0;
-            self.ratingView.editable = YES;
-            self.ratingView.maxRating = 5;
-            self.ratingView.delegate = self;
-            [self.rateView addSubview:self.ratingView];
-            
-            [self.scrollView addSubview:self.rateView];
-            
-            self.buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 203, CGRectGetWidth(self.view.frame), 127)];
-            [self addShadowtoView:self.buyView];
-            
-            self.buyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
-            self.buyLabel.text = @"Would you buy this product?";
-            self.buyLabel.textAlignment = NSTextAlignmentCenter;
-            self.buyLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
-            self.buyLabel.alpha = 0.7;
-            [self.buyView addSubview:self.buyLabel];
-            
-            self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
-            [self.yesButton setTitle:@"Yes" forState:UIControlStateNormal];
-            [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.yesButton.backgroundColor = [UIColor darkGrayColor];
-            self.yesButton.alpha = 0.5;
-            
-            self.yesButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
-            self.yesButton.layer.borderWidth = 2;
-            self.yesButton.layer.cornerRadius = 5;
-            
-            [self.yesButton addTarget:self action:@selector(yesClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [self.buyView addSubview:self.yesButton];
-            
-            self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 2, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
-            [self.noButton setTitle:@"No" forState:UIControlStateNormal];
-            [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [self.noButton addTarget:self action:@selector(noClicked:) forControlEvents:UIControlEventTouchUpInside];
-            self.noButton.backgroundColor = [UIColor redColor];
-            self.noButton.alpha = 0.5;
-            
-            self.noButton.layer.borderColor = [UIColor redColor].CGColor;
-            self.noButton.layer.borderWidth = 2;
-            self.noButton.layer.cornerRadius = 5;
-            [self.buyView addSubview:self.noButton];
-            
-            [self.scrollView addSubview:self.buyView];
-            
-            self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, CGRectGetWidth(self.view.frame), 140)];
-            [self addShadowtoView:self.explainView];
-            
-            self.explainTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
-            self.explainTitleLabel.text = @"Further Review/Comments";
-            self.explainTitleLabel.textAlignment = NSTextAlignmentCenter;
-            self.explainTitleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
-            self.explainTitleLabel.alpha = 0.7;
-            [self.explainView addSubview:self.explainTitleLabel];
-            
-            self.explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.explainTitleLabel.center.y + 15, CGRectGetWidth(self.explainView.frame), 100)];
-            self.explainTextView.editable = YES;
-            self.explainTextView.delegate = self;
-            [self.explainView addSubview:self.explainTextView];
-            
-            [self.scrollView addSubview:self.explainView];
-            
-            [self.view addSubview:self.scrollView];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame))];
+                self.scrollView.showsVerticalScrollIndicator = YES;
+                self.scrollView.scrollEnabled = YES;
+                self.scrollView.userInteractionEnabled = YES;
+                self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+                self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.view.frame) + 20);
+                
+                self.corpTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 1, CGRectGetWidth(self.view.frame), 120)];
+                [self addShadowtoView:self.corpTitleView];
+                
+                self.corpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.corpTitleView.frame), 40)];
+                self.corpLabel.text = self.corpData[@"corpName"];
+                self.corpLabel.textAlignment = NSTextAlignmentCenter;
+                self.corpLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:25];
+                [self.corpTitleView addSubview:self.corpLabel];
+                
+                self.productLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 55, CGRectGetWidth(self.corpTitleView.frame), 30)];
+                self.productLabel.text = self.corpData[@"productName"];
+                self.productLabel.textAlignment = NSTextAlignmentCenter;
+                self.productLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+                self.productLabel.alpha = 0.7 ;
+                [self.corpTitleView addSubview:self.productLabel];
+                
+                [self.scrollView addSubview:self.corpTitleView];
+                
+                self.rateView = [[UIView alloc] initWithFrame:CGRectMake(0, 122, CGRectGetWidth(self.view.frame), 80)];
+                [self addShadowtoView:self.rateView];
+                
+                self.rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 30, 100, 20)];
+                self.rateLabel.text = @"Rate:";
+                self.rateLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+                self.rateLabel.alpha = 0.7;
+                [self.rateView addSubview:self.rateLabel];
+                
+                self.ratingView = [[RateView alloc] initWithFrame:CGRectMake(100, 15, CGRectGetWidth(self.view.frame) / 2 + 60, 50)];
+                self.ratingView.notSelectedImage = [UIImage imageNamed:@"starEmpty"];
+                self.ratingView.fullSelectedImage = [UIImage imageNamed:@"starFull"];
+                self.ratingView.rating = 0;
+                self.ratingView.editable = YES;
+                self.ratingView.maxRating = 5;
+                self.ratingView.delegate = self;
+                [self.rateView addSubview:self.ratingView];
+                
+                [self.scrollView addSubview:self.rateView];
+                
+                self.buyView = [[UIView alloc] initWithFrame:CGRectMake(0, 203, CGRectGetWidth(self.view.frame), 127)];
+                [self addShadowtoView:self.buyView];
+                
+                self.buyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
+                self.buyLabel.text = @"Would you buy this product?";
+                self.buyLabel.textAlignment = NSTextAlignmentCenter;
+                self.buyLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+                self.buyLabel.alpha = 0.7;
+                [self.buyView addSubview:self.buyLabel];
+                
+                self.yesButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
+                [self.yesButton setTitle:@"Yes" forState:UIControlStateNormal];
+                [self.yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                self.yesButton.backgroundColor = [UIColor darkGrayColor];
+                self.yesButton.alpha = 0.5;
+                
+                self.yesButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+                self.yesButton.layer.borderWidth = 2;
+                self.yesButton.layer.cornerRadius = 5;
+                
+                [self.yesButton addTarget:self action:@selector(yesClicked:) forControlEvents:UIControlEventTouchUpInside];
+                [self.buyView addSubview:self.yesButton];
+                
+                self.noButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 + 2, 45, CGRectGetWidth(self.view.frame) / 2 - 6, 77)];
+                [self.noButton setTitle:@"No" forState:UIControlStateNormal];
+                [self.noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                [self.noButton addTarget:self action:@selector(noClicked:) forControlEvents:UIControlEventTouchUpInside];
+                self.noButton.backgroundColor = [UIColor redColor];
+                self.noButton.alpha = 0.5;
+                
+                self.noButton.layer.borderColor = [UIColor redColor].CGColor;
+                self.noButton.layer.borderWidth = 2;
+                self.noButton.layer.cornerRadius = 5;
+                [self.buyView addSubview:self.noButton];
+                
+                [self.scrollView addSubview:self.buyView];
+                
+                self.explainView = [[UIView alloc] initWithFrame:CGRectMake(0, 331, CGRectGetWidth(self.view.frame), 140)];
+                [self addShadowtoView:self.explainView];
+                
+                self.explainTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, CGRectGetWidth(self.view.frame), 25)];
+                self.explainTitleLabel.text = @"Further Review/Comments";
+                self.explainTitleLabel.textAlignment = NSTextAlignmentCenter;
+                self.explainTitleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
+                self.explainTitleLabel.alpha = 0.7;
+                [self.explainView addSubview:self.explainTitleLabel];
+                
+                self.explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.explainTitleLabel.center.y + 15, CGRectGetWidth(self.explainView.frame), 100)];
+                self.explainTextView.editable = YES;
+                self.explainTextView.delegate = self;
+                [self.explainView addSubview:self.explainTextView];
+                
+                [self.scrollView addSubview:self.explainView];
+                
+                [self.view addSubview:self.scrollView];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         });
-    });
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

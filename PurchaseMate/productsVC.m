@@ -26,26 +26,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        self.productsArray = [[[CorpInfo alloc] init] getAllProductsWithCorpName:self.corpString];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 50);
-            self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
-            [self.collectionView setDataSource:self];
-            [self.collectionView setDelegate:self];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            self.productsArray = [[[CorpInfo alloc] init] getAllProductsWithCorpName:self.corpString];
             
-            [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-            [self.collectionView setBackgroundColor:[UIColor whiteColor]];
-            
-            [self.view addSubview:self.collectionView];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+                CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 50);
+                self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:layout];
+                [self.collectionView setDataSource:self];
+                [self.collectionView setDelegate:self];
+                
+                [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+                [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+                
+                [self.view addSubview:self.collectionView];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         });
-    });
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,24 +98,30 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-
-        NSDictionary *corpData = [[[CorpInfo alloc] init] getPoliticalInfoWithCorpName:self.corpString andProductName:self.productsArray[indexPath.row]];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             
-            if (corpData != nil) {
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-                [self presentViewController:navController animated:YES completion:nil];
-            }
+            NSDictionary *corpData = [[[CorpInfo alloc] init] getPoliticalInfoWithCorpName:self.corpString andProductName:self.productsArray[indexPath.row]];
             
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (corpData != nil) {
+                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                    [self presentViewController:navController animated:YES completion:nil];
+                }
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         });
-    });
+        
+    }
 }
 
 @end
