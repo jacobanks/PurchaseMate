@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) IBOutlet UIView *labelsView;
 @property (nonatomic, strong) IBOutlet UIView *textFieldView;
-
+@property (nonatomic, strong) NSString *barcodeID;
 @end
 
 @implementation ReportTableViewController
@@ -46,6 +46,8 @@
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
+    self.barcodeID = [[NSUserDefaults standardUserDefaults] stringForKey:@"barcode"];
+
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     if (delegate.isReachable) {
@@ -57,8 +59,8 @@
             self.labelsView.hidden = YES;
             self.textFieldView.hidden = YES;
             
-            if (barcodeID != nil) {
-                self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
+            if (self.barcodeID != nil) {
+                self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", self.barcodeID];
             } else {
                 self.barcodeLabel.text = @"No Barcode";
             }
@@ -110,7 +112,7 @@
         
         NSDictionary *reportInfo = @{ @"productName" : ![self.productLabel.text isEqualToString:@"Label"] ? self.productLabel.text : self.productTextField.text,
                                       @"corpName" : ![self.corpLabel.text isEqualToString:@"Label"] ? self.corpLabel.text : self.corpTextField.text,
-                                      @"barcode" : barcodeID != nil ? barcodeID : @"No barcode",
+                                      @"barcode" : self.barcodeID != nil ? self.barcodeID : @"No barcode",
                                       @"report"  : self.reportTextView.text
                                      };
         
@@ -127,7 +129,7 @@
         
         [message show];
         
-        barcodeID = nil;
+        self.barcodeID = nil;
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else {

@@ -121,7 +121,7 @@
             self.corpInfo = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:self.barcodeArray[indexPath.row]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                barcodeID = self.barcodeArray[indexPath.row];
+                [[NSUserDefaults standardUserDefaults] setObject:self.barcodeArray[indexPath.row] forKey:@"barcode"];
                 
                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];

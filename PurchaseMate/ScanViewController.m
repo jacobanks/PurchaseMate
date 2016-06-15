@@ -199,7 +199,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (corpData != nil) {
-                    barcodeID = barcode;
+                    [[NSUserDefaults standardUserDefaults] setObject:barcode forKey:@"barcode"];
                     
                     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
@@ -224,7 +224,7 @@
                     
                 } else {
                     [self showAlert];
-                    barcodeID = barcode;
+                    [[NSUserDefaults standardUserDefaults] setInteger:barcode.intValue forKey:@"barcode"];
                 }
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -381,5 +381,3 @@
 }
 
 @end
-
-NSString *barcodeID;

@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-extern NSString *barcodeID;
-
 @interface ScanViewController : UIViewController
 
 - (void)focus:(CGPoint)aPoint;
