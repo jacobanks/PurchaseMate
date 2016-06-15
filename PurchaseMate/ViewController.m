@@ -114,7 +114,6 @@
     
     [self.view bringSubviewToFront:self.highlightView];
     [self.view bringSubviewToFront:self.bottomView];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -186,47 +185,54 @@
 
 - (void)scanProduct:(NSString *)barcode {
     // 04976400
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        // Do something...
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
         
-        NSDictionary *corpData = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:barcode];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (corpData != nil) {
-                barcodeID = barcode;
-                
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-                [self presentViewController:navController animated:YES completion:nil];
-                
-                // add values to barcodeArray to display on scannedTVC
-                self.barcodeArray = [NSMutableArray arrayWithArray:[self.userDefaults valueForKey:@"barcodes"]];
-                if (![self.barcodeArray containsObject:barcode]) {
-                    [self.barcodeArray insertObject:barcode atIndex:0];
-                    [self.userDefaults setObject:self.barcodeArray forKey:@"barcodes"];
-                    [self.userDefaults synchronize];
-                } else {
-                    // delete the barcode from array and then re-add it so it is at the top of tableview
-                    [self.barcodeArray removeObject:barcode];
-                    [self.barcodeArray insertObject:barcode atIndex:0];
-                    [self.userDefaults setObject:self.barcodeArray forKey:@"barcodes"];
-                    [self.userDefaults synchronize];
-                }
-
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
-                
-            } else {
-                [self showAlert];
-                barcodeID = barcode;
-            }
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            // Do something...
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
             
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            NSDictionary *corpData = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:barcode];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (corpData != nil) {
+                    barcodeID = barcode;
+                    
+                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                    [self presentViewController:navController animated:YES completion:nil];
+                    
+                    // add values to barcodeArray to display on scannedTVC
+                    self.barcodeArray = [NSMutableArray arrayWithArray:[self.userDefaults valueForKey:@"barcodes"]];
+                    if (![self.barcodeArray containsObject:barcode]) {
+                        [self.barcodeArray insertObject:barcode atIndex:0];
+                        [self.userDefaults setObject:self.barcodeArray forKey:@"barcodes"];
+                        [self.userDefaults synchronize];
+                    } else {
+                        // delete the barcode from array and then re-add it so it is at the top of tableview
+                        [self.barcodeArray removeObject:barcode];
+                        [self.barcodeArray insertObject:barcode atIndex:0];
+                        [self.userDefaults setObject:self.barcodeArray forKey:@"barcodes"];
+                        [self.userDefaults synchronize];
+                    }
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
+                    
+                } else {
+                    [self showAlert];
+                    barcodeID = barcode;
+                }
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         });
-    });
+        
+    }
+    
 }
 
 - (void)toggleFlashlight:(id)sender {

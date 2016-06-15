@@ -9,3 +9,4 @@ target 'PurchaseMate' do
 	pod 'Fabric'
 	pod 'Crashlytics'
 end
+

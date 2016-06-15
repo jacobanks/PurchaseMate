@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "ViewController.h"
-#import "resultsVC.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (assign, nonatomic) BOOL isReachable;
+
+- (void)showNetworkError;
+- (void)hideNetworkError;
 
 @end
 

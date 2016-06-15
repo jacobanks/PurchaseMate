@@ -239,7 +239,7 @@
     pathAnimation.fillMode = kCAFillModeForwards;
     self.layer.opacity = 1;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [NSThread sleepForTimeInterval:1];
         // update UI on the main thread
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -392,7 +392,7 @@
 - (void) drawLineFromPoint : (CGPoint) startPoint ToPoint : (CGPoint) endPoint WithLineWith : (CGFloat) lineWidth AndWithColor : (UIColor*) color{
     
     // call the same method on a background thread
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [NSThread sleepForTimeInterval:2];
         // calculating start and end point
         __block CGFloat startX = [self mappingIsForAxisX:true WithValue:startPoint.x];

@@ -9,6 +9,7 @@
 #import "scannedTVC.h"
 #import "scannedTableViewCell.h"
 #import "CorpInfo.h"
+#import "resultsVC.h"
 #import "MBProgressHUD.h"
 
 @interface scannedTVC ()
@@ -59,24 +60,29 @@
 }
 
 - (void)loadTableView:(NSNotification *)notification {
-    self.barcodeArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] valueForKey:@"barcodes"]];
     
-    self.neededCorpInfo = [[NSMutableDictionary alloc] init];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        // Do something...
-        for (int i = 0; i < self.barcodeArray.count; i++) {
-            self.corpInfo = [[[CorpInfo alloc] init] getNamesWithBarcode:self.barcodeArray[i]];
-            [self.neededCorpInfo setValue:[NSArray arrayWithObjects:self.corpInfo[@"corpName"], self.corpInfo[@"productName"], nil] forKey:[NSString stringWithFormat:@"%i", i]];
-        }
+    if (delegate.isReachable) {
+        self.barcodeArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] valueForKey:@"barcodes"]];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+        self.neededCorpInfo = [[NSMutableDictionary alloc] init];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            // Do something...
+            for (int i = 0; i < self.barcodeArray.count; i++) {
+                self.corpInfo = [[[CorpInfo alloc] init] getNamesWithBarcode:self.barcodeArray[i]];
+                [self.neededCorpInfo setValue:[NSArray arrayWithObjects:self.corpInfo[@"corpName"], self.corpInfo[@"productName"], nil] forKey:[NSString stringWithFormat:@"%i", i]];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+            });
         });
-    });
+    }
 }
 
 #pragma mark - Table view data source
@@ -105,22 +111,28 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        self.corpInfo = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:self.barcodeArray[indexPath.row]];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            barcodeID = self.barcodeArray[indexPath.row];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            self.corpInfo = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:self.barcodeArray[indexPath.row]];
             
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-            [self presentViewController:navController animated:YES completion:nil];
-            
-            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                barcodeID = self.barcodeArray[indexPath.row];
+                
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                [self presentViewController:navController animated:YES completion:nil];
+                
+                [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+            });
         });
-    });
+        
+    }
 }
 
 @end

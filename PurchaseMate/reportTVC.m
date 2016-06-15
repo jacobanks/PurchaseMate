@@ -46,41 +46,47 @@
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        // Do something...
-        self.labelsView.hidden = YES;
-        self.textFieldView.hidden = YES;
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    if (delegate.isReachable) {
         
-        if (barcodeID != nil) {
-            self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
-        } else {
-            self.barcodeLabel.text = @"No Barcode";
-        }
-        
-        NSDictionary *corpData = [[[CorpInfo alloc] init] getCorpDictionary];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (corpData != nil) {
-                self.labelsView.hidden = NO;
-                self.textFieldView.hidden = YES;
-                
-                self.corpLabel.text = corpData[@"corpName"];
-                self.productLabel.text = corpData[@"productName"];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Loading...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            // Do something...
+            self.labelsView.hidden = YES;
+            self.textFieldView.hidden = YES;
+            
+            if (barcodeID != nil) {
+                self.barcodeLabel.text = [NSString stringWithFormat:@"Barcode: %@", barcodeID];
             } else {
-                self.labelsView.hidden = YES;
-                self.textFieldView.hidden = NO;
-                
-                self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonAction:)];
+                self.barcodeLabel.text = @"No Barcode";
             }
             
-            self.reportTextView.delegate = self;
-            self.reportTextView.textColor = [UIColor lightGrayColor];
+            NSDictionary *corpData = [[[CorpInfo alloc] init] getCorpDictionary];
             
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (corpData != nil) {
+                    self.labelsView.hidden = NO;
+                    self.textFieldView.hidden = YES;
+                    
+                    self.corpLabel.text = corpData[@"corpName"];
+                    self.productLabel.text = corpData[@"productName"];
+                } else {
+                    self.labelsView.hidden = YES;
+                    self.textFieldView.hidden = NO;
+                    
+                    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonAction:)];
+                }
+                
+                self.reportTextView.delegate = self;
+                self.reportTextView.textColor = [UIColor lightGrayColor];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
         });
-    });
+        
+    }
 
 }
 

@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "Reachability.h"
+#import "CWStatusBarNotification.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) CWStatusBarNotification *networkErrorBar;
 
 @end
 
@@ -25,6 +29,24 @@
 
     [Fabric with:@[[Crashlytics class]]];
 
+    Reachability *reach = [Reachability reachabilityWithHostName:@"google.com"];
+    reach.reachableBlock = ^(Reachability *reach) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideNetworkError];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
+            _isReachable = YES;
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability *reach) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showNetworkError];
+            _isReachable = NO;
+        });
+    };
+    
+    [reach startNotifier];
+    
     return YES;
 }
 
@@ -48,6 +70,22 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)showNetworkError{
+    self.networkErrorBar = [CWStatusBarNotification new];
+    
+    _networkErrorBar.notificationLabelBackgroundColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:85.0/255.0 alpha:1.0];
+    _networkErrorBar.notificationLabelTextColor = [UIColor whiteColor];
+    self.networkErrorBar.notificationAnimationInStyle = CWNotificationAnimationStyleTop;
+    self.networkErrorBar.notificationAnimationOutStyle = CWNotificationAnimationStyleTop;
+    self.networkErrorBar.notificationStyle = CWNotificationStyleNavigationBarNotification;
+    
+    [_networkErrorBar displayNotificationWithMessage:@"No signal. Data connection required" completion:nil];
+}
+
+- (void)hideNetworkError {
+    [self.networkErrorBar dismissNotification];
 }
 
 @end
