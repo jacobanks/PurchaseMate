@@ -82,8 +82,6 @@
                 [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
             });
         });
-    } else {
-        NSLog(@"Isn't reachable");
     }
 }
 

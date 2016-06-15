@@ -29,6 +29,7 @@
     reach.reachableBlock = ^(Reachability *reach) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideNetworkError];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
             _isReachable = YES;
         });
     };
