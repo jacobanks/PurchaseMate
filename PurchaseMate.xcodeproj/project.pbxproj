@@ -33,7 +33,7 @@
 		16475DCA1B3E0DF0002CB7A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161C43891B2CA8A200F3F8F4 /* QuartzCore.framework */; };
 		164ED8A81B681816008BBD86 /* reviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 164ED8A71B681816008BBD86 /* reviewVC.m */; };
 		165583001B3DFFD200819716 /* reportTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 165582FF1B3DFFD200819716 /* reportTVC.m */; };
-		16909D321CCBEDDD0095E74D /* searchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D311CCBEDDD0095E74D /* searchVC.m */; };
+		16909D321CCBEDDD0095E74D /* discoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D311CCBEDDD0095E74D /* discoverVC.m */; };
 		16909D351CCBEF6F0095E74D /* searchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */; };
 		16909D3A1CCC07600095E74D /* productsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 16909D391CCC07600095E74D /* productsVC.m */; };
 		169A65861B4388640040F74C /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 169A65691B4388640040F74C /* PNBar.m */; };
@@ -1694,8 +1694,8 @@
 		165583301B3E06E500819716 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		165583321B3E087700819716 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		165583351B3E09F900819716 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		16909D301CCBEDDD0095E74D /* searchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchVC.h; sourceTree = "<group>"; };
-		16909D311CCBEDDD0095E74D /* searchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchVC.m; sourceTree = "<group>"; };
+		16909D301CCBEDDD0095E74D /* discoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoverVC.h; sourceTree = "<group>"; };
+		16909D311CCBEDDD0095E74D /* discoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = discoverVC.m; sourceTree = "<group>"; };
 		16909D331CCBEF6F0095E74D /* searchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchCollectionViewCell.h; sourceTree = "<group>"; };
 		16909D341CCBEF6F0095E74D /* searchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCollectionViewCell.m; sourceTree = "<group>"; };
 		16909D381CCC07600095E74D /* productsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productsVC.h; sourceTree = "<group>"; };
@@ -3805,7 +3805,7 @@
 			isa = PBXGroup;
 			children = (
 				16F4AFE81BC703490007C322 /* Scan View */,
-				16C10D371CCB4997001B2001 /* Search View Controller */,
+				16C10D371CCB4997001B2001 /* Discover View Controller */,
 				16909D3B1CCC076D0095E74D /* Products */,
 				16FEBEE41C4FFD46006B8212 /* Scanned */,
 				16F4AFE91BC703500007C322 /* Results */,
@@ -3906,13 +3906,13 @@
 			path = PNChart;
 			sourceTree = "<group>";
 		};
-		16C10D371CCB4997001B2001 /* Search View Controller */ = {
+		16C10D371CCB4997001B2001 /* Discover View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				16909D301CCBEDDD0095E74D /* searchVC.h */,
-				16909D311CCBEDDD0095E74D /* searchVC.m */,
+				16909D301CCBEDDD0095E74D /* discoverVC.h */,
+				16909D311CCBEDDD0095E74D /* discoverVC.m */,
 			);
-			name = "Search View Controller";
+			name = "Discover View Controller";
 			sourceTree = "<group>";
 		};
 		16CC11281B2E012200D09552 /* XMLParser */ = {
@@ -4297,7 +4297,7 @@
 				161C43641B2CA80900F3F8F4 /* ViewController.m in Sources */,
 				169A658F1B4388640040F74C /* PNPieChart.m in Sources */,
 				169A658D1B4388640040F74C /* PNLineChartData.m in Sources */,
-				16909D321CCBEDDD0095E74D /* searchVC.m in Sources */,
+				16909D321CCBEDDD0095E74D /* discoverVC.m in Sources */,
 				161C43611B2CA80900F3F8F4 /* AppDelegate.m in Sources */,
 				1633D5FA1C72EE4F00AD9961 /* scannedTableViewCell.m in Sources */,
 				169A658B1B4388640040F74C /* PNGenericChart.m in Sources */,

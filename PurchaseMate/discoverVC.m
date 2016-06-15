@@ -6,20 +6,20 @@
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "searchVC.h"
+#import "discoverVC.h"
 #import "productsVC.h"
 #import "searchCollectionViewCell.h"
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 
-@interface searchVC ()
+@interface discoverVC ()
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *corpsArray;
 
 @end
 
-@implementation searchVC
+@implementation discoverVC
 
 #pragma mark - Lifecycle
 

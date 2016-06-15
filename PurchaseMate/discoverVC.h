@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface searchVC : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface discoverVC : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
