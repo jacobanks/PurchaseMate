@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface reportTVC : UITableViewController
+@interface ReportTableViewController : UITableViewController
 
 - (IBAction)submitAction:(id)sender;
 - (void)cancelButtonAction:(id)sender;

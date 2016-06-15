@@ -6,9 +6,9 @@
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "scannedTableViewCell.h"
+#import "ScannedTableViewCell.h"
 
-@implementation scannedTableViewCell
+@implementation ScannedTableViewCell
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

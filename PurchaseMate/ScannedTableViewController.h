@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface scannedTVC : UITableViewController
+@interface ScannedTableViewController : UITableViewController
 
 - (void)loadTableView:(NSNotification *)notification;
 

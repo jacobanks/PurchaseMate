@@ -6,20 +6,20 @@
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "discoverVC.h"
-#import "productsVC.h"
-#import "searchCollectionViewCell.h"
+#import "DiscoverViewController.h"
+#import "ProductsViewController.h"
+#import "SearchCollectionViewCell.h"
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 
-@interface discoverVC ()
+@interface DiscoverViewController ()
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *corpsArray;
 
 @end
 
-@implementation discoverVC
+@implementation DiscoverViewController
 
 #pragma mark - Lifecycle
 
@@ -48,7 +48,7 @@
                 [self.collectionView setDataSource:self];
                 [self.collectionView setDelegate:self];
                 
-                [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+                [self.collectionView registerClass:[SearchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
                 [self.collectionView setBackgroundColor:[UIColor whiteColor]];
                 
                 [self.view addSubview:self.collectionView];
@@ -91,7 +91,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    searchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    SearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor darkGrayColor];
     cell.layer.borderWidth = 1;
@@ -116,7 +116,7 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    productsVC *vc = (productsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"products"];
+    ProductsViewController *vc = (ProductsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"products"];
     vc.corpString = [NSString stringWithFormat:@"%@", self.corpsArray[indexPath.row]];
     [self.navigationController pushViewController:vc animated:YES];
 }

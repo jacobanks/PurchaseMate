@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface scannedTableViewCell : UITableViewCell
+@interface ScannedTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;

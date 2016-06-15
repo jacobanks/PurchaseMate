@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Jacobanks. All rights reserved.
 //
 
-#import "resultsVC.h"
-#import "ViewController.h"
+#import "ResultsViewController.h"
+#import "ScanViewController.h"
 #import "PNChart.h"
-#import "reviewVC.h"
-#import "reportTVC.h"
+#import "ReviewViewController.h"
+#import "ReportTableViewController.h"
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 
-@interface resultsVC ()
+@interface ResultsViewController ()
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 
@@ -46,7 +46,7 @@
 
 @end
 
-@implementation resultsVC
+@implementation ResultsViewController
 
 #pragma mark - Lifecycle
 

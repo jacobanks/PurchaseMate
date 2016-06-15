@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface discoverVC : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DiscoverViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

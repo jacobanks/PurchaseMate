@@ -6,20 +6,20 @@
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "productsVC.h"
+#import "ProductsViewController.h"
 #import "CorpInfo.h"
-#import "searchCollectionViewCell.h"
+#import "SearchCollectionViewCell.h"
 #import "MBProgressHUD.h"
-#import "resultsVC.h"
+#import "ResultsViewController.h"
 
-@interface productsVC ()
+@interface ProductsViewController ()
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *productsArray;
 
 @end
 
-@implementation productsVC
+@implementation ProductsViewController
 
 #pragma mark - Lifecycle
 
@@ -42,7 +42,7 @@
                 [self.collectionView setDataSource:self];
                 [self.collectionView setDelegate:self];
                 
-                [self.collectionView registerClass:[searchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+                [self.collectionView registerClass:[SearchCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
                 [self.collectionView setBackgroundColor:[UIColor whiteColor]];
                 
                 [self.view addSubview:self.collectionView];
@@ -76,7 +76,7 @@
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    searchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    SearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
     cell.layer.borderWidth = 1;
@@ -112,7 +112,7 @@
                 
                 if (corpData != nil) {
                     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                    ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                     [self presentViewController:navController animated:YES completion:nil];
                 }

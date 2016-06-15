@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 PurchaseMate. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ScanViewController.h"
 #import "XMLReader.h"
-#import "resultsVC.h"
+#import "ResultsViewController.h"
 #import "CorpInfo.h"
 #import "MBProgressHUD.h"
 #import "CameraFocusSquare.h"
-#import "reportTVC.h"
+#import "ReportTableViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ViewController () <AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate, UITextFieldDelegate>
+@interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate, UITextFieldDelegate>
 
     @property (strong, nonatomic) AVCaptureSession *session;
     @property (strong, nonatomic) AVCaptureDevice *device;
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ScanViewController
 
 #pragma mark - Lifecycle
 
@@ -202,7 +202,7 @@
                     barcodeID = barcode;
                     
                     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                    ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                     [self presentViewController:navController animated:YES completion:nil];
                     
@@ -374,7 +374,7 @@
         [self.session startRunning];
     } else {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        reportTVC *vc = (reportTVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"report"];
+        ReportTableViewController *vc = (ReportTableViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"report"];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:navController animated:YES completion:nil];
     }

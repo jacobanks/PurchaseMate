@@ -6,12 +6,12 @@
 //
 //
 
-#import "reportTVC.h"
+#import "ReportTableViewController.h"
 #import "MBProgressHUD.h"
-#import "ViewController.h"
+#import "ScanViewController.h"
 #import "CorpInfo.h"
 
-@interface reportTVC () <UITextViewDelegate>
+@interface ReportTableViewController () <UITextViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextView *reportTextView;
 @property (nonatomic, strong) IBOutlet UILabel *corpLabel;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation reportTVC
+@implementation ReportTableViewController
 
 #pragma mark - Lifecycle
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface searchCollectionViewCell : UICollectionViewCell
+@interface SearchCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel *titleLabel;
 

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RateView.h"
 
-@interface reviewVC : UIViewController
+@interface ReviewViewController : UIViewController
 
 @end

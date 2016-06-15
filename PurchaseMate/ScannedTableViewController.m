@@ -6,13 +6,13 @@
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "scannedTVC.h"
-#import "scannedTableViewCell.h"
+#import "ScannedTableViewController.h"
+#import "ScannedTableViewCell.h"
 #import "CorpInfo.h"
-#import "resultsVC.h"
+#import "ResultsViewController.h"
 #import "MBProgressHUD.h"
 
-@interface scannedTVC ()
+@interface ScannedTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *barcodeArray;
 @property (strong, nonatomic) NSDictionary *corpInfo;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation scannedTVC
+@implementation ScannedTableViewController
 
 #pragma mark - Lifecycle
 
@@ -98,7 +98,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    scannedTableViewCell *cell = (scannedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"scannedCell"];
+    ScannedTableViewCell *cell = (ScannedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"scannedCell"];
     
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][1]];
     cell.subtitleLabel.text = [NSString stringWithFormat:@"%@", self.neededCorpInfo[[NSString stringWithFormat:@"%li", (long)indexPath.row]][0]];
@@ -124,7 +124,7 @@
                 barcodeID = self.barcodeArray[indexPath.row];
                 
                 UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                resultsVC *vc = (resultsVC *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
                 [self presentViewController:navController animated:YES completion:nil];
                 

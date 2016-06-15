@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface productsVC : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProductsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) NSString *corpString;
 

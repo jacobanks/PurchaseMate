@@ -6,9 +6,9 @@
 //  Copyright © 2016 Jacobanks. All rights reserved.
 //
 
-#import "searchCollectionViewCell.h"
+#import "SearchCollectionViewCell.h"
 
-@implementation searchCollectionViewCell
+@implementation SearchCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

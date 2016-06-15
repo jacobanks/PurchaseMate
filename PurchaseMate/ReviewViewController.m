@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Jacobanks. All rights reserved.
 //
 
-#import "reviewVC.h"
-#import "ViewController.h"
+#import "ReviewViewController.h"
+#import "ScanViewController.h"
 #import "MBProgressHUD.h"
 #import "CorpInfo.h"
 
-@interface reviewVC () <RateViewDelegate, UITextViewDelegate>
+@interface ReviewViewController () <RateViewDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) RateView *ratingView;
 @property (strong, nonatomic) NSString *ratingString;
@@ -42,7 +42,7 @@
 
 @end
 
-@implementation reviewVC
+@implementation ReviewViewController
 
 #pragma mark - Lifecycle
 
