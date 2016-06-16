@@ -74,15 +74,15 @@ static NSMutableDictionary *corpDict;
 
 - (NSDictionary *)getBrandFromOutPan:(NSString *)urlString {
     
-    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"content-type"];
     
     NSError *err;
     NSURLResponse *response;
     
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request   returningResponse:&response error:&err];
-    NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error: &err];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&err];
     
     //Sort JSON from OutPan
     id attributes = [jsonArray objectForKey:@"attributes"];
@@ -96,6 +96,8 @@ static NSMutableDictionary *corpDict;
         } else if (responseDictionary[@"Manufacturer"]) {
             //Doesn't have Brand Attribute so check for Manufacturer            
             return responseDictionary[@"Manufacturer"];
+        } else {
+            return nil;
         }
     }
     

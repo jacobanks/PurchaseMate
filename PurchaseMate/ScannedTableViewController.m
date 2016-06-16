@@ -11,6 +11,7 @@
 #import "CorpInfo.h"
 #import "ResultsViewController.h"
 #import "MBProgressHUD.h"
+#import "ReportTableViewController.h"
 
 @interface ScannedTableViewController ()
 
@@ -118,20 +119,50 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
         hud.labelText = @"Loading...";
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            
             self.corpInfo = [[[CorpInfo alloc] init] getPoliticalInfoWithBarcode:self.barcodeArray[indexPath.row]];
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSUserDefaults standardUserDefaults] setObject:self.barcodeArray[indexPath.row] forKey:@"barcode"];
+            if (self.corpInfo != nil) {
                 
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
-                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-                [self presentViewController:navController animated:YES completion:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[NSUserDefaults standardUserDefaults] setObject:self.barcodeArray[indexPath.row] forKey:@"barcode"];
+                    
+                    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
+                    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+                    [self presentViewController:navController animated:YES completion:nil];
+                    
+                    [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+                });
                 
-                [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-            });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showAlert];
+                });
+            }
+            
         });
         
+    }
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)showAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Report", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != [alertView cancelButtonIndex]) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ReportTableViewController *vc = (ReportTableViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"report"];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:navController animated:YES completion:nil];
     }
 }
 
