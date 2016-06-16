@@ -199,8 +199,10 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (corpData != nil) {
+                    // set the barcode id number to the barcode NSString
                     [[NSUserDefaults standardUserDefaults] setObject:barcode forKey:@"barcode"];
                     
+                    // load the results view controller
                     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     ResultsViewController *vc = (ResultsViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"results"];
                     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -220,11 +222,12 @@
                         [self.userDefaults synchronize];
                     }
                     
+                    // tell scanned tableview that it will need to reload its data
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadTableView" object:self];
                     
                 } else {
                     [self showAlert];
-                    [[NSUserDefaults standardUserDefaults] setInteger:barcode.intValue forKey:@"barcode"];
+                    [[NSUserDefaults standardUserDefaults] setObject:barcode forKey:@"barcode"];
                 }
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
