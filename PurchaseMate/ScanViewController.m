@@ -270,17 +270,6 @@
     }
 }
 
-#pragma mark - UIAlertViewDelegate
-
-- (void)showAlert {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Report", nil];
-    [alert show];
-}
-
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -370,6 +359,15 @@
 }
 
 #pragma mark - UIAlertViewDelegate
+
+- (void)showAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                    message:@"We have no data on this product! Submit a report to notify us about this, and we will add it to our database."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Report", nil];
+    [alert show];
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
